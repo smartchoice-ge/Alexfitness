@@ -1,0 +1,10 @@
+docs/
+mssql_connection.php
+
+# Google API Configuration (contains API key)
+includes/google-config.php
+
+# Google Reviews Cache
+cache/
+cache/*.json
+zoho_email/tokens.json

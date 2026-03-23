@@ -1,0 +1,20 @@
+[10-Jul-2018 22:17:53 Asia/Tbilisi] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /home/rqkbokuj/public_html/test.php on line 2
+[10-Jul-2018 22:17:55 Asia/Tbilisi] PHP Parse error:  syntax error, unexpected '$_SERVER' (T_VARIABLE) in /home/rqkbokuj/public_html/test.php on line 2
+[10-Jul-2018 22:57:03 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:57:32 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:57:32 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:57:33 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:57:33 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:57:33 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 22:58:42 Asia/Tbilisi] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/rqkbokuj/public_html/test.php on line 13
+[10-Jul-2018 22:59:05 Asia/Tbilisi] PHP Warning:  file_get_contents(): Filename cannot be empty in /home/rqkbokuj/public_html/test.php on line 13
+[10-Jul-2018 23:04:08 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 16
+[10-Jul-2018 23:08:11 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 16
+[10-Jul-2018 23:15:17 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 23:15:18 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 23:15:19 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 23:15:19 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[10-Jul-2018 23:15:19 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[11-Jul-2018 09:08:40 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[24-Feb-2021 13:01:02 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
+[21-Dec-2021 06:45:50 Asia/Tbilisi] PHP Warning:  Illegal string offset 'ka' in /home/rqkbokuj/public_html/test.php on line 15
