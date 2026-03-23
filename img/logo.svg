@@ -1,4 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="300" height="100" viewBox="0 0 300 100">
-  <rect width="300" height="100" fill="#1a1a1a"/>
-  <text x="150" y="55" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#e5c806" text-anchor="middle" dominant-baseline="middle">SYNERGY GYM</text>
+  <defs>
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#c8e600"/>
+      <stop offset="100%" style="stop-color:#d4f000"/>
+    </linearGradient>
+  </defs>
+  <rect width="300" height="100" fill="transparent"/>
+  <!-- Brand circle icon -->
+  <circle cx="40" cy="50" r="28" fill="#c8e600" stroke="#1a73e8" stroke-width="3"/>
+  <text x="40" y="53" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#1a1a1a" text-anchor="middle" dominant-baseline="middle">S</text>
+  <!-- Brand text -->
+  <text x="180" y="42" font-family="Arial, sans-serif" font-size="30" font-weight="bold" fill="url(#brandGrad)" text-anchor="middle" dominant-baseline="middle" letter-spacing="3">SYNERGY</text>
+  <text x="180" y="72" font-family="Arial, sans-serif" font-size="14" font-weight="600" fill="#ffffff" text-anchor="middle" dominant-baseline="middle" letter-spacing="8">GYM</text>
 </svg>

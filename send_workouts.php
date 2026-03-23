@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'generate_qr.php';
 include_once 'db_connection.php';
@@ -139,8 +139,8 @@ $emailBody .= '
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0">
                     <tr>
                         <td align="center" style="padding-top: 10px;">
-                            <a href="https://www.SYNERGY_DOMAIN" style="color: #FFD700; text-decoration: none; font-size: 16px; font-weight: bold;">
-                                WWW.SYNERGY_DOMAIN
+                            <a href="https://synergy-gym.ge" style="color: #FFD700; text-decoration: none; font-size: 16px; font-weight: bold;">
+                                WWW.synergy-gym.ge
                             </a>
                         </td>
                     </tr>
@@ -160,7 +160,7 @@ $emailBody .= '</table>
 // Send email using unified API sender (with SMTP fallback)
 $emailSent = false;
 try {
-    $result = sendUnifiedEmail($clientEmail, 'Group Workouts - SYNERGY_DOMAIN', $emailBody, $user);
+    $result = sendUnifiedEmail($clientEmail, 'Group Workouts - synergy-gym.ge', $emailBody, $user);
     $emailSent = $result['success'];
     
     if ($emailSent) {

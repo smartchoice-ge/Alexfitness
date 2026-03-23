@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ka">
 <head>
     <meta charset="UTF-8">
@@ -27,18 +27,18 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             padding: 2rem;
             margin: 2rem 0;
-            border: 1px solid #ffdf06;
+            border: 1px solid #c8e600;
         }
 
         .terms-header {
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #ffdf06;
+            border-bottom: 2px solid #c8e600;
         }
 
         .terms-title {
-            color: #ffdf06;
+            color: #c8e600;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -57,12 +57,12 @@
         }
 
         .section-title {
-            color: #ffdf06;
+            color: #c8e600;
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
             padding-left: 10px;
-            border-left: 4px solid #ffdf06;
+            border-left: 4px solid #c8e600;
         }
 
         .section-content {
@@ -86,7 +86,7 @@
         }
 
         .back-btn {
-            background: linear-gradient(45deg, #ffdf06, #f0c814);
+            background: linear-gradient(45deg, #c8e600, #a8c200);
             color: #000000;
             border: none;
             padding: 12px 30px;
@@ -100,7 +100,7 @@
         }
 
         .back-btn:hover {
-            background: linear-gradient(45deg, #f0c814, #e6b800);
+            background: linear-gradient(45deg, #a8c200, #1a73e8);
             color: #000000;
             text-decoration: none;
             transform: translateY(-2px);
@@ -113,7 +113,7 @@
 
         .highlight-box {
             background: rgba(255, 223, 6, 0.1);
-            border: 1px solid #ffdf06;
+            border: 1px solid #c8e600;
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1.5rem 0;
@@ -128,7 +128,7 @@
         }
 
         .contact-info h4 {
-            color: #ffdf06;
+            color: #c8e600;
             margin-bottom: 1rem;
         }
 
@@ -138,12 +138,12 @@
         }
 
         .contact-info a {
-            color: #ffdf06;
+            color: #c8e600;
             text-decoration: none;
         }
 
         .contact-info a:hover {
-            color: #f0c814;
+            color: #a8c200;
             text-decoration: underline;
         }
 
@@ -171,15 +171,15 @@
         }
         .lang-btn {
             background: rgba(255, 223, 6, 0.15);
-            color: #ffdf06;
-            border: 1px solid #ffdf06;
+            color: #c8e600;
+            border: 1px solid #c8e600;
             border-radius: 6px;
             padding: 6px 10px;
             font-weight: 600;
             cursor: pointer;
         }
         .lang-btn.active {
-            background: #ffdf06;
+            background: #c8e600;
             color: #000;
         }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0; }
@@ -224,12 +224,12 @@
                             
                             <div class="highlight-box">
                                 <p><strong>Smart Choice ან კომპანია:</strong> საქართველოს კანონმდებლობის შესაბამისად დაფუძნებული იურიდიული პირი, შპს „სმარტელ.ჯი" (ს/ნ 405771277)</p>
-                                <p><strong>ვებ-გვერდი:</strong> კომპანიის ვებ-გვერდი www.SYNERGY_DOMAIN</p>
+                                <p><strong>ვებ-გვერდი:</strong> კომპანიის ვებ-გვერდი www.synergy-gym.ge</p>
                             </div>
                             
                             <ul>
                                 <li><strong>მომსახურების მიმწოდებელი:</strong> შპს სმარტელ.ჯი (ს.კ. 405771277)</li>
-                                <li><strong>საკონტაქტო ინფორმაცია:</strong> ტელ. SYNERGY_PHONE მეილი SYNERGY_EMAIL</li>
+                                <li><strong>საკონტაქტო ინფორმაცია:</strong> ტელ. +995-XXX-XXX-XXX მეილი info@synergy-gym.ge</li>
                                 <li><strong>სამუშაო საათები:</strong> ყოველდღე 08:00-02:00 მდე</li>
                                 <li><strong>მიწოდების პირობები:</strong> განისაზღვრება სიტზე მითითებული სტანდარტული პაკეტების შესაბამისად, ასევე მიმდინარე საქციო პროდუქტებიდან გამომდინარე</li>
                             </ul>
@@ -407,7 +407,7 @@
                         </div>
                     </div>
 
-                    <div class="terms-section" style="border-top: 2px solid #ffdf06; padding-top: 2rem; margin-top: 2rem;">
+                    <div class="terms-section" style="border-top: 2px solid #c8e600; padding-top: 2rem; margin-top: 2rem;">
                         <div class="section-content">
                             <div class="highlight-box">
                                 <p style="font-weight: bold; text-align: center; margin-bottom: 0;">
@@ -419,9 +419,9 @@
 
                     <div class="contact-info">
                         <h4>Questions or Concerns?</h4>
-                        <p><strong>Address:</strong> Tbilisi, SYNERGY_STREET st. №8</p>
-                        <p><strong>Phone:</strong> <a href="tel:+995322195119">SYNERGY_PHONE</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:SYNERGY_EMAIL">SYNERGY_EMAIL</a></p>
+                        <p><strong>Address:</strong> Tbilisi, Giorgi Brtskinvale st. №8</p>
+                        <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
+                        <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
                         <p><strong>Last Updated:</strong> July 2025</p>
                     </div>
                     </div>
@@ -446,11 +446,11 @@
                                 <p>Unless the context clearly indicates otherwise, the terms used in these Terms and Conditions have the following meanings:</p>
                                 <div class="highlight-box">
                                     <p><strong>Smart Choice or Company:</strong> A legal entity established under Georgian law, LLC “Smartel.ge” (ID 405771277)</p>
-                                    <p><strong>Website:</strong> The company website www.SYNERGY_DOMAIN</p>
+                                    <p><strong>Website:</strong> The company website www.synergy-gym.ge</p>
                                 </div>
                                 <ul>
                                     <li><strong>Service Provider:</strong> LLC Smartel.ge (ID 405771277)</li>
-                                    <li><strong>Contact details:</strong> Tel. SYNERGY_PHONE, E-mail: SYNERGY_EMAIL</li>
+                                    <li><strong>Contact details:</strong> Tel. +995-XXX-XXX-XXX, E-mail: info@synergy-gym.ge</li>
                                     <li><strong>Working hours:</strong> Every day 08:00–02:00</li>
                                     <li><strong>Delivery/Provision terms:</strong> Determined by standard packages listed on the site as well as current promotional products</li>
                                 </ul>
@@ -615,7 +615,7 @@
                             </div>
                         </div>
 
-                        <div class="terms-section" style="border-top: 2px solid #ffdf06; padding-top: 2rem; margin-top: 2rem;">
+                        <div class="terms-section" style="border-top: 2px solid #c8e600; padding-top: 2rem; margin-top: 2rem;">
                             <div class="section-content">
                                 <div class="highlight-box">
                                     <p style="font-weight: bold; text-align: center; margin-bottom: 0;">
@@ -627,9 +627,9 @@
 
                         <div class="contact-info">
                             <h4>Questions or Concerns?</h4>
-                            <p><strong>Address:</strong> Tbilisi, SYNERGY_STREET st. №8</p>
-                            <p><strong>Phone:</strong> <a href="tel:+995322195119">SYNERGY_PHONE</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:SYNERGY_EMAIL">SYNERGY_EMAIL</a></p>
+                            <p><strong>Address:</strong> Tbilisi, Giorgi Brtskinvale st. №8</p>
+                            <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
                             <p><strong>Last Updated:</strong> July 2025</p>
                         </div>
                     </div>

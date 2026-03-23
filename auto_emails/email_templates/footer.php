@@ -1,4 +1,4 @@
-﻿<tr>
+<tr>
     <td align="center">
         <meta name="color-scheme" content="light">
         <meta name="supported-color-schemes" content="light">
@@ -39,14 +39,14 @@
                             <td style="padding-bottom: 10px; padding-right: 8px;">
                                 <img src="/img/mobile3.png" alt="Phone" style="width: 16px; vertical-align: middle;">
                             </td>
-                            <td class="white-text" style="color: #ffffff !important; font-size: 15px;"><b> SYNERGY_PHONE</b></td>
+                            <td class="white-text" style="color: #ffffff !important; font-size: 15px;"><b> +995-XXX-XXX-XXX</b></td>
                         </tr>
                         <tr>
                             <td style="padding-right: 8px;">
                                 <img src="/img/email2.png" alt="Email" style="width: 16px; vertical-align: middle;">
                             </td>
                             <td>
-                                <a href="mailto:info@SYNERGY_DOMAIN" class="white-link" style="color: #ffffff !important; text-decoration: none; font-size: 15px;"><b>info@SYNERGY_DOMAIN</b></a>
+                                <a href="mailto:info@synergy-gym.ge" class="white-link" style="color: #ffffff !important; text-decoration: none; font-size: 15px;"><b>info@synergy-gym.ge</b></a>
                             </td>
                         </tr>
                     </table>

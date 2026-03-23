@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // unipay_checkout.php
 require_once 'db_connection.php';
 require_once 'mssql_connection.php';
@@ -54,7 +54,7 @@ $unique_merchant_order_id = $client_mobile_number . '_' . $random_suffix;
 // Step 2: Create Unipay order
 $order_url = 'https://apiv2.unipay.com/v3/api/order/create';
 $order_body = json_encode([
-    'MerchantUser' => 'SYNERGY_EMAIL',
+    'MerchantUser' => 'info@synergy-gym.ge',
     'MerchantOrderID' => $unique_merchant_order_id,
     'OrderPrice' => $amount,
     'OrderCurrency' => 'GEL',

@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="ka">
 <head>
     <!-- Required meta tags -->
@@ -139,13 +139,13 @@
         <h5 class="mt-4">
             თბილისი, მირიან მეფის ქ. №14
             <br>
-            SYNERGY_PHONE
+            +995-XXX-XXX-XXX
             <br>
             <a href="https://www.facebook.com/Synergy-Gym-236344203786898/" target="_blank">
                 facebook
             </a>
             <br>
-            sofi@SYNERGY_DOMAIN
+            sofi@synergy-gym.ge
         </h5>
     </i>
 </div>

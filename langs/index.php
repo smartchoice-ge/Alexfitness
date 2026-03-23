@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in SYNERGY_AREA, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in SYNERGY_AREA, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in SYNERGY_AREA, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, SYNERGY_AREA ფიტნესი">
+    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
+    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
+    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Preconnect to external domains for faster loading -->
@@ -63,7 +63,7 @@
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in SYNERGY_AREA, Tbilisi | Fitness Club & Training</title>
+    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
 
     <style>
         /* Performant CSS animation */
@@ -235,14 +235,14 @@
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
       "name": "Synergy Gym",
-      "description": "Tbilisi's fitness club in SYNERGY_AREA, offering modern equipment, personal training, and a motivating atmosphere.",
+      "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
       "url": "/",
       "logo": "/img/logo.png",
-      "telephone": "SYNERGY_WHATSAPP",
+      "telephone": "+995-XXX-XXX-XXX",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "SYNERGY_AREA, Girogi brwyinvale 8",
+        "streetAddress": "Didi Digomi, Girogi brwyinvale 8",
         "addressLocality": "Tbilisi",
         "addressRegion": "Tbilisi",
         "postalCode": "0159",
@@ -265,7 +265,7 @@
       ],
       "sameAs": [
         "https://www.facebook.com/Synergy-Gym-236344203786898/",
-        "SYNERGY_INSTAGRAM"
+        "https://www.instagram.com/synergy_gym_tbilisi/"
       ]
     }
     </script>
@@ -273,7 +273,7 @@
 </head>
 <body>
     
-<a href="https://wa.me/SYNERGY_WHATSAPP" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" onerror="this.onerror=null; this.src='https://placehold.co/60x60/25d366/ffffff?text=WA';">
 </a>
 
@@ -379,7 +379,7 @@
     <?php include(__DIR__ . '/../includes/google-reviews.php'); ?>
     <div id="contact" class="container-fluid text-center join banner pt-4 pb-4">
         <div class="full-width join-shadow"></div>
-        <i name='key_find'>key_find<h5 class="mt-4" name='key_address'>key_address <br>SYNERGY_PHONE<br><a href="https://www.facebook.com/Synergy-Gym-236344203786898/" target="_blank">facebook</a><br><a href="SYNERGY_INSTAGRAM" target="_blank">Instagram</a><br>SYNERGY_EMAIL</h5></i>
+        <i name='key_find'>key_find<h5 class="mt-4" name='key_address'>key_address <br>+995-XXX-XXX-XXX<br><a href="https://www.facebook.com/Synergy-Gym-236344203786898/" target="_blank">facebook</a><br><a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank">Instagram</a><br>info@synergy-gym.ge</h5></i>
     </div>
     <div class="container-fluid map" style="position:relative;">
         <!-- Google Maps embed - Replace with Synergy location -->
@@ -413,7 +413,7 @@ function openAgreementWithLang(event) {
         event.stopPropagation();
     }
     const currentLang = window.localStorage.getItem('ActiveLanguage') || 'ka';
-    const url = `https://www.SYNERGY_DOMAIN/agreement.php?lang=${currentLang}`;
+    const url = `https://synergy-gym.ge/agreement.php?lang=${currentLang}`;
     window.open(url, '_blank');
     return false;
 }

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'generate_qr.php';
 include_once 'mssql_connection.php';
@@ -154,8 +154,8 @@ $emailBody .= '
                     </tr>
                     <tr>
                         <td align="center" style="padding-top: 10px;">
-                            <a href="https://www.SYNERGY_DOMAIN" style="color: #FFD700; text-decoration: none; font-size: 16px; font-weight: bold;">
-                                WWW.SYNERGY_DOMAIN
+                            <a href="https://synergy-gym.ge" style="color: #FFD700; text-decoration: none; font-size: 16px; font-weight: bold;">
+                                WWW.synergy-gym.ge
                             </a>
                         </td>
                     </tr>

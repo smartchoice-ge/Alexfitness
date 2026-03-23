@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 include '../mssql_connection.php'; // Include database connection
 include '../db_connection.php'; // Include MySQL database connection
@@ -259,7 +259,7 @@ if (isset($clientID)) {
             border-radius: 0.75rem;
         }
         .renew-btn {
-            background-color: #ffdf06;
+            background-color: #00b4d8;
             color: #000000;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
@@ -268,7 +268,7 @@ if (isset($clientID)) {
             background-color: #e6c605;
         }
         .lang-btn {
-            background-color: #ffdf06;
+            background-color: #00b4d8;
             color: #000;
             padding: 8px 16px;
             border-radius: 8px;
@@ -311,7 +311,7 @@ if (isset($clientID)) {
             background-color: #1f1f1f;
         }
         .contact-link {
-            color: #ffdf06;
+            color: #00b4d8;
             transition: color 0.3s ease;
         }
         .contact-link:hover {
@@ -335,14 +335,14 @@ if (isset($clientID)) {
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -369,7 +369,7 @@ if (isset($clientID)) {
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -393,11 +393,11 @@ if (isset($clientID)) {
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.8);
+                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -546,9 +546,9 @@ if (isset($clientID)) {
         }
         
         .workout-tab.active {
-            background-color: #ffdf06;
+            background-color: #00b4d8;
             color: #000;
-            border-color: #ffdf06;
+            border-color: #00b4d8;
         }
         
         .workout-tab:hover:not(.active) {
@@ -564,12 +564,12 @@ if (isset($clientID)) {
         }
         
         .workout-session-card:hover {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             box-shadow: 0 4px 12px rgba(255, 223, 6, 0.1);
         }
         
         .workout-book-btn {
-            background-color: #ffdf06;
+            background-color: #00b4d8;
             color: #000;
             padding: 0.5rem 1.25rem;
             border-radius: 0.5rem;
@@ -635,7 +635,7 @@ if (isset($clientID)) {
         }
         
         .week-day-cell:hover {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             background-color: #2a2a2a;
             transform: translateY(-2px);
         }
@@ -653,7 +653,7 @@ if (isset($clientID)) {
         }
         
         .week-day-cell.today {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             border-width: 2px;
             background-color: rgba(255, 223, 6, 0.05);
         }
@@ -668,7 +668,7 @@ if (isset($clientID)) {
         }
         
         .week-day-cell.selected {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             border-width: 3px;
             background-color: rgba(255, 223, 6, 0.12);
         }
@@ -694,7 +694,7 @@ if (isset($clientID)) {
         .week-sessions-count {
             font-size: 0.75rem;
             background-color: rgba(255, 223, 6, 0.2);
-            color: #ffdf06;
+            color: #00b4d8;
             padding: 0.25rem 0.5rem;
             border-radius: 9999px;
             margin-top: auto;
@@ -716,7 +716,7 @@ if (isset($clientID)) {
         }
         
         .calendar-day:hover {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             background-color: #2a2a2a;
         }
         
@@ -731,7 +731,7 @@ if (isset($clientID)) {
         }
         
         .calendar-day.today {
-            border-color: #ffdf06;
+            border-color: #00b4d8;
             border-width: 2px;
         }
         
@@ -757,7 +757,7 @@ if (isset($clientID)) {
         .calendar-sessions-indicator {
             width: 6px;
             height: 6px;
-            background-color: #ffdf06;
+            background-color: #00b4d8;
             border-radius: 50%;
             margin-top: auto;
         }
@@ -765,7 +765,7 @@ if (isset($clientID)) {
         .session-time-badge {
             font-size: 0.625rem;
             background-color: rgba(255, 223, 6, 0.2);
-            color: #ffdf06;
+            color: #00b4d8;
             padding: 0.125rem 0.375rem;
             border-radius: 0.25rem;
             margin-top: 0.25rem;
@@ -778,7 +778,7 @@ if (isset($clientID)) {
         
         .workout-badge.booked {
             background-color: rgba(255, 223, 6, 0.2);
-            color: #ffdf06;
+            color: #00b4d8;
         }
         
         /* Mobile-specific styles for workout booking */
@@ -813,7 +813,7 @@ if (isset($clientID)) {
 
 <body>
 
-<a href="https://wa.me/SYNERGY_WHATSAPP" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
     <div class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/24x24/ffffff/25d366?text=WA';">
         <span class="whatsapp-text" name="key_contact_whatsapp">Contact Us</span>
@@ -1110,11 +1110,11 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
                     <div class="flex flex-wrap justify-center gap-6 mb-6">
                         <a href="tel:+995322195119" class="contact-link inline-flex items-center">
                             <i class="fas fa-phone mr-2"></i>
-                            <span>SYNERGY_PHONE</span>
+                            <span>+995-XXX-XXX-XXX</span>
                         </a>
-                        <a href="mailto:SYNERGY_EMAIL" class="contact-link inline-flex items-center">
+                        <a href="mailto:info@synergy-gym.ge" class="contact-link inline-flex items-center">
                             <i class="fas fa-envelope mr-2"></i>
-                            <span>SYNERGY_EMAIL</span>
+                            <span>info@synergy-gym.ge</span>
                         </a>
                         <a href="https://wa.me/995551195819" target="_blank" class="contact-link inline-flex items-center">
                             <i class="fab fa-whatsapp mr-2"></i>
@@ -1125,11 +1125,11 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
                     <!-- Social Media Section -->
                     <div class="text-center">
                         <div class="flex justify-center gap-4">
-                            <a href="https://SYNERGY_FACEBOOK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://SYNERGY_FACEBOOK')">
+                            <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.facebook.com/SynergyGymTbilisi')">
                                 <i class="fab fa-facebook-f mr-2"></i>
                                 <span>Facebook</span>
                             </a>
-                            <a href="SYNERGY_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'SYNERGY_INSTAGRAM')">
+                            <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.instagram.com/synergy_gym_tbilisi/')">
                                 <i class="fab fa-instagram mr-2"></i>
                                 <span>Instagram</span>
                             </a>
@@ -1660,7 +1660,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /*
     async function fetchActiveUsers() {
         try {
-            const response = await fetch('https://api.SYNERGY_DOMAIN/gym/active-users');
+            const response = await fetch('https://api.synergy-gym.ge/gym/active-users');
             if (!response.ok) throw new Error('Failed to fetch');
             const data = await response.json();
             const countElement = document.getElementById('active-users-count');

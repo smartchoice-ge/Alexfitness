@@ -1,16 +1,16 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in SYNERGY_AREA, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in SYNERGY_AREA, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in SYNERGY_AREA, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, ფიტნესი დიდ დიღომში, დარბაზი დიდ დიღომში, ჯიმი დიდ დიღომში, affordable gym in digomi, fitness club SYNERGY_AREA, fitness in SYNERGY_AREA, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, SYNERGY_AREA ფიტნესი">
+    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
+    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
+    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, ფიტნესი დიდ დიღომში, დარბაზი დიდ დიღომში, ჯიმი დიდ დიღომში, affordable gym in digomi, fitness club Didi Digomi, fitness in Didi Digomi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Performance and caching meta tags -->
     <meta http-equiv="Cache-Control" content="public, max-age=3600">
     <meta http-equiv="Expires" content="<?php echo gmdate('D, d M Y H:i:s', time() + 3600); ?> GMT">
     <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#ffdf06">
+    <meta name="theme-color" content="#c8e600">
     
     <!-- Resource hints for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,11 +41,6 @@
     
     <!-- Preload critical images -->
     <link rel="preload" href="img/logo.png" as="image" type="image/png">
-    <!-- Preload WebP with JPEG fallback -->
-    <link rel="preload" href="img/top-block-bg.webp" as="image" type="image/webp">
-    <link rel="preload" href="img/top-block-bg.jpg" as="image" type="image/jpeg">
-    <link rel="preload" href="img/content-bg.webp" as="image" type="image/webp">
-    <link rel="preload" href="img/content-bg.jpg" as="image" type="image/jpeg">
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer crossorigin="anonymous"></script>
@@ -67,7 +62,7 @@
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in SYNERGY_AREA, Tbilisi | Fitness Club & Training</title>
+    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
 
     <style>
         /* Remove default browser focus outlines and yellow circles on mobile */
@@ -163,23 +158,55 @@
         }
         
         .loader-logo {
-            width: 120px;
-            height: auto;
+              width: 150px;
+              height: auto;
+            object-fit: contain;
+              border-radius: 0;
             margin-bottom: 20px;
+              display: block;
             animation: logoFade 1.2s ease-in-out infinite alternate;
+        }
+        
+        /* Nav logo sizing for square brand icon */
+        .menu-logo img {
+            max-height: 90px;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain;
+                border-radius: 0;
+            display: block;
+        }
+        .logo-sm img {
+            max-height: 50px;
+            width: auto !important;
+            height: auto !important;
+            object-fit: contain;
+                border-radius: 0;
+        }
+        .nav-item.menu-logo .menu-link {
+            padding: 5px 15px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+        }
+        .nav-item.menu-logo {
+            overflow: visible !important;
+        }
+        .navbar, .navbar-nav {
+            overflow: visible !important;
         }
         
         .loader-spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(255, 223, 6, 0.3);
-            border-top: 3px solid #ffdf06;
+            border: 3px solid rgba(200, 230, 0, 0.3);
+            border-top: 3px solid #c8e600;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
         
         .loader-text {
-            color: #ffdf06;
+            color: #c8e600;
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             margin-top: 15px;
@@ -253,14 +280,14 @@
             .desktop-loader .loader-spinner {
                 width: 50px;
                 height: 50px;
-                border: 4px solid rgba(255, 223, 6, 0.3);
-                border-top: 4px solid #ffdf06;
+                border: 4px solid rgba(200, 230, 0, 0.3);
+                border-top: 4px solid #c8e600;
                 border-radius: 50%;
                 animation: spin 1s linear infinite;
             }
             
             .desktop-loader .loader-text {
-                color: #ffdf06;
+                color: #c8e600;
                 font-family: 'Inter', sans-serif;
                 font-size: 16px;
                 margin-top: 20px;
@@ -312,14 +339,14 @@
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -346,7 +373,7 @@
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -370,11 +397,11 @@
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.8);
+                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -480,7 +507,7 @@
             background-color: #1a1a1a; /* Dark placeholder while image loads */
         }
         .price-box {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             padding: 10px 20px;
             border-radius: 8px;
@@ -491,15 +518,15 @@
 
         /* Enhanced pricing styles for deals */
         .price-box-offer {
-            background: linear-gradient(135deg, #ffdf06 0%, #ffd700 100%);
+            background: linear-gradient(135deg, #c8e600 0%, #a8c200 100%);
             color: #000000;
             padding: 15px 25px;
             border-radius: 12px;
             display: inline-block;
             font-weight: bold;
             position: relative;
-            box-shadow: 0 8px 25px rgba(255, 223, 6, 0.3);
-            border: 2px solid #e6c605;
+            box-shadow: 0 8px 25px rgba(200, 230, 0, 0.3);
+            border: 2px solid #c8e600;
             animation: pulse-glow 2s ease-in-out infinite;
         }
 
@@ -510,7 +537,7 @@
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #ff6b6b, #ee5a24, #ff9ff3, #54a0ff, #5f27cd, #ffdf06, #ff6b6b);
+            background: linear-gradient(45deg, #c8e600, #a8c200, #d4f000, #c8e600);
             background-size: 400% 400%;
             border-radius: 12px;
             z-index: -1;
@@ -519,11 +546,11 @@
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 8px 25px rgba(255, 223, 6, 0.3);
+                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.3);
                 transform: scale(1);
             }
             50% {
-                box-shadow: 0 12px 35px rgba(255, 223, 6, 0.5);
+                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.5);
                 transform: scale(1.02);
             }
         }
@@ -552,60 +579,6 @@
             color: #000;
             display: block;
             line-height: 1;
-        }
-
-        .savings-badge {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            font-size: 0.8rem;
-            font-weight: bold;
-            padding: 4px 8px;
-            border-radius: 20px;
-            position: absolute;
-            top: -8px;
-            right: -8px;
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-            }
-            40% {
-                transform: translateY(-10px);
-            }
-            60% {
-                transform: translateY(-5px);
-            }
-        }
-
-        /* Special highlight for the deal boxes - using same positioning as student badges */
-        .deal-highlight {
-            position: relative;
-            overflow: visible;
-        }
-
-        .deal-highlight .price-block::before {
-            content: 'BEST DEAL!';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(231, 76, 60, 0.4);
-            animation: flash 1.5s ease-in-out infinite;
-            z-index: 10;
-        }
-
-        @keyframes flash {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
         }
 
         /* Tailwind CSS replacements for production */
@@ -661,68 +634,11 @@
         
         /* Style for the language change button */
         .topcorner {
-            background-color: #ffdf06; /* Same yellow as your other buttons */
+            background-color: #c8e600; /* Same yellow as your other buttons */
             color: #000000;           /* Black text for good contrast */
             padding: 8px 12px;
             border-radius: 8px;       /* Rounded corners to match */
             margin-top: 5px;          /* A little space from the top */
-        }
-
-        /* Student pricing box styling */
-        .student-price-block {
-            position: relative;
-            border: 3px solid #ffdf06 !important;
-            background: rgba(255, 223, 6, 0.1) !important;
-        }
-
-        .student-price-block::before {
-            content: '🎓 STUDENT ONLY';
-            position: absolute;
-            top: -15px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
-            color: white;
-            font-size: 0.7rem;
-            font-weight: bold;
-            padding: 4px 12px;
-            border-radius: 20px;
-            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
-            animation: studentPulse 2s ease-in-out infinite;
-            z-index: 10;
-        }
-
-        @keyframes studentPulse {
-            0%, 100% { 
-                transform: translateX(-50%) scale(1); 
-                box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
-            }
-            50% { 
-                transform: translateX(-50%) scale(1.05); 
-                box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
-            }
-        }
-
-        /* Special styling for student deal highlights */
-        .student-deal-highlight {
-            position: relative;
-            overflow: visible;
-        }
-
-        .student-deal-highlight .price-block::before {
-            content: '🎓 STUDENT DEAL!';
-            background: linear-gradient(135deg, #2980b9 0%, #1abc9c 100%);
-        }
-
-        /* Student price box colors - restore yellow theme */
-        .student-price-block .offer-price {
-            color: #000 !important;
-        }
-
-        .student-price-block .price-box {
-            color: #000 !important;
-            border: 2px solid #ffdf06;
-            background: #ffdf06;
         }
 
         /* Call-to-action text styling - enhanced visibility */
@@ -736,17 +652,17 @@
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border: 2px solid #ffdf06;
+            border: 2px solid #c8e600;
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .price-block:hover .price-cta {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(255, 223, 6, 0.4);
+            box-shadow: 0 4px 12px rgba(200, 230, 0, 0.4);
             border-color: #e6c500;
         }
 
@@ -829,7 +745,7 @@
         }
 
         .top-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             padding: 8px 15px;
             border-radius: 8px;
@@ -843,11 +759,11 @@
         }
 
         .top-btn:hover {
-            background-color: #e6c500;
+            background-color: #1a73e8;
             color: #000000;
             text-decoration: none;
             transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(255, 223, 6, 0.3);
+            box-shadow: 0 3px 8px rgba(26, 115, 232, 0.35);
         }
 
         .top-btn span, .top-btn h6 {
@@ -892,7 +808,7 @@
                     right: 8px !important;
                     padding: 6px 10px !important;
                     font-size: 0.7rem !important;
-                    background-color: rgba(255, 223, 6, 0.95) !important;
+                    background-color: rgba(200, 230, 0, 0.95) !important;
                     backdrop-filter: blur(5px) !important;
                     border: 1px solid rgba(0, 0, 0, 0.1) !important;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
@@ -971,7 +887,7 @@
             }
             
             .navbar-nav .nav-item .menu-link {
-                background-color: #ffdf06 !important;
+                background-color: #c8e600 !important;
                 color: #000000 !important;
                 padding: 10px 16px !important;
                 border-radius: 8px !important;
@@ -991,7 +907,7 @@
                 color: #000000 !important;
                 text-decoration: none !important;
                 transform: translateY(-1px) !important;
-                box-shadow: 0 3px 8px rgba(255, 223, 6, 0.3) !important;
+                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3) !important;
             }
             
             /* Add mobile buttons container after nav */
@@ -1018,16 +934,16 @@
             
             /* Join Now Button - Eye-catching gradient with animation */
             .mobile-btn:first-child {
-                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 25%, #ff9ff3 50%, #54a0ff 75%, #5f27cd 100%);
+                background: #c8e600;
                 background-size: 300% 300%;
-                color: #ffffff;
+                color: #000000;
                 padding: 15px 25px;
                 border-radius: 12px;
                 font-size: 1.1rem;
                 font-weight: 700;
                 text-decoration: none;
                 transition: all 0.3s ease;
-                border: 2px solid #ffffff;
+                border: 2px solid #c8e600;
                 cursor: pointer;
                 display: inline-block;
                 text-align: center;
@@ -1035,8 +951,8 @@
                 white-space: nowrap;
                 text-transform: uppercase;
                 letter-spacing: 1px;
-                animation: gradientShift 3s ease infinite, pulseGlow 2s ease-in-out infinite;
-                box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+                animation: pulseGlow 2s ease-in-out infinite;
+                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.4);
                 position: relative;
                 overflow: hidden;
             }
@@ -1058,13 +974,13 @@
             
             .mobile-btn:first-child:hover {
                 transform: translateY(-3px) scale(1.05);
-                box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
-                border-color: #ffdf06;
+                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.6);
+                border-color: #c8e600;
             }
             
             /* Log In Button - Simple and clean */
             .mobile-btn:last-child {
-                background-color: #ffdf06;
+                background-color: #c8e600;
                 color: #000000;
                 padding: 12px 20px;
                 border-radius: 8px;
@@ -1072,7 +988,7 @@
                 font-weight: 600;
                 text-decoration: none;
                 transition: all 0.3s ease;
-                border: 2px solid #ffdf06;
+                border: 2px solid #c8e600;
                 cursor: pointer;
                 display: inline-block;
                 text-align: center;
@@ -1085,7 +1001,7 @@
                 color: #000000;
                 text-decoration: none;
                 transform: translateY(-1px);
-                box-shadow: 0 3px 8px rgba(255, 223, 6, 0.3);
+                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3);
             }
         }
 
@@ -1097,11 +1013,11 @@
 
         @keyframes pulseGlow {
             0%, 100% {
-                box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.4);
                 transform: scale(1);
             }
             50% {
-                box-shadow: 0 12px 35px rgba(255, 107, 107, 0.6);
+                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.6);
                 transform: scale(1.02);
             }
         }
@@ -1210,7 +1126,7 @@
             
             /* Ensure proper spacing for tablet navigation buttons */
             .navbar-nav .nav-item .menu-link {
-                background-color: #ffdf06 !important;
+                background-color: #c8e600 !important;
                 color: #000000 !important;
                 padding: 12px 20px !important;
                 border-radius: 8px !important;
@@ -1231,14 +1147,14 @@
                 color: #000000 !important;
                 text-decoration: none !important;
                 transform: translateY(-1px) !important;
-                box-shadow: 0 3px 8px rgba(255, 223, 6, 0.3) !important;
+                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3) !important;
             }
             
             /* Better button layout for tablets */
             .mobile-buttons-container .mobile-btn:first-child {
-                background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 25%, #ff9ff3 50%, #54a0ff 75%, #5f27cd 100%) !important;
+                background: #c8e600 !important;
                 background-size: 300% 300% !important;
-                animation: gradientShift 3s ease infinite !important;
+                animation: pulseGlow 2s ease-in-out infinite !important;
             }
             
             /* Remove any background colors from nav items */
@@ -1458,17 +1374,14 @@
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
       "name": "Synergy Gym",
-      "description": "Tbilisi's fitness club in SYNERGY_AREA, offering modern equipment, personal training, and a motivating atmosphere.",
+      "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
       "url": "/",
       "logo": "/img/logo.png",
-      "telephone": "SYNERGY_WHATSAPP",
+      "telephone": "+995-XXX-XXX-XXX",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "SYNERGY_AREA, Girogi brwyinvale 8",
         "addressLocality": "Tbilisi",
-        "addressRegion": "Tbilisi",
-        "postalCode": "0159",
         "addressCountry": "GE"
       },
       "geo": {
@@ -1487,13 +1400,14 @@
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
       ],
       "sameAs": [
-        "https://SYNERGY_FACEBOOK",
-        "SYNERGY_INSTAGRAM"
+        "https://www.facebook.com/SynergyGymTbilisi",
+        "https://www.instagram.com/synergy_gym_tbilisi/"
       ]
     }
     </script>
     
-    <!-- Meta Pixel Code -->
+    <!-- Meta Pixel Code - Configure when FB Pixel ID is available -->
+    <!--
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -1503,12 +1417,10 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SYNERGY_FB_PIXEL_ID');
+    fbq('init', 'YOUR_PIXEL_ID');
     fbq('track', 'PageView');
     </script>
-    <noscript><img height="1" width="1" style="display:none" alt=""
-    src="https://www.facebook.com/tr?id=SYNERGY_FB_PIXEL_ID&ev=PageView&noscript=1"
-    /></noscript>
+    -->
     <!-- End Meta Pixel Code -->
     
 </head>
@@ -1528,7 +1440,7 @@
     <div class="loader-text">Loading...</div>
 </div>
 
-<a href="https://wa.me/SYNERGY_WHATSAPP" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
     <div class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/24x24/ffffff/25d366?text=WA';">
         <span class="whatsapp-text" name="key_contact_whatsapp">Contact Us</span>
@@ -1563,7 +1475,7 @@
                 </div>
                 
                 <div class="flex flex-wrap justify-center items-center gap-4 my-4 d-none d-lg-block">
-                    <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;" class="btn btn-lg banner" target="_blank" name="key_become_member" style="background-color: #ffdf06; color: #000000; font-size: 1.2rem; padding: 1rem 2rem; border-radius: 8px; font-weight: bold;">key_become_member</a>
+                    <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;" class="btn btn-lg banner" target="_blank" name="key_become_member" style="background-color: #c8e600; color: #000000; font-size: 1.2rem; padding: 1rem 2rem; border-radius: 8px; font-weight: bold;">key_become_member</a>
                 </div>
                 <h1 class="slogan banner mt-xs-1" name='key_motivational'><i>key_motivational</i></h1>
             </header>
@@ -1578,6 +1490,21 @@
                 include_once __DIR__ . '/mssql_connection.php';
                 include_once __DIR__ . '/mssql_packages_payments_helper.php';
                 $packages = getPackagesWebsite('order_number ASC', 'ISNULL(order_number,0) > 0');
+
+                // Demo fallback packages when DB is empty or unavailable
+                if (empty($packages)) {
+                    $packages = [
+                        ['duration_month' => '1', 'price' => 150, 'old_price' => 0, 'name_eng' => 'Monthly', 'name_geo' => 'თვიური', 'description' => 'Full gym access', 'description_geo' => 'სრული წვდომა', 'deal' => ''],
+                        ['duration_month' => '1', 'price' => 100, 'old_price' => 150, 'name_eng' => 'Student Monthly', 'name_geo' => 'სტუდენტური თვიური', 'description' => 'Student discount', 'description_geo' => 'სტუდენტური ფასდაკლება', 'deal' => 'STUDENT'],
+                        ['duration_month' => '1', 'price' => 80, 'old_price' => 0, 'name_eng' => 'Morning Only', 'name_geo' => 'დილის საათები', 'description' => '8:00 - 14:00', 'description_geo' => '8:00 - 14:00', 'deal' => ''],
+                        ['duration_month' => '3', 'price' => 350, 'old_price' => 450, 'name_eng' => 'Quarterly', 'name_geo' => 'კვარტალური', 'description' => 'Full gym access', 'description_geo' => 'სრული წვდომა', 'deal' => 'BEST'],
+                        ['duration_month' => '3', 'price' => 250, 'old_price' => 350, 'name_eng' => 'Student Quarterly', 'name_geo' => 'სტუდენტური კვარტალური', 'description' => 'Student discount', 'description_geo' => 'სტუდენტური ფასდაკლება', 'deal' => 'STUDENT'],
+                        ['duration_month' => '6', 'price' => 600, 'old_price' => 900, 'name_eng' => 'Semi-Annual', 'name_geo' => 'ნახევარწლიური', 'description' => 'Full gym access', 'description_geo' => 'სრული წვდომა', 'deal' => ''],
+                        ['duration_month' => '6', 'price' => 750, 'old_price' => 900, 'name_eng' => 'Semi-Annual + Group', 'name_geo' => 'ნახევარწლიური + ჯგუფური', 'description' => 'Gym + group workouts', 'description_geo' => 'სრული + ჯგუფური ვარჯიშები', 'deal' => 'BEST'],
+                        ['duration_month' => '12', 'price' => 1000, 'old_price' => 1800, 'name_eng' => 'Annual', 'name_geo' => 'წლიური', 'description' => 'Full gym access + locker', 'description_geo' => 'სრული წვდომა + საკეტი', 'deal' => 'BEST'],
+                        ['duration_month' => '12', 'price' => 1400, 'old_price' => 2100, 'name_eng' => 'Annual Premium', 'name_geo' => 'წლიური პრემიუმ', 'description' => 'All-inclusive + personal trainer', 'description_geo' => 'სრული + პირადი მწვრთნელი', 'deal' => ''],
+                    ];
+                }
                 ?>
 
                 <?php if (!empty($packages)): ?>
@@ -1586,15 +1513,9 @@
                         $price = isset($p['price']) ? (float)$p['price'] : 0;
                         $old = isset($p['old_price']) ? (float)$p['old_price'] : 0;
                         $hasDiscount = $old > $price && $old > 0;
-                        $saving = $hasDiscount ? (int)round($old - $price) : 0;
                         $deal = isset($p['deal']) ? trim($p['deal']) : '';
-                        $isStudent = stripos($deal, 'STUDENT') !== false;
-                        $isBest = stripos($deal, 'BEST') !== false;
                         $colCls = 'col-xl-4 col-lg-6 col-md-6';
-                        if ($isStudent) { $colCls .= ' student-deal-highlight'; }
-                        elseif ($isBest) { $colCls .= ' deal-highlight'; }
                         $blockCls = 'price-block text-center banner pt-5 pb-5 pl-3 pr-3';
-                        if ($isStudent) { $blockCls .= ' student-price-block'; }
                         $duration = htmlspecialchars((string)($p['duration_month'] ?? ''));
                         $descGeo = htmlspecialchars((string)($p['description_geo'] ?: $p['name_geo'] ?: ''));
                         $descEn = htmlspecialchars((string)($p['description'] ?: $p['name_eng'] ?: ''));
@@ -1609,7 +1530,6 @@
                                 <div class="mt-5 price-box-offer">
                                     <span class="original-price"><?php echo (int)$old; ?> <span name='key_currency'>key_currency</span></span>
                                     <span class="offer-price"><?php echo (int)$price; ?> <span name='key_currency'>key_currency</span></span>
-                                    <div class="savings-badge">SAVE <?php echo $saving; ?>!</div>
                                 </div>
                             <?php else: ?>
                                 <div class="mt-5 price-box"><?php echo (int)$price; ?> <span name='key_currency'>key_currency</span></div>
@@ -1630,13 +1550,12 @@
     
     <div id="contact" class="container-fluid text-center join banner pt-5 pb-5" style="background-color: #000000; color: #FFFFFF;">
         <div class="full-width join-shadow"></div>
-        <h2 name='key_find' style="font-size: 2.5rem; font-weight: bold; color: #ffdf06; text-transform: uppercase; letter-spacing: 1px;">key_find</h2>
+        <h2 name='key_find' style="font-size: 2.5rem; font-weight: bold; color: #c8e600; text-transform: uppercase; letter-spacing: 1px;">key_find</h2>
 
         <div class="contact-info mt-4">
-            <h3 class="mt-4" name='key_address' style="font-size: 1.5rem; font-weight: 500; color: #f0f0f0;">key_address</h3>
 
             <p style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                <strong>Email:</strong> <a href="mailto:SYNERGY_EMAIL" style="text-decoration: none; color: #FFFFFF;">SYNERGY_EMAIL</a>
+                <strong>Email:</strong> <a href="mailto:info@synergy-gym.ge" style="text-decoration: none; color: #FFFFFF;">info@synergy-gym.ge</a>
             </p>
 
             <!-- Mobile App Download Images -->
@@ -1650,27 +1569,28 @@
             </div>
 
             <div class="social-links" style="margin-top: 2rem;">
-                <a href="https://SYNERGY_FACEBOOK" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #1877F2; transition: color 0.3s;" onmouseover="this.style.color='#4267B2'" onmouseout="this.style.color='#1877F2'">
+                <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #1877F2; transition: color 0.3s;" onmouseover="this.style.color='#4267B2'" onmouseout="this.style.color='#1877F2'">
                     <i class="fab fa-facebook-f fa-lg" style="margin-right: 8px;"></i>Facebook
                 </a>
-                <a href="SYNERGY_INSTAGRAM" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #E4405F; transition: color 0.3s;" onmouseover="this.style.color='#C13584'" onmouseout="this.style.color='#E4405F'">
+                <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #E4405F; transition: color 0.3s;" onmouseover="this.style.color='#C13584'" onmouseout="this.style.color='#E4405F'">
                     <i class="fab fa-instagram fa-lg" style="margin-right: 8px;"></i>Instagram
                 </a>
             </div>
         </div>
     </div>
     <div class="container-fluid map" style="position:relative;">
-        <!-- Google Maps embed - Replace with Synergy location -->
-        <a href="https://maps.app.goo.gl/ne54zrsjMz3GysQs8" target="_blank" rel="noopener noreferrer"
+        <!-- Google Maps embed -->
+        <iframe src="https://www.google.com/maps?q=Tbilisi%2C%20Georgia&z=12&output=embed" width="100%" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=Tbilisi%2C%20Georgia" target="_blank" rel="noopener noreferrer"
            style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;"
-           class="map-mobile-overlay" aria-label="Open Synergy Gym in Google Maps"></a>
+           class="map-mobile-overlay" aria-label="Open Tbilisi in Google Maps"></a>
     </div>
     <style>
         @media (max-width: 768px) {
             .map-mobile-overlay { display: block !important; }
         }
     </style>
-    <div class="container-fluid text-center footer" style="background-color: #1a1a1a; color: #ffffff; padding: 2rem 0; border-top: 2px solid #ffdf06;">
+    <div class="container-fluid text-center footer" style="background-color: #1a1a1a; color: #ffffff; padding: 2rem 0; border-top: 2px solid #c8e600;">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
@@ -1678,17 +1598,14 @@
                         © 2025 Synergy Gym. All rights reserved.
                     </p>
                     <div class="footer-links" style="margin-bottom: 1rem;">
-                        <a href="terms.php" style="color: #ffdf06; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#f0c814'" onmouseout="this.style.color='#ffdf06'">
+                        <a href="terms.php" style="color: #c8e600; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
                             Terms and Conditions
                         </a>
                         <span style="color: #666;">|</span>
-                        <a href="privacy.php" style="color: #ffdf06; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#f0c814'" onmouseout="this.style.color='#ffdf06'">
+                        <a href="privacy.php" style="color: #c8e600; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
                             Privacy Policy
                         </a>                       
                     </div>
-                    <p style="margin-bottom: 0; font-size: 0.9rem; color: #999;">
-                        Tbilisi, SYNERGY_STREET st. №8
-                    </p>
                 </div>
             </div>
         </div>
@@ -1706,7 +1623,7 @@ function openAgreementWithLang(event) {
         event.stopPropagation();
     }
     const currentLang = window.localStorage.getItem('ActiveLanguage') || 'ka';
-    const url = `https://www.SYNERGY_DOMAIN/agreement.php?lang=${currentLang}`;
+    const url = `agreement.php?lang=${currentLang}`;
     window.open(url, '_blank');
     return false;
 }

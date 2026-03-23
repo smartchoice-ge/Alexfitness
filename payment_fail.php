@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Redirect mobile app requests immediately before rendering any HTML
 if (isset($_GET['source']) && $_GET['source'] === 'app') {
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
@@ -61,7 +61,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
 
         .brand-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
@@ -69,7 +69,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
         
         .brand-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
         }
 
         .error-icon {
@@ -125,7 +125,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
 
         .troubleshoot-item {
-            border-left: 3px solid #ffdf06;
+            border-left: 3px solid #c8e600;
             padding-left: 1rem;
             margin-bottom: 1rem;
         }
@@ -168,11 +168,11 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                         24/7 მხარდაჭერის სერვისი
                     </p>
                     <div class="flex justify-center space-x-6 text-sm">
-                        <a href="mailto:support@SYNERGY_DOMAIN" class="text-ffdf06 hover:text-yellow-400 transition-colors">
+                        <a href="mailto:support@synergy-gym.ge" class="text-ffdf06 hover:text-yellow-400 transition-colors">
                             <i class="fas fa-envelope mr-1"></i>
-                            support@SYNERGY_DOMAIN
+                            support@synergy-gym.ge
                         </a>
-                        <a href="https://wa.me/SYNERGY_WHATSAPP" class="text-ffdf06 hover:text-yellow-400 transition-colors" target="_blank">
+                        <a href="https://wa.me/+995-XXX-XXX-XXX" class="text-ffdf06 hover:text-yellow-400 transition-colors" target="_blank">
                             <i class="fab fa-whatsapp mr-1"></i>
                             WhatsApp
                         </a>
@@ -180,13 +180,13 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                     
                     <!-- Social Media Links -->
                     <div class="flex justify-center space-x-4 mt-4">
-                        <a href="https://SYNERGY_FACEBOOK" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-xl">
+                        <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-xl">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="SYNERGY_INSTAGRAM" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
+                        <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/SYNERGY_WHATSAPP" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-xl">
+                        <a href="https://wa.me/+995-XXX-XXX-XXX" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-xl">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>

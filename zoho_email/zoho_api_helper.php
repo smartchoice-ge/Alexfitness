@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Zoho Mail API Helper Class
  * Handles OAuth token refresh and API requests
@@ -125,7 +125,7 @@ class ZohoMailAPI {
         return $this->makeRequest($url);
     }
     
-    public function sendEmail($accountId, $toAddress, $subject, $content, $fromAddress = 'info@SYNERGY_DOMAIN') {
+    public function sendEmail($accountId, $toAddress, $subject, $content, $fromAddress = 'info@synergy-gym.ge') {
         $url = "https://mail.zoho.com/api/accounts/{$accountId}/messages";
         
         $data = [

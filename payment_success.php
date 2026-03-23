@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Redirect mobile app requests immediately before rendering any HTML
 if (isset($_GET['source']) && $_GET['source'] === 'app') {
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
@@ -60,12 +60,12 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
 
         .success-card:hover {
-            border-color: #ffdf06;
+            border-color: #c8e600;
             box-shadow: 0 0 40px rgba(255, 223, 6, 0.2);
         }
 
         .brand-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
@@ -73,11 +73,11 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
         
         .brand-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
         }
 
         .success-icon {
-            background: linear-gradient(135deg, #ffdf06 0%, #e6c605 100%);
+            background: linear-gradient(135deg, #c8e600 0%, #1a73e8 100%);
             animation: pulse 2s infinite;
         }
 
@@ -131,7 +131,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
             position: absolute;
             width: 10px;
             height: 10px;
-            background: #ffdf06;
+            background: #c8e600;
             animation: confetti-fall 3s linear infinite;
         }
 
@@ -142,11 +142,11 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
 
         /* Custom brand color utility */
         .text-brand {
-            color: #ffdf06 !important;
+            color: #c8e600 !important;
         }
         
         .text-brand:hover {
-            color: #e6c605 !important;
+            color: #1a73e8 !important;
         }
     </style>
     
@@ -161,7 +161,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
     
-    fbq('init', 'SYNERGY_FB_PIXEL_ID'); // Your actual Pixel ID
+    fbq('init', ''); // Your actual Pixel ID
     fbq('track', 'PageView');
     
     // Track Purchase conversion with detailed parameters and content_ids
@@ -204,14 +204,14 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     fbq('trackCustom', 'GymMembershipPurchase', {
         membership_type: 'Standard',
         payment_method: 'Card',
-        gym_location: 'SYNERGY_AREA',
+        gym_location: 'Didi Digomi',
         content_ids: ['custom_gym_membership_' + Date.now()],
         value: 50.00,
         currency: 'GEL'
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=SYNERGY_FB_PIXEL_ID&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
 </head>
@@ -258,15 +258,15 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                         If you have any questions, contact us:
                     </p>
                     <div class="flex justify-center flex-wrap gap-4 text-sm mb-4">
-                        <a href="tel:SYNERGY_WHATSAPP" class="text-brand hover:text-yellow-300 transition-colors">
+                        <a href="tel:+995-XXX-XXX-XXX" class="text-brand hover:text-yellow-300 transition-colors">
                             <i class="fas fa-phone mr-1"></i>
                             +995 551 195 819
                         </a>
-                        <a href="mailto:info@SYNERGY_DOMAIN" class="text-brand hover:text-yellow-300 transition-colors">
+                        <a href="mailto:info@synergy-gym.ge" class="text-brand hover:text-yellow-300 transition-colors">
                             <i class="fas fa-envelope mr-1"></i>
-                            info@SYNERGY_DOMAIN
+                            info@synergy-gym.ge
                         </a>
-                        <a href="https://wa.me/SYNERGY_WHATSAPP" class="text-brand hover:text-yellow-300 transition-colors" target="_blank">
+                        <a href="https://wa.me/+995-XXX-XXX-XXX" class="text-brand hover:text-yellow-300 transition-colors" target="_blank">
                             <i class="fab fa-whatsapp mr-1"></i>
                             WhatsApp
                         </a>
@@ -274,13 +274,13 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                     
                     <!-- Social Media Links -->
                     <div class="flex justify-center space-x-4 mt-4">
-                        <a href="https://SYNERGY_FACEBOOK" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-2xl">
+                        <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-2xl">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="SYNERGY_INSTAGRAM" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl">
+                        <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/SYNERGY_WHATSAPP" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-2xl">
+                        <a href="https://wa.me/+995-XXX-XXX-XXX" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-2xl">
                             <i class="fab fa-whatsapp"></i>
                         </a>
                     </div>
@@ -333,7 +333,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         // Create confetti animation
         function createConfetti() {
             const confettiContainer = document.getElementById('confetti');
-            const colors = ['#ffdf06', '#e6c605', '#ffffff', '#ffd700'];
+            const colors = ['#c8e600', '#1a73e8', '#ffffff', '#ffd700'];
             
             for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');

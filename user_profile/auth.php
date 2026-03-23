@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start();
 // Make sure this path is correct for your server setup.
 include '../mssql_connection.php'; 
@@ -87,31 +87,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
         .form-input:focus {
             outline: none;
-            border-color: #ffdf06; /* Brand yellow on focus */
-            box-shadow: 0 0 0 3px rgba(255, 223, 6, 0.2);
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.22);
         }
-        /* Using Synergy brand color for the button */
+        /* Use the Synergy palette for auth actions */
         .signin-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
             border-radius: 0.5rem;
         }
         .signin-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
+            box-shadow: 0 10px 24px rgba(26, 115, 232, 0.28);
+            transform: translateY(-1px);
         }
-        /* New styles for the language button */
+        /* Language toggle styling */
         .lang-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000;
             padding: 8px 16px;
             border-radius: 8px;
             font-weight: bold;
             cursor: pointer;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
         }
         .lang-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
+            box-shadow: 0 8px 20px rgba(26, 115, 232, 0.28);
+            transform: translateY(-1px);
         }
         
         /* WhatsApp Button Styles */
@@ -127,14 +131,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -161,7 +165,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -185,11 +189,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.8);
+                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -294,7 +298,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/SYNERGY_WHATSAPP" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
     <div class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/28x28/ffffff/25d366?text=WA';">
         <span class="whatsapp-text" name="key_contact_whatsapp">Contact Us</span>
@@ -338,7 +342,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                 <!-- Forgot Password Section -->
                 <div class="text-center mt-4">
-                    <button type="button" id="forgotPasswordBtn" class="text-yellow-400 hover:text-yellow-300 underline text-sm" name="key_forgot_password">
+                    <button type="button" id="forgotPasswordBtn" class="text-lime-400 hover:text-blue-400 underline text-sm" name="key_forgot_password">
                         Forgot Username/Password?
                     </button>
                 </div>
@@ -350,15 +354,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 <!-- Forgot Password Modal -->
 <div id="forgotPasswordModal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50" style="display: none;">
-    <div class="bg-gray-900 border-2 border-yellow-400 rounded-lg p-8 max-w-md w-full mx-4">
+    <div class="bg-gray-900 border-2 border-lime-400 rounded-lg p-8 max-w-md w-full mx-4">
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold text-yellow-400" name="key_recover_title">Recover Your Credentials</h2>
-            <button id="closeModal" class="text-yellow-400 hover:text-yellow-300 text-2xl">&times;</button>
+            <h2 class="text-xl font-bold text-lime-400" name="key_recover_title">Recover Your Credentials</h2>
+            <button id="closeModal" class="text-lime-400 hover:text-blue-400 text-2xl">&times;</button>
         </div>
         
         <form id="forgotPasswordForm">
             <div class="mb-6">
-                <label for="recoveryEmail" class="block text-sm font-medium text-yellow-400 mb-2" name="key_email_label">
+                <label for="recoveryEmail" class="block text-sm font-medium text-lime-400 mb-2" name="key_email_label">
                     Enter your email address:
                 </label>
                 <input type="email" id="recoveryEmail" name="email" 

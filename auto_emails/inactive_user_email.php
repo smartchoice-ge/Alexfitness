@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 
-require '/home/SYNERGY_DOMAIN/public_html/mssql_connection.php';
-require '/home/SYNERGY_DOMAIN/public_html/email_sender.php';
-require '/home/SYNERGY_DOMAIN/public_html/params.php';
+require '/home/synergy-gym.ge/public_html/mssql_connection.php';
+require '/home/synergy-gym.ge/public_html/email_sender.php';
+require '/home/synergy-gym.ge/public_html/params.php';
 
 $discount_percentages = [20, 25, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30];
 $days_back = 30;
@@ -113,7 +113,7 @@ function sendEmail($email, $discount_percentage, $month_count, $unsubscribe_toke
 </body>
 </html>';
 
-    $result = sendUnifiedEmail($email, $discount_percentage . '% OFF - SYNERGY_DOMAIN', $emailBody, $user);
+    $result = sendUnifiedEmail($email, $discount_percentage . '% OFF - synergy-gym.ge', $emailBody, $user);
     
     if ($result['success']) {
         echo "Email sent to: $email\n";

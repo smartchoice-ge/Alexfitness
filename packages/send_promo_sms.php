@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 session_start([
     'cookie_httponly' => true,
     'cookie_samesite' => 'Strict'
@@ -75,7 +75,7 @@ function transliterateGeorgianToLatin($georgianString) {
 
 // --- Fetch SMS main text from settings table ---
 $promoMessageCore = ""; // Default message
-$facebookLink = "SYNERGY_FACEBOOK"; // Keep this part separate or also make it a setting
+$facebookLink = "https://www.facebook.com/SynergyGymTbilisi"; // Keep this part separate or also make it a setting
 $nosms = "No2981To90775";
 
 $latinFirstName = transliterateGeorgianToLatin($firstName);

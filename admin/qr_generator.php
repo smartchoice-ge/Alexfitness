@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // QR Generator is publicly accessible - no login required
 ?>
 <!DOCTYPE html>
@@ -438,7 +438,7 @@
                             </div>
                             <div class="flex items-start">
                                 <i class="fas fa-envelope text-blue-600 mt-0.5 mr-2"></i>
-                                <span class="text-gray-700">Email: info@SYNERGY_DOMAIN</span>
+                                <span class="text-gray-700">Email: info@synergy-gym.ge</span>
                             </div>
                         </div>
                     </div>

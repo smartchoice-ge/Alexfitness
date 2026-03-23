@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Unified Email Sender
  * Tries Zoho API first (bypasses SMTP port blocking), falls back to SMTP if needed
@@ -18,7 +18,7 @@ use PHPMailer\PHPMailer\Exception;
  * @param string $to Recipient email
  * @param string $subject Email subject
  * @param string $htmlBody HTML email body
- * @param string $from From address (default: info@SYNERGY_DOMAIN)
+ * @param string $from From address (default: info@synergy-gym.ge)
  * @return array ['success' => bool, 'method' => string, 'error' => string]
  */
 function sendUnifiedEmail($to, $subject, $htmlBody, $from = null) {
@@ -84,7 +84,7 @@ function sendEmailViaSMTP($to, $subject, $htmlBody, $from = null) {
             )
         );
         
-        $mail->setFrom($from, 'SYNERGY_DOMAIN');
+        $mail->setFrom($from, 'synergy-gym.ge');
         $mail->addAddress($to);
         $mail->isHTML(true);
         $mail->Subject = $subject;

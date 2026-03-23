@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'mssql_connection.php';
 include_once 'db_connection.php';
@@ -137,7 +137,7 @@ $emailBody .= '</table>
 </body>
 </html>';
 
-$result = sendUnifiedEmail($clientEmail, 'Workout Plans - SYNERGY_DOMAIN', $emailBody, $user);
+$result = sendUnifiedEmail($clientEmail, 'Workout Plans - synergy-gym.ge', $emailBody, $user);
 
 if ($result['success']) {
     $emailSent = true;

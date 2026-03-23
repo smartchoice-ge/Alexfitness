@@ -1,0 +1,8 @@
+<?php
+
+return [
+    'api_key' => '',
+    'place_id' => '',
+    'business_name' => 'Synergy Gym',
+    'maps_url' => 'https://www.google.com/maps/search/?api=1&query=Synergy%20Gym%20Tbilisi',
+];

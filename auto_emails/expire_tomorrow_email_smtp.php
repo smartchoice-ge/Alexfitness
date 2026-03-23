@@ -1,15 +1,15 @@
-﻿<?php
+<?php
 
-require '/home/SYNERGY_DOMAIN/public_html/mssql_connection.php';
-require '/home/SYNERGY_DOMAIN/public_html/vendor/autoload.php';
+require '/home/synergy-gym.ge/public_html/mssql_connection.php';
+require '/home/synergy-gym.ge/public_html/vendor/autoload.php';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
 
 $host = 'smtppro.zoho.com';
-$user = 'info@SYNERGY_DOMAIN';
-$pass = 'SYNERGY_EMAIL_PASS';
+$user = 'info@synergy-gym.ge';
+$pass = 'info@synergy-gym.ge_PASS';
 
 $sql = "SELECT 
             ClientID, 
@@ -60,12 +60,12 @@ function sendEmail($email, $unsubscribe_token)
         $mail->isSMTP();
         $mail->Host = 'smtppro.zoho.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@SYNERGY_DOMAIN';
-        $mail->Password = 'SYNERGY_EMAIL_PASS';
+        $mail->Username = 'info@synergy-gym.ge';
+        $mail->Password = 'info@synergy-gym.ge_PASS';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('info@SYNERGY_DOMAIN', 'SYNERGY_DOMAIN');
+        $mail->setFrom('info@synergy-gym.ge', 'synergy-gym.ge');
         $mail->addAddress($email);
         $mail->Subject = 'Membership Ending Tomorrow';
         $mail->isHTML(true);
@@ -101,7 +101,7 @@ function sendEmail($email, $unsubscribe_token)
                     <p style="color:rgb(255, 255, 255); font-size: 16px; line-height: 1.5;">
                     <b>
                         Hi there! Your membership <span style="color: #FFD700 !important; font-size: 18px;">will expire tomorrow</span> , but your fitness journey doesn’t have to stop! Stay on track with full access to our facilities, expert trainers, and exciting classes.
-Renew today by contacting us on <a href="https://SYNERGY_FACEBOOK">Facebook</a> and keep pushing toward your goals!
+Renew today by contacting us on <a href="https://www.facebook.com/SynergyGymTbilisi">Facebook</a> and keep pushing toward your goals!
                     </b>
                     </p>
                 </div>

@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-require '/home/SYNERGY_DOMAIN/public_html/mssql_connection.php';
+require '/home/synergy-gym.ge/public_html/mssql_connection.php';
 
 if (isset($_GET['token'])) {
     $token = $_GET['token'];

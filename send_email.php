@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require 'vendor/autoload.php';
 require 'db_connection.php';
 require 'email_sender.php';
@@ -57,7 +57,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         file_put_contents('email_debug.log', date('Y-m-d H:i:s') . " - Attempting to send email to $email\n", FILE_APPEND);
         $startTime = microtime(true);
         
-        $result = sendUnifiedEmail($email, 'Verification Code - SYNERGY_DOMAIN', $emailBody);
+        $result = sendUnifiedEmail($email, 'Verification Code - synergy-gym.ge', $emailBody);
         
         $duration = microtime(true) - $startTime;
         file_put_contents('email_debug.log', date('Y-m-d H:i:s') . " - Result: " . json_encode($result) . " (Duration: {$duration}s)\n", FILE_APPEND);

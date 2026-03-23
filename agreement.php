@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -42,12 +42,12 @@
         }
         .form-input:focus {
             outline: none;
-            border-color: #ffdf06;
+            border-color: #c8e600;
             box-shadow: 0 0 0 3px rgba(255, 223, 6, 0.2);
         }
         /* Brand button styling */
         .brand-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
@@ -93,12 +93,12 @@
         }
         
         .image-upload-area:hover {
-            border-color: #ffdf06;
+            border-color: #c8e600;
             background-color: #222;
         }
         
         .image-upload-area.dragover {
-            border-color: #ffdf06;
+            border-color: #c8e600;
             background-color: rgba(255, 223, 6, 0.1);
         }
         
@@ -153,7 +153,7 @@
         
         .upload-progress-bar {
             height: 100%;
-            background-color: #ffdf06;
+            background-color: #c8e600;
             transition: width 0.3s ease;
         }
         
@@ -226,8 +226,8 @@
             cursor: pointer;
         }
         .checkbox-custom:checked {
-            background-color: #ffdf06;
-            border-color: #ffdf06;
+            background-color: #c8e600;
+            border-color: #c8e600;
         }
         .checkbox-custom:checked::after {
             content: '✓';
@@ -253,14 +253,14 @@
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -287,7 +287,7 @@
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(37, 211, 102, 0.7);
+            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -311,11 +311,11 @@
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(37, 211, 102, 0.8);
+                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -426,7 +426,7 @@
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SYNERGY_FB_PIXEL_ID');
+    fbq('init', '');
     fbq('track', 'PageView');
     fbq('track', 'InitiateCheckout', {
         content_name: 'Gym Membership Registration',
@@ -434,7 +434,7 @@
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=SYNERGY_FB_PIXEL_ID&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
@@ -442,7 +442,7 @@
 <body class="bg-black text-white min-h-screen flex flex-col">
 
 <!-- WhatsApp Button -->
-<a href="https://wa.me/SYNERGY_WHATSAPP" class="whatsapp-float" target="_blank">
+<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
     <div class="whatsapp-button">
         <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/28x28/ffffff/25d366?text=WA';">
         <span class="whatsapp-text" id="whatsapp-text">Contact Us</span>

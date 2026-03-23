@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Include database connections
 include_once 'mssql_connection.php';
 include_once 'mssql_packages_payments_helper.php';
@@ -68,7 +68,7 @@ $packages = $allPackages;
         }
 
         .payment-card:hover {
-            border-color: #ffdf06;
+            border-color: #c8e600;
             box-shadow: 0 0 20px rgba(255, 223, 6, 0.1);
         }
 
@@ -87,7 +87,7 @@ $packages = $allPackages;
         }
 
         .payment-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000000;
             transition: all 0.3s ease;
             border-radius: 0.5rem;
@@ -95,7 +95,7 @@ $packages = $allPackages;
         }
 
         .payment-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
             transform: translateY(-1px);
         }
 
@@ -118,7 +118,7 @@ $packages = $allPackages;
 
         .membership-select:focus {
             outline: none;
-            border-color: #ffdf06;
+            border-color: #c8e600;
             box-shadow: 0 0 0 3px rgba(255, 223, 6, 0.2);
         }
 
@@ -171,7 +171,7 @@ $packages = $allPackages;
         }
 
         .lang-btn {
-            background-color: #ffdf06;
+            background-color: #c8e600;
             color: #000;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
@@ -198,7 +198,7 @@ $packages = $allPackages;
         }
 
         .lang-btn:hover {
-            background-color: #e6c605;
+            background-color: #1a73e8;
             transform: translateY(-1px);
         }
 
@@ -255,12 +255,12 @@ $packages = $allPackages;
         }
 
         .contact-link {
-            color: #ffdf06;
+            color: #c8e600;
             transition: color 0.3s ease;
         }
 
         .contact-link:hover {
-            color: #e6c605;
+            color: #1a73e8;
         }
 
         .header-section {
@@ -524,7 +524,7 @@ $packages = $allPackages;
     t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'SYNERGY_FB_PIXEL_ID');
+    fbq('init', '');
     fbq('track', 'PageView');
     fbq('track', 'ViewContent', {
         content_name: 'Gym Membership Packages',
@@ -532,7 +532,7 @@ $packages = $allPackages;
     });
     </script>
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=SYNERGY_FB_PIXEL_ID&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 </head>
@@ -716,11 +716,11 @@ $packages = $allPackages;
                 <div class="flex flex-wrap justify-center gap-6 mb-6">
                     <a href="tel:+995322195119" class="contact-link inline-flex items-center">
                         <i class="fas fa-phone mr-2"></i>
-                        <span>SYNERGY_PHONE</span>
+                        <span>+995-XXX-XXX-XXX</span>
                     </a>
-                    <a href="mailto:SYNERGY_EMAIL" class="contact-link inline-flex items-center">
+                    <a href="mailto:info@synergy-gym.ge" class="contact-link inline-flex items-center">
                         <i class="fas fa-envelope mr-2"></i>
-                        <span>SYNERGY_EMAIL</span>
+                        <span>info@synergy-gym.ge</span>
                     </a>
                     <a href="https://wa.me/995551195819" target="_blank" class="contact-link inline-flex items-center">
                         <i class="fab fa-whatsapp mr-2"></i>
@@ -731,11 +731,11 @@ $packages = $allPackages;
                 <!-- Social Media Section -->
                 <div class="text-center">
                     <div class="flex justify-center gap-4">
-                        <a href="https://SYNERGY_FACEBOOK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://SYNERGY_FACEBOOK')">
+                        <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.facebook.com/SynergyGymTbilisi')">
                             <i class="fab fa-facebook-f mr-2"></i>
                             <span>Facebook</span>
                         </a>
-                        <a href="SYNERGY_INSTAGRAM" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'SYNERGY_INSTAGRAM')">
+                        <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.instagram.com/synergy_gym_tbilisi/')">
                             <i class="fab fa-instagram mr-2"></i>
                             <span>Instagram</span>
                         </a>

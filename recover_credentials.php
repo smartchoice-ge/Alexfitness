@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Add immediate error output for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 0); // Don't display to prevent JSON corruption
@@ -99,7 +99,7 @@ function sendCredentialsEmail($email, $fullName, $username, $password) {
             <div style="max-width: 600px; margin: auto; padding: 40px 20px; text-align: center;">
                 <h1 style="color: #FFD700;">Your Login Credentials</h1>
                 <p>Hello <strong>' . htmlspecialchars($fullName) . '</strong>,</p>
-                <p>Here are your login credentials for SYNERGY_DOMAIN:</p>
+                <p>Here are your login credentials for synergy-gym.ge:</p>
                 
                 <div style="background: rgba(255, 255, 255, 0.1); padding: 25px; border-radius: 10px; margin: 20px 0; border: 2px solid #FFD700;">
                     <p><strong style="color: #FFD700;">Username:</strong><br>
@@ -116,7 +116,7 @@ function sendCredentialsEmail($email, $fullName, $username, $password) {
         </body>
         </html>';
     
-    $result = sendUnifiedEmail($email, 'Your Login Credentials - SYNERGY_DOMAIN', $emailBody, $user);
+    $result = sendUnifiedEmail($email, 'Your Login Credentials - synergy-gym.ge', $emailBody, $user);
     
     if ($result['success']) {
         return true;

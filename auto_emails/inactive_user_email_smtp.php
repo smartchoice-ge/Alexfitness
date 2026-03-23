@@ -1,8 +1,8 @@
-﻿<?php
+<?php
 
-require '/home/SYNERGY_DOMAIN/public_html/mssql_connection.php';
-require '/home/SYNERGY_DOMAIN/public_html/email_sender.php';
-require '/home/SYNERGY_DOMAIN/public_html/params.php';
+require '/home/synergy-gym.ge/public_html/mssql_connection.php';
+require '/home/synergy-gym.ge/public_html/email_sender.php';
+require '/home/synergy-gym.ge/public_html/params.php';
 
 $discount_percentages = [20, 25, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30];
 $days_back = 30;
@@ -73,12 +73,12 @@ function sendEmail($email, $discount_percentage, $month_count, $unsubscribe_toke
         $mail->isSMTP();
         $mail->Host = 'smtppro.zoho.com';
         $mail->SMTPAuth = true;
-        $mail->Username = 'info@SYNERGY_DOMAIN';
-        $mail->Password = 'SYNERGY_EMAIL_PASS';
+        $mail->Username = 'info@synergy-gym.ge';
+        $mail->Password = 'info@synergy-gym.ge_PASS';
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
         $mail->Port = 587;
 
-        $mail->setFrom('info@SYNERGY_DOMAIN', 'SYNERGY_DOMAIN');
+        $mail->setFrom('info@synergy-gym.ge', 'synergy-gym.ge');
         $mail->addAddress($email);
         $mail->Subject = $discount_percentage . '% OFF';
         $mail->isHTML(true);

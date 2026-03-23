@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'mssql_connection.php';
 include_once 'db_connection.php';
@@ -90,7 +90,7 @@ try {
 
     // $mail->SMTPDebug = SMTP::DEBUG_SERVER; // Uncomment for debugging
 
-    $mail->setFrom($user, 'SYNERGY_DOMAIN');
+    $mail->setFrom($user, 'synergy-gym.ge');
     $mail->addAddress($clientEmail); // Use the client's email
     $mail->Subject = 'Workout Plans';
     $mail->isHTML(true);

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ka">
 <head>
     <meta charset="UTF-8">
@@ -27,18 +27,18 @@
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
             padding: 2rem;
             margin: 2rem 0;
-            border: 1px solid #ffdf06;
+            border: 1px solid #c8e600;
         }
 
         .terms-header {
             text-align: center;
             margin-bottom: 2rem;
             padding-bottom: 1rem;
-            border-bottom: 2px solid #ffdf06;
+            border-bottom: 2px solid #c8e600;
         }
 
         .terms-title {
-            color: #ffdf06;
+            color: #c8e600;
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
@@ -57,12 +57,12 @@
         }
 
         .section-title {
-            color: #ffdf06;
+            color: #c8e600;
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
             padding-left: 10px;
-            border-left: 4px solid #ffdf06;
+            border-left: 4px solid #c8e600;
         }
 
         .section-content {
@@ -86,7 +86,7 @@
         }
 
         .back-btn {
-            background: linear-gradient(45deg, #ffdf06, #f0c814);
+            background: linear-gradient(45deg, #c8e600, #a8c200);
             color: #000000;
             border: none;
             padding: 12px 30px;
@@ -100,7 +100,7 @@
         }
 
         .back-btn:hover {
-            background: linear-gradient(45deg, #f0c814, #e6b800);
+            background: linear-gradient(45deg, #a8c200, #1a73e8);
             color: #000000;
             text-decoration: none;
             transform: translateY(-2px);
@@ -113,7 +113,7 @@
 
         .highlight-box {
             background: rgba(255, 223, 6, 0.1);
-            border: 1px solid #ffdf06;
+            border: 1px solid #c8e600;
             border-radius: 8px;
             padding: 1.5rem;
             margin: 1.5rem 0;
@@ -128,7 +128,7 @@
         }
 
         .contact-info h4 {
-            color: #ffdf06;
+            color: #c8e600;
             margin-bottom: 1rem;
         }
 
@@ -138,12 +138,12 @@
         }
 
         .contact-info a {
-            color: #ffdf06;
+            color: #c8e600;
             text-decoration: none;
         }
 
         .contact-info a:hover {
-            color: #f0c814;
+            color: #a8c200;
             text-decoration: underline;
         }
 
@@ -171,15 +171,15 @@
         }
         .lang-btn {
             background: rgba(255, 223, 6, 0.15);
-            color: #ffdf06;
-            border: 1px solid #ffdf06;
+            color: #c8e600;
+            border: 1px solid #c8e600;
             border-radius: 6px;
             padding: 6px 10px;
             font-weight: 600;
             cursor: pointer;
         }
         .lang-btn.active {
-            background: #ffdf06;
+            background: #c8e600;
             color: #000;
         }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,1px,1px); white-space: nowrap; border: 0; }
@@ -211,7 +211,7 @@
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>ეს კონფიდენციალობის პოლიტიკა განმარტავს, თუ როგორ აგროვებს, იყენებს და იცავს შპს „სმარტელ.ჯი" (ს/ნ 405771277) თქვენს პერსონალურ ინფორმაციას, როდესაც იყენებთ ჩვენს ვებ-გვერდს www.SYNERGY_DOMAIN ან ჩვენი ფიტნეს კლუბის მომსახურებებს.</p>
+                                <p>ეს კონფიდენციალობის პოლიტიკა განმარტავს, თუ როგორ აგროვებს, იყენებს და იცავს შპს „სმარტელ.ჯი" (ს/ნ 405771277) თქვენს პერსონალურ ინფორმაციას, როდესაც იყენებთ ჩვენს ვებ-გვერდს www.synergy-gym.ge ან ჩვენი ფიტნეს კლუბის მომსახურებებს.</p>
                                 <p>ჩვენ ვამუშავებთ თქვენს პერსონალურ მონაცემებს საქართველოს "პერსონალურ მონაცემთა დაცვის შესახებ" კანონის მოთხოვნების შესაბამისად.</p>
                             </div>
                         </div>
@@ -222,9 +222,9 @@
                                 <div class="highlight-box">
                                     <p><strong>კომპანია:</strong> შპს „სმარტელ.ჯი"</p>
                                     <p><strong>საიდენტიფიკაციო ნომერი:</strong> 405771277</p>
-                                    <p><strong>მისამართი:</strong> თბილისი, გიორგი SYNERGY_STREETს ქუჩა №8</p>
-                                    <p><strong>ტელეფონი:</strong> SYNERGY_PHONE</p>
-                                    <p><strong>ელ-ფოსტა:</strong> SYNERGY_EMAIL</p>
+                                    <p><strong>მისამართი:</strong> თბილისი, გიორგი Giorgi Brtskinvaleს ქუჩა №8</p>
+                                    <p><strong>ტელეფონი:</strong> +995-XXX-XXX-XXX</p>
+                                    <p><strong>ელ-ფოსტა:</strong> info@synergy-gym.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -334,7 +334,7 @@
                                 </ul>
 
                                 <div class="highlight-box">
-                                    <p><strong>როგორ გამოვიყენოთ ეს უფლებები:</strong> დაგვიკავშირდით ელ-ფოსტაზე SYNERGY_EMAIL ან ტელეფონით SYNERGY_PHONE</p>
+                                    <p><strong>როგორ გამოვიყენოთ ეს უფლებები:</strong> დაგვიკავშირდით ელ-ფოსტაზე info@synergy-gym.ge ან ტელეფონით +995-XXX-XXX-XXX</p>
                                 </div>
                             </div>
                         </div>
@@ -402,9 +402,9 @@
                                 <p>კონფიდენციალობის ან მონაცემთა დაცვის საკითხებთან დაკავშირებით დაგვიკავშირდით:</p>
                                 <div class="highlight-box">
                                     <p><strong>მონაცემთა დაცვის ოფიცერი:</strong> ქეთი</p>
-                                    <p><strong>ელ-ფოსტა:</strong> SYNERGY_EMAIL</p>
-                                    <p><strong>ტელეფონი:</strong> SYNERGY_PHONE</p>
-                                    <p><strong>მისამართი:</strong> თბილისი, გიორგი SYNERGY_STREETს ქუჩა №8</p>
+                                    <p><strong>ელ-ფოსტა:</strong> info@synergy-gym.ge</p>
+                                    <p><strong>ტელეფონი:</strong> +995-XXX-XXX-XXX</p>
+                                    <p><strong>მისამართი:</strong> თბილისი, გიორგი Giorgi Brtskinvaleს ქუჩა №8</p>
                                     <p><strong>სამუშაო საათები:</strong> ყოველდღე 08:00-02:00</p>
                                 </div>
                             </div>
@@ -412,9 +412,9 @@
 
                         <div class="contact-info">
                             <h4>კითხვები ან შეშფოთებები?</h4>
-                            <p><strong>მისამართი:</strong> თბილისი, გიორგი SYNERGY_STREETს ქუჩა №8</p>
-                            <p><strong>ტელეფონი:</strong> <a href="tel:+995322195119">SYNERGY_PHONE</a></p>
-                            <p><strong>ელ-ფოსტა:</strong> <a href="mailto:SYNERGY_EMAIL">SYNERGY_EMAIL</a></p>
+                            <p><strong>მისამართი:</strong> თბილისი, გიორგი Giorgi Brtskinvaleს ქუჩა №8</p>
+                            <p><strong>ტელეფონი:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
+                            <p><strong>ელ-ფოსტა:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
                             <p><strong>ბოლოს განახლდა:</strong> სექტემბერი 2025</p>
                         </div>
                     </div>
@@ -428,7 +428,7 @@
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>This Privacy Policy explains how LLC "Smartel.ge" (ID 405771277) collects, uses, and protects your personal information when you use our website www.SYNERGY_DOMAIN or our fitness club services.</p>
+                                <p>This Privacy Policy explains how LLC "Smartel.ge" (ID 405771277) collects, uses, and protects your personal information when you use our website www.synergy-gym.ge or our fitness club services.</p>
                                 <p>We process your personal data in accordance with the requirements of Georgia's "Personal Data Protection Law".</p>
                             </div>
                         </div>
@@ -439,9 +439,9 @@
                                 <div class="highlight-box">
                                     <p><strong>Company:</strong> LLC "Smartel.ge"</p>
                                     <p><strong>ID Number:</strong> 405771277</p>
-                                    <p><strong>Address:</strong> Tbilisi, SYNERGY_STREET st. №8</p>
-                                    <p><strong>Phone:</strong> SYNERGY_PHONE</p>
-                                    <p><strong>Email:</strong> SYNERGY_EMAIL</p>
+                                    <p><strong>Address:</strong> Tbilisi, Giorgi Brtskinvale st. №8</p>
+                                    <p><strong>Phone:</strong> +995-XXX-XXX-XXX</p>
+                                    <p><strong>Email:</strong> info@synergy-gym.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -551,7 +551,7 @@
                                 </ul>
 
                                 <div class="highlight-box">
-                                    <p><strong>How to exercise these rights:</strong> Contact us at SYNERGY_EMAIL or call SYNERGY_PHONE</p>
+                                    <p><strong>How to exercise these rights:</strong> Contact us at info@synergy-gym.ge or call +995-XXX-XXX-XXX</p>
                                 </div>
                             </div>
                         </div>
@@ -619,9 +619,9 @@
                                 <p>For privacy or data protection issues, contact us:</p>
                                 <div class="highlight-box">
                                     <p><strong>Data Protection Officer:</strong> Keti</p>
-                                    <p><strong>Email:</strong> SYNERGY_EMAIL</p>
-                                    <p><strong>Phone:</strong> SYNERGY_PHONE</p>
-                                    <p><strong>Address:</strong> Tbilisi, SYNERGY_STREET st. №8</p>
+                                    <p><strong>Email:</strong> info@synergy-gym.ge</p>
+                                    <p><strong>Phone:</strong> +995-XXX-XXX-XXX</p>
+                                    <p><strong>Address:</strong> Tbilisi, Giorgi Brtskinvale st. №8</p>
                                     <p><strong>Working hours:</strong> Every day 08:00-02:00</p>
                                 </div>
                             </div>
@@ -629,9 +629,9 @@
 
                         <div class="contact-info">
                             <h4>Questions or Concerns?</h4>
-                            <p><strong>Address:</strong> Tbilisi, SYNERGY_STREET st. №8</p>
-                            <p><strong>Phone:</strong> <a href="tel:+995322195119">SYNERGY_PHONE</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:SYNERGY_EMAIL">SYNERGY_EMAIL</a></p>
+                            <p><strong>Address:</strong> Tbilisi, Giorgi Brtskinvale st. №8</p>
+                            <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
+                            <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
                             <p><strong>Last Updated:</strong> September 2025</p>
                         </div>
                     </div>
