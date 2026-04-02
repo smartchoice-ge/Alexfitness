@@ -451,6 +451,12 @@
                 </form>
 
                 <div id="message" class="text-red-400 text-center mt-4"></div>
+
+                <div class="mt-6 pt-4 border-t border-gray-700 flex justify-center items-center gap-4 text-sm">
+                    <a href="/terms.php" target="_blank" style="color:#c8e600;" class="hover:underline" id="link_terms">Terms and Conditions</a>
+                    <span class="text-gray-600">|</span>
+                    <a href="/privacy.php" target="_blank" style="color:#c8e600;" class="hover:underline" id="link_privacy">Privacy Policy</a>
+                </div>
             </div>
         </div>
     </div>
@@ -589,6 +595,8 @@
                 document.getElementById('label_birth_date').textContent = 'დაბადების თარიღი';
                 document.getElementById('verification_method_label').textContent = 'ვერიფიკაციის მეთოდი';
                 document.getElementById('submit_button').textContent = 'გაგზავნა';
+                document.getElementById('link_terms').textContent = 'წესები და პირობები';
+                document.getElementById('link_privacy').textContent = 'კონფიდენციალურობის პოლიტიკა';
                 
                 // Agreement with link
                 document.getElementById('label_agreement').innerHTML = 'ვეთანხმები <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">კონტრაქტს</span></a>';
@@ -636,6 +644,8 @@
                 document.getElementById('label_birth_date').textContent = 'Birth Date';
                 document.getElementById('verification_method_label').textContent = 'Verification Method';
                 document.getElementById('submit_button').textContent = 'Submit';
+                document.getElementById('link_terms').textContent = 'Terms and Conditions';
+                document.getElementById('link_privacy').textContent = 'Privacy Policy';
                 
                 // Agreement with link
                 document.getElementById('label_agreement').innerHTML = 'I agree to the <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">Contract</span></a>';
@@ -746,8 +756,8 @@
                             if (response.status === 'error') {
                                 // Phone number already registered - show warning popup but allow continuation
                                 const warningMsg = currentLang === 'ka' ? 
-                                    'ეს ნომერი უკვე რეგისტრირებულია. სისტემაში შესასვლელად დააჭირეთ შესვლას' : 
-                                    'Warning: This number is already registered To log in click continue.';
+                                    'ეს ნომერი უკვე რეგისტრირებულია. სისტემაში შესასვლელად გადმოწერეთ ჩვენი აპი' : 
+                                    'This number is already registered. To log in, download our app.';
                                 console.log('Setting warning message:', warningMsg);
                                 showPhoneWarningPopup(warningMsg);
                             } else {
@@ -782,26 +792,20 @@
             }
             
             // Get translated text based on current language
-            const continueText = currentLang === 'ka' ? 'შესვლა' : 'Continue';
             const cancelText = currentLang === 'ka' ? 'რეგისტრაციის გაგრძელება' : 'Cancel';
             
             let popup = document.createElement('div');
             popup.id = "phoneWarningPopup";
             popup.innerHTML = `
-                <div class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-50">
-                    <div class="bg-gray-900 border border-gray-700 p-8 rounded-lg shadow-2xl w-96 text-center">
-                        <div class="mb-6">
-                            <div class="mx-auto flex items-center justify-center h-12 w-12 rounded-full bg-yellow-100 mb-4">
-                                <svg class="h-6 w-6 text-yellow-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
-                                </svg>
-                            </div>
-                            <h2 class="text-xl font-semibold text-white mb-4">${message}</h2>
+                <div class="fixed inset-0 flex items-center justify-center z-50" style="background:rgba(0,0,0,0.85);">
+                    <div style="background:#1a1a1a;border:1px solid #c8e600;border-radius:12px;padding:2rem 2rem 1.5rem;max-width:360px;width:90%;text-align:center;box-shadow:0 0 40px rgba(200,230,0,0.15);">
+                        <div style="margin:0 auto 1.25rem;width:52px;height:52px;border-radius:50%;background:rgba(200,230,0,0.12);border:2px solid #c8e600;display:flex;align-items:center;justify-content:center;">
+                            <svg style="width:26px;height:26px;color:#c8e600;" fill="none" viewBox="0 0 24 24" stroke="#c8e600">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
+                            </svg>
                         </div>
-                        <div class="flex space-x-4">
-                            <button onclick="continueWithRegistration()" class="bg-gray-600 hover:bg-gray-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex-1">${cancelText}</button>
-                            <button onclick="window.location.href='/user_profile/auth.php?lang=' + currentLang" class="bg-yellow-600 hover:bg-yellow-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors duration-200 flex-1">${continueText}</button>
-                        </div>
+                        <p style="color:#ffffff;font-size:1rem;font-weight:600;line-height:1.6;margin-bottom:1.5rem;">${message}</p>
+                        <button onclick="continueWithRegistration()" class="brand-btn" style="width:100%;padding:0.75rem 1rem;font-size:0.95rem;border-radius:8px;border:none;cursor:pointer;">${cancelText}</button>
                     </div>
                 </div>
             `;

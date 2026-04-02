@@ -13,26 +13,20 @@ function isActive($page) {
     return $currentPage === $page ? 'sc-nav-link active' : 'sc-nav-link';
 }
 
-// Determine if we're in admin folder for proper path handling
+// Determine if we're in the admin folder for link path handling
 $isAdminFolder = strpos($_SERVER['REQUEST_URI'], '/admin/') !== false;
-$logoCandidates = $isAdminFolder
-    ? ['../img/smartchoice_logo.png', '../img/logo.png', '../img/logo.svg', '../img/logo_black.svg']
-    : ['/img/smartchoice_logo.png', '/img/logo.png', '/img/logo.svg', '/img/logo_black.svg'];
-$logoPath = $logoCandidates[1]; // Default to logo.png
-foreach ($logoCandidates as $candidate) {
-    $checkPath = $candidate;
-    if ($isAdminFolder && str_starts_with($candidate, '../')) {
-        $checkPath = __DIR__ . '/../img/' . basename($candidate);
-    } elseif (!$isAdminFolder && str_starts_with($candidate, '/img/')) {
-        $checkPath = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/') . $candidate;
-    }
 
-    if (is_file($checkPath)) {
+// Use absolute web paths so the logo works from any sub-folder depth
+$logoCandidates = ['/img/smartchoice_logo.png', '/img/logo.png', '/img/logo.svg', '/img/logo_black.svg'];
+$logoPath = '/img/smartchoice_logo.png'; // Default
+$docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/');
+foreach ($logoCandidates as $candidate) {
+    if (is_file($docRoot . $candidate)) {
         $logoPath = $candidate;
         break;
     }
 }
-$faviconPath = $isAdminFolder ? '../img/logo.png' : '/img/logo.png';
+$faviconPath = '/img/smartchoice_logo.png';
 ?>
 
 <script>

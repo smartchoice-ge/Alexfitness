@@ -103,15 +103,6 @@ $totalPages = ceil($totalPayments / $limit);
     <div class="container mx-auto p-4">
         <h1 class="text-xl font-bold mb-4">Payments</h1>
 
-        <!-- Immediate Processing Notice -->
-        <div class="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg flex items-center">
-            <div class="flex items-center">
-                <div class="w-3 h-3 bg-blue-500 rounded-full mr-3"></div>
-                <span class="text-blue-800 font-medium">Instant Processing Active</span>
-                <span class="text-blue-600 text-sm ml-2">New payments are processed automatically when payment is confirmed</span>
-            </div>
-        </div>
-
         <!-- Search and Filter Form -->
         <form method="GET" class="mb-4 flex gap-4 flex-wrap">
             <input type="text" name="search" placeholder="Search by phone or transaction ID" value="<?= htmlspecialchars($search) ?>"
