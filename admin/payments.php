@@ -16,6 +16,24 @@ include('../db_connection.php');
 include('../mssql_connection.php');
 include('../mssql_packages_payments_helper.php');
 
+// Ensure PaymentsWebsite table exists
+if ($mssqlconn) {
+    sqlsrv_query($mssqlconn, "IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='PaymentsWebsite' AND xtype='U')
+    CREATE TABLE PaymentsWebsite (
+        id INT IDENTITY(1,1) PRIMARY KEY,
+        amount DECIMAL(10,2) NOT NULL,
+        status NVARCHAR(50) NOT NULL,
+        client_mobile_number NVARCHAR(50) NOT NULL,
+        transaction_id NVARCHAR(255) NULL,
+        time DATETIME NOT NULL DEFAULT GETDATE(),
+        package_id INT NULL,
+        user_id INT NULL,
+        processed BIT NOT NULL DEFAULT 0,
+        created_at DATETIME NULL DEFAULT GETDATE(),
+        updated_at DATETIME NULL
+    )");
+}
+
 // Pagination settings
 $limit = 30; // Number of payments per page
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
@@ -129,24 +147,25 @@ $totalPages = ceil($totalPayments / $limit);
                 SUM(CASE WHEN status = 'Success' THEN amount ELSE 0 END) as total_revenue
                 FROM PaymentsWebsite";
             $statsStmt = sqlsrv_query($mssqlconn, $statsQuery);
-            $stats = sqlsrv_fetch_array($statsStmt, SQLSRV_FETCH_ASSOC);
-            sqlsrv_free_stmt($statsStmt);
+            $stats = ($statsStmt !== false) ? sqlsrv_fetch_array($statsStmt, SQLSRV_FETCH_ASSOC) : null;
+            if ($statsStmt !== false) sqlsrv_free_stmt($statsStmt);
+            if (!$stats) $stats = ['total_count'=>0,'success_count'=>0,'pending_count'=>0,'fail_count'=>0,'total_revenue'=>0];
             ?>
             <div class="bg-white p-4 rounded-lg shadow">
                 <h3 class="text-sm font-medium text-gray-500">Total Payments</h3>
-                <p class="text-2xl font-bold"><?= number_format($stats['total_count']) ?></p>
+                <p class="text-2xl font-bold"><?= number_format((int)($stats['total_count'] ?? 0)) ?></p>
             </div>
             <div class="bg-green-50 p-4 rounded-lg shadow">
                 <h3 class="text-sm font-medium text-green-600">Successful</h3>
-                <p class="text-2xl font-bold text-green-800"><?= number_format($stats['success_count']) ?></p>
+                <p class="text-2xl font-bold text-green-800"><?= number_format((int)($stats['success_count'] ?? 0)) ?></p>
             </div>
             <div class="bg-yellow-50 p-4 rounded-lg shadow">
                 <h3 class="text-sm font-medium text-yellow-600">Pending</h3>
-                <p class="text-2xl font-bold text-yellow-800"><?= number_format($stats['pending_count']) ?></p>
+                <p class="text-2xl font-bold text-yellow-800"><?= number_format((int)($stats['pending_count'] ?? 0)) ?></p>
             </div>
             <div class="bg-blue-50 p-4 rounded-lg shadow">
                 <h3 class="text-sm font-medium text-blue-600">Total Revenue</h3>
-                <p class="text-2xl font-bold text-blue-800"><?= number_format($stats['total_revenue'], 2) ?> GEL</p>
+                <p class="text-2xl font-bold text-blue-800"><?= number_format((float)($stats['total_revenue'] ?? 0), 2) ?> GEL</p>
             </div>
         </div>
 
