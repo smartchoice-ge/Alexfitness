@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 // Make sure this path is correct for your server setup.
 include '../mssql_connection.php'; 
@@ -49,8 +49,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Sign In - Synergy Gym">
-    <meta name="description" content="Access your Synergy Gym account. Sign in to manage your membership, book classes, and track your progress.">
+    <meta name="title" content="Sign In - Luka Qaliashvili, ID: 0172409681">
+    <meta name="description" content="Access your Luka Qaliashvili, ID: 0172409681 account. Sign in to manage your membership, book classes, and track your progress.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
@@ -59,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <title>Sign In | Synergy Gym</title>
+    <title>Sign In | Luka Qaliashvili, ID: 0172409681</title>
 
     <style>
         body {
@@ -319,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="text-center mb-8">
                     <a href="/" class="inline-block bg-black p-3 rounded-lg hover:bg-gray-800 transition-colors duration-300">
                         <!-- Increased logo size -->
-                        <img src="/img/logo.png" alt="Synergy Gym Logo" class="h-16 mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/180x60/cccccc/000000?text=Synergy+Logo';">
+                        <img src="/img/logo.png" alt="Luka Qaliashvili, ID: 0172409681 Logo" class="h-16 mx-auto" onerror="this.onerror=null; this.src='https://placehold.co/180x60/cccccc/000000?text=Synergy+Logo';">
                     </a>
                 </div>
 

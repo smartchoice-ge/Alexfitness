@@ -1,8 +1,8 @@
 ﻿<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="QR Codes - Synergy Gym">
-    <meta name="description" content="Scan QR codes to buy membership or contact Synergy Gym for a tour.">
+    <meta name="title" content="QR Codes - Luka Qaliashvili, ID: 0172409681">
+    <meta name="description" content="Scan QR codes to buy membership or contact Luka Qaliashvili, ID: 0172409681 for a tour.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -11,7 +11,7 @@
     
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>QR Codes | Synergy Gym</title>
+    <title>QR Codes | Luka Qaliashvili, ID: 0172409681</title>
 
     <style>
         body {

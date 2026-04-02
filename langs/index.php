@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
+    <meta name="title" content="Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi | Fitness Club & Training">
+    <meta name="description" content="Discover Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
+    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Luka Qaliashvili, ID: 0172409681, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Preconnect to external domains for faster loading -->
@@ -63,7 +63,7 @@
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
+    <title>Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi | Fitness Club & Training</title>
 
     <style>
         /* Performant CSS animation */
@@ -234,7 +234,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
-      "name": "Synergy Gym",
+      "name": "Luka Qaliashvili, ID: 0172409681",
       "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
       "url": "/",
       "logo": "/img/logo.png",
@@ -385,7 +385,7 @@
         <!-- Google Maps embed - Replace with Synergy location -->
         <a href="https://maps.app.goo.gl/ne54zrsjMz3GysQs8" target="_blank" rel="noopener noreferrer"
            style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;"
-           class="map-mobile-overlay" aria-label="Open Synergy Gym in Google Maps"></a>
+           class="map-mobile-overlay" aria-label="Open Luka Qaliashvili, ID: 0172409681 in Google Maps"></a>
     </div>
     <style>
         @media (max-width: 768px) {

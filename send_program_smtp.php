@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 include_once 'mssql_connection.php';
 include_once 'db_connection.php';
@@ -99,7 +99,7 @@ try {
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Synergy Gym QR Code</title>
+    <title>Luka Qaliashvili, ID: 0172409681 QR Code</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
 

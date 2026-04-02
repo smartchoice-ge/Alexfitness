@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start();
 include '../mssql_connection.php'; // Include database connection
 include '../db_connection.php'; // Include MySQL database connection
@@ -221,8 +221,8 @@ if (isset($clientID)) {
 <!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Member Profile - Synergy Gym">
-    <meta name="description" content="View your Synergy Gym member profile, check your membership status, and renew your plan.">
+    <meta name="title" content="Member Profile - Luka Qaliashvili, ID: 0172409681">
+    <meta name="description" content="View your Luka Qaliashvili, ID: 0172409681 member profile, check your membership status, and renew your plan.">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
@@ -232,7 +232,7 @@ if (isset($clientID)) {
     
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <title>Member Profile | Synergy Gym</title>
+    <title>Member Profile | Luka Qaliashvili, ID: 0172409681</title>
 
     <style>
         body {
@@ -825,7 +825,7 @@ if (isset($clientID)) {
         <!-- Logo on the left -->
         <div class="flex items-center">
             <a href="/" class="inline-block bg-black p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
-                <img src="/img/logo.png" alt="Synergy Gym Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/140x40/cccccc/000000?text=Synergy+Logo';">
+                <img src="/img/logo.png" alt="Luka Qaliashvili, ID: 0172409681 Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/140x40/cccccc/000000?text=Synergy+Logo';">
             </a>
         </div>
         <!-- Language and logout buttons on the right -->

@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, ფიტნესი დიდ დიღომში, დარბაზი დიდ დიღომში, ჯიმი დიდ დიღომში, affordable gym in digomi, fitness club Didi Digomi, fitness in Didi Digomi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
+    <meta name="title" content="Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi | Fitness Club & Training">
+    <meta name="description" content="Discover Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
+    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Luka Qaliashvili, ID: 0172409681, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, ფიტნესი დიდ დიღომში, დარბაზი დიდ დიღომში, ჯიმი დიდ დიღომში, affordable gym in digomi, fitness club Didi Digomi, fitness in Didi Digomi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Performance and caching meta tags -->
@@ -62,7 +62,7 @@
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
+    <title>Luka Qaliashvili, ID: 0172409681 in Didi Digomi, Tbilisi | Fitness Club & Training</title>
 
     <style>
         /* Remove default browser focus outlines and yellow circles on mobile */
@@ -1373,7 +1373,7 @@
     {
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
-      "name": "Synergy Gym",
+      "name": "Luka Qaliashvili, ID: 0172409681",
       "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
       "url": "/",
       "logo": "/img/logo.png",
@@ -1428,14 +1428,14 @@
 
 <!-- Mobile Loader - Only visible on mobile devices -->
 <div class="mobile-loader" id="mobileLoader">
-    <img src="img/logo.png" alt="Synergy Gym" class="loader-logo" onerror="this.style.display='none';">
+    <img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681" class="loader-logo" onerror="this.style.display='none';">
     <div class="loader-spinner"></div>
     <div class="loader-text">Loading...</div>
 </div>
 
 <!-- Desktop Loader - Only visible on desktop devices -->
 <div class="desktop-loader" id="desktopLoader">
-    <img src="img/logo.png" alt="Synergy Gym" class="loader-logo" onerror="this.style.display='none';">
+    <img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681" class="loader-logo" onerror="this.style.display='none';">
     <div class="loader-spinner"></div>
     <div class="loader-text">Loading...</div>
 </div>
@@ -1453,12 +1453,12 @@
             <header class="full-width text-center pt-3 pb-3">
                 <nav class="navbar navbar-expand-lg navbar-light bg-none no-padding col-md-8 offset-2" style="justify-content: center !important;">
                     <button class="navbar-toggler full-width" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <a href="/" class="logo-sm banner"><img src="img/logo.png" alt="Synergy Gym Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a>
+                        <a href="/" class="logo-sm banner"><img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681 Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a>
                     </button>
                     <div class="" id="navbarSupportedContent" style="justify-content: center; display: flex;">
                         <ul class="navbar-nav mr-auto middle">
                             <li class="nav-item middle"><a href="#packages" class="menu-link banner menu_links" name="key_packages">key_packages</a></li>
-                            <li class="nav-item menu-logo d-none d-md-block"><a href="/" class="menu-link banner"><img src="img/logo.png" alt="Synergy Gym Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a></li>
+                            <li class="nav-item menu-logo d-none d-md-block"><a href="/" class="menu-link banner"><img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681 Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a></li>
                             <li class="nav-item middle"><a href="#contact" class="menu-link banner menu_links" name="key_contact">key_contact</a></li>
                         </ul>
                     </div>
@@ -1595,7 +1595,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <p style="margin-bottom: 1rem; font-size: 1rem; color: #e0e0e0;">
-                        © 2025 Synergy Gym. All rights reserved.
+                        © 2025 Luka Qaliashvili, ID: 0172409681. All rights reserved.
                     </p>
                     <div class="footer-links" style="margin-bottom: 1rem;">
                         <a href="terms.php" style="color: #c8e600; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">

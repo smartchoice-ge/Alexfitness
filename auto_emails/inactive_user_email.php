@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 require '/home/synergy-gym.ge/public_html/mssql_connection.php';
 require '/home/synergy-gym.ge/public_html/email_sender.php';
@@ -75,7 +75,7 @@ function sendEmail($email, $discount_percentage, $month_count, $unsubscribe_toke
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Synergy Gym</title>
+    <title>Luka Qaliashvili, ID: 0172409681</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
     <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" 

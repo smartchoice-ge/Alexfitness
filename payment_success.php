@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Redirect mobile app requests immediately before rendering any HTML
 if (isset($_GET['source']) && $_GET['source'] === 'app') {
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
@@ -22,7 +22,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Successful - Synergy Gym</title>
+    <title>Payment Successful - Luka Qaliashvili, ID: 0172409681</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -168,7 +168,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     fbq('track', 'Purchase', {
         value: 50.00, // Set actual membership price
         currency: 'GEL', // Georgian Lari currency code
-        content_name: 'Synergy Gym Membership',
+        content_name: 'Luka Qaliashvili, ID: 0172409681 Membership',
         content_category: 'Fitness',
         content_type: 'product',
         content_ids: ['gym_membership_' + Date.now()], // Unique content ID
@@ -226,7 +226,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                 
                 <!-- Header Section -->
                 <div class="header-section text-center">
-                    <img src="img/logo.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
+                    <img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
                     
                     <div class="success-icon inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full mb-6 checkmark-animation">
                         <i class="fas fa-check text-black text-3xl md:text-4xl"></i>
@@ -236,7 +236,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                         Payment Successful!
                     </h1>
                     <p class="text-lg md:text-xl text-gray-300 mb-8 text-center break-words" name="key_payment_success_message">
-                        Your payment was completed successfully. Thank you for choosing Synergy Gym! Please note that membership activation may take 5-10 minutes.
+                        Your payment was completed successfully. Thank you for choosing Luka Qaliashvili, ID: 0172409681! Please note that membership activation may take 5-10 minutes.
                     </p>
                 </div>
 

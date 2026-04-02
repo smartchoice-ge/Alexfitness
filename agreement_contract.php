@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 error_reporting(E_ALL);
@@ -27,7 +27,7 @@ try {
     $pdf = new TCPDF();
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('Synergy');
-    $pdf->SetTitle('Synergy Gym Agreement');
+    $pdf->SetTitle('Luka Qaliashvili, ID: 0172409681 Agreement');
     $pdf->SetSubject('Public membership agreement');
     $pdf->SetKeywords('TCPDF, PDF, agreement, synergy');
     $pdf->SetMargins(12, 12, 12);

@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Synergy Google Reviews block.
  * Styled to match the Tonus layout more closely while keeping Synergy naming.
@@ -7,7 +7,7 @@
 $defaultConfig = [
     'api_key' => '',
     'place_id' => '',
-    'business_name' => 'Synergy Gym',
+    'business_name' => 'Luka Qaliashvili, ID: 0172409681',
     'maps_url' => 'https://www.google.com/maps/search/?api=1&query=Synergy%20Gym%20Tbilisi',
 ];
 

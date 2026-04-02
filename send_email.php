@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 require 'vendor/autoload.php';
 require 'db_connection.php';
 require 'email_sender.php';
@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Synergy Gym</title>
+            <title>Luka Qaliashvili, ID: 0172409681</title>
         </head>
         <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
         

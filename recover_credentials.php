@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Add immediate error output for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 0); // Don't display to prevent JSON corruption
@@ -93,7 +93,7 @@ function sendCredentialsEmail($email, $fullName, $username, $password) {
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Synergy Gym - Login Credentials</title>
+            <title>Luka Qaliashvili, ID: 0172409681 - Login Credentials</title>
         </head>
         <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; background-color: #1a1a1a; color: white;">
             <div style="max-width: 600px; margin: auto; padding: 40px 20px; text-align: center;">

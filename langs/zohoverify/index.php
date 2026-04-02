@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ka">
 <head>
     <!-- Required meta tags -->
@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-    <title>Synergy Gym</title>
+    <title>Luka Qaliashvili, ID: 0172409681</title>
 </head>
 <body>
 <!-- TOP BLOCK -->

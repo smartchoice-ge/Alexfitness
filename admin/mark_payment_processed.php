@@ -427,7 +427,7 @@ try {
             
             // Insert welcome SMS log
             $smsSql = "INSERT INTO SMSLog (ClientID, SMSText, SmsSentStatusID, PhoneNumber, UserID) VALUES (?, ?, ?, ?, ?)";
-            $smsParams = array($client_id, 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.', 1, $phone_for_mssql, $creator_user_id);
+            $smsParams = array($client_id, 'Welcome to Luka Qaliashvili, ID: 0172409681, Mokharulebi vart rom gakhdit chveni gundis tsevri.', 1, $phone_for_mssql, $creator_user_id);
             $smsStmt = sqlsrv_query($mssqlconn, $smsSql, $smsParams);
             
             if ($smsStmt) {

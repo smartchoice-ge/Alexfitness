@@ -1,13 +1,13 @@
-<?php
+﻿<?php
 $lang = isset($_GET['lang']) && strtolower($_GET['lang']) === 'en' ? 'en' : 'ka';
 
 $copy = [
     'ka' => [
-        'title' => 'რეგისტრაცია დასრულდა - Synergy Gym',
+        'title' => 'რეგისტრაცია დასრულდა - Luka Qaliashvili, ID: 0172409681',
         'heading' => 'რეგისტრაცია წარმატებით დასრულდა',
     ],
     'en' => [
-        'title' => 'Registration Complete - Synergy Gym',
+        'title' => 'Registration Complete - Luka Qaliashvili, ID: 0172409681',
         'heading' => 'Registration Completed Successfully',
     ],
 ];
@@ -87,7 +87,7 @@ $text = $copy[$lang];
 </head>
 <body>
     <main class="card">
-        <img src="img/logo.png" alt="Synergy Gym" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/180x60/cccccc/000000?text=Synergy';">
+        <img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681" class="logo" onerror="this.onerror=null;this.src='https://placehold.co/180x60/cccccc/000000?text=Synergy';">
         <div class="icon">✓</div>
         <h1><?php echo htmlspecialchars($text['heading'], ENT_QUOTES, 'UTF-8'); ?></h1>
     </main>

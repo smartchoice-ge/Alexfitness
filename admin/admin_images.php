@@ -97,7 +97,7 @@ if ($stmt) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Image Manager - Synergy Gym</title>
+    <title>Image Manager - Luka Qaliashvili, ID: 0172409681</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -209,7 +209,7 @@ if ($stmt) {
 </head>
 <body>
     <div class="header">
-        <h1>🏋️ Synergy Gym - Image Manager</h1>
+        <h1>🏋️ Luka Qaliashvili, ID: 0172409681 - Image Manager</h1>
     </div>
 
     <div class="container">
