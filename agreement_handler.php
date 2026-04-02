@@ -121,6 +121,9 @@ function sendSMSViaSenderGE($phone_number, $message) {
 // Function to log MSSQL save operations
 function logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, $status, $error_message = null, $error_details = null, $mssql_client_id = null) {
     try {
+        if (!$conn || !method_exists($conn, 'prepare')) {
+            return;
+        }
         $log_stmt = $conn->prepare("INSERT INTO mssql_save_logs (mysql_client_id, id_number, full_name, mobile_number, email, status, error_message, error_details, mssql_client_id, operation_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'auto_save')");
         if ($log_stmt) {
             $log_stmt->bind_param("isssssssi", $mysql_client_id, $id_number, $full_name, $mobile_number, $email, $status, $error_message, $error_details, $mssql_client_id);
@@ -163,7 +166,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
     if (!$mssqlconn) {
         $error_msg = "MSSQL connection not available for auto-save";
         error_log($error_msg);
-        logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, 'MSSQL connection is null', null);
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, 'MSSQL connection is null', null);
         return false;
     }
     
@@ -183,14 +186,14 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         $error_msg = "MSSQL check error during auto-save";
         $error_details = print_r($errors, true);
         error_log($error_msg . ": " . $error_details);
-        logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, $error_details, null);
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, $error_details, null);
         return false;
     }
     
     if ($existing_client = sqlsrv_fetch_array($checkStmt)) {
         $existing_id = $existing_client['ID'];
         error_log("Client already exists in MSSQL (phone: {$phone_for_mssql}), ID: {$existing_id}");
-        logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'already_exists', "Client already exists with phone: {$phone_for_mssql}", null, $existing_id);
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'already_exists', "Client already exists with phone: {$phone_for_mssql}", null, $existing_id);
         sqlsrv_free_stmt($checkStmt);
         return true; // Not an error, client already exists
     }
@@ -212,7 +215,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         $error_msg = "MSSQL insert error during auto-save";
         $error_details = print_r($errors, true);
         error_log($error_msg . ": " . $error_details);
-        logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, $error_details, null);
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, $error_details, null);
         return false;
     }
     
@@ -240,7 +243,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         sqlsrv_free_stmt($stmt);
         
         // Log successful save
-        logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'success', null, null, $client_id);
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'success', null, null, $client_id);
         return true;
     }
     
@@ -249,7 +252,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
     // Failed to fetch client ID after insert
     $error_msg = "Client inserted but failed to retrieve MSSQL client ID";
     error_log($error_msg);
-    logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, 'Insert succeeded but fetch failed', null);
+    logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'failed', $error_msg, 'Insert succeeded but fetch failed', null);
     return false;
 }
 

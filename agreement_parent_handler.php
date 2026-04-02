@@ -102,6 +102,9 @@ function sendSMSViaSenderGE($phone_number, $message) {
 // Function to log MSSQL save operations
 function logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, $status, $error_message = null, $error_details = null, $mssql_client_id = null) {
     try {
+        if (!$conn || !method_exists($conn, 'prepare')) {
+            return;
+        }
         $log_stmt = $conn->prepare("INSERT INTO mssql_save_logs (mysql_client_id, id_number, full_name, mobile_number, email, status, error_message, error_details, mssql_client_id, operation_type) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 'auto_save')");
         if ($log_stmt) {
             $log_stmt->bind_param("isssssssi", $mysql_client_id, $id_number, $full_name, $mobile_number, $email, $status, $error_message, $error_details, $mssql_client_id);

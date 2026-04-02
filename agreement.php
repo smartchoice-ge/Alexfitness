@@ -54,7 +54,7 @@
             font-weight: bold;
         }
         .brand-btn:hover {
-            background-color: #e6c605;
+            background-color: #c8e600;
         }
         /* Language button container */
         .lang-btn-container {
@@ -159,11 +159,13 @@
         
         /* Language button */
         .lang-btn {
+            background-color: #c8e600;
+            color: #000000;
             padding: 0.5rem 1rem;
             border-radius: 0.5rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
+            border: 1px solid rgba(200, 230, 0, 0.35);
             cursor: pointer;
             font-size: 0.875rem;
             min-width: auto;
@@ -172,6 +174,12 @@
         }
         .lang-btn:hover {
             transform: translateY(-1px);
+        }
+        .lang-btn-active {
+            opacity: 1;
+        }
+        .lang-btn-inactive {
+            opacity: 0.78;
         }
 
         /* Mobile optimizations */
@@ -239,181 +247,6 @@
             font-weight: bold;
             font-size: 14px;
         }
-        
-        /* WhatsApp Button Styles */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 100;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .whatsapp-button {
-            display: flex;
-            align-items: center;
-            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
-            color: #ffffff;
-            padding: 16px 28px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
-            border: 3px solid #ffffff;
-            animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
-            position: relative;
-            overflow: hidden;
-            transform: scale(1.1);
-            min-width: 160px;
-            justify-content: center;
-        }
-
-        .whatsapp-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .whatsapp-button:hover::before {
-            left: 100%;
-        }
-
-        .whatsapp-button:hover {
-            transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
-            text-decoration: none;
-            color: #ffffff;
-            animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
-        }
-
-        .whatsapp-icon {
-            width: 28px;
-            height: 28px;
-            margin-right: 12px;
-            filter: brightness(1.2);
-            animation: whatsappIconSpin 3s linear infinite;
-        }
-
-        .whatsapp-text {
-            white-space: nowrap;
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.8px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        @keyframes whatsappPulse {
-            0%, 100% {
-                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
-                transform: scale(1.1);
-            }
-            50% {
-                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
-                transform: scale(1.15);
-            }
-        }
-
-        @keyframes whatsappBounce {
-            0%, 100% {
-                transform: translateY(0) scale(1.1);
-            }
-            25% {
-                transform: translateY(-3px) scale(1.12);
-            }
-            50% {
-                transform: translateY(0) scale(1.1);
-            }
-            75% {
-                transform: translateY(-1px) scale(1.11);
-            }
-        }
-
-        @keyframes whatsappShake {
-            0%, 100% { transform: translateY(-5px) scale(1.15) rotate(0deg); }
-            25% { transform: translateY(-5px) scale(1.15) rotate(-2deg); }
-            75% { transform: translateY(-5px) scale(1.15) rotate(2deg); }
-        }
-
-        @keyframes whatsappIconSpin {
-            0% { transform: rotate(0deg); }
-            10% { transform: rotate(10deg); }
-            20% { transform: rotate(-8deg); }
-            30% { transform: rotate(6deg); }
-            40% { transform: rotate(-4deg); }
-            50% { transform: rotate(2deg); }
-            60% { transform: rotate(-1deg); }
-            70% { transform: rotate(0deg); }
-            100% { transform: rotate(0deg); }
-        }
-
-        /* Mobile responsive adjustments for WhatsApp button */
-        @media (max-width: 768px) {
-            .whatsapp-float {
-                bottom: 20px;
-                right: 20px;
-            }
-            
-            .whatsapp-button {
-                padding: 14px 24px;
-                font-size: 1rem;
-                transform: scale(1.05);
-                min-width: 140px;
-            }
-            
-            .whatsapp-icon {
-                width: 26px;
-                height: 26px;
-                margin-right: 10px;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .whatsapp-button {
-                padding: 12px 20px;
-                font-size: 0.9rem;
-                transform: scale(1);
-                min-width: 120px;
-            }
-            
-            .whatsapp-text {
-                font-size: 0.8rem;
-            }
-            
-            .whatsapp-icon {
-                width: 24px;
-                height: 24px;
-                margin-right: 8px;
-            }
-        }
-
-        @media (max-width: 400px) {
-            .whatsapp-text {
-                display: none; /* Hide text on very small screens, show only icon */
-            }
-            
-            .whatsapp-button {
-                width: 60px;
-                height: 60px;
-                border-radius: 50%;
-                padding: 0;
-                justify-content: center;
-                min-width: auto;
-                transform: scale(1.1);
-            }
-            
-            .whatsapp-icon {
-                margin-right: 0;
-                width: 30px;
-                height: 30px;
-            }
-        }
     </style>
     
     <!-- Meta Pixel Code -->
@@ -441,19 +274,11 @@
 
 <body class="bg-black text-white min-h-screen flex flex-col">
 
-<!-- WhatsApp Button -->
-<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
-    <div class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/28x28/ffffff/25d366?text=WA';">
-        <span class="whatsapp-text" id="whatsapp-text">Contact Us</span>
-    </div>
-</a>
-
 <div id="cont">
     <!-- Language Buttons -->
     <div class="lang-btn-container">
-        <button id="georgianBtn" onclick="setLanguage('ka')" class="lang-btn bg-yellow-400 text-black rounded font-semibold">ქართული</button>
-        <button id="englishBtn" onclick="setLanguage('en')" class="lang-btn bg-gray-600 text-white rounded font-semibold">ENGLISH</button>
+        <button id="georgianBtn" onclick="setLanguage('ka')" class="lang-btn lang-btn-active rounded font-semibold">ქართული</button>
+        <button id="englishBtn" onclick="setLanguage('en')" class="lang-btn lang-btn-inactive rounded font-semibold">ENGLISH</button>
     </div>
     
     <!-- Agreement Form Section -->
@@ -508,8 +333,8 @@
                             placeholder="შენი ელ-ფოსტა" required>
                     </div>
 
-                    <!-- Profile Picture Upload -->
-                    <div class="mb-4">
+                    <!-- Profile Picture Upload (hidden for now) -->
+                    <div class="mb-4" id="profile-picture-section" style="display: none;">
                         <label id="label_profile_picture" for="profile_picture" class="form-label">პროფილის ფოტო <span class="text-red-400">*</span></label>
                         <div class="image-upload-container">
                             <div class="image-upload-area">
@@ -705,11 +530,11 @@
             const englishBtn = document.getElementById('englishBtn');
             
             if (lang === 'ka') {
-                georgianBtn.className = 'lang-btn bg-yellow-400 text-black rounded font-semibold';
-                englishBtn.className = 'lang-btn bg-gray-600 text-white rounded font-semibold';
+                georgianBtn.className = 'lang-btn lang-btn-active rounded font-semibold';
+                englishBtn.className = 'lang-btn lang-btn-inactive rounded font-semibold';
             } else {
-                georgianBtn.className = 'lang-btn bg-gray-600 text-white rounded font-semibold';
-                englishBtn.className = 'lang-btn bg-yellow-400 text-black rounded font-semibold';
+                georgianBtn.className = 'lang-btn lang-btn-inactive rounded font-semibold';
+                englishBtn.className = 'lang-btn lang-btn-active rounded font-semibold';
             }
             
             // Update content
@@ -734,7 +559,6 @@
                 document.getElementById('label_birth_date').textContent = 'დაბადების თარიღი';
                 document.getElementById('verification_method_label').textContent = 'ვერიფიკაციის მეთოდი';
                 document.getElementById('submit_button').textContent = 'გაგზავნა';
-                document.getElementById('whatsapp-text').textContent = 'დაგვიკავშირდით';
                 
                 // Agreement with link
                 document.getElementById('label_agreement').innerHTML = 'ვეთანხმები <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">კონტრაქტს</span></a>';
@@ -782,7 +606,6 @@
                 document.getElementById('label_birth_date').textContent = 'Birth Date';
                 document.getElementById('verification_method_label').textContent = 'Verification Method';
                 document.getElementById('submit_button').textContent = 'Submit';
-                document.getElementById('whatsapp-text').textContent = 'Contact Us';
                 
                 // Agreement with link
                 document.getElementById('label_agreement').innerHTML = 'I agree to the <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">Contract</span></a>';
@@ -1038,28 +861,6 @@
             
             // Store original button text BEFORE any changes
             const originalButtonText = submitButton.textContent;
-            
-            // Check profile picture first - before disabling button and showing loading
-            if (!window.uploadedImageUrl) {
-                const errorMsg = currentLang === 'ka' ? 
-                    'გთხოვთ ატვირთოთ პროფილის ფოტო' : 
-                    'Please upload a profile picture';
-                messageDiv.innerHTML = `<div style="color: #dc2626; font-weight: bold; background: #fef2f2; padding: 10px; border-radius: 5px; border-left: 4px solid #dc2626;">${errorMsg}</div>`;
-                
-                // Highlight the photo upload section to draw attention
-                const photoUploadArea = document.querySelector('.image-upload-area');
-                if (photoUploadArea) {
-                    photoUploadArea.style.borderColor = '#dc2626';
-                    photoUploadArea.style.backgroundColor = 'rgba(220, 38, 38, 0.1)';
-                    // Reset highlight after 3 seconds
-                    setTimeout(() => {
-                        photoUploadArea.style.borderColor = '#666';
-                        photoUploadArea.style.backgroundColor = '#1a1a1a';
-                    }, 3000);
-                }
-                
-                return;
-            }
             
             // Disable submit button after validation passes
             submitButton.disabled = true;
