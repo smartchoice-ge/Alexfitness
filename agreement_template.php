@@ -3,16 +3,23 @@
 <head>
     <title>User Agreement</title>
     <style>
-        h2 {
-            text-align: center;
+        body { font-family: DejaVu Sans, Arial, sans-serif; font-size: 13px; }
+        h2 { text-align: center; margin: 0.4em 0; }
+        h3 { text-align: right; margin: 0.2em 0; }
+        p  { margin: 0.35em 0; line-height: 1.5; }
+        .section {
+            padding: 15mm 18mm;
+            box-sizing: border-box;
         }
-	h3 { 
-		text-align:right;
-	}
+        @media print {
+            @page { size: A4; margin: 0; }
+            .section { page-break-after: always; break-after: page; }
+            .section:last-child { page-break-after: avoid; break-after: avoid; }
+        }
     </style>
 </head>
 <body>
-    <div style='width: 210mm; height: 280mm; padding: 20mm;'>
+    <div class="section">
         <h2>კონტრაქტი წევრობის შესახებ</h2>
 	<h3><?php echo $year; ?> წ.</h3>
                 <h2>განაცხადის ფორმა</h2>
@@ -84,7 +91,7 @@
 		</div>
     </div>
     
-    <div style='width: 210mm; height: 280mm; padding: 20mm;'>
+    <div class="section">
         <h2>Contract about Membership</h2>
 	<h3><?php echo $year; ?> Y.</h3>
                 <h2>Application Form</h2>

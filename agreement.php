@@ -63,7 +63,14 @@
             right: 1rem !important;
             z-index: 99999 !important;
             display: flex;
-            gap: 0.5rem;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.3rem;
+            background: rgba(18, 18, 18, 0.92);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 999px;
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+            backdrop-filter: blur(10px);
             transform: translateZ(0);
             will-change: transform;
             transition: all 0.3s ease;
@@ -159,27 +166,49 @@
         
         /* Language button */
         .lang-btn {
-            background-color: #c8e600;
-            color: #000000;
-            padding: 0.5rem 1rem;
-            border-radius: 0.5rem;
+            background-color: transparent;
+            color: rgba(255, 255, 255, 0.82);
+            padding: 0.55rem 1rem;
+            border-radius: 999px;
             font-weight: 600;
             transition: all 0.3s ease;
-            border: 1px solid rgba(200, 230, 0, 0.35);
+            border: 1px solid transparent;
             cursor: pointer;
             font-size: 0.875rem;
             min-width: auto;
             white-space: nowrap;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.02em;
         }
         .lang-btn:hover {
-            transform: translateY(-1px);
+            color: #ffffff;
         }
         .lang-btn-active {
             opacity: 1;
+            background-color: #c8e600;
+            color: #000000;
+            box-shadow: 0 6px 16px rgba(200, 230, 0, 0.25);
         }
         .lang-btn-inactive {
-            opacity: 0.78;
+            opacity: 1;
+        }
+
+        /* Short/full label visibility */
+        .btn-short { display: none; }
+        @media (max-width: 540px) {
+            .btn-full  { display: none; }
+            .btn-short { display: inline; }
+        }
+
+        /* Mobile top-padding so logo clears the fixed lang switcher */
+        @media (max-width: 768px) {
+            .flex-grow.flex.items-center {
+                padding-top: 3.5rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .flex-grow.flex.items-center {
+                padding-top: 3rem;
+            }
         }
 
         /* Mobile optimizations */
@@ -191,14 +220,14 @@
             .lang-btn-container {
                 top: 0.75rem !important;
                 right: 0.75rem !important;
-                gap: 0.375rem;
+                gap: 0.2rem;
+                padding: 0.25rem;
                 position: fixed !important;
                 z-index: 99999 !important;
             }
             .lang-btn {
-                padding: 0.4rem 0.8rem;
+                padding: 0.42rem 0.82rem;
                 font-size: 0.8rem;
-                border-radius: 0.4rem;
             }
         }
 
@@ -206,12 +235,13 @@
             .lang-btn-container {
                 top: 0.5rem !important;
                 right: 0.5rem !important;
-                gap: 0.25rem;
+                gap: 0.15rem;
+                padding: 0.22rem;
                 position: fixed !important;
                 z-index: 99999 !important;
             }
             .lang-btn {
-                padding: 0.35rem 0.7rem;
+                padding: 0.38rem 0.7rem;
                 font-size: 0.75rem;
             }
         }
@@ -277,8 +307,8 @@
 <div id="cont">
     <!-- Language Buttons -->
     <div class="lang-btn-container">
-        <button id="georgianBtn" onclick="setLanguage('ka')" class="lang-btn lang-btn-active rounded font-semibold">ქართული</button>
-        <button id="englishBtn" onclick="setLanguage('en')" class="lang-btn lang-btn-inactive rounded font-semibold">ENGLISH</button>
+        <button id="georgianBtn" onclick="setLanguage('ka')" class="lang-btn lang-btn-active rounded font-semibold"><span class="btn-full">ქართული</span><span class="btn-short">ქარ</span></button>
+        <button id="englishBtn" onclick="setLanguage('en')" class="lang-btn lang-btn-inactive rounded font-semibold"><span class="btn-full">ENGLISH</span><span class="btn-short">EN</span></button>
     </div>
     
     <!-- Agreement Form Section -->
