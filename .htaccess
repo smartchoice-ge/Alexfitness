@@ -118,6 +118,13 @@ RewriteRule ^auth$ user_profile/auth.php [NC,L]
     # HTML files - Short cache for content updates
     <FilesMatch "\.(html|php)$">
         Header set Cache-Control "public, max-age=3600"
+
+    # Force fresh fetch for the public agreement PDF
+    <Files "Synergy-gym-agreement.pdf">
+        Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+        Header set Pragma "no-cache"
+        Header set Expires "0"
+    </Files>
     </FilesMatch>
     
     # Media files - 1 month cache

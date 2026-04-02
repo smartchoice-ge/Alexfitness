@@ -19,6 +19,13 @@
     </style>
 </head>
 <body>
+	<?php
+	$year = $year ?? date('Y');
+	$full_name = $full_name ?? '____________________';
+	$id_number = $id_number ?? '____________________';
+	$mobile_number = $mobile_number ?? '____________________';
+	$email = $email ?? '____________________';
+	?>
     <div class="section">
         <h2>კონტრაქტი წევრობის შესახებ</h2>
 	<h3><?php echo $year; ?> წ.</h3>
