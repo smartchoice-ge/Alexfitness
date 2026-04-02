@@ -78,7 +78,7 @@ function sendEmail($email, $unsubscribe_token)
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Luka Qaliashvili, ID: 0172409681 QR Code</title>
+    <title>Synergy Gym QR Code</title>
 </head>
 <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
 

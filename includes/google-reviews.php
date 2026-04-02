@@ -7,7 +7,7 @@
 $defaultConfig = [
     'api_key' => '',
     'place_id' => '',
-    'business_name' => 'Luka Qaliashvili, ID: 0172409681',
+    'business_name' => 'Synergy Gym',
     'maps_url' => 'https://www.google.com/maps/search/?api=1&query=Synergy%20Gym%20Tbilisi',
 ];
 

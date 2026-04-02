@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>Luka Qaliashvili, ID: 0172409681</title>
+            <title>Synergy Gym</title>
         </head>
         <body style="margin: 0; padding: 0; font-family: Arial, sans-serif; text-align: center;">
         

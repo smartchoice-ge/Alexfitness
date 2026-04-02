@@ -13,7 +13,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
 
-    <title>Luka Qaliashvili, ID: 0172409681</title>
+    <title>Synergy Gym</title>
 </head>
 <body>
 <!-- TOP BLOCK -->

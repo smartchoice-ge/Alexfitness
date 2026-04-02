@@ -27,7 +27,7 @@ try {
     $pdf = new TCPDF();
     $pdf->SetCreator(PDF_CREATOR);
     $pdf->SetAuthor('Synergy');
-    $pdf->SetTitle('Luka Qaliashvili, ID: 0172409681 Agreement');
+    $pdf->SetTitle('Synergy Gym Agreement');
     $pdf->SetSubject('Public membership agreement');
     $pdf->SetKeywords('TCPDF, PDF, agreement, synergy');
     $pdf->SetMargins(12, 12, 12);

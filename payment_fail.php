@@ -21,7 +21,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>გადახდის შეცდომა - Luka Qaliashvili, ID: 0172409681</title>
+    <title>გადახდის შეცდომა - Synergy Gym</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -139,7 +139,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                 
                 <!-- Header Section -->
                 <div class="header-section">
-                    <img src="img/logo.png" alt="Luka Qaliashvili, ID: 0172409681" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
+                    <img src="img/logo.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
                     
                     <div class="error-icon inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 pulse-error">
                         <i class="fas fa-exclamation-triangle text-white text-4xl"></i>

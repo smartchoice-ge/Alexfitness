@@ -106,7 +106,7 @@ if (isset($_POST['save_client'])) {
                 $clientID = $row['ID'];
     
                 // Send welcome SMS via sender.ge API (like tonus does)
-                $welcome_message = 'Welcome to Luka Qaliashvili, ID: 0172409681, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
+                $welcome_message = 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
                 $sms_sent = sendSMSViaSenderGE($phone, $welcome_message);
                 
                 // Insert SMS log to track the send attempt

@@ -228,7 +228,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         error_log("Client auto-saved to MSSQL with ID: {$client_id}");
         
         // Send welcome SMS via sender.ge API (like tonus does)
-        $welcome_message = 'Welcome to Luka Qaliashvili, ID: 0172409681, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
+        $welcome_message = 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
         $sms_sent = sendSMSViaSenderGE($phone_for_mssql, $welcome_message);
         
         // Insert SMS log to track the send attempt

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Luka Qaliashvili, ID: 0172409681</title>
+    <title>Privacy Policy - Synergy Gym</title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -206,7 +206,7 @@
                     <div id="privacy-ka">
                         <div class="terms-header">
                             <h1 class="terms-title">კონფიდენციალობის პოლიტიკა</h1>
-                            <p class="terms-subtitle">Luka Qaliashvili, ID: 0172409681-ის პერსონალურ მონაცემთა დამუშავების პოლიტიკა</p>
+                            <p class="terms-subtitle">Synergy Gym-ის პერსონალურ მონაცემთა დამუშავების პოლიტიკა</p>
                         </div>
 
                         <div class="terms-section">
@@ -404,7 +404,7 @@
                     <div id="privacy-en" style="display:none">
                         <div class="terms-header">
                             <h1 class="terms-title">Privacy Policy</h1>
-                            <p class="terms-subtitle">Luka Qaliashvili, ID: 0172409681 Personal Data Processing Policy</p>
+                            <p class="terms-subtitle">Synergy Gym Personal Data Processing Policy</p>
                         </div>
 
                         <div class="terms-section">
@@ -418,8 +418,8 @@
                             <h2 class="section-title">1. Data Controller</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>Company:</strong> Luka Qaliashvili, ID: 0172409681</p>
-                                    <p><strong>Sole Entrepreneur:</strong> Luka Qaliashvili, ID: 0172409681</p>
+                                    <p><strong>Company:</strong> Synergy Gym</p>
+                                    <p><strong>Sole Entrepreneur:</strong> Synergy Gym</p>
                                     <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                                     <p><strong>Email:</strong> Info@synergyfitness.ge</p>
                                 </div>
