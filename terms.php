@@ -223,13 +223,14 @@
                             <p>თუ თავად ტექსტიდან პირდაპირ სხვაგვარად არ გამომდინარეობს, წინამდებარე წესებსა და პირობებში გამოყენებულ ტერმინებს აქვთ შემდეგი მნიშვნელობა:</p>
                             
                             <div class="highlight-box">
-                                <p><strong>Smart Choice ან კომპანია:</strong> Synergy Gym და მისი ვებ-გვერდის/აპლიკაციის ოპერატორი</p>
-                                <p><strong>ვებ-გვერდი:</strong> კომპანიის ვებ-გვერდი www.synergy-gym.ge</p>
+                                <p><strong>Smart Choice ან კომპანია:</strong> Synergy Fitness და მისი ვებ-გვერდის/აპლიკაციის ოპერატორი</p>
+                                <p><strong>ს/მ:</strong> ლუკა ქალიაშვილი, პ/ნ: 0172409681</p>
+                                <p><strong>ვებ-გვერდი:</strong> კომპანიის ვებ-გვერდი synergyfitness.ge</p>
                             </div>
                             
                             <ul>
-                                <li><strong>მომსახურების მიმწოდებელი:</strong> Synergy Gym</li>
-                                <li><strong>საკონტაქტო ინფორმაცია:</strong> ტელ. +995-XXX-XXX-XXX მეილი info@synergy-gym.ge</li>
+                                <li><strong>მომსახურების მიმწოდებელი:</strong> Synergy Fitness</li>
+                                <li><strong>საკონტაქტო ინფორმაცია:</strong> მეილი Info@synergyfitness.ge</li>
                                 <li><strong>სამუშაო საათები:</strong> ყოველდღე 08:00-02:00 მდე</li>
                                 <li><strong>მიწოდების პირობები:</strong> განისაზღვრება სიტზე მითითებული სტანდარტული პაკეტების შესაბამისად, ასევე მიმდინარე საქციო პროდუქტებიდან გამომდინარე</li>
                             </ul>
@@ -389,9 +390,8 @@
 
                     <div class="contact-info">
                         <h4>Questions or Concerns?</h4>
-                        <p><strong>Address:</strong> Tbilisi, Georgia</p>
-                        <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
-                        <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
+                        <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
+                        <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
                         <p><strong>Last Updated:</strong> July 2025</p>
                     </div>
                     </div>
@@ -415,12 +415,13 @@
                             <div class="section-content">
                                 <p>Unless the context clearly indicates otherwise, the terms used in these Terms and Conditions have the following meanings:</p>
                                 <div class="highlight-box">
-                                    <p><strong>Smart Choice or Company:</strong> Synergy Gym and the operator of its website/application</p>
-                                    <p><strong>Website:</strong> The company website www.synergy-gym.ge</p>
+                                    <p><strong>Smart Choice or Company:</strong> Synergy Fitness and the operator of its website/application</p>
+                                    <p><strong>Sole Entrepreneur:</strong> Luka Qaliashvili, ID: 0172409681</p>
+                                    <p><strong>Website:</strong> The company website synergyfitness.ge</p>
                                 </div>
                                 <ul>
-                                    <li><strong>Service Provider:</strong> Synergy Gym</li>
-                                    <li><strong>Contact details:</strong> Tel. +995-XXX-XXX-XXX, E-mail: info@synergy-gym.ge</li>
+                                    <li><strong>Service Provider:</strong> Synergy Fitness</li>
+                                    <li><strong>Contact details:</strong> E-mail: Info@synergyfitness.ge</li>
                                     <li><strong>Working hours:</strong> Every day 08:00–02:00</li>
                                     <li><strong>Delivery/Provision terms:</strong> Determined by standard packages listed on the site as well as current promotional products</li>
                                 </ul>
@@ -475,21 +476,6 @@
                             <h2 class="section-title">4. Equipment Use</h2>
                             <div class="section-content">
                                 <p>Please return kettlebells and any other exercise equipment (plates, bars, dumbbells, etc.) to their place after use.</p>
-                            </div>
-                        </div>
-
-                        <div class="terms-section">
-                            <h2 class="section-title">5. Installment Payments</h2>
-                            <div class="section-content">
-                                <ul>
-                                    <li><strong>5.1.</strong> Installments may apply only to the 12-month membership.</li>
-                                    <li><strong>5.2.</strong> The price is determined by Synergy Gym and may change at any time.</li>
-                                    <li><strong>5.3.</strong> The price of a membership already purchased by a member cannot be changed.</li>
-                                    <li><strong>5.4.</strong> The total price is divided into 5 equal parts to be paid over the next 5 months from the date of purchase.</li>
-                                    <li><strong>5.5.</strong> Each installment must be paid within 5 months from purchase, no later than the date corresponding to the contract confirmation date.</li>
-                                    <li><strong>5.6.</strong> If delayed by more than five calendar days, the contract will be canceled and the paid amount will not be refunded.</li>
-                                    <li><strong>5.7.</strong> This membership cannot be paused or canceled.</li>
-                                </ul>
                             </div>
                         </div>
 
@@ -597,9 +583,8 @@
 
                         <div class="contact-info">
                             <h4>Questions or Concerns?</h4>
-                            <p><strong>Address:</strong> Tbilisi, Georgia</p>
-                            <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
+                            <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
+                            <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
                             <p><strong>Last Updated:</strong> July 2025</p>
                         </div>
                     </div>

@@ -211,7 +211,7 @@
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>ეს კონფიდენციალობის პოლიტიკა განმარტავს, თუ როგორ აგროვებს, იყენებს და იცავს Synergy Gym თქვენს პერსონალურ ინფორმაციას, როდესაც იყენებთ ჩვენს ვებ-გვერდს www.synergy-gym.ge ან ჩვენი ფიტნეს კლუბის მომსახურებებს.</p>
+                                <p>ეს კონფიდენციალობის პოლიტიკა განმარტავს, თუ როგორ აგროვებს, იყენებს და იცავს Synergy Fitness თქვენს პერსონალურ ინფორმაციას, როდესაც იყენებთ ჩვენს ვებ-გვერდს synergyfitness.ge ან ჩვენი ფიტნეს კლუბის მომსახურებებს.</p>
                                 <p>ჩვენ ვამუშავებთ თქვენს პერსონალურ მონაცემებს საქართველოს "პერსონალურ მონაცემთა დაცვის შესახებ" კანონის მოთხოვნების შესაბამისად.</p>
                             </div>
                         </div>
@@ -220,10 +220,10 @@
                             <h2 class="section-title">1. მონაცემთა კონტროლერი</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>კომპანია:</strong> Synergy Gym</p>
-                                    <p><strong>მისამართი:</strong> თბილისი, საქართველო</p>
-                                    <p><strong>ტელეფონი:</strong> +995-XXX-XXX-XXX</p>
-                                    <p><strong>ელ-ფოსტა:</strong> info@synergy-gym.ge</p>
+                                    <p><strong>კომპანია:</strong> Synergy Fitness</p>
+                                    <p><strong>ს/მ:</strong> ლუკა ქალიაშვილი, პ/ნ: 0172409681</p>
+                                    <p><strong>მისამართი:</strong> მარიჯანი 6, თბილისი, საქართველო</p>
+                                    <p><strong>ელ-ფოსტა:</strong> Info@synergyfitness.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -333,7 +333,7 @@
                                 </ul>
 
                                 <div class="highlight-box">
-                                    <p><strong>როგორ გამოვიყენოთ ეს უფლებები:</strong> დაგვიკავშირდით ელ-ფოსტაზე info@synergy-gym.ge ან ტელეფონით +995-XXX-XXX-XXX</p>
+                                    <p><strong>როგორ გამოვიყენოთ ეს უფლებები:</strong> დაგვიკავშირდით ელ-ფოსტაზე Info@synergyfitness.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -384,10 +384,9 @@
                             <div class="section-content">
                                 <p>კონფიდენციალობის ან მონაცემთა დაცვის საკითხებთან დაკავშირებით დაგვიკავშირდით:</p>
                                 <div class="highlight-box">
-                                    <p><strong>მონაცემთა დაცვის ოფიცერი:</strong> ქეთი</p>
-                                    <p><strong>ელ-ფოსტა:</strong> info@synergy-gym.ge</p>
-                                    <p><strong>ტელეფონი:</strong> +995-XXX-XXX-XXX</p>
-                                    <p><strong>მისამართი:</strong> თბილისი, საქართველო</p>
+                                    <p><strong>მონაცემთა დაცვის ოფიცერი:</strong> ლუკა ქალიაშვილი</p>
+                                    <p><strong>ელ-ფოსტა:</strong> Info@synergyfitness.ge</p>
+                                    <p><strong>მისამართი:</strong> მარიჯანი 6, თბილისი, საქართველო</p>
                                     <p><strong>სამუშაო საათები:</strong> ყოველდღე 08:00-02:00</p>
                                 </div>
                             </div>
@@ -395,9 +394,8 @@
 
                         <div class="contact-info">
                             <h4>კითხვები ან შეშფოთებები?</h4>
-                            <p><strong>მისამართი:</strong> თბილისი, საქართველო</p>
-                            <p><strong>ტელეფონი:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
-                            <p><strong>ელ-ფოსტა:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
+                            <p><strong>მისამართი:</strong> მარიჯანი 6, თბილისი, საქართველო</p>
+                            <p><strong>ელ-ფოსტა:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
                             <p><strong>ბოლოს განახლდა:</strong> სექტემბერი 2025</p>
                         </div>
                     </div>
@@ -411,7 +409,7 @@
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>This Privacy Policy explains how Synergy Gym collects, uses, and protects your personal information when you use our website www.synergy-gym.ge or our fitness club services.</p>
+                                <p>This Privacy Policy explains how Synergy Fitness collects, uses, and protects your personal information when you use our website synergyfitness.ge or our fitness club services.</p>
                                 <p>We process your personal data in accordance with the requirements of Georgia's "Personal Data Protection Law".</p>
                             </div>
                         </div>
@@ -420,10 +418,10 @@
                             <h2 class="section-title">1. Data Controller</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>Company:</strong> Synergy Gym</p>
-                                    <p><strong>Address:</strong> Tbilisi, Georgia</p>
-                                    <p><strong>Phone:</strong> +995-XXX-XXX-XXX</p>
-                                    <p><strong>Email:</strong> info@synergy-gym.ge</p>
+                                    <p><strong>Company:</strong> Synergy Fitness</p>
+                                    <p><strong>Sole Entrepreneur:</strong> Luka Qaliashvili, ID: 0172409681</p>
+                                    <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
+                                    <p><strong>Email:</strong> Info@synergyfitness.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -533,7 +531,7 @@
                                 </ul>
 
                                 <div class="highlight-box">
-                                    <p><strong>How to exercise these rights:</strong> Contact us at info@synergy-gym.ge or call +995-XXX-XXX-XXX</p>
+                                    <p><strong>How to exercise these rights:</strong> Contact us at Info@synergyfitness.ge</p>
                                 </div>
                             </div>
                         </div>
@@ -600,10 +598,9 @@
                             <div class="section-content">
                                 <p>For privacy or data protection issues, contact us:</p>
                                 <div class="highlight-box">
-                                    <p><strong>Data Protection Officer:</strong> Keti</p>
-                                    <p><strong>Email:</strong> info@synergy-gym.ge</p>
-                                    <p><strong>Phone:</strong> +995-XXX-XXX-XXX</p>
-                                    <p><strong>Address:</strong> Tbilisi, Georgia</p>
+                                    <p><strong>Data Protection Officer:</strong> Luka Qaliashvili</p>
+                                    <p><strong>Email:</strong> Info@synergyfitness.ge</p>
+                                    <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                                     <p><strong>Working hours:</strong> Every day 08:00-02:00</p>
                                 </div>
                             </div>
@@ -611,9 +608,8 @@
 
                         <div class="contact-info">
                             <h4>Questions or Concerns?</h4>
-                            <p><strong>Address:</strong> Tbilisi, Georgia</p>
-                            <p><strong>Phone:</strong> <a href="tel:+995322195119">+995-XXX-XXX-XXX</a></p>
-                            <p><strong>Email:</strong> <a href="mailto:info@synergy-gym.ge">info@synergy-gym.ge</a></p>
+                            <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
+                            <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
                             <p><strong>Last Updated:</strong> September 2025</p>
                         </div>
                     </div>
