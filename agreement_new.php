@@ -1,12 +1,16 @@
 ﻿<?php
-require 'vendor/autoload.php';
+require_once __DIR__ . '/tcpdf_loader.php';
+
+if (!loadTcpdfLibrary(__DIR__)) {
+    http_response_code(500);
+    echo json_encode(array('status' => 'error', 'message' => 'Server configuration error - missing PDF dependency'));
+    exit;
+}
+
 include_once 'db_connection.php';
 include_once 'mssql_connection.php';
 include_once 'mssql_packages_payments_helper.php';
 date_default_timezone_set('Asia/Tbilisi');
-
-
-use TCPDF;
 
 function generatePDF($id_number, $html_content) {
     $pdf = new TCPDF();

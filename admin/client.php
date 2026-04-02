@@ -17,10 +17,60 @@ include('../db_connection.php');
 include('../mssql_connection.php');
 include('../mssql_packages_payments_helper.php');
 include_once '../params.php';
+require_once '../tcpdf_loader.php';
 
 // Synergy runs on MSSQL only. Keep MySQL include for compatibility, but do not block page.
 if (!$mssqlconn) {
     die("Connection failed: MSSQL is unavailable.");
+}
+
+function ensureClientAgreementPdf(array $client)
+{
+    if (!loadTcpdfLibrary(dirname(__DIR__))) {
+        return null;
+    }
+
+    $idNumber = trim((string)($client['id_number'] ?? ''));
+    if ($idNumber === '') {
+        return null;
+    }
+
+    $docsDir = rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/docs/';
+    if (!is_dir($docsDir) && !mkdir($docsDir, 0755, true) && !is_dir($docsDir)) {
+        return null;
+    }
+
+    $pdfPath = $docsDir . $idNumber . '.pdf';
+    if (is_file($pdfPath)) {
+        return '/docs/' . rawurlencode($idNumber) . '.pdf';
+    }
+
+    $year = date('Y');
+    $full_name = $client['full_name'] ?? '____________________';
+    $id_number = $idNumber;
+    $mobile_number = $client['mobile_number'] ?? '____________________';
+    $email = $client['email'] ?? '____________________';
+
+    ob_start();
+    include '../agreement_template.php';
+    $htmlContent = ob_get_clean();
+
+    try {
+        $pdf = new TCPDF();
+        $pdf->SetCreator(PDF_CREATOR);
+        $pdf->SetAuthor('Synergy');
+        $pdf->SetTitle('User Agreement');
+        $pdf->SetSubject('User Agreement Form');
+        $pdf->AddPage();
+        $pdf->SetFont('dejavusans', '', 11);
+        $pdf->writeHTML($htmlContent);
+        $pdf->Output($pdfPath, 'F');
+    } catch (Throwable $e) {
+        error_log('Client agreement PDF generation failed: ' . $e->getMessage());
+        return null;
+    }
+
+    return is_file($pdfPath) ? '/docs/' . rawurlencode($idNumber) . '.pdf' : null;
 }
 
 // Initialize success message variable
@@ -86,6 +136,8 @@ if (isset($_GET['user_id'])) {
             }
         }
     }
+
+    $clientAgreementUrl = ensureClientAgreementPdf($client) ?? '/Synergy-gym-agreement.pdf';
 
     // Fetch payments for this client from MSSQL PaymentsWebsite
     $payments = [];
@@ -725,7 +777,7 @@ if (isset($_GET['user_id'])) {
                         PDF Documents
                     </h3>
                     <div class="space-y-3">
-                        <a href="/Synergy-gym-agreement.pdf" 
+                        <a href="<?= htmlspecialchars($clientAgreementUrl) ?>" 
                            target="_blank"
                            class="flex items-center justify-between bg-red-50 hover:bg-red-100 p-3 rounded-lg transition-colors">
                             <span class="font-medium text-red-700">Client Agreement</span>

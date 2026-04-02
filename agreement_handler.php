@@ -4,17 +4,17 @@ ini_set('display_errors', 0);
 ini_set('log_errors', 1);
 error_reporting(E_ALL);
 
+require_once __DIR__ . '/tcpdf_loader.php';
+
 try {
-    if (file_exists('vendor/autoload.php')) {
-        require 'vendor/autoload.php';
-    } else {
-        error_log("CRITICAL: vendor/autoload.php not found");
+    if (!loadTcpdfLibrary(__DIR__)) {
+        error_log("CRITICAL: TCPDF library not available");
         http_response_code(500);
-        echo json_encode(array('status' => 'error', 'message' => 'Server configuration error - missing dependencies'));
+        echo json_encode(array('status' => 'error', 'message' => 'Server configuration error - missing PDF dependency'));
         exit;
     }
 } catch (Exception $e) {
-    error_log("Error loading autoload: " . $e->getMessage());
+    error_log("Error loading PDF dependencies: " . $e->getMessage());
     http_response_code(500);
     echo json_encode(array('status' => 'error', 'message' => 'Server error'));
     exit;
