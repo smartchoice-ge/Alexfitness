@@ -77,7 +77,7 @@ $qrLink = generateQR($cleanMobile);
 $text = htmlspecialchars($settingValue);
 $text2 = htmlspecialchars($settingValue2);
 $message = trim($text . ' ' . $qrLink . ' ' . $text2);
-$apikey = 'SYNERGY_SMS_API_KEY'; // Your API key
+$apikey = '0f132d23f162ca06a769128a5e866cf1';
 
 // SMS sending (sender.ge) - use cleaned mobile number
 $url = "https://sender.ge/api/send.php";

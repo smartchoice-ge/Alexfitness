@@ -61,6 +61,63 @@ function generatePDF($id_number, $html_content) {
     }
 }
 
+// Function to clean mobile number for SMS API (remove country codes)
+function cleanMobileForSMS($mobile) {
+    $mobile = trim($mobile);
+    
+    // Remove +995 prefix if present
+    if (str_starts_with($mobile, '+995')) {
+        $mobile = substr($mobile, 4);
+    }
+    // Remove 995 prefix if present
+    elseif (str_starts_with($mobile, '995')) {
+        $mobile = substr($mobile, 3);
+    }
+    
+    return $mobile;
+}
+
+// Function to send SMS via sender.ge API (like tonus does)
+function sendSMSViaSenderGE($phone_number, $message) {
+    $apikey = '0f132d23f162ca06a769128a5e866cf1';
+    $url = "https://sender.ge/api/send.php";
+    
+    // Clean the phone number for SMS API
+    $cleanMobile = cleanMobileForSMS($phone_number);
+    error_log("SMS Send Attempt - Original: {$phone_number}, Cleaned: {$cleanMobile}, Message: {$message}");
+    
+    $fields = [
+        'apikey'      => $apikey,
+        'smsno'       => 2,
+        'destination' => $cleanMobile,
+        'content'     => $message
+    ];
+    
+    $fields_string = http_build_query($fields);
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+    
+    $response = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+    
+    $responseData = json_decode($response, true);
+    error_log("SMS API Response - HTTP Code: {$httpCode}, Response: " . $response);
+    
+    // Check if SMS was sent successfully
+    if ($httpCode == 200 && isset($responseData['data'][0]['statusId']) && $responseData['data'][0]['statusId'] == 1) {
+        error_log("SMS sent successfully to {$cleanMobile}");
+        return true;
+    } else {
+        error_log("SMS send failed - HTTP: {$httpCode}, Response: " . $response);
+        return false;
+    }
+}
+
 // Function to log MSSQL save operations
 function logMSSQLSave($conn, $mysql_client_id, $id_number, $full_name, $mobile_number, $email, $status, $error_message = null, $error_details = null, $mssql_client_id = null) {
     try {
@@ -167,9 +224,13 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         $client_id = $row['ID'];
         error_log("Client auto-saved to MSSQL with ID: {$client_id}");
         
-        // Insert welcome SMS log
+        // Send welcome SMS via sender.ge API (like tonus does)
+        $welcome_message = 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
+        $sms_sent = sendSMSViaSenderGE($phone_for_mssql, $welcome_message);
+        
+        // Insert SMS log to track the send attempt
         $smsSql = "INSERT INTO SMSLog (ClientID, SMSText, SmsSentStatusID, PhoneNumber, UserID) VALUES (?, ?, ?, ?, ?)";
-        $smsParams = array($client_id, 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.', 1, $phone_for_mssql, 1);
+        $smsParams = array($client_id, $welcome_message, ($sms_sent ? 1 : 2), $phone_for_mssql, 1);
         $smsStmt = sqlsrv_query($mssqlconn, $smsSql, $smsParams);
         
         if ($smsStmt) {

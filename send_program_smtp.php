@@ -47,7 +47,7 @@ if ($smsSqlRes->num_rows > 0) {
 $text = "გიგზავნით პროგრამის ლინკს. დასაკლები /wp1.pdf მოსამატებლი /wp2.pdf \n\nYou can find the workout program at this link Lose Weight /wp1.pdf, Gain Weight /wp2.pdf";
 $message = $text;
 
-$apikey = 'SYNERGY_SMS_API_KEY'; // Your API key
+$apikey = '0f132d23f162ca06a769128a5e866cf1';
 
 // SMS sending (sender.ge)
 $url = "https://sender.ge/api/send.php";

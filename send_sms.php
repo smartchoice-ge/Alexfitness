@@ -7,7 +7,7 @@ if (!isset($_POST['mobile']) || !isset($_POST['code'])) {
 $mobile = $_POST['mobile'];
 $verificationCode = $_POST['code'];
 
-$apikey = 'SYNERGY_SMS_API_KEY';
+$apikey = '0f132d23f162ca06a769128a5e866cf1';
 $url = "https://sender.ge/api/send.php";
 $message = $verificationCode;
 

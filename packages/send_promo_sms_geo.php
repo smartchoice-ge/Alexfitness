@@ -103,7 +103,7 @@ if (!$db_connection_error_for_settings) {
 // Construct the final SMS message
 $messageText = "gamarjoba " . ucfirst(htmlspecialchars($latinFirstName)) . ' '. $promoMessageCore . "\n\n" . $nosms;
 
-$apikey = 'SYNERGY_SMS_API_KEY'; 
+$apikey = '0f132d23f162ca06a769128a5e866cf1'; 
 
 $url = "https://sender.ge/api/send.php";
 $fields = [
