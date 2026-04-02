@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms and Conditions - Synergy Gym</title>
+    <title>Terms and Conditions - ლუკა ქალიაშვილი</title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -206,12 +206,12 @@
                     <div id="terms-ka">
                     <div class="terms-header">
                         <h1 class="terms-title">წესები და პირობები</h1>
-                        <p class="terms-subtitle">Synergy Gym-ის ვებ-გვერდისა და აპლიკაციის გამოყენების წესები და პირობები</p>
+                        <p class="terms-subtitle">ლუკა ქალიაშვილიის ვებ-გვერდისა და აპლიკაციის გამოყენების წესები და პირობები</p>
                     </div>
 
                     <div class="terms-section">
                         <div class="section-content">
-                            <p>წინამდებარე წესები და პირობები წარმოადგენს Synergy Gym-ის ვებ-გვერდისა და აპლიკაციის გამოყენების წესებსა და პირობებს (შემდგომში, „წესები და პირობები"). მათზე დათანხმებით, თქვენზე გავრცელდება აღნიშნული წესებისა და პირობების მოქმედება.</p>
+                            <p>წინამდებარე წესები და პირობები წარმოადგენს ლუკა ქალიაშვილიის ვებ-გვერდისა და აპლიკაციის გამოყენების წესებსა და პირობებს (შემდგომში, „წესები და პირობები"). მათზე დათანხმებით, თქვენზე გავრცელდება აღნიშნული წესებისა და პირობების მოქმედება.</p>
                             
                             <p>იმ შემთხვევაში თუ თქვენ არ ეთანხმებით წესებსა და პირობებს და არ გსურთ, რომ თქვენზე გავრცელდეს, არ დააჭიროთ დათანხმების ღილაკს და არ გამოიყენოთ ვებ-გვერდსა და აპლიკაციაში განთავსებული ჩვენი სერვისები.</p>
                         </div>
@@ -239,7 +239,7 @@
                     <div class="terms-section">
                         <h2 class="section-title">კლუბის წესები</h2>
                         <div class="section-content">
-                            <p>მოგესალმებით! Synergy Gym-ის კლუბის წევრად მიღების შესახებ განაცხადის ხელმოწერამდე, გთხოვთ გაეცნოთ შემდეგ წესებს:</p>
+                            <p>მოგესალმებით! ლუკა ქალიაშვილიის კლუბის წევრად მიღების შესახებ განაცხადის ხელმოწერამდე, გთხოვთ გაეცნოთ შემდეგ წესებს:</p>
                         </div>
                     </div>
 
@@ -257,24 +257,24 @@
                             
                             <p>კლუბის წევრისთვის ცნობილია და ის თანახმაა, რომ:</p>
                             <ul>
-                                <li><strong>2.1.</strong> კლუბის წევრის მიღებისას, Synergy Gym დაეყრდნობა წევრის ზემოთ აღნიშნულ განცხადებას და გარანტიას და არ არის ვალდებული განახორციელოს რაიმე სახის ფიზიკური ფორმის შეფასება, ფიზიკური მდგომარეობის განსაზღვრისთვის.</li>
-                                <li><strong>2.2.</strong> თუ Synergy Gym ჩაატარებს რაიმე სახის შეფასებას ან სხვა მსგავს ტესტირებას, ეს განხორციელებულ იქნება მხოლოდ მონაცემების შედარებისთვის, რათა კლუბის წევრმა შეძლოს თვალი მიადევნოს საკუთარ წინსვლას და არა დიაგნოსტირების მიზნებისთვის.</li>
-                                <li><strong>2.3.</strong> Synergy Gym-ს არ შეიძლება წაეყენოს რაიმე მოთხოვნები, საჩივარი ან ზარალის ანაზღაურების მოთხოვნა, ფიზიკური ფორმის შეფასების ან ანალოგიური ტესტირების შედეგების ან მათი ინტერპრეტაციის გამო.</li>
-                                <li><strong>2.4.</strong> Synergy Gym არ აგებს პასუხს რაიმე ზიანის გამო, რომელიც განპირობებულია კლუბის წევრის რაიმე სახის ავადმყოფობით ან მდგომარეობით, რომელზეც ვარჯიშებმა შესაძლოა უარყოფითად იმოქმედებს მის ჯანმრთელობაზე, უსაფრთხოებაზე ან ფიზიკურ მდგომარეობაზე, თუ ის შეასრულებს ასეთ სავარჯიშოებს ან მონაწილეობას მიიღებს მათში.</li>
+                                <li><strong>2.1.</strong> კლუბის წევრის მიღებისას, ლუკა ქალიაშვილი დაეყრდნობა წევრის ზემოთ აღნიშნულ განცხადებას და გარანტიას და არ არის ვალდებული განახორციელოს რაიმე სახის ფიზიკური ფორმის შეფასება, ფიზიკური მდგომარეობის განსაზღვრისთვის.</li>
+                                <li><strong>2.2.</strong> თუ ლუკა ქალიაშვილი ჩაატარებს რაიმე სახის შეფასებას ან სხვა მსგავს ტესტირებას, ეს განხორციელებულ იქნება მხოლოდ მონაცემების შედარებისთვის, რათა კლუბის წევრმა შეძლოს თვალი მიადევნოს საკუთარ წინსვლას და არა დიაგნოსტირების მიზნებისთვის.</li>
+                                <li><strong>2.3.</strong> ლუკა ქალიაშვილის არ შეიძლება წაეყენოს რაიმე მოთხოვნები, საჩივარი ან ზარალის ანაზღაურების მოთხოვნა, ფიზიკური ფორმის შეფასების ან ანალოგიური ტესტირების შედეგების ან მათი ინტერპრეტაციის გამო.</li>
+                                <li><strong>2.4.</strong> ლუკა ქალიაშვილი არ აგებს პასუხს რაიმე ზიანის გამო, რომელიც განპირობებულია კლუბის წევრის რაიმე სახის ავადმყოფობით ან მდგომარეობით, რომელზეც ვარჯიშებმა შესაძლოა უარყოფითად იმოქმედებს მის ჯანმრთელობაზე, უსაფრთხოებაზე ან ფიზიკურ მდგომარეობაზე, თუ ის შეასრულებს ასეთ სავარჯიშოებს ან მონაწილეობას მიიღებს მათში.</li>
                             </ul>
                             
                             <div class="highlight-box">
                                 <strong>მნიშვნელოვანი:</strong> თითოეულმა კლუბის წევრმა უნდა გაიაროს კონსულტაცია ექიმთან, ვარჯიშის დაწყებამდე ან მათ გაგრძელებამდე, თუ არსებობს ამის სამედიცინო ჩვენებები.
                             </div>
                             
-                            <p><strong>2.5.</strong> Synergy Gym პასუხს არ აგებს წევრის მდგომარეობაზე, რომელიც გამოწვეულია სპორტული კვების ან საკვები დანამატების გამოყენებით. წევრი კისრულობს ვალდებულებას გაიაროს კონსულტაციები ექიმთან საკვები დანამატების გამოყენებამდე.</p>
+                            <p><strong>2.5.</strong> ლუკა ქალიაშვილი პასუხს არ აგებს წევრის მდგომარეობაზე, რომელიც გამოწვეულია სპორტული კვების ან საკვები დანამატების გამოყენებით. წევრი კისრულობს ვალდებულებას გაიაროს კონსულტაციები ექიმთან საკვები დანამატების გამოყენებამდე.</p>
                         </div>
                     </div>
 
                     <div class="terms-section">
                         <h2 class="section-title">3. კლუბის წევრების დაშვება</h2>
                         <div class="section-content">
-                            <p>კლუბის წევრებზე გაიცემა დაშვებისათვის ბარათი ან დამატებით QR კოდი, რომლებიც საშუალებას მისცემს წევრებს შევიდნენ Synergy Gym-ის ტერიტორიაზე და ისარგებლონ აღჭურვილობით.</p>
+                            <p>კლუბის წევრებზე გაიცემა დაშვებისათვის ბარათი ან დამატებით QR კოდი, რომლებიც საშუალებას მისცემს წევრებს შევიდნენ ლუკა ქალიაშვილიის ტერიტორიაზე და ისარგებლონ აღჭურვილობით.</p>
                             
                             <p>კლუბის წევრი თანახმაა, არ მისცეს სხვა პირებს შენობებში თავისი ბარათის ან QR კოდის მეშვეობით შესვლის ნება და არ დაუშვას, რომ მასთან ერთად სხვა პირი შევიდეს შენობაში.</p>
                             
@@ -282,7 +282,8 @@
                                 <strong>გაფრთხილება:</strong> თუ კლუბის წევრი დაარღვევს წევრების დაშვების რაიმე პირობებს, მას შეიძლება გაუუქმდეს წევრობა, ყოველგვარი ანაზღაურების გარეშე და შეიძლება აღიძრას სისხლის სამართლის საქმე მის წინააღმდეგ.
                             </div>
                             
-                            <p>ბარათის შეცვლის ღირებულება განისაზღვრება მიმდინარე ფიქსირებული ტარიფის შესაბამისად. Synergy Gym-ის კლუბის წევრად გახდომისას პირს შეიძლება გადაუღონ ფოტო, რომელიც უსაფრთხოების მიზნებისთვის და მონიტორინგისთვის გამოიყენება.</p>
+                            <p>ბარათის შეცვლის ღირებულება განისაზღვრება მიმდინარე ფიქსირებული ტარიფის შესაბამისად. ლუკა ქალიაშვილიის კლუბის წევრად გახდომისას პირს შეიძლება გადაუღონ ფოტო, რომელიც უსაფრთხოების მიზნებისთვის და მონიტორინგისთვის გამოიყენება.</p>
+                            <p>16 წლამდე ასაკის ბავშვები სპორტდარბაზში დაიშვებიან მხოლოდ მშობლის ან კანონიერი წარმომადგენლის წერილობითი თანხმობის შემთხვევაში. აღნიშნული თანხმობა უნდა იყოს დადასტურებული მშობლის/კანონიერი წარმომადგენლის ხელმოწერით. ასევე, 16 წლამდე ასაკის ბავშვებისთვის დარბაზში დაშვება შესაძლებელია პერსონალური ტრენერის აყვანის შემთხვევაშიც, რომელიც უზრუნველყოფს მათ უსაფრთხო და კონტროლირებად ვარჯიშს.</p>
                         </div>
                     </div>
 
@@ -299,37 +300,37 @@
                             <p>კარადები ხელმისაწვდომია და განთავსებულია გასახდელებში. წევრი ვალდებულია ყურადღება მიაქციოს წევრის პირად ნივთებს.</p>
                             
                             <div class="highlight-box">
-                                <strong>მნიშვნელოვანი:</strong> Synergy Gym-ის თანამშრომლები და კონტრაქტორები პასუხს არ აგებენ პირადი ნივთების დაკარგვისთვის. კარადები არ წარმოადგენს მოწყობილობებს უსაფრთხოდ შენახვისთვის.
+                                <strong>მნიშვნელოვანი:</strong> ლუკა ქალიაშვილიის თანამშრომლები და კონტრაქტორები პასუხს არ აგებენ პირადი ნივთების დაკარგვისთვის. კარადები არ წარმოადგენს მოწყობილობებს უსაფრთხოდ შენახვისთვის.
                             </div>
                             
-                            <p>შესაბამისად, წევრი ვალდებულია კლუბის მომსახურებით სარგებლობისას თან იქონიოს ყველა ფასეული ნივთი. წინააღმდეგ შემთხვევაში Synergy Gym პასუხს არ აგებს ასეთი ნივთების დაკარგვაზე ან/და დაზიანებაზე.</p>
+                            <p>შესაბამისად, წევრი ვალდებულია კლუბის მომსახურებით სარგებლობისას თან იქონიოს ყველა ფასეული ნივთი. წინააღმდეგ შემთხვევაში ლუკა ქალიაშვილი პასუხს არ აგებს ასეთი ნივთების დაკარგვაზე ან/და დაზიანებაზე.</p>
                         </div>
                     </div>
 
                     <div class="terms-section">
                         <h2 class="section-title">7. პირდაპირი მარკეტინგის მიზნებისთვის პერსონალურ მონაცემთა დამუშავებაზე თანხმობა</h2>
                         <div class="section-content">
-                            <p><strong>7.1.</strong> წინამდებარე ხელშეკრულებაზე ხელმოწერით წევრი თანხმობას აცხადებს, რომ Synergy Gym მისი პირადი მონაცემები, კერძოდ სახელი (სახელები), მისამართი, ტელეფონის ნომერი, ელექტრონული ფოსტის მისამართი დაამუშაოს პირდაპირი მარკეტინგის მიზნებისათვის და აღნიშნულ მონაცემებზე გაუგზავნოს და მიაწოდოს ინფორმაცია Synergy Gym-ის არსებული, დაგეგმილი ან/და სამომავლო შეთავაზებების, რეკლამების, ფასდაკლებების, აქციებისა და ღონისძიებების შესახებ. ასევე საინფორმაციო შინაარსის შეტყობინების გაგზავნის მიზნით.</p>
+                            <p><strong>7.1.</strong> წინამდებარე ხელშეკრულებაზე ხელმოწერით წევრი თანხმობას აცხადებს, რომ ლუკა ქალიაშვილი მისი პირადი მონაცემები, კერძოდ სახელი (სახელები), მისამართი, ტელეფონის ნომერი, ელექტრონული ფოსტის მისამართი დაამუშაოს პირდაპირი მარკეტინგის მიზნებისათვის და აღნიშნულ მონაცემებზე გაუგზავნოს და მიაწოდოს ინფორმაცია ლუკა ქალიაშვილიის არსებული, დაგეგმილი ან/და სამომავლო შეთავაზებების, რეკლამების, ფასდაკლებების, აქციებისა და ღონისძიებების შესახებ. ასევე საინფორმაციო შინაარსის შეტყობინების გაგზავნის მიზნით.</p>
                             
-                            <p><strong>7.2.</strong> წევრისთვის ცნობილია, რომ ნებისმიერ დროს შეუძლია უარი განაცხადოს და უკან გამოითხოვოს წინამდებარე დოკუმენტით გაცხადებული თანხმობა მისი პირადი მონაცემების პირდაპირი მარკეტინგის მიზნებისთვის დამუშავებასთან დაკავშირებით და აღნიშნული უარი შეუძლია განაცხადოს წერილობითი ფორმით, Synergy Gym-ისთვის აღნიშნულის შესახებ იმავე კომუნიკაციის საშუალებით, რასაც შუალებითაც იღებს ინფორმაციას.</p>
+                            <p><strong>7.2.</strong> წევრისთვის ცნობილია, რომ ნებისმიერ დროს შეუძლია უარი განაცხადოს და უკან გამოითხოვოს წინამდებარე დოკუმენტით გაცხადებული თანხმობა მისი პირადი მონაცემების პირდაპირი მარკეტინგის მიზნებისთვის დამუშავებასთან დაკავშირებით და აღნიშნული უარი შეუძლია განაცხადოს წერილობითი ფორმით, ლუკა ქალიაშვილიისთვის აღნიშნულის შესახებ იმავე კომუნიკაციის საშუალებით, რასაც შუალებითაც იღებს ინფორმაციას.</p>
                         </div>
                     </div>
 
                     <div class="terms-section">
                         <h2 class="section-title">8. წევრთა უფლებები</h2>
                         <div class="section-content">
-                            <p>Synergy Gym-ის კლუბის წევრობა წევრს უფლებას აძლევს ივარჯიშოს შეძენილი აბონიმენტით განსაზღვრული ვადით და პირობით.</p>
+                            <p>ლუკა ქალიაშვილიის კლუბის წევრობა წევრს უფლებას აძლევს ივარჯიშოს შეძენილი აბონიმენტით განსაზღვრული ვადით და პირობით.</p>
                         </div>
                     </div>
 
                     <div class="terms-section">
                         <h2 class="section-title">9. წევრის ვალდებულებები</h2>
                         <div class="section-content">
-                            <p>Synergy Gym-ის კლუბის წევრს მოეთხოვება:</p>
+                            <p>ლუკა ქალიაშვილიის კლუბის წევრს მოეთხოვება:</p>
                             <ul>
                                 <li><strong>9.1.</strong> დაიცვას კლუბის ყველა წესი და წინამდებარე ხელშეკრულების პირობები;</li>
                                 <li><strong>9.2.</strong> გადაიხადოს ყველა შეთანხმებული საფასური;</li>
-                                <li><strong>9.3.</strong> წინასწარ აცნობოს Synergy Gym-ს თუ არსებობს რაიმე სახის დაავადება ან რისკი, კლუბის წევრის ჯანმრთელობისთვის.</li>
+                                <li><strong>9.3.</strong> წინასწარ აცნობოს ლუკა ქალიაშვილის თუ არსებობს რაიმე სახის დაავადება ან რისკი, კლუბის წევრის ჯანმრთელობისთვის.</li>
                             </ul>
                         </div>
                     </div>
@@ -340,7 +341,7 @@
                             <p>შენობაში აკრძალულია მოწევა, ალკოჰოლის მიღება და ნარკოტიკების (მათ შორის სტეროიდების) მოხმარება, დაუშვებელია რაიმე სახის იარაღის შეტანა.</p>
                             
                             <div class="highlight-box">
-                                <strong>მნიშვნელოვანი:</strong> კლუბის წევრი თანახმაა არ განახორციელოს რაიმე მოქმედებები Synergy Gym-ის შენობაში, ისეთი ნივთიერებების ზემოქმედების დროს, რომლებსაც შეუძლია დააქვეითოს მისი უნარი, მართოს აღჭურვილობა.
+                                <strong>მნიშვნელოვანი:</strong> კლუბის წევრი თანახმაა არ განახორციელოს რაიმე მოქმედებები ლუკა ქალიაშვილიის შენობაში, ისეთი ნივთიერებების ზემოქმედების დროს, რომლებსაც შეუძლია დააქვეითოს მისი უნარი, მართოს აღჭურვილობა.
                             </div>
                         </div>
                     </div>
@@ -348,7 +349,7 @@
                     <div class="terms-section">
                         <h2 class="section-title">11. შეწყვეტა</h2>
                         <div class="section-content">
-                            <p>კლუბის წევრობა შეიძლება შეწყდეს ვადამდე, წევრის ხანგრძლივი ავადმყოფობის ან ფიზიკური მდგომარეობის გამო. Synergy Gym უფლებას იტოვებს შეწყვიტოს წევრის კონტრაქტი, შემდეგი პირობების შესაბამისად:</p>
+                            <p>კლუბის წევრობა შეიძლება შეწყდეს ვადამდე, წევრის ხანგრძლივი ავადმყოფობის ან ფიზიკური მდგომარეობის გამო. ლუკა ქალიაშვილი უფლებას იტოვებს შეწყვიტოს წევრის კონტრაქტი, შემდეგი პირობების შესაბამისად:</p>
                             <ul>
                                 <li><strong>11.1.</strong> წევრის შეუსაბამობა წესებში ან/და ხელშეკრულებაში მითითებულ რომელიმე კრიტერიუმთან;</li>
                                 <li><strong>11.2.</strong> კლუბის წევრის ან მისი თანამშრომლების (ან კონტრაქტორების) საჩივრის საფუძველზე.</li>
@@ -359,7 +360,7 @@
                     <div class="terms-section">
                         <h2 class="section-title">13. პასუხისმგებლობა</h2>
                         <div class="section-content">
-                            <p>Synergy Gym არ აგებს პასუხს მისგან დამოუკიდებელი მიზეზების გამო ხელშეკრულების პირობების შეუსრულებლობაზე.</p>
+                            <p>ლუკა ქალიაშვილი არ აგებს პასუხს მისგან დამოუკიდებელი მიზეზების გამო ხელშეკრულების პირობების შეუსრულებლობაზე.</p>
                         </div>
                     </div>
 
@@ -399,12 +400,12 @@
                     <div id="terms-en" style="display:none">
                         <div class="terms-header">
                             <h1 class="terms-title">Terms and Conditions</h1>
-                            <p class="terms-subtitle">Rules and conditions for using the Synergy Gym website and application</p>
+                            <p class="terms-subtitle">Rules and conditions for using the ლუკა ქალიაშვილი website and application</p>
                         </div>
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>These Terms and Conditions set the rules for using the Synergy Gym website and application (hereinafter, the “Terms and Conditions”). By agreeing to them, you accept that these Terms and Conditions apply to you.</p>
+                                <p>These Terms and Conditions set the rules for using the ლუკა ქალიაშვილი website and application (hereinafter, the “Terms and Conditions”). By agreeing to them, you accept that these Terms and Conditions apply to you.</p>
                                 <p>If you do not agree and do not want these Terms and Conditions to apply, please do not click the consent button and do not use the services provided on the website and in the application.</p>
                             </div>
                         </div>
@@ -414,11 +415,11 @@
                             <div class="section-content">
                                 <p>Unless the context clearly indicates otherwise, the terms used in these Terms and Conditions have the following meanings:</p>
                                 <div class="highlight-box">
-                                    <p><strong>Sole Entrepreneur:</strong> Synergy Gym</p>
+                                    <p><strong>Sole Entrepreneur:</strong> ლუკა ქალიაშვილი, ID: 0172409681</p>
                                     <p><strong>Website:</strong> The company website synergyfitness.ge</p>
                                 </div>
                                 <ul>
-                                    <li><strong>Service Provider:</strong> Synergy Gym</li>
+                                    <li><strong>Service Provider:</strong> ლუკა ქალიაშვილი, ID: 0172409681</li>
                                     <li><strong>Contact details:</strong> E-mail: Info@synergyfitness.ge</li>
                                     <li><strong>Working hours:</strong> Every day 08:00–02:00</li>
                                     <li><strong>Delivery/Provision terms:</strong> Determined by standard packages listed on the site as well as current promotional products</li>
@@ -429,7 +430,7 @@
                         <div class="terms-section">
                             <h2 class="section-title">Club Rules</h2>
                             <div class="section-content">
-                                <p>Welcome! Before signing the application for becoming a club member of Synergy Gym, please read the following rules.</p>
+                                <p>Welcome! Before signing the application for becoming a club member of ლუკა ქალიაშვილი, please read the following rules.</p>
                             </div>
                         </div>
 
@@ -446,27 +447,28 @@
                                 <p>The club member guarantees and declares that they are not limited in ability, not ill, and not in a condition that would prevent them from exercising, and that such activity will not harm or adversely affect their health, safety, or physical condition.</p>
                                 <p>The club member is aware and agrees that:</p>
                                 <ul>
-                                    <li><strong>2.1.</strong> Upon admission, Synergy Gym relies on the member’s statements and warranty above and is not obliged to carry out any fitness or health assessment.</li>
-                                    <li><strong>2.2.</strong> If Synergy Gym conducts any assessment or similar testing, it is only for comparison of data so the member can track progress, not for diagnosis.</li>
-                                    <li><strong>2.3.</strong> No claims or compensation requests can be made against Synergy Gym regarding results or interpretation of fitness assessments or similar testing.</li>
-                                    <li><strong>2.4.</strong> Synergy Gym is not liable for any harm caused by any illness or condition of a member that may be adversely affected by exercise if the member performs such exercises or participates in them.</li>
+                                    <li><strong>2.1.</strong> Upon admission, ლუკა ქალიაშვილი relies on the member’s statements and warranty above and is not obliged to carry out any fitness or health assessment.</li>
+                                    <li><strong>2.2.</strong> If ლუკა ქალიაშვილი conducts any assessment or similar testing, it is only for comparison of data so the member can track progress, not for diagnosis.</li>
+                                    <li><strong>2.3.</strong> No claims or compensation requests can be made against ლუკა ქალიაშვილი regarding results or interpretation of fitness assessments or similar testing.</li>
+                                    <li><strong>2.4.</strong> ლუკა ქალიაშვილი is not liable for any harm caused by any illness or condition of a member that may be adversely affected by exercise if the member performs such exercises or participates in them.</li>
                                 </ul>
                                 <div class="highlight-box">
                                     <strong>Important:</strong> Each member should consult a doctor before starting or continuing exercise if medically indicated.
                                 </div>
-                                <p><strong>2.5.</strong> Synergy Gym is not responsible for conditions caused by the use of sports nutrition or supplements. The member undertakes to consult a doctor before using any supplements.</p>
+                                <p><strong>2.5.</strong> ლუკა ქალიაშვილი is not responsible for conditions caused by the use of sports nutrition or supplements. The member undertakes to consult a doctor before using any supplements.</p>
                             </div>
                         </div>
 
                         <div class="terms-section">
                             <h2 class="section-title">3. Member Access</h2>
                             <div class="section-content">
-                                <p>Members are issued an access card or an additional QR code that allows entry to Synergy Gym premises and use of equipment.</p>
+                                <p>Members are issued an access card or an additional QR code that allows entry to ლუკა ქალიაშვილი premises and use of equipment.</p>
                                 <p>The member agrees not to allow other persons to enter the premises using their card or QR code and not to let another person enter together with them.</p>
                                 <div class="highlight-box">
                                     <strong>Warning:</strong> If a member violates any access conditions, membership may be canceled without any refund and criminal proceedings may be initiated.
                                 </div>
-                                <p>The card replacement fee is determined by the current fixed tariff. Upon becoming a member of Synergy Gym, a photo may be taken for security and monitoring purposes.</p>
+                                <p>The card replacement fee is determined by the current fixed tariff. Upon becoming a member of ლუკა ქალიაშვილი, a photo may be taken for security and monitoring purposes.</p>
+                                <p>Children under the age of 16 may be admitted to the gym only with written consent from a parent or legal guardian, confirmed by their signature. Additionally, children under 16 may be admitted with a personal trainer who ensures their safe and supervised training.</p>
                             </div>
                         </div>
 
@@ -482,35 +484,35 @@
                             <div class="section-content">
                                 <p>Lockers are available in the changing rooms. Members are responsible for their personal belongings.</p>
                                 <div class="highlight-box">
-                                    <strong>Important:</strong> Employees and contractors of Synergy Gym are not responsible for lost personal items. Lockers are not secure storage devices.
+                                    <strong>Important:</strong> Employees and contractors of ლუკა ქალიაშვილი are not responsible for lost personal items. Lockers are not secure storage devices.
                                 </div>
-                                <p>Therefore, members must keep valuables with them while using the club. Otherwise, Synergy Gym is not liable for loss or damage.</p>
+                                <p>Therefore, members must keep valuables with them while using the club. Otherwise, ლუკა ქალიაშვილი is not liable for loss or damage.</p>
                             </div>
                         </div>
 
                         <div class="terms-section">
                             <h2 class="section-title">7. Consent to Personal Data Processing for Direct Marketing</h2>
                             <div class="section-content">
-                                <p><strong>7.1.</strong> By signing this agreement, the member consents to Synergy Gym processing their personal data (name, address, phone number, email) for direct marketing and sending information about existing, planned, or future offers, ads, discounts, promotions, events, and for informational messages.</p>
-                                <p><strong>7.2.</strong> The member knows they can withdraw this consent at any time by notifying Synergy Gym in writing using the same communication channel through which they receive information.</p>
+                                <p><strong>7.1.</strong> By signing this agreement, the member consents to ლუკა ქალიაშვილი processing their personal data (name, address, phone number, email) for direct marketing and sending information about existing, planned, or future offers, ads, discounts, promotions, events, and for informational messages.</p>
+                                <p><strong>7.2.</strong> The member knows they can withdraw this consent at any time by notifying ლუკა ქალიაშვილი in writing using the same communication channel through which they receive information.</p>
                             </div>
                         </div>
 
                         <div class="terms-section">
                             <h2 class="section-title">8. Member Rights</h2>
                             <div class="section-content">
-                                <p>Membership in Synergy Gym entitles the member to exercise for the period and under the conditions specified in the purchased membership.</p>
+                                <p>Membership in ლუკა ქალიაშვილი entitles the member to exercise for the period and under the conditions specified in the purchased membership.</p>
                             </div>
                         </div>
 
                         <div class="terms-section">
                             <h2 class="section-title">9. Member Obligations</h2>
                             <div class="section-content">
-                                <p>Members of Synergy Gym shall:</p>
+                                <p>Members of ლუკა ქალიაშვილი shall:</p>
                                 <ul>
                                     <li><strong>9.1.</strong> Follow all club rules and the terms of this agreement;</li>
                                     <li><strong>9.2.</strong> Pay all agreed fees;</li>
-                                    <li><strong>9.3.</strong> Inform Synergy Gym in advance of any disease or risk to health.</li>
+                                    <li><strong>9.3.</strong> Inform ლუკა ქალიაშვილი in advance of any disease or risk to health.</li>
                                 </ul>
                             </div>
                         </div>
@@ -520,7 +522,7 @@
                             <div class="section-content">
                                 <p>Smoking, drinking alcohol, and using drugs (including steroids) are prohibited on the premises. Bringing any type of weapon is not allowed.</p>
                                 <div class="highlight-box">
-                                    <strong>Important:</strong> The member agrees not to perform any actions on the premises of Synergy Gym under the influence of substances that may impair their ability to operate equipment.
+                                    <strong>Important:</strong> The member agrees not to perform any actions on the premises of ლუკა ქალიაშვილი under the influence of substances that may impair their ability to operate equipment.
                                 </div>
                             </div>
                         </div>
@@ -528,7 +530,7 @@
                         <div class="terms-section">
                             <h2 class="section-title">11. Termination</h2>
                             <div class="section-content">
-                                <p>Membership may be terminated early due to long illness or physical condition. Synergy Gym reserves the right to terminate the member’s contract under the following conditions.</p>
+                                <p>Membership may be terminated early due to long illness or physical condition. ლუკა ქალიაშვილი reserves the right to terminate the member’s contract under the following conditions.</p>
                                 <ul>
                                     <li><strong>11.1.</strong> Non-compliance with any criteria specified in the rules and/or agreement;</li>
                                     <li><strong>11.2.</strong> Based on a complaint from a club member or its employees (or contractors).</li>
@@ -551,7 +553,7 @@
                         <div class="terms-section">
                             <h2 class="section-title">13. Liability</h2>
                             <div class="section-content">
-                                <p>Synergy Gym is not liable for non-performance caused by reasons beyond its control.</p>
+                                <p>ლუკა ქალიაშვილი is not liable for non-performance caused by reasons beyond its control.</p>
                             </div>
                         </div>
 

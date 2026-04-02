@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html>
+﻿<?php
+$lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
+header("Location: agreement.php?lang=" . $lang);
+exit;
+?>
+<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">

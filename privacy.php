@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Synergy Gym</title>
+    <title>Privacy Policy - ლუკა ქალიაშვილი</title>
     
     <link rel="stylesheet" href="css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -206,7 +206,7 @@
                     <div id="privacy-ka">
                         <div class="terms-header">
                             <h1 class="terms-title">კონფიდენციალობის პოლიტიკა</h1>
-                            <p class="terms-subtitle">Synergy Gym-ის პერსონალურ მონაცემთა დამუშავების პოლიტიკა</p>
+                            <p class="terms-subtitle">ლუკა ქალიაშვილიის პერსონალურ მონაცემთა დამუშავების პოლიტიკა</p>
                         </div>
 
                         <div class="terms-section">
@@ -404,12 +404,12 @@
                     <div id="privacy-en" style="display:none">
                         <div class="terms-header">
                             <h1 class="terms-title">Privacy Policy</h1>
-                            <p class="terms-subtitle">Synergy Gym Personal Data Processing Policy</p>
+                            <p class="terms-subtitle">ლუკა ქალიაშვილი Personal Data Processing Policy</p>
                         </div>
 
                         <div class="terms-section">
                             <div class="section-content">
-                                <p>This Privacy Policy explains how Luka Qaliashvili (ID: 0172409681) collects, uses, and protects your personal information when you use our website synergyfitness.ge or our fitness club services.</p>
+                                <p>This Privacy Policy explains how ლუკა ქალიაშვილი (ID: 0172409681) collects, uses, and protects your personal information when you use our website synergyfitness.ge or our fitness club services.</p>
                                 <p>We process your personal data in accordance with the requirements of Georgia's "Personal Data Protection Law".</p>
                             </div>
                         </div>
@@ -418,8 +418,8 @@
                             <h2 class="section-title">1. Data Controller</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>Company:</strong> Synergy Gym</p>
-                                    <p><strong>Sole Entrepreneur:</strong> Synergy Gym</p>
+                                    <p><strong>Company:</strong> ლუკა ქალიაშვილი, ID: 0172409681</p>
+                                    <p><strong>Sole Entrepreneur:</strong> ლუკა ქალიაშვილი, ID: 0172409681</p>
                                     <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                                     <p><strong>Email:</strong> Info@synergyfitness.ge</p>
                                 </div>
@@ -598,7 +598,7 @@
                             <div class="section-content">
                                 <p>For privacy or data protection issues, contact us:</p>
                                 <div class="highlight-box">
-                                    <p><strong>Data Protection Officer:</strong> Luka Qaliashvili</p>
+                                    <p><strong>Data Protection Officer:</strong> ლუკა ქალიაშვილი</p>
                                     <p><strong>Email:</strong> Info@synergyfitness.ge</p>
                                     <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                                     <p><strong>Working hours:</strong> Every day 08:00-02:00</p>
