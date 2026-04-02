@@ -16,6 +16,32 @@ $error = '';
 // Include database connection
 require_once 'mssql_connection.php';
 
+/**
+ * Try to authenticate against a given MSSQL users table.
+ */
+function authenticateUser($conn, $username, $hashedPassword)
+{
+    if (!$conn) {
+        return null;
+    }
+
+    $sql = "SELECT TOP 1 id, UserName, Password, IsActive FROM users WHERE UserName = ? AND Password = ? AND IsActive = 1";
+    $params = array($username, $hashedPassword);
+    $stmt = sqlsrv_query($conn, $sql, $params);
+
+    if ($stmt === false) {
+        return null;
+    }
+
+    $user = null;
+    if (sqlsrv_has_rows($stmt)) {
+        $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
+    }
+    sqlsrv_free_stmt($stmt);
+
+    return $user ?: null;
+}
+
 // Session fixation and CSRF protection
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
@@ -34,32 +60,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Hash the input password with MD5
         $hashed_password = md5($password);
 
-        // Prepare the SQL query to select id, UserName, Password, IsActive
-        $sql = "SELECT id, UserName, Password, IsActive FROM users WHERE UserName = ? AND Password = ? AND IsActive = 1";
-        $params = array($username, $hashed_password);
+        // 1) Try Synergy DB first
+        $user = authenticateUser($mssqlconn, $username, $hashed_password);
 
-        // Execute the query
-        $stmt = sqlsrv_query($mssqlconn, $sql, $params);
+        // 2) Fallback: shared Tonus users DB (same credentials as tonus.ge admin)
+        if (!$user) {
+            $sharedConn = sqlsrv_connect("smartchoice.zapto.org,1433", array(
+                "Database" => "FitnesTonus",
+                "Uid" => "fitnes_tonus",
+                "PWD" => "fitnes!@#",
+                "Encrypt" => false,
+                "TrustServerCertificate" => true,
+                "CharacterSet" => "UTF-8",
+                "LoginTimeout" => 5,
+            ));
 
-        if ($stmt === false) {
-            $error = "Database error: " . print_r(sqlsrv_errors(), true);
-        } else {
-            // Fetch the user
-            if (sqlsrv_has_rows($stmt)) {
-                $user = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
-                // User found and active
-                session_regenerate_id(true); // Prevent session fixation
-                $_SESSION['user_logged_in'] = true;
-                $_SESSION['username'] = $username; // Store username in session
-                $_SESSION['user_id'] = $user['id']; // Store user ID in session
-                header('Location: admin/users_list.php'); // Redirect to admin users list page
-                exit;
-            } else {
-                // No active user found with provided credentials
-                $error = 'Invalid username or password or account is not active.';
+            $user = authenticateUser($sharedConn, $username, $hashed_password);
+
+            if ($sharedConn) {
+                sqlsrv_close($sharedConn);
             }
-            sqlsrv_free_stmt($stmt); // Free the statement
         }
+
+        if ($user) {
+            session_regenerate_id(true); // Prevent session fixation
+            $_SESSION['user_logged_in'] = true;
+            $_SESSION['username'] = $username; // Store username in session
+            $_SESSION['user_id'] = $user['id']; // Store user ID in session
+            header('Location: admin/users_list.php'); // Redirect to admin users list page
+            exit;
+        }
+
+        $error = 'Invalid username or password or account is not active.';
     }
 }
 

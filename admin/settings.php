@@ -14,9 +14,39 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true)
 // Include MSSQL database connection
 include_once '../mssql_connection.php';
 
+function getSharedSettingsConnection()
+{
+    return sqlsrv_connect("smartchoice.zapto.org,1433", array(
+        "Database" => "FitnesTonus",
+        "Uid" => "fitnes_tonus",
+        "PWD" => "fitnes!@#",
+        "Encrypt" => false,
+        "TrustServerCertificate" => true,
+        "CharacterSet" => "UTF-8",
+        "LoginTimeout" => 5,
+    ));
+}
+
+function resolveSettingsConnection($primaryConn)
+{
+    if ($primaryConn) {
+        $probe = sqlsrv_query($primaryConn, "SELECT TOP 1 id FROM WebsiteSettings");
+        if ($probe !== false) {
+            $hasRow = sqlsrv_fetch_array($probe, SQLSRV_FETCH_ASSOC);
+            sqlsrv_free_stmt($probe);
+            if ($hasRow) {
+                return $primaryConn;
+            }
+        }
+    }
+
+    return getSharedSettingsConnection();
+}
+
 // Initialize success message variable
 $successMessage = '';
 $errorMessage = '';
+$settingsConn = resolveSettingsConnection($mssqlconn);
 
 // Handle form submission to update settings
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
@@ -30,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update'])) {
                 break;
             }
 
-            $stmt = sqlsrv_query($mssqlconn, "UPDATE WebsiteSettings SET value = ? WHERE id = ?", array($value, $sanitized_id));
+            $stmt = sqlsrv_query($settingsConn, "UPDATE WebsiteSettings SET value = ? WHERE id = ?", array($value, $sanitized_id));
             if ($stmt === false) {
                 $errors = sqlsrv_errors();
                 $errorMessage = 'Error updating setting ID ' . $sanitized_id . ': ' . ($errors ? $errors[0]['message'] : 'Unknown error');
@@ -60,6 +90,27 @@ if ($mssqlconn) {
     } else {
         $errors = sqlsrv_errors();
         $errorMessage = "Error fetching settings: " . ($errors ? $errors[0]['message'] : 'Unknown error');
+    }
+
+    // If Synergy DB has no WebsiteSettings, fall back to shared Tonus settings table.
+    if (empty($settings)) {
+        $sharedConn = getSharedSettingsConnection();
+        if ($sharedConn) {
+            $sharedResult = sqlsrv_query($sharedConn, $sql);
+            if ($sharedResult) {
+                while ($row = sqlsrv_fetch_array($sharedResult, SQLSRV_FETCH_ASSOC)) {
+                    $settings[] = $row;
+                }
+                sqlsrv_free_stmt($sharedResult);
+                if (!empty($settings)) {
+                    $settingsConn = $sharedConn;
+                    $errorMessage = '';
+                }
+            }
+            if ($settingsConn !== $sharedConn) {
+                sqlsrv_close($sharedConn);
+            }
+        }
     }
 } else {
     $errorMessage = "Database connection not established.";

@@ -36,8 +36,6 @@ include_once '../params.php';
     <!-- Prefer non-Cloudflare CDNs for reliability -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/datatables.net-dt@1.13.8/css/jquery.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/datatables.net-buttons-dt@2.4.2/css/buttons.dataTables.min.css">
-    <!-- Toast Notification System -->
-    <link rel="stylesheet" href="toast-notifications.css">
     <style>
     /* Full-screen loading overlay */
     #loadingOverlay {
@@ -364,19 +362,6 @@ include_once '../params.php';
                     }
                 });
             }
-        });
-    </script>
-
-    <!-- Toast Notification System -->
-    <script src="toast-notifications.js"></script>
-    <script>
-        // Initialize the notification system with user checking enabled
-        document.addEventListener('DOMContentLoaded', function() {
-            window.notificationSystem = new PaymentNotificationSystem();
-            window.notificationSystem.init({
-                checkUsers: true  // Enable user notifications for this page
-            });
-            console.log('✅ Notification system initialized with user checking enabled');
         });
     </script>
 

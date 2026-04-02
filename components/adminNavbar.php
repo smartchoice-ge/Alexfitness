@@ -15,8 +15,45 @@ function isActive($page) {
 
 // Determine if we're in admin folder for proper path handling
 $isAdminFolder = strpos($_SERVER['REQUEST_URI'], '/admin/') !== false;
-$logoPath = $isAdminFolder ? '../img/smartchoice_logo.png' : '/img/smartchoice_logo.png';
+$logoCandidates = $isAdminFolder
+    ? ['../img/smartchoice_logo.png', '../img/logo.png', '../img/logo.svg', '../img/logo_black.svg']
+    : ['/img/smartchoice_logo.png', '/img/logo.png', '/img/logo.svg', '/img/logo_black.svg'];
+$logoPath = $logoCandidates[1]; // Default to logo.png
+foreach ($logoCandidates as $candidate) {
+    $checkPath = $candidate;
+    if ($isAdminFolder && str_starts_with($candidate, '../')) {
+        $checkPath = __DIR__ . '/../img/' . basename($candidate);
+    } elseif (!$isAdminFolder && str_starts_with($candidate, '/img/')) {
+        $checkPath = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/') . $candidate;
+    }
+
+    if (is_file($checkPath)) {
+        $logoPath = $candidate;
+        break;
+    }
+}
+$faviconPath = $isAdminFolder ? '../img/logo.png' : '/img/logo.png';
 ?>
+
+<script>
+    (function() {
+        var href = '<?= htmlspecialchars($faviconPath, ENT_QUOTES, 'UTF-8') ?>';
+        var links = document.querySelectorAll('link[rel="icon"], link[rel="shortcut icon"]');
+
+        if (links.length === 0) {
+            var link = document.createElement('link');
+            link.rel = 'icon';
+            link.type = 'image/png';
+            link.href = href;
+            document.head.appendChild(link);
+            return;
+        }
+
+        links.forEach(function(link) {
+            link.href = href;
+        });
+    })();
+</script>
 
 <!-- Ensure Font Awesome is loaded -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
@@ -123,12 +160,6 @@ $logoPath = $isAdminFolder ? '../img/smartchoice_logo.png' : '/img/smartchoice_l
                     <a href="<?= $isAdminFolder ? 'payments.php' : '/admin/payments.php' ?>" class="<?= isActive('payments.php') ?>">
                         <i class="fas fa-credit-card"></i>
                         <span>გადახდები საიტზე</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="<?= $isAdminFolder ? 'settings.php' : '/admin/settings.php' ?>" class="<?= isActive('settings.php') ?>">
-                        <i class="fas fa-sliders-h"></i>
-                        <span>პარამეტრები</span>
                     </a>
                 </li>
             </ul>

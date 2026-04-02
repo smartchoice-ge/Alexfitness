@@ -18,9 +18,9 @@ include('../mssql_connection.php');
 include('../mssql_packages_payments_helper.php');
 include_once '../params.php';
 
-// Check database connection
-if (!$conn) {
-    die("Connection failed: " . mysqli_connect_error());
+// Synergy runs on MSSQL only. Keep MySQL include for compatibility, but do not block page.
+if (!$mssqlconn) {
+    die("Connection failed: MSSQL is unavailable.");
 }
 
 // Initialize success message variable
@@ -545,21 +545,16 @@ if (isset($_GET['user_id'])) {
                         </div>
                     </div>
                     
-                    <div class="flex flex-col md:flex-row md:space-x-3 space-y-2 md:space-y-0 items-stretch w-full">
-                        <button onclick="saveClientAssignment()" 
-                                class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-lg transition-colors w-full md:flex-1 basis-0">
-                            <i class="fas fa-upload mr-2"></i>
-                            სოფტის ბაზაში გადატანა
-                        </button>
-                        <button id="editButton" onclick="toggleEdit()" class="inline-flex items-center justify-center btn-primary text-white px-4 py-3 rounded-lg font-semibold w-full md:flex-1 basis-0">
+                    <div class="flex flex-col md:flex-row md:justify-end md:space-x-3 space-y-2 md:space-y-0 items-stretch md:items-center w-full md:w-auto">
+                        <button id="editButton" onclick="toggleEdit()" class="inline-flex items-center justify-center btn-primary text-white px-6 py-3 rounded-lg font-semibold w-full md:w-auto md:min-w-[220px]">
                             <i class="fas fa-edit mr-2"></i>
                             რედაქტირება
                         </button>
-                        <button id="saveButton" onclick="saveChanges()" style="display: none;" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-lg font-semibold w-full md:flex-1 basis-0">
+                        <button id="saveButton" onclick="saveChanges()" style="display: none;" class="inline-flex items-center justify-center bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg font-semibold w-full md:w-auto md:min-w-[180px]">
                             <i class="fas fa-save mr-2"></i>
                             შენახვა
                         </button>
-                        <button id="cancelButton" onclick="cancelEdit()" style="display: none;" class="inline-flex items-center justify-center bg-gray-500 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold w-full md:flex-1 basis-0">
+                        <button id="cancelButton" onclick="cancelEdit()" style="display: none;" class="inline-flex items-center justify-center bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold w-full md:w-auto md:min-w-[180px]">
                             <i class="fas fa-times mr-2"></i>
                             გაუქმება
                         </button>
@@ -642,58 +637,13 @@ if (isset($_GET['user_id'])) {
                     </table>
                 </div>
             <?php else: ?>
-                <div class="text-center py-8">
-                    <i class="fas fa-receipt text-gray-300 text-4xl mb-4"></i>
-                    <p class="text-gray-500 text-lg">გადახდები არ მოიძებნა</p>
-                    <p class="text-gray-400 text-sm">ამ მომხმარებლისთვის წარმატებული გადახდები არ არის</p>
+                <div class="text-center py-5">
+                    <i class="fas fa-receipt text-gray-300 text-3xl mb-3"></i>
+                    <p class="text-gray-500 text-base font-medium">გადახდები არ მოიძებნა</p>
+                    <p class="text-gray-400 text-sm mt-1">ამ მომხმარებლისთვის წარმატებული გადახდები არ არის</p>
                 </div>
             <?php endif; ?>
         </div>
-
-        <!-- Client Details Section -->
-            <!-- Communication Actions -->
-        <div class="bg-white rounded-2xl shadow-lg p-6 mb-8">
-            <h2 class="text-2xl font-bold text-gray-800 mb-6 flex items-center">
-                <i class="fas fa-comments mr-3 text-blue-500"></i>
-                კომუნიკაცია
-            </h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="action-card bg-gradient-to-r from-red-500 to-red-600 text-white rounded-xl p-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-semibold">QR</h3>
-                        <i class="fas fa-qrcode text-2xl"></i>
-                    </div>
-                    <button onclick="sendQr(<?= htmlspecialchars(json_encode($client['id_number'] ?? '')) ?>, <?= htmlspecialchars(json_encode($client['mobile_number'] ?? '')) ?>, <?= htmlspecialchars(json_encode($client['email'] ?? '')) ?>)" 
-                            class="w-full bg-white text-red-600 font-semibold py-2 px-4 rounded-lg hover:bg-red-50 transition-colors">
-                        <i class="fas fa-paper-plane mr-2"></i>SMS & Email-ის გაგზავნა
-                    </button>
-                </div>
-
-                <div class="action-card bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl p-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-semibold">ჯგუფური ვარჯიშები</h3>
-                        <i class="fas fa-users text-2xl"></i>
-                    </div>
-                    <button onclick="sendWorkouts(<?= htmlspecialchars(json_encode($client['mobile_number'] ?? '')) ?>, <?= htmlspecialchars(json_encode($client['email'] ?? '')) ?>)" 
-                            class="w-full bg-white text-green-600 font-semibold py-2 px-4 rounded-lg hover:bg-green-50 transition-colors">
-                        <i class="fas fa-dumbbell mr-2"></i>ვარჯიშების გაგზავნა
-                    </button>
-                </div>
-
-                <div class="action-card bg-gradient-to-r from-purple-500 to-purple-600 text-white rounded-xl p-6">
-                    <div class="flex items-center justify-between mb-4">
-                        <h3 class="text-lg font-semibold">პერსონალური პროგრამა</h3>
-                        <i class="fas fa-clipboard-list text-2xl"></i>
-                    </div>
-                    <button onclick="sendProgram(<?= htmlspecialchars(json_encode($client['id_number'] ?? '')) ?>, <?= htmlspecialchars(json_encode($client['mobile_number'] ?? '')) ?>)" 
-                            class="w-full bg-white text-purple-600 font-semibold py-2 px-4 rounded-lg hover:bg-purple-50 transition-colors">
-                        <i class="fas fa-file-alt mr-2"></i>პროგრამის გაგზავნა
-                    </button>
-                </div>
-            </div>
-        </div>
-
 
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
             <!-- Main Details Card -->
@@ -775,38 +725,12 @@ if (isset($_GET['user_id'])) {
                         PDF Documents
                     </h3>
                     <div class="space-y-3">
-                        <?php
-                        $docsDir = rtrim($_SERVER['DOCUMENT_ROOT'], '/') . '/docs/';
-                        $idNum = trim($client['id_number']);
-                        $clientPdfExists = file_exists($docsDir . $idNum . '.pdf');
-                        $parentPdfExists = file_exists($docsDir . $idNum . 'parent.pdf');
-                        ?>
-                        <?php if ($clientPdfExists): ?>
-                        <a href="/docs/<?= htmlspecialchars($idNum) ?>.pdf" 
+                        <a href="/Synergy-gym-agreement.pdf" 
                            target="_blank"
                            class="flex items-center justify-between bg-red-50 hover:bg-red-100 p-3 rounded-lg transition-colors">
                             <span class="font-medium text-red-700">Client Agreement</span>
                             <i class="fas fa-external-link-alt text-red-500"></i>
                         </a>
-                        <?php else: ?>
-                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                            <span class="font-medium text-gray-400">Client Agreement</span>
-                            <span class="text-xs text-gray-400">არ არის გენერირებული</span>
-                        </div>
-                        <?php endif; ?>
-                        <?php if ($parentPdfExists): ?>
-                        <a href="/docs/<?= htmlspecialchars($idNum) ?>parent.pdf" 
-                           target="_blank"
-                           class="flex items-center justify-between bg-red-50 hover:bg-red-100 p-3 rounded-lg transition-colors">
-                            <span class="font-medium text-red-700">Parent Agreement</span>
-                            <i class="fas fa-external-link-alt text-red-500"></i>
-                        </a>
-                        <?php else: ?>
-                        <div class="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                            <span class="font-medium text-gray-400">Parent Agreement</span>
-                            <span class="text-xs text-gray-400">არ არის გენერირებული</span>
-                        </div>
-                        <?php endif; ?>
                     </div>
                 </div>
 
@@ -931,62 +855,6 @@ if (isset($_GET['user_id'])) {
                 document.body.appendChild(form);
                 form.submit();
             }
-        }
-
-        // Enhanced save client assignment with better UX
-        function saveClientAssignment() {
-            const userId = <?= json_encode($_SESSION['user_id'] ?? '') ?>;
-            const clientId = <?= json_encode($client['id_number'] ?? '') ?>;
-            
-            if (!userId) {
-                showNotification('Error: User ID not found in session', 'error');
-                return;
-            }
-
-            if (!clientId) {
-                showNotification('Error: Client ID not found', 'error');
-                return;
-            }
-
-            // Find the button and add loading state
-            const button = event.target;
-            const originalHTML = button.innerHTML;
-            button.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Processing...';
-            button.disabled = true;
-            
-            $.ajax({
-                url: '../save_client.php',
-                type: 'POST',
-                data: {
-                    save_client: true,
-                    fullName: <?= json_encode($client['full_name'] ?? '') ?>,
-                    idNumber: clientId,
-                    birthDate: <?= json_encode($client['birth_date'] ?? '') ?>,
-                    phone: <?= json_encode($client['mobile_number'] ?? '') ?>,
-                    email: <?= json_encode($client['email'] ?? '') ?>,
-                    picurl: <?= json_encode($client['picurl'] ?? '') ?>,
-                    userId: userId
-                },
-                success: function(response) {
-                    // Use the actual response message from save_client.php
-                    if (response.includes('successfully')) {
-                        showNotification('✅ ' + response, 'success');
-                    } else if (response.includes('Already saved')) {
-                        showNotification('ℹ️ ' + response, 'info');
-                    } else if (response.includes('Error')) {
-                        showNotification('❌ ' + response, 'error');
-                    } else {
-                        showNotification('✅ ' + response, 'success');
-                    }
-                },
-                error: function(xhr, status, error) {
-                    showNotification('❌ Error transferring client: ' + error, 'error');
-                },
-                complete: function() {
-                    button.innerHTML = originalHTML;
-                    button.disabled = false;
-                }
-            });
         }
 
         // Enhanced communication functions with better UX
