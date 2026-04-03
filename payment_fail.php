@@ -6,8 +6,8 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
 
     $androidIntent = 'intent://payment/fail#Intent;scheme=synergy;package=ge.synergy.gym;end';
     $fallbackLinks = [
+        'tonusgym://payment/fail',
         'synergy://payment/fail',
-        'synergygym://payment/fail',
     ];
     $primaryLink = $isAndroid ? $androidIntent : $fallbackLinks[0];
     $fallbackJson = json_encode($fallbackLinks, JSON_UNESCAPED_SLASHES);
