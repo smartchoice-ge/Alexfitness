@@ -4,9 +4,8 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
     $isAndroid = stripos($userAgent, 'android') !== false;
 
-    $androidIntent = 'intent://payment/fail#Intent;scheme=tonusgym;package=ge.synergy.gym;end';
+    $androidIntent = 'intent://payment/fail#Intent;scheme=synergy;package=ge.synergy.gym;end';
     $fallbackLinks = [
-        'tonusgym://payment/fail',
         'synergy://payment/fail',
         'synergygym://payment/fail',
     ];
