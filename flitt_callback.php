@@ -6,8 +6,8 @@ require_once 'mssql_packages_payments_helper.php';
 date_default_timezone_set('Asia/Tbilisi');
 
 // Flitt credentials
-define('FLITT_MERCHANT_ID', 4055770);
-define('FLITT_SECRET_KEY', '7Zk5xaIksr2MjgR8KzsKYICeOG4yPrDB');
+define('FLITT_MERCHANT_ID', 4055998);
+define('FLITT_SECRET_KEY', 'jNQSv9muOFcSLo1cxiTlvvDGt2vu8D9I');
 
 // Function to generate Flitt signature for verification
 function generateFlittSignature($params, $secretKey) {
@@ -30,7 +30,8 @@ function generateFlittSignature($params, $secretKey) {
 
 // Function to process payment immediately
 function processPaymentImmediately($payment_id, $mysql_conn) {
-    $url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['REQUEST_URI']) . '/admin/mark_payment_processed.php';
+    $basePath = rtrim(dirname($_SERVER['REQUEST_URI']), '/\\');
+    $url = 'https://' . $_SERVER['HTTP_HOST'] . ($basePath ? $basePath : '') . '/admin/mark_payment_processed.php';
     
     $data = json_encode(['payment_id' => $payment_id]);
     
@@ -40,6 +41,8 @@ function processPaymentImmediately($payment_id, $mysql_conn) {
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_TIMEOUT, 30);
+    curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+    curl_setopt($ch, CURLOPT_MAXREDIRS, 5);
     curl_setopt($ch, CURLOPT_HTTPHEADER, [
         'Content-Type: application/json',
         'Content-Length: ' . strlen($data),

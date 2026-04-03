@@ -3,15 +3,35 @@
 if (isset($_GET['source']) && $_GET['source'] === 'app') {
     $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
     $isAndroid = stripos($userAgent, 'android') !== false;
-    if ($isAndroid) {
-        $intent = 'intent://payment/fail#Intent;scheme=synergygym;package=ge.Synergy.gym;end';
-    } else {
-        $intent = 'synergygym://payment/fail';
-    }
+
+    $androidIntent = 'intent://payment/fail#Intent;scheme=tonusgym;package=ge.synergy.gym;end';
+    $fallbackLinks = [
+        'tonusgym://payment/fail',
+        'synergy://payment/fail',
+        'synergygym://payment/fail',
+    ];
+    $primaryLink = $isAndroid ? $androidIntent : $fallbackLinks[0];
+    $fallbackJson = json_encode($fallbackLinks, JSON_UNESCAPED_SLASHES);
+
     echo '<!DOCTYPE html><html><head><meta charset="UTF-8">';
-    echo '<meta http-equiv="refresh" content="0;url=' . $intent . '">';
+    echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
+    echo '<title>Returning to Synergy App</title>';
+    echo '<style>body{font-family:Inter,Arial,sans-serif;background:#101114;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:24px}.card{max-width:420px;width:100%;background:#181a1f;border:1px solid #2b2f38;border-radius:16px;padding:28px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.25)}h1{font-size:22px;margin:0 0 12px;color:#ff7676}p{line-height:1.5;color:#d4d7dd;margin:0 0 18px}.btn{display:inline-block;background:#ff7676;color:#111;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin:6px 0}.btn-secondary{background:#2b2f38;color:#fff}.links{margin-top:16px;font-size:14px}.links a{color:#9fd3ff;word-break:break-all;display:block;margin-top:8px}</style>';
     echo '</head><body>';
-    echo '<script>window.location.href="' . $intent . '";</script>';
+    echo '<div class="card">';
+    echo '<h1>Returning to Synergy App</h1>';
+    echo '<p>If the app does not open automatically, tap the button below.</p>';
+    echo '<a class="btn" href="' . htmlspecialchars($primaryLink, ENT_QUOTES, 'UTF-8') . '">Open App</a>';
+    echo '<div class="links"><a class="btn btn-secondary" href="https://synergyfitness.ge/payment_fail.php">Stay on Website</a></div>';
+    echo '</div>';
+    echo '<script>';
+    echo 'const isAndroid=' . ($isAndroid ? 'true' : 'false') . ';';
+    echo 'const primaryLink=' . json_encode($primaryLink, JSON_UNESCAPED_SLASHES) . ';';
+    echo 'const fallbackLinks=' . $fallbackJson . ';';
+    echo 'function tryOpen(link){ window.location.href = link; }';
+    echo 'setTimeout(function(){ tryOpen(primaryLink); }, 150);';
+    echo 'if(!isAndroid){ fallbackLinks.forEach(function(link, index){ setTimeout(function(){ tryOpen(link); }, 400 + (index * 250)); }); }';
+    echo '</script>';
     echo '</body></html>';
     exit;
 }

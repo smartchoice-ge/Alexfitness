@@ -61,6 +61,11 @@ function cleanMobileForSMS($mobile) {
 // Function to automatically send QR code after successful payment processing
 function sendQrCodeAutomatically($idNumber, $mobile, $email) {
     global $conn, $mssqlconn; // Make database connections available
+
+    if (!$conn) {
+        error_log("Skipping QR code send - MySQL is unavailable in Synergy");
+        return false;
+    }
     
     // Clean mobile number for SMS API (remove country codes)
     $cleanMobile = cleanMobileForSMS($mobile);
@@ -111,6 +116,11 @@ function sendQrCodeAutomatically($idNumber, $mobile, $email) {
 // Function to automatically send workout programs after successful payment processing
 function sendProgramAutomatically($idNumber, $mobile, $email) {
     global $conn, $mssqlconn; // Make database connections available
+
+    if (!$conn) {
+        error_log("Skipping program send - MySQL is unavailable in Synergy");
+        return false;
+    }
     
     // Clean mobile number for SMS API (remove country codes)
     $cleanMobile = cleanMobileForSMS($mobile);
@@ -158,6 +168,11 @@ function sendProgramAutomatically($idNumber, $mobile, $email) {
 // Function to automatically send group workouts after successful payment processing
 function sendWorkoutsAutomatically($mobile, $email) {
     global $conn, $mssqlconn; // Make database connections available
+
+    if (!$conn) {
+        error_log("Skipping workouts send - MySQL is unavailable in Synergy");
+        return false;
+    }
     
     // Clean mobile number for SMS API (remove country codes)
     $cleanMobile = cleanMobileForSMS($mobile);
@@ -203,9 +218,7 @@ function sendWorkoutsAutomatically($mobile, $email) {
 
 // Check database connections
 if (!$conn) {
-    error_log("MySQL connection failed in mark_payment_processed.php");
-    echo json_encode(['success' => false, 'message' => 'Database connection failed']);
-    exit;
+    error_log("MySQL connection unavailable in mark_payment_processed.php - continuing with MSSQL-only flow");
 }
 
 if (!$mssqlconn) {
@@ -252,7 +265,7 @@ try {
     // Unipay (website) transaction_ids use Unipay's hash format
     $transaction_id = $payment['transaction_id'] ?? '';
     $is_flitt_payment = preg_match('/^\d+_[A-F0-9]+$/i', $transaction_id);
-    $payment_type_id = $is_flitt_payment ? 9 : 7; // 9 = Flitt (app), 7 = Unipay (website)
+    $payment_type_id = $is_flitt_payment ? 15 : 7; // 15 = Flitt (app), 7 = Unipay (website)
     
     // Get package information from MSSQL PackagesWebsite
     $packageInfo = null;
@@ -543,7 +556,7 @@ try {
                 63,                       // SaleTypeID
                 $package_price_for_mssql, // Price from MySQL
                 $payment_amount,          // PayedAmount from payment
-                $payment_type_id,         // PaymentTypeID (9=Flitt/app, 7=Unipay/website)
+                $payment_type_id,         // PaymentTypeID (15=Flitt/app, 7=Unipay/website)
                 0,                        // SaleParcent
                 $creator_user_id,         // CreatorUserID
                 $visits_count,            // VisitsCount (0 for one-time, 999 for regular)
@@ -632,7 +645,6 @@ try {
                 ]);
             }
             
-            $update_stmt->close();
             sqlsrv_free_stmt($stmt_expire);
             sqlsrv_free_stmt($stmt_insert);
             
@@ -665,7 +677,7 @@ try {
                 63,                       // SaleTypeID
                 $package_price_for_mssql, // Price from MySQL
                 $payment_amount,          // PayedAmount from payment
-                $payment_type_id,         // PaymentTypeID (9=Flitt/app, 7=Unipay/website)
+                $payment_type_id,         // PaymentTypeID (15=Flitt/app, 7=Unipay/website)
                 0,                        // SaleParcent
                 $creator_user_id,         // CreatorUserID
                 $visits_count,            // VisitsCount (0 for one-time, 999 for regular)
@@ -733,7 +745,7 @@ try {
                     0,             // Price
                     1,             // ActiveIndevice
                     $client_id,    // ClientID
-                    $payment_type_id // PaymentTypeID (9=Flitt/app, 7=Unipay/website)
+                    $payment_type_id // PaymentTypeID (15=Flitt/app, 7=Unipay/website)
                 );
                 $stmt_insert_card = sqlsrv_query($mssqlconn, $sql_insert_card, $params_insert_card);
                 
@@ -821,7 +833,6 @@ try {
                 ]);
             }
             
-            $update_stmt->close();
             sqlsrv_free_stmt($stmt_insert);
         }
         
@@ -829,9 +840,10 @@ try {
         sqlsrv_free_stmt($stmt_packages);
     
     // Clean up
-    $stmt->close();
     sqlsrv_close($mssqlconn);
-    $conn->close();
+    if (is_object($conn) && method_exists($conn, 'close')) {
+        $conn->close();
+    }
     
 } catch (Exception $e) {
     // Log the detailed error
@@ -839,16 +851,16 @@ try {
     error_log("Error trace: " . $e->getTraceAsString());
     
     // Clean up any open resources
-    if (isset($stmt)) {
+    if (isset($stmt) && is_object($stmt) && method_exists($stmt, 'close')) {
         $stmt->close();
     }
-    if (isset($update_stmt)) {
+    if (isset($update_stmt) && is_object($update_stmt) && method_exists($update_stmt, 'close')) {
         $update_stmt->close();
     }
     if (isset($mssqlconn)) {
         sqlsrv_close($mssqlconn);
     }
-    if (isset($conn)) {
+    if (isset($conn) && is_object($conn) && method_exists($conn, 'close')) {
         $conn->close();
     }
     
