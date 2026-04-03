@@ -148,17 +148,56 @@
         }
 
         @media (max-width: 768px) {
+            body {
+                overflow-x: hidden;
+            }
+
+            .container {
+                padding-left: 12px;
+                padding-right: 12px;
+            }
+
             .terms-container {
-                margin: 1rem;
-                padding: 1.5rem;
+                margin: 0.5rem 0;
+                padding: 1rem;
+                border-radius: 10px;
             }
-            
+
             .terms-title {
-                font-size: 2rem;
+                font-size: 1.6rem;
+                letter-spacing: 0;
             }
-            
+
+            .terms-subtitle {
+                font-size: 0.9rem;
+            }
+
             .section-title {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
+            }
+
+            .section-content {
+                font-size: 0.9rem;
+            }
+
+            .highlight-box {
+                padding: 1rem;
+            }
+
+            .back-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+                margin-bottom: 1rem;
+            }
+
+            .d-flex.justify-content-between {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+
+            .section-content ul {
+                padding-left: 1.2rem;
             }
         }
 
