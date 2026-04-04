@@ -227,6 +227,11 @@ if (!$mssqlconn) {
     exit;
 }
 
+// Ensure the in_progress column exists (idempotent; safe to run every request on old deployments)
+$addColSql = "IF NOT EXISTS (SELECT 1 FROM sys.columns WHERE object_id = OBJECT_ID('PaymentsWebsite') AND name = 'in_progress')
+    ALTER TABLE PaymentsWebsite ADD in_progress BIT NOT NULL DEFAULT 0";
+sqlsrv_query($mssqlconn, $addColSql); // ignore errors — column may already exist
+
 // Get JSON input
 $input = json_decode(file_get_contents('php://input'), true);
 
@@ -311,15 +316,51 @@ try {
         exit;
     }
     
-    // Check if already processed
-    if ($already_processed == 1) {
-        echo json_encode([
-            'success' => false, 
-            'message' => "Payment is already processed (Payment ID: {$payment_id}, Mobile: {$mobile_number})",
-            'payment_id' => $payment_id,
-            'mobile_number' => $mobile_number
-        ]);
-        exit;
+    // Use a dedicated "in_progress" flag to prevent race conditions from duplicate
+    // Flitt callbacks, while still only marking "processed" at the end on success.
+    // Two concurrent requests: only one wins the atomic UPDATE WHERE in_progress=0;
+    // the loser exits immediately without creating a duplicate SoldPackages row.
+    // If processing fails mid-way, in_progress stays 1 but processed stays 0,
+    // so an admin can reset in_progress=0 and retry without financial data loss.
+    $claimSql = "UPDATE PaymentsWebsite SET in_progress = 1, updated_at = GETDATE() WHERE id = ? AND processed = 0 AND in_progress = 0";
+    $claimParams = [$payment_id];
+    $claimStmt = sqlsrv_query($mssqlconn, $claimSql, $claimParams);
+    if ($claimStmt === false) {
+        // Column may not exist yet — fall back to the old processed check to avoid breaking existing deployments
+        $claimErrors = sqlsrv_errors();
+        $errorMsg = print_r($claimErrors, true);
+        if (strpos($errorMsg, 'in_progress') !== false) {
+            // Column doesn't exist: fall back silently and rely on processed flag
+            error_log("in_progress column not found, falling back to processed check only");
+        } else {
+            error_log("Atomic claim error in mark_payment_processed: " . $errorMsg);
+            echo json_encode(['success' => false, 'message' => 'Database error during payment claim']);
+            exit;
+        }
+        // Fallback: check already_processed from earlier read
+        if ($already_processed == 1) {
+            echo json_encode([
+                'success' => false,
+                'message' => "Payment is already processed (Payment ID: {$payment_id}, Mobile: {$mobile_number})",
+                'payment_id' => $payment_id,
+                'mobile_number' => $mobile_number
+            ]);
+            exit;
+        }
+    } else {
+        $claimedRows = sqlsrv_rows_affected($claimStmt);
+        sqlsrv_free_stmt($claimStmt);
+
+        if ($claimedRows === 0) {
+            // Another request already claimed or completed this payment
+            echo json_encode([
+                'success' => false,
+                'message' => "Payment is already processed or in progress (Payment ID: {$payment_id}, Mobile: {$mobile_number})",
+                'payment_id' => $payment_id,
+                'mobile_number' => $mobile_number
+            ]);
+            exit;
+        }
     }
     
     // Step 2: First check if client exists in MSSQL ClientDetailsWebsite table
@@ -849,7 +890,12 @@ try {
     // Log the detailed error
     error_log("Error in mark_payment_processed.php: " . $e->getMessage());
     error_log("Error trace: " . $e->getTraceAsString());
-    
+
+    // Release the in_progress lock so the payment can be retried
+    if (isset($payment_id) && isset($mssqlconn) && $mssqlconn) {
+        sqlsrv_query($mssqlconn, "UPDATE PaymentsWebsite SET in_progress = 0 WHERE id = ? AND processed = 0", [$payment_id]);
+    }
+
     // Clean up any open resources
     if (isset($stmt) && is_object($stmt) && method_exists($stmt, 'close')) {
         $stmt->close();
@@ -863,21 +909,26 @@ try {
     if (isset($conn) && is_object($conn) && method_exists($conn, 'close')) {
         $conn->close();
     }
-    
+
     // Return JSON error response
     http_response_code(500);
     echo json_encode([
-        'success' => false, 
+        'success' => false,
         'message' => 'An error occurred while processing the request',
-        'error_details' => $e->getMessage() // Include error details for debugging
+        'error_details' => $e->getMessage()
     ]);
 } catch (Error $e) {
     // Handle fatal errors
     error_log("Fatal error in mark_payment_processed.php: " . $e->getMessage());
-    
+
+    // Release the in_progress lock so the payment can be retried
+    if (isset($payment_id) && isset($mssqlconn) && $mssqlconn) {
+        sqlsrv_query($mssqlconn, "UPDATE PaymentsWebsite SET in_progress = 0 WHERE id = ? AND processed = 0", [$payment_id]);
+    }
+
     http_response_code(500);
     echo json_encode([
-        'success' => false, 
+        'success' => false,
         'message' => 'A fatal error occurred while processing the request'
     ]);
 }

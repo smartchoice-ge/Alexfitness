@@ -263,7 +263,9 @@ function updatePaymentStatusByTransactionId($transactionId, $status) {
     
     if (!$mssqlconn) return 0;
     
-    $sql = "UPDATE PaymentsWebsite SET status = ?, updated_at = GETDATE() WHERE transaction_id = ?";
+    // Only update if not yet processed; prevents a second Flitt callback from
+    // triggering reprocessing when the first callback already completed.
+    $sql = "UPDATE PaymentsWebsite SET status = ?, updated_at = GETDATE() WHERE transaction_id = ? AND processed = 0";
     $params = [$status, $transactionId];
     
     $stmt = sqlsrv_query($mssqlconn, $sql, $params);
