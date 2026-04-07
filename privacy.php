@@ -259,7 +259,6 @@
                             <h2 class="section-title">1. მონაცემთა კონტროლერი</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>კომპანია:</strong> ლუკა ქალიაშვილი, პ/ნ: 0172409681</p>
                                     <p><strong>ს/მ:</strong> ლუკა ქალიაშვილი, პ/ნ: 0172409681</p>
                                     <p><strong>მისამართი:</strong> მარიჯანი 6, თბილისი, საქართველო</p>
                                     <p><strong>ელ-ფოსტა:</strong> Info@synergyfitness.ge</p>
@@ -435,6 +434,7 @@
                             <h4>კითხვები ან შეშფოთებები?</h4>
                             <p><strong>მისამართი:</strong> მარიჯანი 6, თბილისი, საქართველო</p>
                             <p><strong>ელ-ფოსტა:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
+                            <p><strong>ტელეფონი:</strong> <a href="tel:511266211" style="color:#c8e600;">511 26 62 11</a></p>
                             <p><strong>ბოლოს განახლდა:</strong> სექტემბერი 2025</p>
                         </div>
                     </div>
@@ -457,7 +457,6 @@
                             <h2 class="section-title">1. Data Controller</h2>
                             <div class="section-content">
                                 <div class="highlight-box">
-                                    <p><strong>Company:</strong> ლუკა ქალიაშვილი, ID: 0172409681</p>
                                     <p><strong>Sole Entrepreneur:</strong> ლუკა ქალიაშვილი, ID: 0172409681</p>
                                     <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                                     <p><strong>Email:</strong> Info@synergyfitness.ge</p>
@@ -649,6 +648,7 @@
                             <h4>Questions or Concerns?</h4>
                             <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                             <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:511266211" style="color:#c8e600;">511 26 62 11</a></p>
                             <p><strong>Last Updated:</strong> September 2025</p>
                         </div>
                     </div>

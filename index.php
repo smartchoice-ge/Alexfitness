@@ -1611,6 +1611,11 @@ exit;
                             Privacy Policy
                         </a>                       
                     </div>
+                    <div style="margin-bottom: 0.5rem;">
+                        <a href="tel:511266211" style="color: #c8e600; text-decoration: none; font-weight: 500; font-size: 1rem;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
+                            📞 511 26 62 11
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

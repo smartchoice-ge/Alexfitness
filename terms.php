@@ -431,6 +431,7 @@
                         <h4>Questions or Concerns?</h4>
                         <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                         <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
+                        <p><strong>Phone:</strong> <a href="tel:511266211" style="color:#c8e600;">511 26 62 11</a></p>
                         <p><strong>Last Updated:</strong> July 2025</p>
                     </div>
                     </div>
@@ -624,6 +625,7 @@
                             <h4>Questions or Concerns?</h4>
                             <p><strong>Address:</strong> Marijani 6, Tbilisi, Georgia</p>
                             <p><strong>Email:</strong> <a href="mailto:Info@synergyfitness.ge">Info@synergyfitness.ge</a></p>
+                            <p><strong>Phone:</strong> <a href="tel:511266211" style="color:#c8e600;">511 26 62 11</a></p>
                             <p><strong>Last Updated:</strong> July 2025</p>
                         </div>
                     </div>
