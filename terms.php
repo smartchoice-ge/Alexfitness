@@ -397,6 +397,16 @@
                     </div>
 
                     <div class="terms-section">
+                        <h2 class="section-title">12. აბონიმენტის საფასურის დაბრუნება</h2>
+                        <div class="section-content">
+                            <p>კლუბის წევრის მოთხოვნის საფუძველზე შესაძლებელია საბანკო ანგარიშზე დაბრუნდეს მხოლოდ ფასდაუკლებელი ტარიფით შეძენილი აბონიმენტის საფასური. დაბრუნება ხდება მოთხოვნიდან და საბანკო ანგარიშის წარდგენიდან 7 (შვიდი) სამუშაო დღის ვადაში.</p>
+                            <div class="highlight-box">
+                                <strong>მნიშვნელოვანი:</strong> თანხის დაბრუნების შემთხვევაში გადახდილ თანხას აკლდება აბონიმენტის შეძენიდან დაბრუნების მოთხოვნის დღემდე გასული დღეების ოდენობის პროპორციული თანხა, ხოლო სხვაობა ბრუნდება საბანკო ანგარიშზე. (ყოველ 1 თვეზე იანგარიშება 30 დღიანი ლიმიტი)
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="terms-section">
                         <h2 class="section-title">13. პასუხისმგებლობა</h2>
                         <div class="section-content">
                             <p>ლუკა ქალიაშვილი არ აგებს პასუხს მისგან დამოუკიდებელი მიზეზების გამო ხელშეკრულების პირობების შეუსრულებლობაზე.</p>
@@ -579,14 +589,12 @@
                         </div>
 
                         <div class="terms-section">
-                            <h2 class="section-title">12. Refunds and Pausing</h2>
+                            <h2 class="section-title">12. Membership Fee Refund</h2>
                             <div class="section-content">
-                                <p>Upon member request, only the fee for a membership purchased at a non-discounted tariff can be refunded to a bank account.</p>
+                                <p>Upon a club member's request, only the fee for a membership purchased at a non-discounted tariff may be refunded to a bank account. The refund is processed within 7 (seven) business days from the date of the request and submission of bank account details.</p>
                                 <div class="highlight-box">
-                                    <strong>Important:</strong> In all cases, each recorded visit is deducted from the refund at 25 GEL per visit (this fee may change according to the current fixed tariff).
+                                    <strong>Important:</strong> In the case of a refund, a proportional amount corresponding to the number of days elapsed from the date of membership purchase to the date of the refund request is deducted from the paid amount, and the difference is refunded to the bank account. (Each 1-month period is calculated based on a 30-day limit.)
                                 </div>
-                                <p>Refunds are processed within 7 business days from the request and submission of bank details.</p>
-                                <p>Membership can be paused only with a medical certificate from a qualified institution for the days indicated in the document during which physical activity was not allowed.</p>
                             </div>
                         </div>
 
