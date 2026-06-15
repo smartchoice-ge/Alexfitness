@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'mssql_connection.php';
 include_once 'db_connection.php';
@@ -43,7 +43,7 @@ if ($smsSqlRes->num_rows > 0) {
 $text = "გიგზავნით პროგრამის ლინკს. დასაკლები /wp1.pdf მოსამატებლი /wp2.pdf \n\nYou can find the workout program at this link Lose Weight /wp1.pdf, Gain Weight /wp2.pdf";
 $message = $text;
 
-$apikey = '0f132d23f162ca06a769128a5e866cf1';
+$apikey = 'e774aad67ecaba4ba90b86da65be10d9';
 
 $url = "https://sender.ge/api/send.php";
 $fields = [

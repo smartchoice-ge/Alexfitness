@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 session_start([
     'cookie_httponly' => true,
     'cookie_samesite' => 'Strict'
@@ -75,7 +75,7 @@ function transliterateGeorgianToLatin($georgianString) {
 
 // --- Fetch SMS main text from settings table ---
 $promoMessageCore = ""; // Default message
-$facebookLink = "https://www.facebook.com/SynergyGymTbilisi"; // Keep this part separate or also make it a setting
+$facebookLink = "https://www.facebook.com/Alexfitnesskobulrti"; // Keep this part separate or also make it a setting
 $nosms = "No2981To90775";
 
 $latinFirstName = transliterateGeorgianToLatin($firstName);
@@ -103,7 +103,7 @@ if (!$db_connection_error_for_settings) {
 // Construct the final SMS message
 $messageText = "Hello " . ucfirst(htmlspecialchars($latinFirstName)) . ' '. $promoMessageCore .  "\n\n" . $nosms;
 
-$apikey = '0f132d23f162ca06a769128a5e866cf1'; 
+$apikey = 'e774aad67ecaba4ba90b86da65be10d9'; 
 
 $url = "https://sender.ge/api/send.php";
 $fields = [

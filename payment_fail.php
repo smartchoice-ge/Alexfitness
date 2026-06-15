@@ -21,7 +21,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     echo '<h1>Returning to Synergy App</h1>';
     echo '<p>If the app does not open automatically, tap the button below.</p>';
     echo '<a class="btn" href="' . htmlspecialchars($primaryLink, ENT_QUOTES, 'UTF-8') . '">Open App</a>';
-    echo '<div class="links"><a class="btn btn-secondary" href="https://synergyfitness.ge/payment_fail.php">Stay on Website</a></div>';
+    echo '<div class="links"><a class="btn btn-secondary" href="https://synergy-gym.ge/payment_fail.php">Stay on Website</a></div>';
     echo '</div>';
     echo '<script>';
     echo 'const isAndroid=' . ($isAndroid ? 'true' : 'false') . ';';
@@ -80,15 +80,14 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
 
         .brand-btn {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
             font-weight: bold;
         }
         
         .brand-btn:hover {
-            background-color: #1a73e8;
+            background-color: #1e40af;
         }
 
         .error-icon {
@@ -144,7 +143,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         }
 
         .troubleshoot-item {
-            border-left: 3px solid #c8e600;
+            border-left: 3px solid #22c55e;
             padding-left: 1rem;
             margin-bottom: 1rem;
         }
@@ -158,7 +157,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                 
                 <!-- Header Section -->
                 <div class="header-section">
-                    <img src="img/logo.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
+                    <img src="img/gym.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
                     
                     <div class="error-icon inline-flex items-center justify-center w-24 h-24 rounded-full mb-6 pulse-error">
                         <i class="fas fa-exclamation-triangle text-white text-4xl"></i>
@@ -191,22 +190,22 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                             <i class="fas fa-envelope mr-1"></i>
                             support@synergy-gym.ge
                         </a>
-                        <a href="https://wa.me/+995-XXX-XXX-XXX" class="text-ffdf06 hover:text-yellow-400 transition-colors" target="_blank">
-                            <i class="fab fa-whatsapp mr-1"></i>
-                            WhatsApp
+                        <a href="https://t.me/alex_fitness_kobuleti" class="text-ffdf06 hover:text-yellow-400 transition-colors" target="_blank">
+                            <i class="fab fa-telegram-plane mr-1"></i>
+                            Telegram
                         </a>
                     </div>
                     
                     <!-- Social Media Links -->
                     <div class="flex justify-center space-x-4 mt-4">
-                        <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-xl">
+                        <a href="https://www.facebook.com/Alexfitnesskobulrti" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-xl">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
+                        <a href="https://www.instagram.com/alex_fitness_kobuleti/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/+995-XXX-XXX-XXX" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-xl">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://t.me/alex_fitness_kobuleti" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors text-xl">
+                            <i class="fab fa-telegram-plane"></i>
                         </a>
                     </div>
                 </div>

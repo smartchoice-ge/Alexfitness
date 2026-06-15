@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // Handle logout
 if (isset($_POST['logout'])) {
     session_destroy();
@@ -17,7 +17,7 @@ function isActive($page) {
 $isAdminFolder = strpos($_SERVER['REQUEST_URI'], '/admin/') !== false;
 
 // Use absolute web paths so the logo works from any sub-folder depth
-$logoCandidates = ['/img/smartchoice_logo.png', '/img/logo.png', '/img/logo.svg', '/img/logo_black.svg'];
+$logoCandidates = ['/img/smartchoice_logo.png', '/img/gym.png', '/img/logo.svg', '/img/logo_black.svg'];
 $logoPath = '/img/smartchoice_logo.png'; // Default
 $docRoot = rtrim($_SERVER['DOCUMENT_ROOT'] ?? '', '/');
 foreach ($logoCandidates as $candidate) {
@@ -154,6 +154,25 @@ $faviconPath = '/img/smartchoice_logo.png';
                     <a href="<?= $isAdminFolder ? 'payments.php' : '/admin/payments.php' ?>" class="<?= isActive('payments.php') ?>">
                         <i class="fas fa-credit-card"></i>
                         <span>გადახდები საიტზე</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?= $isAdminFolder ? 'transfer_requests.php' : '/admin/transfer_requests.php' ?>" class="<?= isActive('transfer_requests.php') ?>" style="position:relative">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>გადარიცხვის მოთხოვნები</span>
+                        <?php
+                        // Show pending badge
+                        if ($mssqlconn ?? false) {
+                            $badge = sqlsrv_query($mssqlconn, "SELECT COUNT(*) AS cnt FROM TransferRequests WHERE status='pending'");
+                            if ($badge) {
+                                $brow = sqlsrv_fetch_array($badge, SQLSRV_FETCH_ASSOC);
+                                if ($brow && $brow['cnt'] > 0) {
+                                    echo '<span style="margin-left:auto;background:#ef4444;color:#fff;font-size:.65rem;font-weight:700;padding:1px 6px;border-radius:99px;">' . $brow['cnt'] . '</span>';
+                                }
+                                sqlsrv_free_stmt($badge);
+                            }
+                        }
+                        ?>
                     </a>
                 </li>
             </ul>

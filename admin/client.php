@@ -58,7 +58,7 @@ function ensureClientAgreementPdf(array $client)
     try {
         $pdf = new TCPDF();
         $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('Synergy');
+        $pdf->SetAuthor('Synergy Gym');
         $pdf->SetTitle('User Agreement');
         $pdf->SetSubject('User Agreement Form');
         $pdf->AddPage();

@@ -237,7 +237,8 @@ if (isset($clientID)) {
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #000;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 40%, #0f3460 100%);
+            background-attachment: fixed;
             color: #fff;
             display: flex;
             flex-direction: column;
@@ -265,10 +266,10 @@ if (isset($clientID)) {
             border-radius: 0.5rem;
         }
         .renew-btn:hover {
-            background-color: #e6c605;
+            background-color: #0090ae;
         }
         .lang-btn {
-            background-color: #00b4d8;
+            background-color: #22c55e;
             color: #000;
             padding: 8px 16px;
             border-radius: 8px;
@@ -277,7 +278,7 @@ if (isset($clientID)) {
             transition: background-color 0.3s ease;
         }
         .lang-btn:hover {
-            background-color: #e6c605;
+            background-color: #16a34a;
         }
         /* Style for the new logout button */
         .logout-btn {
@@ -311,11 +312,11 @@ if (isset($clientID)) {
             background-color: #1f1f1f;
         }
         .contact-link {
-            color: #00b4d8;
+            color: #22c55e;
             transition: color 0.3s ease;
         }
         .contact-link:hover {
-            color: #e6c605;
+            color: #16a34a;
         }
         .support-section {
             background-color: #111;
@@ -335,14 +336,14 @@ if (isset($clientID)) {
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f2d52 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -369,7 +370,7 @@ if (isset($clientID)) {
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -393,11 +394,11 @@ if (isset($clientID)) {
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
+                box-shadow: 0 10px 30px rgba(30, 64, 175, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
+                box-shadow: 0 15px 40px rgba(30, 64, 175, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -546,9 +547,9 @@ if (isset($clientID)) {
         }
         
         .workout-tab.active {
-            background-color: #00b4d8;
+            background-color: #22c55e;
             color: #000;
-            border-color: #00b4d8;
+            border-color: #22c55e;
         }
         
         .workout-tab:hover:not(.active) {
@@ -564,12 +565,12 @@ if (isset($clientID)) {
         }
         
         .workout-session-card:hover {
-            border-color: #00b4d8;
-            box-shadow: 0 4px 12px rgba(255, 223, 6, 0.1);
+            border-color: #22c55e;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.1);
         }
         
         .workout-book-btn {
-            background-color: #00b4d8;
+            background-color: #22c55e;
             color: #000;
             padding: 0.5rem 1.25rem;
             border-radius: 0.5rem;
@@ -580,7 +581,7 @@ if (isset($clientID)) {
         }
         
         .workout-book-btn:hover:not(:disabled) {
-            background-color: #e6c605;
+            background-color: #16a34a;
             transform: translateY(-2px);
         }
         
@@ -635,7 +636,7 @@ if (isset($clientID)) {
         }
         
         .week-day-cell:hover {
-            border-color: #00b4d8;
+            border-color: #22c55e;
             background-color: #2a2a2a;
             transform: translateY(-2px);
         }
@@ -653,24 +654,24 @@ if (isset($clientID)) {
         }
         
         .week-day-cell.today {
-            border-color: #00b4d8;
+            border-color: #22c55e;
             border-width: 2px;
-            background-color: rgba(255, 223, 6, 0.05);
+            background-color: rgba(34, 197, 94, 0.05);
         }
         
         .week-day-cell.has-sessions {
-            background-color: rgba(255, 223, 6, 0.08);
+            background-color: rgba(34, 197, 94, 0.08);
             border-color: #555;
         }
         
         .week-day-cell.has-sessions:hover {
-            background-color: rgba(255, 223, 6, 0.15);
+            background-color: rgba(34, 197, 94, 0.15);
         }
         
         .week-day-cell.selected {
-            border-color: #00b4d8;
+            border-color: #22c55e;
             border-width: 3px;
-            background-color: rgba(255, 223, 6, 0.12);
+            background-color: rgba(34, 197, 94, 0.12);
         }
         
         .week-day-name {
@@ -693,8 +694,8 @@ if (isset($clientID)) {
         
         .week-sessions-count {
             font-size: 0.75rem;
-            background-color: rgba(255, 223, 6, 0.2);
-            color: #00b4d8;
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
             padding: 0.25rem 0.5rem;
             border-radius: 9999px;
             margin-top: auto;
@@ -716,7 +717,7 @@ if (isset($clientID)) {
         }
         
         .calendar-day:hover {
-            border-color: #00b4d8;
+            border-color: #22c55e;
             background-color: #2a2a2a;
         }
         
@@ -731,16 +732,16 @@ if (isset($clientID)) {
         }
         
         .calendar-day.today {
-            border-color: #00b4d8;
+            border-color: #22c55e;
             border-width: 2px;
         }
         
         .calendar-day.has-sessions {
-            background-color: rgba(255, 223, 6, 0.05);
+            background-color: rgba(34, 197, 94, 0.05);
         }
         
         .calendar-day.has-sessions:hover {
-            background-color: rgba(255, 223, 6, 0.1);
+            background-color: rgba(34, 197, 94, 0.1);
         }
         
         .calendar-day-number {
@@ -757,15 +758,15 @@ if (isset($clientID)) {
         .calendar-sessions-indicator {
             width: 6px;
             height: 6px;
-            background-color: #00b4d8;
+            background-color: #22c55e;
             border-radius: 50%;
             margin-top: auto;
         }
         
         .session-time-badge {
             font-size: 0.625rem;
-            background-color: rgba(255, 223, 6, 0.2);
-            color: #00b4d8;
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
             padding: 0.125rem 0.375rem;
             border-radius: 0.25rem;
             margin-top: 0.25rem;
@@ -777,8 +778,8 @@ if (isset($clientID)) {
         }
         
         .workout-badge.booked {
-            background-color: rgba(255, 223, 6, 0.2);
-            color: #00b4d8;
+            background-color: rgba(34, 197, 94, 0.2);
+            color: #22c55e;
         }
         
         /* Mobile-specific styles for workout booking */
@@ -786,7 +787,7 @@ if (isset($clientID)) {
             .week-day-cell {
                 min-height: 80px;
                 padding: 0.5rem 0.25rem;
-                -webkit-tap-highlight-color: rgba(255, 223, 6, 0.2);
+                -webkit-tap-highlight-color: rgba(34, 197, 94, 0.2);
                 touch-action: manipulation;
             }
             
@@ -813,9 +814,9 @@ if (isset($clientID)) {
 
 <body>
 
-<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
+<a href="https://t.me/alex_fitness_kobuleti" class="whatsapp-float" target="_blank">
     <div class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/24x24/ffffff/25d366?text=WA';">
+        <i class="fab fa-telegram-plane whatsapp-icon" style="font-size:26px;color:#fff;margin-right:10px;"></i>
         <span class="whatsapp-text" name="key_contact_whatsapp">Contact Us</span>
     </div>
 </a>
@@ -825,7 +826,7 @@ if (isset($clientID)) {
         <!-- Logo on the left -->
         <div class="flex items-center">
             <a href="/" class="inline-block bg-black p-2 rounded-lg hover:bg-gray-800 transition-colors duration-300">
-                <img src="/img/logo.png" alt="Synergy Gym Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/140x40/cccccc/000000?text=Synergy+Logo';">
+                <img src="/img/gym.png" alt="Synergy Gym Logo" class="h-10" onerror="this.onerror=null; this.src='https://placehold.co/140x40/cccccc/000000?text=Synergy+Logo';">
             </a>
         </div>
         <!-- Language and logout buttons on the right -->
@@ -853,17 +854,19 @@ if (isset($clientID)) {
                             <p class="text-lg" name="<?php echo htmlspecialchars($membershipStatusKey); ?>"></p>
                         </div>
                     <?php endif; ?>
-                    
+
                     <!-- Membership Type Display -->
+                    <?php if ($membershipStatusKey === 'key_active_member'): ?>
                     <div class="bg-gray-800 border border-gray-600 p-3 rounded-lg mt-4">
                         <div class="flex justify-between items-center">
                             <span class="text-gray-400 flex items-center">
                                 <i class="fas fa-id-card mr-2"></i>
                                 <span name="key_membership_type">Membership Type</span>
                             </span>
-                            <span class="font-bold text-yellow-400"><?php echo htmlspecialchars($membershipType); ?></span>
+                            <span class="font-bold text-green-400"><?php echo htmlspecialchars($membershipType); ?></span>
                         </div>
                     </div>
+                    <?php endif; ?>
                 </div>
 
                 <?php if ($showQrCode): ?> 
@@ -875,7 +878,8 @@ if (isset($clientID)) {
                 </div>
                 <?php endif; ?>
 
-                <!-- Pause Membership Section - Visible to All Members -->
+                <!-- Pause Membership Section - Active Members Only -->
+                <?php if ($membershipStatusKey === 'key_active_member'): ?>
                 <div class="bg-gray-800 border border-gray-600 p-4 rounded-lg mb-6" id="pause-section">
                     <h3 class="text-lg font-semibold text-white mb-3 flex items-center">
                         <i class="fas fa-pause-circle mr-2 text-yellow-400"></i>
@@ -974,8 +978,10 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
                     </p>
                     <?php endif; ?>
                 </div>
-                
+                <?php endif; ?>
+
                 <div class="space-y-4 mb-6">
+                    <?php if ($membershipStatusKey === 'key_active_member'): ?>
                     <div class="flex justify-between items-center bg-gray-900 p-3 rounded-lg">
                         <span class="text-gray-400 flex items-center">
                             <i class="fas fa-users mr-2"></i>
@@ -985,7 +991,6 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
                             <span id="active-users-count"><?php echo htmlspecialchars($activeUsersCount); ?></span>
                         </span>
                     </div>
-                    <?php if ($membershipStatusKey === 'key_active_member'): ?>
                     <div class="flex justify-between items-center bg-gray-900 p-3 rounded-lg">
                         <span class="text-gray-400 flex items-center">
                             <i class="fas fa-calendar-times mr-2"></i>
@@ -998,7 +1003,11 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
 
                 <!-- Renew Membership Button -->
                 <div class="mb-8">
+                    <?php if ($membershipStatusKey === 'key_inactive_member'): ?>
+                    <a href="../index.php#packages" class="renew-btn w-full font-bold py-3 px-4 text-lg text-center block" name="key_buy_subscription" id="renew-link">Buy Subscription</a>
+                    <?php else: ?>
                     <a href="../success.php?phone=<?php echo urlencode($username ?? ''); ?><?php echo ($mysqlUserId ? '&user_id=' . urlencode($mysqlUserId) : ''); ?>" class="renew-btn w-full font-bold py-3 px-4 text-lg text-center block" name="<?php echo htmlspecialchars($renewButtonTextKey); ?>" id="renew-link">Renew Membership</a>
+                    <?php endif; ?>
                 </div>
 
                 <div class="mb-8">
@@ -1108,28 +1117,24 @@ echo $displayRemainingPause . '/' . $maxPauseDays;
                         Contact us anytime
                     </p>
                     <div class="flex flex-wrap justify-center gap-6 mb-6">
-                        <a href="tel:+995322195119" class="contact-link inline-flex items-center">
+                        <a href="tel:+995599061572" class="contact-link inline-flex items-center">
                             <i class="fas fa-phone mr-2"></i>
-                            <span>+995-XXX-XXX-XXX</span>
+                            <span>+995 599 061 572</span>
                         </a>
-                        <a href="mailto:info@synergy-gym.ge" class="contact-link inline-flex items-center">
-                            <i class="fas fa-envelope mr-2"></i>
-                            <span>info@synergy-gym.ge</span>
-                        </a>
-                        <a href="https://wa.me/995551195819" target="_blank" class="contact-link inline-flex items-center">
-                            <i class="fab fa-whatsapp mr-2"></i>
-                            <span>WhatsApp</span>
+<a href="https://t.me/alex_fitness_kobuleti" target="_blank" class="contact-link inline-flex items-center">
+                            <i class="fab fa-telegram-plane mr-2"></i>
+                            <span>Telegram</span>
                         </a>
                     </div>
                     
                     <!-- Social Media Section -->
                     <div class="text-center">
                         <div class="flex justify-center gap-4">
-                            <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.facebook.com/SynergyGymTbilisi')">
+                            <a href="https://www.facebook.com/Alexfitnesskobulrti" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.facebook.com/Alexfitnesskobulrti')">
                                 <i class="fab fa-facebook-f mr-2"></i>
                                 <span>Facebook</span>
                             </a>
-                            <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.instagram.com/synergy_gym_tbilisi/')">
+                            <a href="https://www.instagram.com/alex_fitness_kobuleti/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95 touch-manipulation" onclick="openSocialMedia(event, 'https://www.instagram.com/alex_fitness_kobuleti/')">
                                 <i class="fab fa-instagram mr-2"></i>
                                 <span>Instagram</span>
                             </a>
@@ -1151,6 +1156,9 @@ const translations = {
         key_membership_status: 'Active Member',
         key_active_member: 'Active Member',
         key_inactive_member: 'Your membership is not active',
+        key_no_subscription: 'You don\'t have an active subscription',
+        key_no_subscription_desc: 'Purchase a subscription to access all gym features',
+        key_buy_subscription: 'Buy Subscription',
         key_expires_on: 'Expires on',
         key_renew_button: 'Renew Membership',
         key_buy_subscription: 'Buy Subscription',
@@ -1251,6 +1259,9 @@ const translations = {
         key_membership_status: 'აქტიური წევრი',
         key_active_member: 'აქტიური წევრი',
         key_inactive_member: 'აბონემენტი არ არის აქტიური',
+        key_no_subscription: 'თქვენ არ გაქვთ აქტიური აბონემენტი',
+        key_no_subscription_desc: 'შეიძინეთ აბონემენტი სპორტდარბაზის სრული წვდომისთვის',
+        key_buy_subscription: 'აბონემენტის ყიდვა',
         key_expires_on: 'ვადა იწურება',
         key_renew_button: 'აბონიმენტის განახლება',
         key_buy_subscription: 'აბონიმენტის ყიდვა',

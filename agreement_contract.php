@@ -26,10 +26,10 @@ try {
 
     $pdf = new TCPDF();
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Synergy');
-    $pdf->SetTitle('Synergy Gym Agreement');
+    $pdf->SetAuthor('Alex Fitness');
+    $pdf->SetTitle('Alex Fitness Agreement');
     $pdf->SetSubject('Public membership agreement');
-    $pdf->SetKeywords('TCPDF, PDF, agreement, synergy');
+    $pdf->SetKeywords('TCPDF, PDF, agreement, alex fitness');
     $pdf->SetMargins(12, 12, 12);
     $pdf->SetAutoPageBreak(true, 12);
     $pdf->AddPage();
@@ -37,9 +37,9 @@ try {
     $pdf->writeHTML($html_content, true, false, true, false, '');
 
     header('Content-Type: application/pdf');
-    header('Content-Disposition: inline; filename="Synergy-gym-agreement.pdf"');
+    header('Content-Disposition: inline; filename="Alex-Fitness-agreement.pdf"');
 
-    $pdf->Output('Synergy-gym-agreement.pdf', 'I');
+    $pdf->Output('Alex-Fitness-agreement.pdf', 'I');
     exit;
 } catch (Throwable $e) {
     error_log('Public agreement PDF failed: ' . $e->getMessage());

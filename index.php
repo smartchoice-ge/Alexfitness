@@ -1,21 +1,23 @@
-﻿<?php
+<?php
 $lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
-header("Location: agreement.php?lang=" . $lang);
-exit;
+// Redirect disabled for local development - show packages page directly
+// header("Location: agreement.php?lang=" . $lang);
+// exit;
 ?>
 <!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, ფიტნესი დიდ დიღომში, დარბაზი დიდ დიღომში, ჯიმი დიდ დიღომში, affordable gym in digomi, fitness club Didi Digomi, fitness in Didi Digomi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google-site-verification" content="cuzzQ9TWsviGVMIV1TXJX7cI4eWu9Y6CnRYiVYX0aqw" />
+    <meta name="title" content="Alex Fit – Gym &amp; Boxing in Kobuleti | Fitness Club">
+    <meta name="description" content="Discover Alex Fit in Kobuleti. Premier fitness club combining gym training and boxing. State-of-the-art equipment, personal training, boxing classes. Join us today.">
+    <meta name="keywords" content="Alex Fit, gym in Kobuleti, boxing kobuleti, fitness kobuleti, gym kobuleti, personal trainer kobuleti, boxing classes georgia, weight loss kobuleti, bodybuilding georgia, women's fitness kobuleti, affordable gym kobuleti, ფიტნესი ქობულეთში, ბოქსი ქობულეთი, დარბაზი ქობულეთი, ჯიმი ქობულეთი, affordable gym in kobuleti, fitness club Kobuleti">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover">
     
     <!-- Performance and caching meta tags -->
     <meta http-equiv="Cache-Control" content="public, max-age=3600">
     <meta http-equiv="Expires" content="<?php echo gmdate('D, d M Y H:i:s', time() + 3600); ?> GMT">
     <meta name="format-detection" content="telephone=no">
-    <meta name="theme-color" content="#c8e600">
+    <meta name="theme-color" content="#22c55e">
     
     <!-- Resource hints for better performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -45,8 +47,14 @@ exit;
     <link rel="preload" href="css/webfonts/fa-brands-400.woff2" as="font" type="font/woff2" crossorigin="anonymous">
     
     <!-- Preload critical images -->
-    <link rel="preload" href="img/logo.png" as="image" type="image/png">
-    
+    <link rel="preload" href="img/gym.webp" as="image" type="image/webp">
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.web-fonts.ge">
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" defer crossorigin="anonymous"></script>
     
@@ -67,7 +75,7 @@ exit;
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
+    <title>Alex Fit – Gym &amp; Boxing in Kobuleti</title>
 
     <style>
         /* Remove default browser focus outlines and yellow circles on mobile */
@@ -146,7 +154,7 @@ exit;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            background: linear-gradient(135deg, #0d1a11 0%, #1a2820 100%);
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -204,14 +212,14 @@ exit;
         .loader-spinner {
             width: 40px;
             height: 40px;
-            border: 3px solid rgba(200, 230, 0, 0.3);
-            border-top: 3px solid #c8e600;
+            border: 3px solid rgba(34, 197, 94, 0.3);
+            border-top: 3px solid #22c55e;
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
         
         .loader-text {
-            color: #c8e600;
+            color: #22c55e;
             font-family: 'Inter', sans-serif;
             font-size: 14px;
             margin-top: 15px;
@@ -227,7 +235,7 @@ exit;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                background: linear-gradient(135deg, #0d1a11 0%, #1a2820 100%);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -258,7 +266,7 @@ exit;
                 left: 0;
                 width: 100%;
                 height: 100%;
-                background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+                background: linear-gradient(135deg, #0d1a11 0%, #1a2820 100%);
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
@@ -285,14 +293,14 @@ exit;
             .desktop-loader .loader-spinner {
                 width: 50px;
                 height: 50px;
-                border: 4px solid rgba(200, 230, 0, 0.3);
-                border-top: 4px solid #c8e600;
+                border: 4px solid rgba(34, 197, 94, 0.3);
+                border-top: 4px solid #22c55e;
                 border-radius: 50%;
                 animation: spin 1s linear infinite;
             }
             
             .desktop-loader .loader-text {
-                color: #c8e600;
+                color: #22c55e;
                 font-family: 'Inter', sans-serif;
                 font-size: 16px;
                 margin-top: 20px;
@@ -344,14 +352,14 @@ exit;
         .whatsapp-button {
             display: flex;
             align-items: center;
-            background: linear-gradient(135deg, #1a73e8 0%, #1557b0 100%);
+            background: linear-gradient(135deg, #1e3a8a 0%, #0f2d52 100%);
             color: #ffffff;
             padding: 16px 28px;
             border-radius: 50px;
             text-decoration: none;
             font-weight: 700;
             font-size: 1.1rem;
-            box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
+            box-shadow: 0 10px 30px rgba(30, 64, 175, 0.5);
             border: 3px solid #ffffff;
             animation: whatsappPulse 2.5s ease-in-out infinite, whatsappBounce 4s ease-in-out infinite;
             position: relative;
@@ -378,7 +386,7 @@ exit;
 
         .whatsapp-button:hover {
             transform: translateY(-5px) scale(1.15);
-            box-shadow: 0 15px 40px rgba(26, 115, 232, 0.7);
+            box-shadow: 0 15px 40px rgba(30, 64, 175, 0.7);
             text-decoration: none;
             color: #ffffff;
             animation: whatsappPulse 1.5s ease-in-out infinite, whatsappShake 0.5s ease-in-out;
@@ -402,11 +410,11 @@ exit;
 
         @keyframes whatsappPulse {
             0%, 100% {
-                box-shadow: 0 10px 30px rgba(26, 115, 232, 0.5);
+                box-shadow: 0 10px 30px rgba(30, 64, 175, 0.5);
                 transform: scale(1.1);
             }
             50% {
-                box-shadow: 0 15px 40px rgba(26, 115, 232, 0.8);
+                box-shadow: 0 15px 40px rgba(30, 64, 175, 0.8);
                 transform: scale(1.15);
             }
         }
@@ -512,8 +520,7 @@ exit;
             background-color: #1a1a1a; /* Dark placeholder while image loads */
         }
         .price-box {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             padding: 10px 20px;
             border-radius: 8px;
             display: inline-block;
@@ -523,15 +530,15 @@ exit;
 
         /* Enhanced pricing styles for deals */
         .price-box-offer {
-            background: linear-gradient(135deg, #c8e600 0%, #a8c200 100%);
+            background: linear-gradient(135deg, #166534 0%, #14532d 100%);
             color: #000000;
             padding: 15px 25px;
             border-radius: 12px;
             display: inline-block;
             font-weight: bold;
             position: relative;
-            box-shadow: 0 8px 25px rgba(200, 230, 0, 0.3);
-            border: 2px solid #c8e600;
+            box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
+            border: 2px solid #22c55e;
             animation: pulse-glow 2s ease-in-out infinite;
         }
 
@@ -542,7 +549,7 @@ exit;
             left: -2px;
             right: -2px;
             bottom: -2px;
-            background: linear-gradient(45deg, #c8e600, #a8c200, #d4f000, #c8e600);
+            background: linear-gradient(45deg, #22c55e, #166534, #16a34a, #22c55e);
             background-size: 400% 400%;
             border-radius: 12px;
             z-index: -1;
@@ -551,11 +558,11 @@ exit;
 
         @keyframes pulse-glow {
             0%, 100% {
-                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.3);
+                box-shadow: 0 8px 25px rgba(34, 197, 94, 0.3);
                 transform: scale(1);
             }
             50% {
-                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.5);
+                box-shadow: 0 12px 35px rgba(34, 197, 94, 0.5);
                 transform: scale(1.02);
             }
         }
@@ -639,7 +646,7 @@ exit;
         
         /* Style for the language change button */
         .topcorner {
-            background-color: #c8e600; /* Same yellow as your other buttons */
+            background-color: #22c55e; /* Same yellow as your other buttons */
             color: #000000;           /* Black text for good contrast */
             padding: 8px 12px;
             border-radius: 8px;       /* Rounded corners to match */
@@ -657,18 +664,17 @@ exit;
             font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            border: 2px solid #c8e600;
+            border: 2px solid #22c55e;
             display: inline-block;
             transition: all 0.3s ease;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
         }
 
         .price-block:hover .price-cta {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(200, 230, 0, 0.4);
-            border-color: #e6c500;
+            box-shadow: 0 4px 12px rgba(34, 197, 94, 0.4);
+            border-color: #16a34a;
         }
 
         /* Pricing boxes alignment and proportional sizing */
@@ -688,7 +694,7 @@ exit;
 
         .packages [class*='col-'] {
             display: flex;
-            margin-bottom: 30px;
+            margin-bottom: 12px;
         }
 
         .packages .price-block {
@@ -696,15 +702,15 @@ exit;
             flex-direction: column;
             justify-content: flex-start;
             width: 100%;
-            min-height: 520px;
+            min-height: 360px;
             position: relative;
             padding: 34px 24px 24px 24px !important;
         }
 
         /* Ensure all price boxes have consistent spacing */
         .packages [class*='col-'] {
-            margin-top: 30px !important;
-            margin-bottom: 30px !important;
+            margin-top: 12px !important;
+            margin-bottom: 12px !important;
         }
 
         /* Content structure and spacing */
@@ -750,8 +756,7 @@ exit;
         }
 
         .top-btn {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             padding: 8px 15px;
             border-radius: 8px;
             font-size: 0.9rem;
@@ -764,11 +769,11 @@ exit;
         }
 
         .top-btn:hover {
-            background-color: #1a73e8;
+            background-color: #1e40af;
             color: #000000;
             text-decoration: none;
             transform: translateY(-1px);
-            box-shadow: 0 3px 8px rgba(26, 115, 232, 0.35);
+            box-shadow: 0 3px 8px rgba(30, 64, 175, 0.35);
         }
 
         .top-btn span, .top-btn h6 {
@@ -813,7 +818,7 @@ exit;
                     right: 8px !important;
                     padding: 6px 10px !important;
                     font-size: 0.7rem !important;
-                    background-color: rgba(200, 230, 0, 0.95) !important;
+                    background-color: rgba(34, 197, 94, 0.95) !important;
                     backdrop-filter: blur(5px) !important;
                     border: 1px solid rgba(0, 0, 0, 0.1) !important;
                     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
@@ -892,7 +897,7 @@ exit;
             }
             
             .navbar-nav .nav-item .menu-link {
-                background-color: #c8e600 !important;
+                background-color: #22c55e !important;
                 color: #000000 !important;
                 padding: 10px 16px !important;
                 border-radius: 8px !important;
@@ -908,11 +913,11 @@ exit;
             }
             
             .navbar-nav .nav-item .menu-link:hover {
-                background-color: #e6c500 !important;
+                background-color: #16a34a !important;
                 color: #000000 !important;
                 text-decoration: none !important;
                 transform: translateY(-1px) !important;
-                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3) !important;
+                box-shadow: 0 3px 8px rgba(34, 197, 94, 0.3) !important;
             }
             
             /* Add mobile buttons container after nav */
@@ -939,7 +944,7 @@ exit;
             
             /* Join Now Button - Eye-catching gradient with animation */
             .mobile-btn:first-child {
-                background: #c8e600;
+                background: #22c55e;
                 background-size: 300% 300%;
                 color: #000000;
                 padding: 15px 25px;
@@ -948,7 +953,7 @@ exit;
                 font-weight: 700;
                 text-decoration: none;
                 transition: all 0.3s ease;
-                border: 2px solid #c8e600;
+                border: 2px solid #22c55e;
                 cursor: pointer;
                 display: inline-block;
                 text-align: center;
@@ -957,7 +962,7 @@ exit;
                 text-transform: uppercase;
                 letter-spacing: 1px;
                 animation: pulseGlow 2s ease-in-out infinite;
-                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.4);
+                box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
                 position: relative;
                 overflow: hidden;
             }
@@ -979,21 +984,20 @@ exit;
             
             .mobile-btn:first-child:hover {
                 transform: translateY(-3px) scale(1.05);
-                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.6);
-                border-color: #c8e600;
+                box-shadow: 0 12px 35px rgba(34, 197, 94, 0.6);
+                border-color: #22c55e;
             }
             
             /* Log In Button - Simple and clean */
             .mobile-btn:last-child {
-                background-color: #c8e600;
-                color: #000000;
+                background-color: #166534; color: #ffffff;
                 padding: 12px 20px;
                 border-radius: 8px;
                 font-size: 0.95rem;
                 font-weight: 600;
                 text-decoration: none;
                 transition: all 0.3s ease;
-                border: 2px solid #c8e600;
+                border: 2px solid #22c55e;
                 cursor: pointer;
                 display: inline-block;
                 text-align: center;
@@ -1002,11 +1006,11 @@ exit;
             }
             
             .mobile-btn:last-child:hover {
-                background-color: #e6c500;
+                background-color: #16a34a;
                 color: #000000;
                 text-decoration: none;
                 transform: translateY(-1px);
-                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3);
+                box-shadow: 0 3px 8px rgba(34, 197, 94, 0.3);
             }
         }
 
@@ -1018,11 +1022,11 @@ exit;
 
         @keyframes pulseGlow {
             0%, 100% {
-                box-shadow: 0 8px 25px rgba(200, 230, 0, 0.4);
+                box-shadow: 0 8px 25px rgba(34, 197, 94, 0.4);
                 transform: scale(1);
             }
             50% {
-                box-shadow: 0 12px 35px rgba(200, 230, 0, 0.6);
+                box-shadow: 0 12px 35px rgba(34, 197, 94, 0.6);
                 transform: scale(1.02);
             }
         }
@@ -1131,7 +1135,7 @@ exit;
             
             /* Ensure proper spacing for tablet navigation buttons */
             .navbar-nav .nav-item .menu-link {
-                background-color: #c8e600 !important;
+                background-color: #22c55e !important;
                 color: #000000 !important;
                 padding: 12px 20px !important;
                 border-radius: 8px !important;
@@ -1148,16 +1152,16 @@ exit;
             }
             
             .navbar-nav .nav-item .menu-link:hover {
-                background-color: #e6c500 !important;
+                background-color: #16a34a !important;
                 color: #000000 !important;
                 text-decoration: none !important;
                 transform: translateY(-1px) !important;
-                box-shadow: 0 3px 8px rgba(200, 230, 0, 0.3) !important;
+                box-shadow: 0 3px 8px rgba(34, 197, 94, 0.3) !important;
             }
             
             /* Better button layout for tablets */
             .mobile-buttons-container .mobile-btn:first-child {
-                background: #c8e600 !important;
+                background: #22c55e !important;
                 background-size: 300% 300% !important;
                 animation: pulseGlow 2s ease-in-out infinite !important;
             }
@@ -1210,7 +1214,350 @@ exit;
             }
         }
     </style>
-    
+
+    <style>
+    /* ── Fixed Top Navbar ─────────────────────────────────────────── */
+    .site-navbar {
+        position: fixed;
+        top: 0; left: 0;
+        width: 100%;
+        z-index: 1000;
+        background: rgba(8, 14, 10, 0.96);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(34, 197, 94, 0.15);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    }
+    .site-navbar-inner {
+        display: flex;
+        align-items: center;
+        height: 82px;
+        padding: 0 24px;
+        max-width: 1400px;
+        margin: 0 auto;
+        position: relative;
+    }
+
+    /* Logo – left */
+    .navbar-logo-link {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+    .navbar-logo-img {
+        height: 70px;
+        width: auto;
+        display: block;
+        filter: drop-shadow(0 2px 10px rgba(34, 197, 94, 0.35));
+        transition: filter 0.25s ease, transform 0.25s ease;
+    }
+    .navbar-logo-img:hover {
+        filter: drop-shadow(0 4px 18px rgba(34, 197, 94, 0.60));
+        transform: scale(1.04);
+    }
+
+    /* Desktop center links – truly centered on the page */
+    .navbar-desktop-links {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        pointer-events: auto;
+    }
+    .navbar-link {
+        color: #c8c8c8;
+        font-size: 0.95rem;
+        font-weight: 600;
+        padding: 8px 20px;
+        border-radius: 6px;
+        text-decoration: none;
+        letter-spacing: 0.4px;
+        transition: color 0.2s ease, background 0.2s ease;
+        white-space: nowrap;
+    }
+    .navbar-link:hover {
+        color: #4ade80;
+        background: rgba(74, 222, 128, 0.10);
+        text-decoration: none;
+    }
+    @keyframes nav-btn-shimmer {
+        0%   { background-position: 200% center; }
+        100% { background-position: -200% center; }
+    }
+    .navbar-register {
+        background: linear-gradient(90deg, #16a34a 0%, #4ade80 40%, #22c55e 55%, #4ade80 70%, #16a34a 100%);
+        background-size: 250% auto;
+        color: #000 !important;
+        font-size: 0.92rem;
+        font-weight: 700;
+        padding: 9px 24px;
+        border-radius: 6px;
+        border: 1px solid rgba(74, 222, 128, 0.70);
+        text-decoration: none;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        white-space: nowrap;
+        box-shadow: 0 4px 18px rgba(74, 222, 128, 0.30);
+        animation: nav-btn-shimmer 3.5s linear infinite;
+        transition: box-shadow 0.22s ease, transform 0.22s ease;
+    }
+    .navbar-register:hover {
+        color: #000 !important;
+        border-color: #4ade80;
+        text-decoration: none;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 28px rgba(74, 222, 128, 0.55);
+    }
+
+    /* Auth button – right group */
+    .navbar-auth-btn {
+        color: #d0d0d0;
+        font-size: .88rem;
+        font-weight: 600;
+        padding: 7px 28px;
+        border-radius: 6px;
+        border: 1px solid rgba(56,189,248,0.38);
+        background: rgba(56,189,248,0.08);
+        text-decoration: none;
+        letter-spacing: .3px;
+        white-space: nowrap;
+        transition: all .2s ease;
+    }
+    .navbar-auth-btn:hover {
+        color: #38bdf8;
+        border-color: #38bdf8;
+        background: rgba(56,189,248,0.16);
+        text-decoration: none;
+    }
+    .nm-auth {
+        color: #c8c8c8;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 11px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        border: 1px solid rgba(56,189,248,0.30);
+        background: rgba(56,189,248,0.07);
+        text-align: center;
+        transition: color .2s, background .2s;
+    }
+    .nm-auth:hover { color: #38bdf8; background: rgba(56,189,248,0.14); text-decoration: none; }
+
+    /* Right group – lang + hamburger */
+    .navbar-right-group {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-left: auto;
+    }
+    .navbar-lang-btn {
+        color: #d0d0d0;
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 7px 28px;
+        border-radius: 6px;
+        border: 1px solid rgba(74, 222, 128, 0.38);
+        background: rgba(74, 222, 128, 0.08);
+        transition: all 0.2s ease;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+    }
+    .navbar-lang-btn:hover {
+        color: #4ade80;
+        border-color: #4ade80;
+        background: rgba(74, 222, 128, 0.16);
+        box-shadow: 0 0 10px rgba(74, 222, 128, 0.20);
+    }
+
+    /* Hamburger – hidden on desktop */
+    .navbar-hamburger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        gap: 5px;
+        width: 36px;
+        height: 36px;
+        padding: 0;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .navbar-hamburger span {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: #c8c8c8;
+        border-radius: 2px;
+        transition: background 0.2s ease;
+    }
+    .navbar-hamburger:hover span { background: #22c55e; }
+
+    /* Mobile dropdown – hidden by default */
+    .navbar-mobile-menu {
+        display: none;
+        flex-direction: column;
+        padding: 12px 20px 18px;
+        border-top: 1px solid rgba(34, 197, 94, 0.12);
+        background: rgba(6, 12, 8, 0.98);
+        gap: 4px;
+    }
+    .navbar-mobile-menu.open { display: flex; }
+    .nm-link {
+        color: #c8c8c8;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 11px 16px;
+        border-radius: 6px;
+        text-decoration: none;
+        transition: color 0.2s, background 0.2s;
+    }
+    .nm-link:hover {
+        color: #ffffff;
+        background: rgba(34, 197, 94, 0.10);
+        text-decoration: none;
+    }
+    .nm-register {
+        background: linear-gradient(90deg, #16a34a 0%, #4ade80 50%, #16a34a 100%);
+        background-size: 200% auto;
+        color: #000 !important;
+        font-size: 0.95rem;
+        font-weight: 700;
+        padding: 12px 20px;
+        border-radius: 6px;
+        border: 1px solid rgba(74, 222, 128, 0.60);
+        text-decoration: none;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 6px 0;
+        box-shadow: 0 4px 16px rgba(74, 222, 128, 0.28);
+        animation: nav-btn-shimmer 3.5s linear infinite;
+        transition: box-shadow 0.22s ease, transform 0.22s ease;
+    }
+    .nm-register:hover {
+        color: #000 !important;
+        text-decoration: none;
+        box-shadow: 0 6px 24px rgba(74, 222, 128, 0.50);
+    }
+    .nm-lang {
+        color: #a0a0a0;
+        font-size: 0.88rem;
+        font-weight: 600;
+        padding: 10px 16px;
+        border-radius: 6px;
+        border: 1px solid rgba(34, 197, 94, 0.22);
+        text-align: center;
+        margin-top: 6px;
+        transition: color 0.2s, border-color 0.2s;
+    }
+    .nm-lang:hover { color: #22c55e; border-color: #22c55e; }
+
+    /* Show hamburger, hide desktop links on small screens */
+    @media (max-width: 900px) {
+        .navbar-desktop-links { display: none; }
+        .navbar-hamburger { display: flex; }
+    }
+    @media (min-width: 901px) {
+        .navbar-mobile-menu { display: none !important; }
+    }
+
+    /* ── Hero / Top-Block ─────────────────────────────────────────── */
+    .site-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 134px 20px 90px; /* 68px navbar + 66px breathing room */
+        position: relative;
+        z-index: 2;
+    }
+
+    @keyframes logo-float {
+        0%, 100% { transform: translateY(0px);   filter: drop-shadow(0 6px 28px rgba(74,222,128,0.42)) drop-shadow(0 2px 8px rgba(0,0,0,0.7)); }
+        50%       { transform: translateY(-10px); filter: drop-shadow(0 14px 40px rgba(74,222,128,0.62)) drop-shadow(0 4px 12px rgba(0,0,0,0.8)); }
+    }
+    @keyframes hero-btn-shimmer {
+        0%   { background-position: 200% center; }
+        100% { background-position: -200% center; }
+    }
+    @keyframes hero-btn-pulse {
+        0%, 100% { box-shadow: 0 8px 28px rgba(74,222,128,0.40); }
+        50%       { box-shadow: 0 14px 48px rgba(74,222,128,0.70); }
+    }
+
+    /* Logo */
+    .hero-logo-wrap { margin-bottom: 36px; }
+    .hero-logo {
+        width: 210px;
+        height: auto;
+        display: block;
+        animation: logo-float 5s ease-in-out infinite;
+    }
+    .hero-logo:hover {
+        animation: none;
+        transform: scale(1.08) translateY(-6px);
+        filter: drop-shadow(0 16px 50px rgba(74, 222, 128, 0.70))
+                drop-shadow(0 4px 14px rgba(0, 0, 0, 0.85));
+    }
+
+    /* CTA */
+    .hero-cta {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 55px;
+    }
+    .hero-cta-btn {
+        background: linear-gradient(90deg, #16a34a 0%, #4ade80 35%, #22c55e 50%, #4ade80 65%, #16a34a 100%);
+        background-size: 250% auto;
+        color: #000;
+        padding: 17px 52px;
+        border-radius: 8px;
+        font-size: 1.18rem;
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid rgba(74, 222, 128, 0.70);
+        letter-spacing: 1.8px;
+        text-transform: uppercase;
+        display: inline-block;
+        animation: hero-btn-shimmer 3s linear infinite, hero-btn-pulse 2.5s ease-in-out infinite;
+        transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+    .hero-cta-btn:hover {
+        color: #000;
+        transform: translateY(-4px) scale(1.03);
+        box-shadow: 0 18px 55px rgba(74, 222, 128, 0.75);
+        text-decoration: none;
+        border-color: #4ade80;
+    }
+
+    /* Slogan */
+    .slogan {
+        color: #ffffff;
+        text-align: center;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.75);
+        margin: 0;
+        padding: 0 20px;
+    }
+
+    /* Mobile hero adjustments */
+    @media (max-width: 900px) {
+        .site-header { padding: 110px 16px 55px; }
+        .hero-logo { width: 160px; }
+        .hero-logo-wrap { margin-bottom: 28px; }
+        .hero-cta-btn { padding: 14px 30px; font-size: 1rem; letter-spacing: 1px; }
+    }
+    @media (max-width: 480px) {
+        .hero-logo { width: 130px; }
+        .hero-cta { flex-direction: column; align-items: center; }
+        .hero-cta-btn { width: 240px; text-align: center; }
+    }
+    </style>
+
     <script src="js/scripts.js" crossorigin="anonymous" defer></script>
     <script src="js/language.js" crossorigin="anonymous" defer></script>
     
@@ -1349,7 +1696,7 @@ exit;
                 '/js/popper.min.js',
                 '/js/scripts.js',
                 '/js/language.js',
-                '/img/logo.png'
+                '/img/gym.png'
             ];
             
             // Preload critical resources into cache
@@ -1369,7 +1716,7 @@ exit;
             // Prefetch external resources for next page loads
             const linkPrefetch = document.createElement('link');
             linkPrefetch.rel = 'prefetch';
-            linkPrefetch.href = 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg';
+            // no external icon prefetch needed
             document.head.appendChild(linkPrefetch);
         });
     </script>
@@ -1378,21 +1725,23 @@ exit;
     {
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
-      "name": "Synergy Gym",
-      "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
+      "name": "Alex Fit",
+      "description": "Alex Fit in Kobuleti — gym and boxing training centre with modern equipment, personal training, and boxing classes.",
       "url": "/",
-      "logo": "/img/logo.png",
-      "telephone": "+995-XXX-XXX-XXX",
+      "logo": "/img/gym.png",
+      "telephone": "+995599061572",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Tbilisi",
+        "streetAddress": "Shota Rustaveli 170-25",
+        "addressLocality": "Kobuleti",
+        "postalCode": "6200",
         "addressCountry": "GE"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "41.788453",
-        "longitude": "44.762575"
+        "latitude": "41.8323",
+        "longitude": "41.7712"
       },
       "openingHoursSpecification": [
         {
@@ -1405,8 +1754,8 @@ exit;
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
       ],
       "sameAs": [
-        "https://www.facebook.com/SynergyGymTbilisi",
-        "https://www.instagram.com/synergy_gym_tbilisi/"
+        "https://www.facebook.com/Alexfitnesskobulrti/",
+        "https://www.instagram.com/alex_fitness_kobuleti/"
       ]
     }
     </script>
@@ -1427,67 +1776,240 @@ exit;
     </script>
     -->
     <!-- End Meta Pixel Code -->
-    
+
+    <!-- Mobile Tonus-style layout overrides -->
+    <style>
+    @media (max-width: 900px) {
+        .site-navbar { display: none !important; }
+
+        /* Language pill — top right */
+        .mobile-lang-fixed {
+            position: fixed;
+            top: max(16px, env(safe-area-inset-top, 16px));
+            right: max(12px, env(safe-area-inset-right, 12px));
+            z-index: 1100;
+            background: rgba(34, 197, 94, 0.88);
+            backdrop-filter: blur(6px);
+            color: #000 !important;
+            padding: 7px 14px;
+            border-radius: 20px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            cursor: pointer;
+            display: block;
+            border: 1px solid rgba(74, 222, 128, 0.4);
+            letter-spacing: 0.3px;
+            white-space: nowrap;
+            box-sizing: border-box;
+            max-width: calc(100vw - 24px);
+        }
+
+        /* Hero full-screen centered column */
+        .top-block { min-height: 100svh; display: flex; align-items: stretch; }
+        .site-header {
+            min-height: 100svh;
+            width: 100%;
+            padding: 0 24px 100px !important;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            justify-content: center !important;
+            gap: 0 !important;
+        }
+
+        /* Logo */
+        .hero-logo-wrap { margin-bottom: 28px !important; }
+        .hero-logo { width: 140px !important; filter: drop-shadow(0 4px 20px rgba(34,197,94,0.4)); }
+
+        /* Prices / Contact — compact nav buttons */
+        .mobile-hero-nav-btn {
+            display: block;
+            background: #22c55e;
+            color: #000 !important;
+            padding: 12px 0;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+            text-decoration: none !important;
+            width: 240px;
+            text-align: center;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bigger gap after Contact before Registration group */
+        .mobile-hero-nav-btn + .mobile-hero-nav-btn { margin-bottom: 32px; }
+
+        /* JOIN NOW */
+        .hero-cta {
+            width: 100%;
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            gap: 0 !important;
+            margin-bottom: 0 !important;
+        }
+        .hero-cta-btn {
+            background: linear-gradient(135deg, #15803d 0%, #22c55e 45%, #4ade80 75%, #22c55e 100%) !important;
+            background-size: 250% 250% !important;
+            color: #000 !important;
+            padding: 16px 0 !important;
+            border-radius: 12px !important;
+            font-size: 1.1rem !important;
+            font-weight: 800 !important;
+            letter-spacing: 2px !important;
+            width: 280px !important;
+            text-align: center !important;
+            box-shadow: 0 8px 28px rgba(34, 197, 94, 0.45) !important;
+            animation: none !important;
+            margin-bottom: 8px !important;
+        }
+
+        /* Log In — outlined style, same size as Registration */
+        .mobile-hero-login-btn {
+            display: block;
+            background: transparent;
+            color: #22c55e !important;
+            padding: 16px 0;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            text-decoration: none !important;
+            width: 280px;
+            text-align: center;
+            border: 2px solid #22c55e;
+            letter-spacing: 2px;
+        }
+
+        /* Slogan at bottom */
+        .slogan {
+            margin-top: 24px !important;
+            font-size: 0.95rem !important;
+            opacity: 0.8 !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .mobile-buttons-container { display: none !important; }
+    }
+    @media (min-width: 901px) {
+        .mobile-lang-fixed { display: none !important; }
+        .mobile-hero-nav-btn { display: none !important; }
+        .mobile-hero-login-btn { display: none !important; }
+    }
+    </style>
+
 </head>
 <body>
 
+<!-- Mobile fixed language button (Tonus-style, top-right) -->
+<div class="mobile-lang-fixed pointer" onclick="SetLanguage()">
+    <span name="key_lang">key_lang</span>
+</div>
+
 <!-- Mobile Loader - Only visible on mobile devices -->
 <div class="mobile-loader" id="mobileLoader">
-    <img src="img/logo.png" alt="Synergy Gym" class="loader-logo" onerror="this.style.display='none';">
+    <img src="img/gym.png" alt="Alex Fit" class="loader-logo" onerror="this.style.display='none';">
     <div class="loader-spinner"></div>
     <div class="loader-text">Loading...</div>
 </div>
 
 <!-- Desktop Loader - Only visible on desktop devices -->
 <div class="desktop-loader" id="desktopLoader">
-    <img src="img/logo.png" alt="Synergy Gym" class="loader-logo" onerror="this.style.display='none';">
+    <img src="img/gym.png" alt="Alex Fit" class="loader-logo" onerror="this.style.display='none';">
     <div class="loader-spinner"></div>
     <div class="loader-text">Loading...</div>
 </div>
 
-<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
-    <div class="whatsapp-button">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="whatsapp-icon" onerror="this.onerror=null; this.src='https://placehold.co/24x24/ffffff/25d366?text=WA';">
-        <span class="whatsapp-text" name="key_contact_whatsapp">Contact Us</span>
-    </div>
-</a>
 
 <div id="cont" class="content-visible">
-    <div class="container-fluid top-block no-padding">
-        <div class="container" > 
-            <header class="full-width text-center pt-3 pb-3">
-                <nav class="navbar navbar-expand-lg navbar-light bg-none no-padding col-md-8 offset-2" style="justify-content: center !important;">
-                    <button class="navbar-toggler full-width" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <a href="/" class="logo-sm banner"><img src="img/logo.png" alt="Synergy Gym Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a>
-                    </button>
-                    <div class="" id="navbarSupportedContent" style="justify-content: center; display: flex;">
-                        <ul class="navbar-nav mr-auto middle">
-                            <li class="nav-item middle"><a href="#packages" class="menu-link banner menu_links" name="key_packages">key_packages</a></li>
-                            <li class="nav-item menu-logo d-none d-md-block"><a href="/" class="menu-link banner"><img src="img/logo.png" alt="Synergy Gym Logo" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a></li>
-                            <li class="nav-item middle"><a href="#contact" class="menu-link banner menu_links" name="key_contact">key_contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="top-buttons-container">
-                        <a href="javascript:void(0);" onclick="openAuthWithLang(); return false;" class="top-btn banner" name="key_sign_in">key_sign_in</a>
-                        <div class="top-btn pointer" onclick="SetLanguage()"><span name='key_lang'>key_lang</span></div>
-                    </div>
-                </nav>
-                
-                <!-- Mobile buttons container - only visible on mobile/tablet -->
-                <div class="mobile-buttons-container d-block d-lg-none">
-                    <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;" class="mobile-btn banner" target="_blank" name="key_become_member">key_become_member</a>
-                    <a href="javascript:void(0);" onclick="openAuthWithLang(); return false;" class="mobile-btn banner" name="key_sign_in">key_sign_in</a>
+
+    <!-- ── Fixed Top Navbar ─────────────────────────────────────────────── -->
+    <nav class="site-navbar" id="siteNavbar">
+        <div class="site-navbar-inner">
+
+            <!-- Logo – left -->
+            <a href="/" class="navbar-logo-link">
+                <picture>
+                    <source srcset="img/gym.webp" type="image/webp">
+                    <img src="img/gym.png" alt="Alex Fit" class="navbar-logo-img" loading="eager"
+                         onerror="this.onerror=null;this.src='https://placehold.co/55x55/0d1a11/22c55e?text=AF';">
+                </picture>
+            </a>
+
+            <!-- Desktop links + register button in center -->
+            <div class="navbar-desktop-links">
+                <a href="#packages" class="navbar-link menu_links" name="key_packages">key_packages</a>
+                <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;"
+                   class="navbar-register banner" name="key_become_member">key_become_member</a>
+                <a href="#contact"  class="navbar-link menu_links" name="key_contact">key_contact</a>
+            </div>
+
+            <!-- Language + login + hamburger – right -->
+            <div class="navbar-right-group">
+                <a href="javascript:void(0);" onclick="openAuthWithLang(); return false;"
+                   class="navbar-auth-btn" name="key_sign_in">key_sign_in</a>
+                <div class="navbar-lang-btn pointer" onclick="SetLanguage()">
+                    <span name="key_lang">key_lang</span>
                 </div>
-                
-                <div class="flex flex-wrap justify-center items-center gap-4 my-4 d-none d-lg-block">
-                    <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;" class="btn btn-lg banner" target="_blank" name="key_become_member" style="background-color: #c8e600; color: #000000; font-size: 1.2rem; padding: 1rem 2rem; border-radius: 8px; font-weight: bold;">key_become_member</a>
-                </div>
-                <h1 class="slogan banner mt-xs-1" name='key_motivational'><i>key_motivational</i></h1>
-            </header>
+                <button class="navbar-hamburger" id="navToggle"
+                        onclick="document.getElementById('navMobileMenu').classList.toggle('open')">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
+
+        <!-- Mobile dropdown -->
+        <div class="navbar-mobile-menu" id="navMobileMenu">
+            <a href="#packages" class="nm-link menu_links" name="key_packages">key_packages</a>
+            <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;"
+               class="nm-register banner" name="key_become_member">key_become_member</a>
+            <a href="#contact"  class="nm-link menu_links" name="key_contact">key_contact</a>
+            <a href="javascript:void(0);" onclick="openAuthWithLang(); return false;"
+               class="nm-auth" name="key_sign_in">key_sign_in</a>
+            <div class="nm-lang pointer" onclick="SetLanguage()">
+                <span name="key_lang">key_lang</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Hero / Top Block ─────────────────────────────────────────────── -->
+    <div class="container-fluid top-block no-padding">
+        <header class="site-header">
+
+            <!-- Logo – large and centered -->
+            <div class="hero-logo-wrap">
+                <a href="/"><picture>
+                    <source srcset="img/gym.webp" type="image/webp">
+                    <img src="img/gym.png" alt="Alex Fit" class="hero-logo" fetchpriority="high"
+                        onerror="this.onerror=null;this.src='https://placehold.co/220x220/0d1a11/22c55e?text=Logo';">
+                </picture></a>
+            </div>
+
+            <!-- Mobile nav buttons: Prices + Contact (hidden on desktop) -->
+            <a href="#packages" class="mobile-hero-nav-btn menu_links" name="key_packages">key_packages</a>
+            <a href="#contact"  class="mobile-hero-nav-btn menu_links" name="key_contact">key_contact</a>
+
+            <!-- Big centered CTA -->
+            <div class="hero-cta">
+                <a href="javascript:void(0);" onclick="openAgreementWithLang(); return false;"
+                   class="hero-cta-btn banner" name="key_become_member">key_become_member</a>
+            </div>
+
+            <!-- Mobile Log In button (hidden on desktop) -->
+            <a href="javascript:void(0);" onclick="openAuthWithLang(); return false;"
+               class="mobile-hero-login-btn" name="key_sign_in">key_sign_in</a>
+
+            <!-- Slogan -->
+            <h1 class="slogan banner" name="key_motivational"><i>key_motivational</i></h1>
+
+        </header>
     </div>
     <div id="packages" class="content full-width packages">
         <div class="container-fluid d-none d-sm-block shadow-bg"></div>
+        <div class="packages-caption">
+            <h2 name="key_gym_name">Alex Fitness</h2>
+            <p name="key_choose_plan">აირჩიეთ თქვენი გეგმა &bull; Choose Your Plan</p>
+        </div>
         <div class="container">
             <div class="col-sm-12">
                 <?php
@@ -1555,71 +2077,351 @@ exit;
     
     <div id="contact" class="container-fluid text-center join banner pt-5 pb-5" style="background-color: #000000; color: #FFFFFF;">
         <div class="full-width join-shadow"></div>
-        <h2 name='key_find' style="font-size: 2.5rem; font-weight: bold; color: #c8e600; text-transform: uppercase; letter-spacing: 1px;">key_find</h2>
+        <h2 name='key_find' style="font-size: 2.5rem; font-weight: bold; color: #22c55e; text-transform: uppercase; letter-spacing: 1px;">key_find</h2>
 
         <div class="contact-info mt-4">
 
-            <p style="font-size: 1.3rem; margin-top: 1.5rem; margin-bottom: 1.5rem;">
-                <strong>Email:</strong> <a href="mailto:info@synergy-gym.ge" style="text-decoration: none; color: #FFFFFF;">info@synergy-gym.ge</a>
+            <p style="font-size: 1.4rem; margin: 1.2rem 0;">
+                <a href="tel:+995599061572"
+                   style="text-decoration:none; color:#4ade80; font-weight:700; letter-spacing:1px; transition:color 0.2s;"
+                   onmouseover="this.style.color='#22c55e'" onmouseout="this.style.color='#4ade80'">
+                    <i class="fas fa-phone-alt" style="margin-right:10px;"></i>+995 599 061 572
+                </a>
             </p>
 
-            <!-- Mobile App Download Images -->
-            <div style="margin: 3rem auto; padding: 2rem 0; max-width: 600px; display: flex; justify-content: center; align-items: center; gap: 30px; flex-wrap: wrap;">
-                <a href="https://play.google.com/store/apps/details?id=ge.Synergy.gym" target="_blank" rel="noopener noreferrer" style="transition: all 0.3s ease; display: inline-block; filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3));" onmouseover="this.style.transform='scale(1.1) translateY(-5px)'; this.style.filter='drop-shadow(0 8px 20px rgba(255, 255, 255, 0.5))'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.filter='drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3))'">
-                    <img src="img/android.png" alt="Download on Google Play" style="height: 80px; width: auto; border-radius: 8px;">
-                </a>
-                <a href="https://apps.apple.com/ge/app/Synergy-gym/id6752832860" target="_blank" rel="noopener noreferrer" style="transition: all 0.3s ease; display: inline-block; filter: drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3));" onmouseover="this.style.transform='scale(1.1) translateY(-5px)'; this.style.filter='drop-shadow(0 8px 20px rgba(255, 255, 255, 0.5))'" onmouseout="this.style.transform='scale(1) translateY(0)'; this.style.filter='drop-shadow(0 4px 12px rgba(255, 255, 255, 0.3))'">
-                    <img src="img/ios.png" alt="Download on App Store" style="height: 80px; width: auto; border-radius: 8px;">
-                </a>
+            <div style="display:inline-flex; align-items:center; gap:18px; background:rgba(74,222,128,0.07); border:1px solid rgba(74,222,128,0.25); border-radius:50px; padding:10px 28px; margin:0.5rem 0 1.5rem;">
+                <span style="color:#4ade80; font-size:1.4rem;"><i class="fas fa-clock"></i></span>
+                <div style="text-align:left; line-height:1.35;">
+                    <div style="color:#ececec; font-size:1.25rem; font-weight:800; letter-spacing:1px;">09:30 – 00:00</div>
+                    <div style="color:#7a7a7a; font-size:0.82rem; letter-spacing:0.5px; text-transform:uppercase;" name="key_every_day">Every Day</div>
+                </div>
             </div>
 
             <div class="social-links" style="margin-top: 2rem;">
-                <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #1877F2; transition: color 0.3s;" onmouseover="this.style.color='#4267B2'" onmouseout="this.style.color='#1877F2'">
-                    <i class="fab fa-facebook-f fa-lg" style="margin-right: 8px;"></i>Facebook
+                <a href="https://www.facebook.com/Alexfitnesskobulrti/" target="_blank" rel="noopener noreferrer"
+                   style="font-size:1.3rem; margin:0 15px; text-decoration:none; color:#1877F2; transition:color 0.3s;"
+                   onmouseover="this.style.color='#60a5fa'" onmouseout="this.style.color='#1877F2'">
+                    <i class="fab fa-facebook-f fa-lg" style="margin-right:8px;"></i>Facebook
                 </a>
-                <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" style="font-size: 1.3rem; margin: 0 15px; text-decoration: none; color: #E4405F; transition: color 0.3s;" onmouseover="this.style.color='#C13584'" onmouseout="this.style.color='#E4405F'">
-                    <i class="fab fa-instagram fa-lg" style="margin-right: 8px;"></i>Instagram
+                <a href="https://www.instagram.com/alex_fitness_kobuleti/" target="_blank" rel="noopener noreferrer"
+                   style="font-size:1.3rem; margin:0 15px; text-decoration:none; color:#E4405F; transition:color 0.3s;"
+                   onmouseover="this.style.color='#f472b6'" onmouseout="this.style.color='#E4405F'">
+                    <i class="fab fa-instagram fa-lg" style="margin-right:8px;"></i>Instagram
+                </a>
+                <a href="https://t.me/alex_fitness_kobuleti" target="_blank" rel="noopener noreferrer"
+                   style="font-size:1.3rem; margin:0 15px; text-decoration:none; color:#27A1DE; transition:color 0.3s;"
+                   onmouseover="this.style.color='#7dd3fc'" onmouseout="this.style.color='#27A1DE'">
+                    <i class="fab fa-telegram-plane fa-lg" style="margin-right:8px;"></i>Telegram
                 </a>
             </div>
         </div>
     </div>
-    <div class="container-fluid map" style="position:relative;">
-        <!-- Google Maps embed -->
-        <iframe src="https://www.google.com/maps?q=Tbilisi%2C%20Georgia&z=12&output=embed" width="100%" height="430" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        <a href="https://www.google.com/maps/search/?api=1&query=Tbilisi%2C%20Georgia" target="_blank" rel="noopener noreferrer"
-           style="display:none;position:absolute;top:0;left:0;width:100%;height:100%;z-index:10;"
-           class="map-mobile-overlay" aria-label="Open Tbilisi in Google Maps"></a>
-    </div>
+    <!-- ── Map ── -->
     <style>
+        .map-wrap {
+            position: relative;
+            overflow: hidden;
+            border-top: 2px solid rgba(74,222,128,0.25);
+            border-bottom: 2px solid rgba(74,222,128,0.25);
+        }
+        .map-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 420px;
+            border: 0;
+            filter: invert(90%) hue-rotate(165deg) saturate(0.6) brightness(0.85);
+        }
+        .map-wrap { overflow: hidden; width: 100%; box-sizing: border-box; }
+        .map-overlay-card {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: calc(100% - 32px);
+            background: rgba(7,13,9,0.90);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(74,222,128,0.30);
+            border-radius: 12px;
+            padding: 14px 20px;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px 12px;
+            white-space: normal;
+            z-index: 5;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.55);
+        }
+        .map-overlay-card i {
+            color: #4ade80;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+        .map-overlay-card span {
+            color: #e8e8e8;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+        }
+        .map-overlay-card a {
+            color: #38bdf8;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            margin-left: 8px;
+            transition: color 0.2s;
+        }
+        .map-overlay-card a:hover { color: #7dd3fc; }
+        /* mobile: make iframe tappable */
+        .map-mobile-link {
+            display: none;
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+        }
         @media (max-width: 768px) {
-            .map-mobile-overlay { display: block !important; }
+            .map-mobile-link { display: block; }
+            .map-wrap iframe { height: 320px; }
+            .map-overlay-card { font-size: 0.85rem; padding: 10px 16px; bottom: 14px; }
         }
     </style>
-    <div class="container-fluid text-center footer" style="background-color: #1a1a1a; color: #ffffff; padding: 2rem 0; border-top: 2px solid #c8e600;">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <p style="margin-bottom: 1rem; font-size: 1rem; color: #e0e0e0;">
-                        © 2025 Synergy Gym. All rights reserved.
-                    </p>
-                    <div class="footer-links" style="margin-bottom: 1rem;">
-                        <a href="terms.php" style="color: #c8e600; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
-                            Terms and Conditions
-                        </a>
-                        <span style="color: #666;">|</span>
-                        <a href="privacy.php" style="color: #c8e600; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
-                            Privacy Policy
-                        </a>                       
-                    </div>
-                    <div style="margin-bottom: 0.5rem;">
-                        <a href="tel:511266211" style="color: #c8e600; text-decoration: none; font-weight: 500; font-size: 1rem;" onmouseover="this.style.color='#a8c200'" onmouseout="this.style.color='#c8e600'">
-                            📞 511 26 62 11
-                        </a>
-                    </div>
+
+    <div class="map-wrap">
+        <iframe
+            src="https://www.google.com/maps?q=41.8457672,41.7811427&z=17&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <!-- Floating address card -->
+        <div class="map-overlay-card">
+            <i class="fas fa-map-marker-alt"></i>
+            <span name="key_address">Shota Rustaveli 170-25, Kobuleti 6200</span>
+            <a href="https://www.google.com/maps/place/Aleks+Fitness/@41.8457672,41.7811427,17z/data=!3m1!4b1!4m6!3m5!1s0x405d774945ab373d:0x6ba6d134edcc8426!8m2!3d41.8457672!4d41.7811427!16s%2Fg%2F11y17fmysr"
+               target="_blank" rel="noopener noreferrer">
+               Open in Maps &rsaquo;
+            </a>
+        </div>
+        <!-- Mobile tap-through overlay -->
+        <a href="https://www.google.com/maps/place/Aleks+Fitness/@41.8457672,41.7811427,17z/data=!3m1!4b1!4m6!3m5!1s0x405d774945ab373d:0x6ba6d134edcc8426!8m2!3d41.8457672!4d41.7811427!16s%2Fg%2F11y17fmysr"
+           target="_blank" rel="noopener noreferrer"
+           class="map-mobile-link"
+           aria-label="Open location in Google Maps"></a>
+    </div>
+
+    <!-- ── Footer ── -->
+    <style>
+        .site-footer {
+            background: #080e0a;
+            border-top: 2px solid rgba(74,222,128,0.22);
+            padding: 22px 0 12px;
+            color: #a0a0a0;
+            overflow-x: hidden;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 16px;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 16px;
+            text-align: center;
+        }
+        @media (max-width: 640px) {
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+        }
+        .footer-col-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #4ade80;
+            margin-bottom: 14px;
+        }
+        .footer-logo-img {
+            height: 44px;
+            width: auto;
+            filter: drop-shadow(0 2px 10px rgba(74,222,128,0.30));
+            margin-bottom: 6px;
+        }
+        .footer-brand-name {
+            font-size: 1.05rem;
+            font-weight: 800;
+            color: #ececec;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+        .footer-tagline {
+            font-size: 0.80rem;
+            color: #606060;
+        }
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 9px;
+            margin-bottom: 10px;
+            font-size: 0.90rem;
+        }
+        .footer-contact-item i { color: #4ade80; width: 16px; flex-shrink: 0; }
+        .footer-contact-item a {
+            color: #d0d0d0;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        .footer-contact-item a:hover { color: #4ade80; }
+        .footer-social-row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+        }
+        .footer-social-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            padding: 9px 14px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: 1px solid transparent;
+            transition: all 0.22s ease;
+            white-space: nowrap;
+        }
+        @media (max-width: 400px) {
+            .footer-social-btn { padding: 8px 10px; font-size: 0.80rem; gap: 5px; }
+            .footer-social-row { gap: 6px; }
+        }
+        .footer-social-btn.fb {
+            background: rgba(24,119,242,0.12);
+            border-color: rgba(24,119,242,0.30);
+            color: #60a5fa;
+        }
+        .footer-social-btn.fb:hover {
+            background: rgba(24,119,242,0.22);
+            border-color: #1877F2;
+            color: #93c5fd;
+            text-decoration: none;
+        }
+        .footer-social-btn.ig {
+            background: rgba(228,64,95,0.10);
+            border-color: rgba(228,64,95,0.28);
+            color: #f472b6;
+        }
+        .footer-social-btn.ig:hover {
+            background: rgba(228,64,95,0.20);
+            border-color: #E4405F;
+            color: #fda4af;
+            text-decoration: none;
+        }
+        .footer-social-btn.tg {
+            background: rgba(39,161,222,0.12);
+            border-color: rgba(39,161,222,0.30);
+            color: #38bdf8;
+        }
+        .footer-social-btn.tg:hover {
+            background: rgba(39,161,222,0.22);
+            border-color: #27A1DE;
+            color: #7dd3fc;
+            text-decoration: none;
+        }
+        .footer-divider {
+            border: none;
+            border-top: 1px solid rgba(74,222,128,0.10);
+            margin: 16px auto 10px;
+            max-width: 960px;
+        }
+        .footer-bottom {
+            text-align: center;
+            font-size: 0.80rem;
+            color: #454545;
+            padding: 0 12px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 4px 8px;
+        }
+        .footer-bottom a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.2s;
+            white-space: nowrap;
+        }
+        .footer-bottom a:hover { color: #4ade80; }
+    </style>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+
+            <!-- Brand -->
+            <div>
+                <picture>
+                    <source srcset="img/gym.webp" type="image/webp">
+                    <img src="img/gym.png" alt="Alex Fit" class="footer-logo-img" loading="lazy"
+                         onerror="this.style.display='none'">
+                </picture>
+                <div class="footer-brand-name">Alex Fit</div>
+                <div class="footer-tagline" name="key_footer_tagline">Gym &amp; Boxing · Kobuleti</div>
+            </div>
+
+            <!-- Contact -->
+            <div>
+                <div class="footer-col-title" name="key_contact">Contact</div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <a href="tel:+995599061572">+995 599 061 572</a>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <a href="https://www.google.com/maps/place/Aleks+Fitness/@41.8457672,41.7811427,17z/data=!3m1!4b1!4m6!3m5!1s0x405d774945ab373d:0x6ba6d134edcc8426!8m2!3d41.8457672!4d41.7811427!16s%2Fg%2F11y17fmysr"
+                       target="_blank" rel="noopener noreferrer">
+                        <span name="key_address">Shota Rustaveli 170-25, Kobuleti 6200</span>
+                    </a>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fas fa-clock"></i>
+                    <span style="color:#d0d0d0;">09:30 – 00:00 &nbsp;<span style="color:#606060; font-size:0.80rem;" name="key_every_day">Every Day</span></span>
                 </div>
             </div>
+
+            <!-- Social -->
+            <div>
+                <div class="footer-col-title" name="key_follow_us">Follow Us</div>
+                <div class="footer-social-row">
+                    <a href="https://www.facebook.com/Alexfitnesskobulrti/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="footer-social-btn fb">
+                        <i class="fab fa-facebook-f"></i> Facebook
+                    </a>
+                    <a href="https://www.instagram.com/alex_fitness_kobuleti/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="footer-social-btn ig">
+                        <i class="fab fa-instagram"></i> Instagram
+                    </a>
+                    <a href="https://t.me/alex_fitness_kobuleti"
+                       target="_blank" rel="noopener noreferrer"
+                       class="footer-social-btn tg">
+                        <i class="fab fa-telegram-plane"></i> Telegram
+                    </a>
+                </div>
+            </div>
+
         </div>
-    </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            © 2026 Alex Fit. All rights reserved.
+            &nbsp;·&nbsp;
+            <a href="terms.php">Terms</a>
+            &nbsp;·&nbsp;
+            <a href="privacy.php">Privacy Policy</a>
+        </div>
+    </footer>
 </div>
 
 <script src="js/popper.min.js" crossorigin="anonymous" defer></script>

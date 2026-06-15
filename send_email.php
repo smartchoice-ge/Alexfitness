@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require 'vendor/autoload.php';
 require 'db_connection.php';
 require 'email_sender.php';

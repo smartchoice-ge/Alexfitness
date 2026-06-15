@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,7 +17,7 @@
             <button onclick="switchLanguage('en')" class="text-blue-500 px-2">English</button> | 
             <button onclick="switchLanguage('ka')" class="text-blue-500 px-2">ქართული</button>
         </div>
-        <img src="/img/logo.png" alt="Synergy Logo" class="mx-auto mb-4">
+        <img src="/img/gym.png" alt="Synergy Logo" class="mx-auto mb-4">
         <h1 id="title" class="text-3xl font-bold mb-6 text-center">მშობლის თანხმობა</h1>
         <form id="agreementForm">
             <div class="mb-4">
@@ -109,7 +109,7 @@
             <div class="mb-4">
                 <input type="checkbox" name="agree_to_agreement" id="agree_to_agreement" class="mr-2">
                 <label id="label_agreement" for="agree_to_agreement" class="text-sm font-medium text-gray-700">
-                    ვეთანხმები<a href="/Synergy-gym-agreement.pdf" target="_blank"> <span class="text-red-500">კონტრაქტს</span></a>
+                    ვეთანხმები<a href="/Alex-Fitness-agreement.pdf" target="_blank"> <span class="text-red-500">კონტრაქტს</span></a>
                 </label>
             </div>
             <div class="mb-4">
@@ -244,7 +244,7 @@
             document.getElementById("label_birth_date").textContent = translations[currentLang].label_birth_date;
             document.getElementById("verification_method_label").textContent = translations[currentLang].verification_method_label;
             document.getElementById("label_agreement").innerHTML = translations[currentLang].label_agreement + 
-                '<a href="/Synergy-gym-agreement.pdf" target="_blank"> <span class="text-red-500">' + translations[lang].contract_text + '</span></a>';
+                '<a href="/Alex-Fitness-agreement.pdf" target="_blank"> <span class="text-red-500">' + translations[lang].contract_text + '</span></a>';
             document.getElementById("submit_button").textContent = translations[lang].submit_button;
 
             // Update placeholders

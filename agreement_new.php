@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require_once __DIR__ . '/tcpdf_loader.php';
 
 if (!loadTcpdfLibrary(__DIR__)) {
@@ -15,7 +15,7 @@ date_default_timezone_set('Asia/Tbilisi');
 function generatePDF($id_number, $html_content) {
     $pdf = new TCPDF();
     $pdf->SetCreator(PDF_CREATOR);
-    $pdf->SetAuthor('Synergy');
+    $pdf->SetAuthor('Synergy Gym');
     $pdf->SetTitle('User Agreement');
     $pdf->SetSubject('User Agreement Form');
     $pdf->SetKeywords('TCPDF, PDF, agreement');

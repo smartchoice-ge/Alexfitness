@@ -7,7 +7,7 @@ if (!isset($_POST['mobile']) || !isset($_POST['code'])) {
 $mobile = $_POST['mobile'];
 $verificationCode = $_POST['code'];
 
-$apikey = '0f132d23f162ca06a769128a5e866cf1';
+$apikey = 'e774aad67ecaba4ba90b86da65be10d9';
 $url = "https://sender.ge/api/send.php";
 $message = $verificationCode;
 

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Enable error logging
 ini_set('display_errors', 0);
 ini_set('log_errors', 1);
@@ -38,7 +38,7 @@ function generatePDF($id_number, $html_content) {
     try {
         $pdf = new TCPDF();
         $pdf->SetCreator(PDF_CREATOR);
-        $pdf->SetAuthor('Synergy');
+        $pdf->SetAuthor('Alex Fitness');
         $pdf->SetTitle('User Agreement');
         $pdf->SetSubject('User Agreement Form');
         $pdf->SetKeywords('TCPDF, PDF, agreement');
@@ -79,7 +79,7 @@ function cleanMobileForSMS($mobile) {
 
 // Function to send SMS via sender.ge API (like tonus does)
 function sendSMSViaSenderGE($phone_number, $message) {
-    $apikey = '0f132d23f162ca06a769128a5e866cf1';
+    $apikey = 'e774aad67ecaba4ba90b86da65be10d9';
     $url = "https://sender.ge/api/send.php";
     
     // Clean the phone number for SMS API
@@ -153,14 +153,14 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
     
     $id_number = $client_data['id_number'];
     $full_name = $client_data['full_name'];
+    // MSSQL returns date columns as PHP DateTime objects; format for re-insertion
     $birth_date = $client_data['birth_date'];
+    if ($birth_date instanceof DateTime) {
+        $birth_date = $birth_date->format('Y-m-d');
+    }
     $mobile_number = $client_data['mobile_number'];
     $email = $client_data['email'];
-    $picurl = !empty($client_data['picurl']) ? '/' . $client_data['picurl'] : null;
-    $birth_date = $client_data['birth_date'];
-    $mobile_number = $client_data['mobile_number'];
-    $email = $client_data['email'];
-    $picurl = !empty($client_data['picurl']) ? '/' . $client_data['picurl'] : null;
+    $picurl = !empty($client_data['picurl']) ? 'https://alexfitness.ge/' . $client_data['picurl'] : null;
     
     // Check MSSQL connection
     if (!$mssqlconn) {
@@ -193,18 +193,33 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
     if ($existing_client = sqlsrv_fetch_array($checkStmt)) {
         $existing_id = $existing_client['ID'];
         error_log("Client already exists in MSSQL (phone: {$phone_for_mssql}), ID: {$existing_id}");
-        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'already_exists', "Client already exists with phone: {$phone_for_mssql}", null, $existing_id);
         sqlsrv_free_stmt($checkStmt);
-        return true; // Not an error, client already exists
+
+        // Update all fields in CRM for existing client
+        $updateFields = "FullName = ?, BirthDate = ?, Email = ?";
+        $updateParams = array($full_name, $birth_date, $email, $existing_id);
+        if ($picurl) {
+            $updateFields .= ", ProfilePicture = ?";
+            array_splice($updateParams, 3, 0, array($picurl));
+        }
+        $updateSql = "UPDATE Clients SET {$updateFields} WHERE ID = ?";
+        $updateStmt = sqlsrv_query($mssqlconn, $updateSql, $updateParams);
+        if ($updateStmt) {
+            error_log("Updated Clients record for existing client ID: {$existing_id}");
+            sqlsrv_free_stmt($updateStmt);
+        }
+
+        logMSSQLSave($conn, $client_details_id, $id_number, $full_name, $mobile_number, $email, 'already_exists', "Client already exists with phone: {$phone_for_mssql}", null, $existing_id);
+        return true;
     }
     sqlsrv_free_stmt($checkStmt);
     
     // Insert new client to MSSQL
     $sql = "
     INSERT INTO Clients (FullName, IdNumber, BirthDate, Phone, Email, SexID, CardNumber, IndeviceID, ProfilePicture, SendSms, IsActive, SupplierID, ClientTypeID, CreatorUser, BlackListed, ClientParentOrgID, GroupSync, Comment)
-    SELECT ?, ?, ?, ?, ?, 1, '', 
+    SELECT ?, ?, ?, ?, ?, 1, '',
         COALESCE((SELECT MAX(InDeviceID) + 1 FROM Clients), 1),
-        ?, 1, 1, 2, 2, 1, 0, 19, 0, ''
+        ?, 1, 1, 2, 2, 71, 0, 19, 0, ''
     ";
     
     $params = array($full_name, $id_number, $birth_date, $phone_for_mssql, $email, $picurl);
@@ -228,7 +243,7 @@ function saveClientToMSSQL($conn, $mssqlconn, $client_details_id) {
         error_log("Client auto-saved to MSSQL with ID: {$client_id}");
         
         // Send welcome SMS via sender.ge API (like tonus does)
-        $welcome_message = 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
+        $welcome_message = 'Welcome to Alex Fitness, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
         $sms_sent = sendSMSViaSenderGE($phone_for_mssql, $welcome_message);
         
         // Insert SMS log to track the send attempt
@@ -310,9 +325,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $agree_to_agreement = isset($_POST['agree_to_agreement']) ? 1 : 0;
         $agreement_date = date('Y-m-d H:i:s');
         $year = date('Y', strtotime($agreement_date));
-        $birth_date = $_POST['birth_year'] . '-' . $_POST['birth_month'] . '-' . str_pad($_POST['birth_day'], 2, '0', STR_PAD_LEFT);
+        $birth_date = $_POST['birth_year'] . '-' . str_pad($_POST['birth_month'], 2, '0', STR_PAD_LEFT) . '-' . str_pad($_POST['birth_day'], 2, '0', STR_PAD_LEFT);
         $user_ip = $_SERVER['REMOTE_ADDR'];
         $profile_picture_url = isset($_POST['profile_picture_url']) ? $_POST['profile_picture_url'] : null;
+
+        // Require photo
+        if (empty($profile_picture_url)) {
+            echo json_encode(array('status' => 'error', 'message' => 'გთხოვთ ატვირთოთ პროფილის ფოტო'));
+            exit;
+        }
 
         // Check if client exists in MSSQL ClientDetailsWebsite
         $existing_client = getClientDetailsByIdNumber($id_number);
@@ -322,7 +343,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo json_encode(array('status' => 'error', 'message' => 'შენ უკვე შევსებული გაქვს ფორმა'));
             } else {
             // Update existing client in MSSQL ClientDetailsWebsite
-            $updateResult = updateClientDetailsByIdNumber($id_number, [
+            $updateData = [
                 'full_name' => $full_name,
                 'mobile_number' => $mobile_number,
                 'agreed' => $agree_to_agreement,
@@ -330,8 +351,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 'agreement_date' => $agreement_date,
                 'birth_date' => $birth_date,
                 'user_ip' => $user_ip,
-                'picurl' => $profile_picture_url
-            ]);
+            ];
+            // Only update picurl if a new photo was uploaded (don't wipe existing photo)
+            if ($profile_picture_url) {
+                $updateData['picurl'] = $profile_picture_url;
+            }
+            $updateResult = updateClientDetailsByIdNumber($id_number, $updateData);
             if ($updateResult) {
                 $user_id = $existing_client['id']; // Get the user ID from the fetched data
                 

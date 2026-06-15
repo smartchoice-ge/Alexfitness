@@ -1,4 +1,4 @@
-﻿            <div class="mb-4">
+            <div class="mb-4">
                 <label id="label_id_number" for="id_number" class="block text-sm font-medium text-gray-700">პირადი ნომერი / პასპორტის ნომერი</label>
                 <input type="text" name="id_number" id="id_number" class="mt-1 p-2 border rounded-md w-full"
                     placeholder="ჩაწერე პირადი ნომერი" maxlength="11" required>

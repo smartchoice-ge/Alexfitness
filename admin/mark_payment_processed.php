@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 date_default_timezone_set('Asia/Tbilisi');
 
@@ -481,7 +481,7 @@ try {
             
             // Insert welcome SMS log
             $smsSql = "INSERT INTO SMSLog (ClientID, SMSText, SmsSentStatusID, PhoneNumber, UserID) VALUES (?, ?, ?, ?, ?)";
-            $smsParams = array($client_id, 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.', 1, $phone_for_mssql, $creator_user_id);
+            $smsParams = array($client_id, 'Welcome to Alex Fitness, Mokharulebi vart rom gakhdit chveni gundis tsevri.', 1, $phone_for_mssql, $creator_user_id);
             $smsStmt = sqlsrv_query($mssqlconn, $smsSql, $smsParams);
             
             if ($smsStmt) {

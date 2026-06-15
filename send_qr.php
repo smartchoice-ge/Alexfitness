@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'generate_qr.php';
 include_once 'mssql_connection.php';
@@ -77,7 +77,7 @@ $qrLink = generateQR($cleanMobile);
 $text = htmlspecialchars($settingValue);
 $text2 = htmlspecialchars($settingValue2);
 $message = trim($text . ' ' . $qrLink . ' ' . $text2);
-$apikey = '0f132d23f162ca06a769128a5e866cf1';
+$apikey = 'e774aad67ecaba4ba90b86da65be10d9';
 
 // SMS sending (sender.ge) - use cleaned mobile number
 $url = "https://sender.ge/api/send.php";

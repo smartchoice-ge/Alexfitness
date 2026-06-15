@@ -24,7 +24,7 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-none no-padding col-md-8 offset-2">
                 <button class="navbar-toggler full-width" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars float-left mt-4"></i>
-                    <a href="/" class="logo-sm banner"><img src="img/logo.png"></a>
+                    <a href="/" class="logo-sm banner"><img src="img/gym.png"></a>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -36,7 +36,7 @@
                             <a href="" class="menu-link banner" name="packages">პაკეტები</a>
                         </li>
                         <li class="nav-item menu-logo d-none d-md-block">
-                            <a href="/" class="menu-link banner"><img src="img/logo.png"></a>
+                            <a href="/" class="menu-link banner"><img src="img/gym.png"></a>
                         </li>
                         <li class="nav-item middle">
                             <a href="" class="menu-link banner" name="blog">ბლოგი</a>
@@ -139,9 +139,9 @@
         <h5 class="mt-4">
             თბილისი, მირიან მეფის ქ. №14
             <br>
-            +995-XXX-XXX-XXX
+            +995 599 061 572
             <br>
-            <a href="https://www.facebook.com/Synergy-Gym-236344203786898/" target="_blank">
+            <a href="https://www.facebook.com/Alexfitnesskobulrti/" target="_blank">
                 facebook
             </a>
             <br>

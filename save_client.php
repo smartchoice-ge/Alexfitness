@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 // Report all PHP errors
 error_reporting(-1);
@@ -26,7 +26,7 @@ function cleanMobileForSMS($mobile) {
 
 // Function to send SMS via sender.ge API (like tonus does)
 function sendSMSViaSenderGE($phone_number, $message) {
-    $apikey = '0f132d23f162ca06a769128a5e866cf1';
+    $apikey = 'e774aad67ecaba4ba90b86da65be10d9';
     $url = "https://sender.ge/api/send.php";
     
     // Clean the phone number for SMS API
@@ -106,19 +106,19 @@ if (isset($_POST['save_client'])) {
                 $clientID = $row['ID'];
     
                 // Send welcome SMS via sender.ge API (like tonus does)
-                $welcome_message = 'Welcome to Synergy Gym, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
+                $welcome_message = 'Welcome to Alex Fitness, Mokharulebi vart rom gakhdit chveni gundis tsevri.';
                 $sms_sent = sendSMSViaSenderGE($phone, $welcome_message);
                 
                 // Insert SMS log to track the send attempt
                 $smsSql = "INSERT INTO SMSLog (ClientID, SMSText, SmsSentStatusID, PhoneNumber, UserID) VALUES (?, ?, ?, ?, ?)";
                 $smsParams = array($clientID, $welcome_message, ($sms_sent ? 1 : 2), $phone, $userId);
                 $smsStmt = sqlsrv_query($mssqlconn, $smsSql, $smsParams);
-    
+
                 if (!$smsStmt) {
-                    echo "Error saving SMS log: " . print_r(sqlsrv_errors(), true);
-                } else {
-                    echo "Client saved successfully and SMS log recorded.";
+                    error_log("Error saving SMS log: " . print_r(sqlsrv_errors(), true));
                 }
+
+                echo "Client saved successfully and SMS log recorded.";
                 
                 // Clean up SMS statement
                 if (isset($smsStmt) && $smsStmt) {

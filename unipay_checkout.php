@@ -28,8 +28,8 @@ if (!$amount || !$client_mobile_number) {
 // Step 1: Get Unipay auth token
 $auth_url = 'https://apiv2.unipay.com/v3/auth';
 $auth_body = json_encode([
-    'merchant_id' => '5017254030111',
-    'api_key' => 'b87aeb0a-f0d8-4965-9584-f6b87ddc35d6'
+    'merchant_id' => '',
+    'api_key' => ''
 ]);
 $ch = curl_init($auth_url);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -58,11 +58,11 @@ $order_body = json_encode([
     'MerchantOrderID' => $unique_merchant_order_id,
     'OrderPrice' => $amount,
     'OrderCurrency' => 'GEL',
-    'OrderName' => 'ACVNJSIWPM',
-    'OrderDescription' => 'AKXU0BJ5LEV97HN',
-    'SuccessRedirectUrl' => 'aHR0cHM6Ly90b251cy5nZS9wYXltZW50X3N1Y2Nlc3MucGhw',
-    'CancelRedirectUrl' => 'aHR0cHM6Ly90b251cy5nZS9wYXltZW50X2ZhaWwucGhw',
-    'CallBackUrl' => 'aHR0cHM6Ly90b251cy5nZS91bmlwYXlfY2FsbGJhY2sucGhw',
+    'OrderName' => 'Alex Fitness',
+    'OrderDescription' => 'Alex Fitness Membership',
+    'SuccessRedirectUrl' => 'aHR0cHM6Ly9hbGV4Zml0bmVzcy5nZS9wYXltZW50X3N1Y2Nlc3MucGhw',
+    'CancelRedirectUrl' => 'aHR0cHM6Ly9hbGV4Zml0bmVzcy5nZS9wYXltZW50X2ZhaWwucGhw',
+    'CallBackUrl' => 'aHR0cHM6Ly9hbGV4Zml0bmVzcy5nZS91bmlwYXlfY2FsbGJhY2sucGhw',
     'Mlogo' => '',
     'InApp' => 0,
     'Language' => 'GE'

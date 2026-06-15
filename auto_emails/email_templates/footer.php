@@ -1,4 +1,4 @@
-<tr>
+﻿<tr>
     <td align="center">
         <meta name="color-scheme" content="light">
         <meta name="supported-color-schemes" content="light">
@@ -39,7 +39,7 @@
                             <td style="padding-bottom: 10px; padding-right: 8px;">
                                 <img src="/img/mobile3.png" alt="Phone" style="width: 16px; vertical-align: middle;">
                             </td>
-                            <td class="white-text" style="color: #ffffff !important; font-size: 15px;"><b> +995-XXX-XXX-XXX</b></td>
+                            <td class="white-text" style="color: #ffffff !important; font-size: 15px;"><b> +995 599 061 572</b></td>
                         </tr>
                         <tr>
                             <td style="padding-right: 8px;">

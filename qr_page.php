@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="title" content="QR Codes - Synergy Gym">
@@ -293,7 +293,7 @@
                 </div>
             </div>
             <div class="qr-code-box">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=<?php echo urlencode('https://wa.me/995551195819?text=Hello! I would like to visit the gym and get a tour.'); ?>&bgcolor=ffffff&color=000000" 
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=<?php echo urlencode('https://wa.me/995599061572?text=Hello! I would like to visit the gym and get a tour.'); ?>&bgcolor=ffffff&color=000000" 
                      alt="WhatsApp QR Code" 
                      class="mx-auto"
                      onerror="this.onerror=null; this.src='https://placehold.co/250x250/ffffff/000000?text=WhatsApp+QR';">

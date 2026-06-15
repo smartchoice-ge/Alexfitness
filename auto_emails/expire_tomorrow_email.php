@@ -73,7 +73,7 @@ function sendEmail($email, $unsubscribe_token)
                     <p style="color:rgb(255, 255, 255); font-size: 16px; line-height: 1.5;">
                     <b>
                         Hi there! Your membership <span style="color: #FFD700 !important; font-size: 18px;">will expire tomorrow</span> , but your fitness journey doesn\'t have to stop! Stay on track with full access to our facilities, expert trainers, and exciting classes.
-Renew today by contacting us on <a href="https://www.facebook.com/SynergyGymTbilisi">Facebook</a> and keep pushing toward your goals!
+Renew today by contacting us on <a href="https://www.facebook.com/Alexfitnesskobulrti">Facebook</a> and keep pushing toward your goals!
                     </b>
                     </p>
                 </div>

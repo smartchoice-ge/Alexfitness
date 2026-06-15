@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agreement Form | Synergy Gym</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Agreement Form | Alex Fitness</title>
     <!-- Import Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -14,7 +14,78 @@
     
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    
+    <link rel="preload" href="/img/gym.webp" as="image" type="image/webp">
+    <link rel="dns-prefetch" href="//ajax.googleapis.com">
+    <link rel="dns-prefetch" href="//cdn.tailwindcss.com">
+    <link rel="dns-prefetch" href="//cdn.web-fonts.ge">
+    <link rel="preconnect" href="https://ajax.googleapis.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+    /* ── Navbar ── */
+    .site-navbar{position:fixed;top:0;left:0;width:100%;z-index:9999;background:rgba(8,14,10,0.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(34,197,94,0.15);box-shadow:0 2px 20px rgba(0,0,0,.5)}
+    .site-navbar-inner{display:flex;align-items:center;height:82px;padding:0 24px;max-width:1400px;margin:0 auto}
+    .navbar-logo-link{flex-shrink:0;display:flex;align-items:center;text-decoration:none}
+    .navbar-logo-img{height:70px;width:auto;display:block;filter:drop-shadow(0 2px 10px rgba(34,197,94,.35));transition:filter .25s,transform .25s}
+    .navbar-logo-img:hover{filter:drop-shadow(0 4px 18px rgba(34,197,94,.60));transform:scale(1.04)}
+    .navbar-desktop-links{flex:1;display:flex;align-items:center;justify-content:center;gap:6px}
+    .navbar-link{color:#c8c8c8;font-size:.95rem;font-weight:600;padding:8px 20px;border-radius:6px;text-decoration:none;letter-spacing:.4px;transition:color .2s,background .2s;white-space:nowrap}
+    .navbar-link:hover{color:#4ade80;background:rgba(74,222,128,.10);text-decoration:none}
+    @keyframes nav-btn-shimmer{0%{background-position:200% center}100%{background-position:-200% center}}
+    .navbar-register{background:linear-gradient(90deg,#16a34a 0%,#4ade80 40%,#22c55e 55%,#4ade80 70%,#16a34a 100%);background-size:250% auto;color:#000!important;font-size:.92rem;font-weight:700;padding:9px 24px;border-radius:6px;border:1px solid rgba(74,222,128,.70);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap;box-shadow:0 4px 18px rgba(74,222,128,.30);animation:nav-btn-shimmer 3.5s linear infinite;transition:box-shadow .22s,transform .22s}
+    .navbar-register:hover{color:#000!important;text-decoration:none;transform:translateY(-2px);box-shadow:0 8px 28px rgba(74,222,128,.55)}
+    .navbar-right-group{flex-shrink:0;display:flex;align-items:center;gap:12px}
+    .navbar-lang-btn{color:#d0d0d0;font-size:.88rem;font-weight:600;padding:7px 14px;border-radius:6px;border:1px solid rgba(74,222,128,.38);background:rgba(74,222,128,.08);transition:all .2s;letter-spacing:.3px;white-space:nowrap;cursor:pointer}
+    .navbar-lang-btn:hover{color:#4ade80;border-color:#4ade80;background:rgba(74,222,128,.16)}
+    .navbar-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;padding:0;background:none;border:none;cursor:pointer}
+    .navbar-hamburger span{display:block;width:24px;height:2px;background:#c8c8c8;border-radius:2px;transition:background .2s}
+    .navbar-hamburger:hover span{background:#22c55e}
+    .navbar-mobile-menu{display:none;flex-direction:column;padding:12px 20px 18px;border-top:1px solid rgba(34,197,94,.12);background:rgba(6,12,8,.98);gap:4px}
+    .navbar-mobile-menu.open{display:flex}
+    .nm-link{color:#c8c8c8;font-size:1rem;font-weight:600;padding:11px 16px;border-radius:6px;text-decoration:none;transition:color .2s,background .2s}
+    .nm-link:hover{color:#fff;background:rgba(34,197,94,.10);text-decoration:none}
+    .nm-register{background:linear-gradient(90deg,#16a34a 0%,#4ade80 50%,#16a34a 100%);background-size:200% auto;color:#000!important;font-size:.95rem;font-weight:700;padding:12px 20px;border-radius:6px;border:1px solid rgba(74,222,128,.60);text-decoration:none;letter-spacing:.8px;text-transform:uppercase;text-align:center;margin:6px 0;box-shadow:0 4px 16px rgba(74,222,128,.28);animation:nav-btn-shimmer 3.5s linear infinite}
+    .nm-lang{color:#a0a0a0;font-size:.88rem;font-weight:600;padding:10px 16px;border-radius:6px;border:1px solid rgba(34,197,94,.22);text-align:center;margin-top:6px;transition:color .2s,border-color .2s;cursor:pointer}
+    .nm-lang:hover{color:#22c55e;border-color:#22c55e}
+    @media(max-width:900px){
+        .navbar-desktop-links{display:none}
+        .navbar-hamburger{display:flex}
+        .navbar-right-group{margin-left:auto}
+        .site-navbar-inner{height:62px;padding:0 max(16px,env(safe-area-inset-right,16px)) 0 max(16px,env(safe-area-inset-left,16px))}
+        .navbar-logo-img{height:48px}
+    }
+    @media(min-width:901px){.navbar-mobile-menu{display:none!important}}
+
+    /* ── Footer ── */
+    .site-footer{background:#080e0a;border-top:2px solid rgba(74,222,128,.22);padding:22px 16px 12px;color:#a0a0a0;font-size:.85rem;overflow-x:hidden;width:100%;box-sizing:border-box}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;max-width:960px;margin:0 auto;text-align:center}
+    @media(max-width:640px){.footer-grid{grid-template-columns:1fr;gap:12px}}
+    .footer-col-title{color:#4ade80;font-size:.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px}
+    .footer-logo-img{height:40px;width:auto;margin:0 auto 6px;display:block;filter:drop-shadow(0 2px 8px rgba(74,222,128,.30))}
+    .footer-brand-name{color:#ececec;font-size:1.1rem;font-weight:800;letter-spacing:.5px;margin-bottom:4px}
+    .footer-tagline{font-size:.80rem;color:#606060}
+    .footer-contact-item{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:10px;font-size:.90rem}
+    .footer-contact-item i{color:#4ade80;width:16px;flex-shrink:0}
+    .footer-contact-item a{color:#d0d0d0;text-decoration:none;transition:color .2s}
+    .footer-contact-item a:hover{color:#4ade80}
+    .footer-social-row{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+    .footer-social-btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:9px 14px;border-radius:8px;font-size:.85rem;font-weight:700;text-decoration:none;border:1px solid transparent;transition:all .22s;white-space:nowrap}
+    .footer-social-btn.fb{background:rgba(24,119,242,.12);border-color:rgba(24,119,242,.30);color:#60a5fa}
+    .footer-social-btn.fb:hover{background:rgba(24,119,242,.22);border-color:#1877F2;color:#93c5fd;text-decoration:none}
+    .footer-social-btn.ig{background:rgba(228,64,95,.10);border-color:rgba(228,64,95,.28);color:#f472b6}
+    .footer-social-btn.ig:hover{background:rgba(228,64,95,.20);border-color:#E4405F;color:#fda4af;text-decoration:none}
+    .footer-social-btn.tg{background:rgba(39,161,222,.12);border-color:rgba(39,161,222,.30);color:#38bdf8}
+    .footer-social-btn.tg:hover{background:rgba(39,161,222,.22);border-color:#27A1DE;color:#7dd3fc;text-decoration:none}
+    .footer-divider{border:none;border-top:1px solid rgba(74,222,128,.10);margin:16px auto 10px;max-width:960px}
+    .footer-bottom{text-align:center;font-size:.80rem;color:#454545;padding:0 12px}
+    .footer-bottom a{color:#555;text-decoration:none;transition:color .2s}
+    .footer-bottom a:hover{color:#4ade80}
+    @media(max-width:400px){
+        .footer-social-btn{padding:8px 10px;font-size:.80rem;gap:5px}
+        .footer-social-row{gap:6px}
+    }
+    </style>
+
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -23,6 +94,10 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
+            padding-top: 82px;
+        }
+        @media(max-width:900px){
+            body { padding-top: 62px; }
         }
         #cont {
             flex-grow: 1;
@@ -42,19 +117,18 @@
         }
         .form-input:focus {
             outline: none;
-            border-color: #c8e600;
-            box-shadow: 0 0 0 3px rgba(255, 223, 6, 0.2);
+            border-color: #22c55e;
+            box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
         }
         /* Brand button styling */
         .brand-btn {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
             font-weight: bold;
         }
         .brand-btn:hover {
-            background-color: #c8e600;
+            background-color: #22c55e;
         }
         /* Language button container */
         .lang-btn-container {
@@ -100,13 +174,13 @@
         }
         
         .image-upload-area:hover {
-            border-color: #c8e600;
+            border-color: #22c55e;
             background-color: #222;
         }
         
         .image-upload-area.dragover {
-            border-color: #c8e600;
-            background-color: rgba(255, 223, 6, 0.1);
+            border-color: #22c55e;
+            background-color: rgba(34, 197, 94, 0.1);
         }
         
         .image-preview {
@@ -160,7 +234,7 @@
         
         .upload-progress-bar {
             height: 100%;
-            background-color: #c8e600;
+            background-color: #22c55e;
             transition: width 0.3s ease;
         }
         
@@ -184,9 +258,8 @@
         }
         .lang-btn-active {
             opacity: 1;
-            background-color: #c8e600;
-            color: #000000;
-            box-shadow: 0 6px 16px rgba(200, 230, 0, 0.25);
+            background-color: #166534; color: #ffffff;
+            box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
         }
         .lang-btn-inactive {
             opacity: 1;
@@ -264,8 +337,8 @@
             cursor: pointer;
         }
         .checkbox-custom:checked {
-            background-color: #c8e600;
-            border-color: #c8e600;
+            background-color: #22c55e;
+            border-color: #22c55e;
         }
         .checkbox-custom:checked::after {
             content: '✓';
@@ -304,13 +377,37 @@
 
 <body class="bg-black text-white min-h-screen flex flex-col">
 
-<div id="cont">
-    <!-- Language Buttons -->
-    <div class="lang-btn-container">
-        <button id="georgianBtn" onclick="setLanguage('ka')" class="lang-btn lang-btn-active rounded font-semibold"><span class="btn-full">ქართული</span><span class="btn-short">ქარ</span></button>
-        <button id="englishBtn" onclick="setLanguage('en')" class="lang-btn lang-btn-inactive rounded font-semibold"><span class="btn-full">ENGLISH</span><span class="btn-short">EN</span></button>
+<nav class="site-navbar" id="siteNavbar">
+    <div class="site-navbar-inner">
+        <a href="/" class="navbar-logo-link">
+            <picture>
+                <source srcset="img/gym.webp" type="image/webp">
+                <img src="img/gym.png" alt="Alex Fit" class="navbar-logo-img" fetchpriority="high"
+                     onerror="this.onerror=null;this.src='https://placehold.co/55x55/0d1a11/22c55e?text=AF';">
+            </picture>
+        </a>
+        <div class="navbar-desktop-links">
+            <span class="navbar-register banner" name="key_become_member" style="cursor:default;">key_become_member</span>
+        </div>
+        <div class="navbar-right-group">
+            <div class="navbar-lang-btn" onclick="toggleNavLang();">
+                <span name="key_lang">key_lang</span>
+            </div>
+            <button class="navbar-hamburger" id="navToggle"
+                    onclick="document.getElementById('navMobileMenu').classList.toggle('open')">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
     </div>
-    
+    <div class="navbar-mobile-menu" id="navMobileMenu">
+        <span class="nm-register banner" name="key_become_member" style="cursor:default;">key_become_member</span>
+        <div class="nm-lang" onclick="toggleNavLang();">
+            <span name="key_lang">key_lang</span>
+        </div>
+    </div>
+</nav>
+
+<div id="cont">
     <!-- Agreement Form Section -->
     <div class="flex-grow flex items-center justify-center pb-12">
         <div class="container mx-auto px-4">
@@ -318,7 +415,10 @@
                 <div class="text-center mb-8">
                     <div class="inline-block bg-black p-3 rounded-lg">
                         <a href="/" class="block">
-                            <img src="/img/logo.png" alt="Synergy Logo" class="h-16 mx-auto cursor-pointer hover:opacity-80 transition-opacity duration-200" onerror="this.onerror=null; this.src='https://placehold.co/180x60/cccccc/000000?text=Synergy+Logo';">
+                            <picture>
+                                <source srcset="/img/gym.webp" type="image/webp">
+                                <img src="/img/gym.png" alt="Alex Fitness" class="h-16 mx-auto cursor-pointer hover:opacity-80 transition-opacity duration-200" onerror="this.onerror=null; this.src='https://placehold.co/180x60/cccccc/000000?text=Alex+Fitness';">
+                            </picture>
                         </a>
                     </div>
                     <h1 id="title" class="text-3xl font-bold mt-6 text-center text-white">შეთანხმების ფორმა</h1>
@@ -363,8 +463,8 @@
                             placeholder="შენი ელ-ფოსტა" required>
                     </div>
 
-                    <!-- Profile Picture Upload (hidden for now) -->
-                    <div class="mb-4" id="profile-picture-section" style="display: none;">
+                    <!-- Profile Picture Upload -->
+                    <div class="mb-4" id="profile-picture-section">
                         <label id="label_profile_picture" for="profile_picture" class="form-label">პროფილის ფოტო <span class="text-red-400">*</span></label>
                         <div class="image-upload-container">
                             <div class="image-upload-area">
@@ -394,10 +494,10 @@
                                 </div>
                             </div>
                             <!-- Camera input (mobile camera) -->
-                            <input type="file" id="camera_input" name="camera_input" class="file-input" 
-                                   accept="image/*" 
-                                   capture
-                                   onchange="handleImageUpload(this)">>
+                            <input type="file" id="camera_input" name="camera_input" class="file-input"
+                                   accept="image/*"
+                                   capture="environment"
+                                   onchange="handleImageUpload(this)">
                             <!-- Gallery input (file picker) -->
                             <input type="file" id="profile_picture" name="profile_picture" class="file-input" 
                                    accept="image/jpeg,image/jpg,image/png,image/gif,image/webp" 
@@ -441,7 +541,7 @@
                     <div class="mb-4 flex items-center">
                         <input type="checkbox" name="agree_to_agreement" id="agree_to_agreement" class="checkbox-custom mr-3">
                         <label id="label_agreement" for="agree_to_agreement" class="form-label mb-0">
-                            ვეთანხმები<a href="/Synergy-gym-agreement.pdf" target="_blank"> <span class="text-yellow-400 hover:text-yellow-300">კონტრაქტს</span></a>
+                            ვეთანხმები<a href="/Alex-Fitness-agreement.pdf" target="_blank"> <span class="text-yellow-400 hover:text-yellow-300">კონტრაქტს</span></a>
                         </label>
                     </div>
 
@@ -453,15 +553,69 @@
                 <div id="message" class="text-red-400 text-center mt-4"></div>
 
                 <div class="mt-6 pt-4 border-t border-gray-700 flex justify-center items-center gap-4 text-sm">
-                    <a href="/terms.php" target="_blank" style="color:#c8e600;" class="hover:underline" id="link_terms">Terms and Conditions</a>
+                    <a href="/terms.php" target="_blank" style="color:#22c55e;" class="hover:underline" id="link_terms">Terms and Conditions</a>
                     <span class="text-gray-600">|</span>
-                    <a href="/privacy.php" target="_blank" style="color:#c8e600;" class="hover:underline" id="link_privacy">Privacy Policy</a>
+                    <a href="/privacy.php" target="_blank" style="color:#22c55e;" class="hover:underline" id="link_privacy">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-    
+
+<footer class="site-footer">
+    <div class="footer-grid">
+        <div>
+            <picture>
+                <source srcset="img/gym.webp" type="image/webp">
+                <img src="img/gym.png" alt="Alex Fit" class="footer-logo-img" loading="lazy"
+                     onerror="this.style.display='none'">
+            </picture>
+            <div class="footer-brand-name">Alex Fit</div>
+            <div class="footer-tagline" name="key_footer_tagline">Gym &amp; Boxing · Kobuleti</div>
+        </div>
+        <div>
+            <div class="footer-col-title" name="key_contact">Contact</div>
+            <div class="footer-contact-item">
+                <i class="fas fa-phone-alt"></i>
+                <a href="tel:+995599061572">+995 599 061 572</a>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-clock"></i>
+                <span style="color:#d0d0d0;">09:30 – 00:00 &nbsp;<span style="color:#606060;font-size:.80rem;" name="key_every_day">Every Day</span></span>
+            </div>
+            <div class="footer-contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <span style="color:#d0d0d0;" name="key_address">Shota Rustaveli 170-25, Kobuleti 6200</span>
+            </div>
+        </div>
+        <div>
+            <div class="footer-col-title" name="key_follow_us">Follow Us</div>
+            <div class="footer-social-row">
+                <a href="https://www.facebook.com/Alexfitnesskobulrti/"
+                   target="_blank" rel="noopener noreferrer" class="footer-social-btn fb">
+                    <i class="fab fa-facebook-f"></i> Facebook
+                </a>
+                <a href="https://www.instagram.com/alex_fitness_kobuleti/"
+                   target="_blank" rel="noopener noreferrer" class="footer-social-btn ig">
+                    <i class="fab fa-instagram"></i> Instagram
+                </a>
+                <a href="https://t.me/alex_fitness_kobuleti"
+                   target="_blank" rel="noopener noreferrer" class="footer-social-btn tg">
+                    <i class="fab fa-telegram-plane"></i> Telegram
+                </a>
+            </div>
+        </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-bottom">
+        © 2026 Alex Fit. All rights reserved.
+        &nbsp;·&nbsp;
+        <a href="terms.php">Terms</a>
+        &nbsp;·&nbsp;
+        <a href="privacy.php">Privacy Policy</a>
+    </div>
+</footer>
+
     <script>
         let currentLang = 'ka';
 
@@ -546,140 +700,111 @@
                     full_name: "დაშვებულია მხოლოდ ასოები და სფეისები",
                     mobile_number: "შეიყვანეთ 9 ციფრიანი ტელეფონის ნომერი"
                 }
+            },
+            ru: {
+                title: "Форма соглашения",
+                label_id_number: "ID номер / Номер паспорта",
+                label_full_name: "Полное имя",
+                label_mobile_number: "Номер телефона",
+                label_birth_date: "Дата рождения",
+                label_email: "Ваш email",
+                label_profile_picture: "Фото профиля *",
+                upload_text: "Нажмите или перетащите фото",
+                upload_text_small: "JPG, PNG, GIF, WebP (Макс. 15МБ)",
+                verification_method_label: "Метод верификации",
+                label_agreement: "Я согласен(а) с",
+                contract_text: "Договором",
+                submit_button: "Отправить",
+                agree_error: "Необходимо принять условия договора",
+                sms_error: "Ошибка отправки SMS: ",
+                success_message: "Ваш ответ записан!",
+                verification_prompt: "Введите код",
+                verification_placeholder: "Введите 3-значный код",
+                verification_error: "Неверный код, попробуйте снова!",
+                verification_confirm: "Подтвердить",
+                verification_cancel: "Отмена",
+                placeholders: {
+                    id_number: "Введите ID номер",
+                    full_name: "Ваше имя и фамилия",
+                    mobile_number: "Номер телефона",
+                    month: "Месяц",
+                    day: "День",
+                    year: "Год",
+                    email: "Email",
+                },
+                monthes: {
+                    1: "Январь", 2: "Февраль", 3: "Март", 4: "Апрель", 5: "Май", 6: "Июнь",
+                    7: "Июль", 8: "Август", 9: "Сентябрь", 10: "Октябрь", 11: "Ноябрь", 12: "Декабрь"
+                },
+                titles: {
+                    full_name: "Разрешены только буквы и пробелы",
+                    mobile_number: "Введите 9-значный номер телефона"
+                }
             }
         };
 
-
         function setLanguage(lang) {
             currentLang = lang;
-            // Set both localStorage keys for compatibility
             localStorage.setItem('ActiveLanguage', lang);
             localStorage.setItem('language', lang);
-            
-            console.log('Language set to:', lang);
-            console.log('localStorage ActiveLanguage:', localStorage.getItem('ActiveLanguage'));
-            console.log('localStorage language:', localStorage.getItem('language'));
-            console.log('Global currentLang:', currentLang);
-            
-            // Update button styles
-            const georgianBtn = document.getElementById('georgianBtn');
-            const englishBtn = document.getElementById('englishBtn');
-            
-            if (lang === 'ka') {
-                georgianBtn.className = 'lang-btn lang-btn-active rounded font-semibold';
-                englishBtn.className = 'lang-btn lang-btn-inactive rounded font-semibold';
-            } else {
-                georgianBtn.className = 'lang-btn lang-btn-inactive rounded font-semibold';
-                englishBtn.className = 'lang-btn lang-btn-active rounded font-semibold';
-            }
-            
-            // Update content
             updateContent();
+            if (typeof ChangeData === 'function') ChangeData();
+        }
+
+        // Hook called by language.js when language changes via the dropdown
+        function onLangChange(lang) { setLanguage(lang); }
+
+        function toggleNavLang() {
+            // Delegate to language.js dropdown if available
+            const btn = document.querySelector('.navbar-lang-btn');
+            if (btn && typeof showLangDropdown === 'function') {
+                showLangDropdown(btn);
+            }
         }
 
         function updateContent() {
-            console.log('Updating content for language:', currentLang);
-            
-            if (currentLang === 'ka') {
-                // Georgian translations
-                document.getElementById('title').textContent = 'შეთანხმების ფორმა';
-                document.getElementById('label_id_number').textContent = 'პირადი ნომერი / პასპორტის ნომერი';
-                document.getElementById('label_full_name').textContent = 'სრული სახელი';
-                document.getElementById('label_mobile_number').textContent = 'მობილურის ნომერი';
-                document.getElementById('label_email').textContent = 'შენი ელ-ფოსტა';
-                document.getElementById('label_profile_picture').textContent = 'პროფილის ფოტო *';
-                document.getElementById('upload_text').textContent = 'აირჩიეთ ფოტოს ატვირთვის გზა';
-                document.getElementById('upload-text-small').textContent = 'JPG, PNG, GIF, WebP (მაქს. 15MB)';
-                document.getElementById('camera-btn-text').textContent = 'კამერა';
-                document.getElementById('gallery-btn-text').textContent = 'გალერეა';
-                document.getElementById('label_birth_date').textContent = 'დაბადების თარიღი';
-                document.getElementById('verification_method_label').textContent = 'ვერიფიკაციის მეთოდი';
-                document.getElementById('submit_button').textContent = 'გაგზავნა';
-                document.getElementById('link_terms').textContent = 'წესები და პირობები';
-                document.getElementById('link_privacy').textContent = 'კონფიდენციალურობის პოლიტიკა';
-                
-                // Agreement with link
-                document.getElementById('label_agreement').innerHTML = 'ვეთანხმები <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">კონტრაქტს</span></a>';
-                
-                // Placeholders
-                document.getElementById('id_number').placeholder = 'ჩაწერე პირადი ნომერი';
-                document.getElementById('full_name').placeholder = 'შენი სახელი და გვარი';
-                document.getElementById('mobile_number').placeholder = 'ტელეფონის ნომერი';
-                document.getElementById('email').placeholder = 'ელ-ფოსტა';
-                document.getElementById('birth_day').placeholder = 'დღე';
-                document.getElementById('birth_year').placeholder = 'წელი';
-                
-                // Month options
-                const monthSelect = document.getElementById('birth_month');
-                const currentMonth = monthSelect.value;
-                monthSelect.innerHTML = `
-                    <option value="">თვე</option>
-                    <option value="01">იანვარი</option>
-                    <option value="02">თებერვალი</option>
-                    <option value="03">მარტი</option>
-                    <option value="04">აპრილი</option>
-                    <option value="05">მაისი</option>
-                    <option value="06">ივნისი</option>
-                    <option value="07">ივლისი</option>
-                    <option value="08">აგვისტო</option>
-                    <option value="09">სექტემბერი</option>
-                    <option value="10">ოქტომბერი</option>
-                    <option value="11">ნოემბერი</option>
-                    <option value="12">დეკემბერი</option>
-                `;
-                if (currentMonth) monthSelect.value = currentMonth;
-                
-            } else {
-                // English translations
-                document.getElementById('title').textContent = 'Agreement Form';
-                document.getElementById('label_id_number').textContent = 'ID Number / Passport No';
-                document.getElementById('label_full_name').textContent = 'Full Name';
-                document.getElementById('label_mobile_number').textContent = 'Mobile Number';
-                document.getElementById('label_email').textContent = 'Your email address';
-                document.getElementById('label_profile_picture').textContent = 'Profile Picture *';
-                document.getElementById('upload_text').textContent = 'Choose photo upload method';
-                document.getElementById('upload-text-small').textContent = 'JPG, PNG, GIF, WebP (Max 15MB)';
-                document.getElementById('camera-btn-text').textContent = 'Camera';
-                document.getElementById('gallery-btn-text').textContent = 'Gallery';
-                document.getElementById('label_birth_date').textContent = 'Birth Date';
-                document.getElementById('verification_method_label').textContent = 'Verification Method';
-                document.getElementById('submit_button').textContent = 'Submit';
-                document.getElementById('link_terms').textContent = 'Terms and Conditions';
-                document.getElementById('link_privacy').textContent = 'Privacy Policy';
-                
-                // Agreement with link
-                document.getElementById('label_agreement').innerHTML = 'I agree to the <a href="/Synergy-gym-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">Contract</span></a>';
-                
-                // Placeholders
-                document.getElementById('id_number').placeholder = 'Enter your ID number';
-                document.getElementById('full_name').placeholder = 'Your full name';
-                document.getElementById('mobile_number').placeholder = 'Your phone number';
-                document.getElementById('email').placeholder = 'Email';
-                document.getElementById('birth_day').placeholder = 'Day';
-                document.getElementById('birth_year').placeholder = 'Year';
-                
-                // Month options
-                const monthSelect = document.getElementById('birth_month');
-                const currentMonth = monthSelect.value;
-                monthSelect.innerHTML = `
-                    <option value="">Month</option>
-                    <option value="01">January</option>
-                    <option value="02">February</option>
-                    <option value="03">March</option>
-                    <option value="04">April</option>
-                    <option value="05">May</option>
-                    <option value="06">June</option>
-                    <option value="07">July</option>
-                    <option value="08">August</option>
-                    <option value="09">September</option>
-                    <option value="10">October</option>
-                    <option value="11">November</option>
-                    <option value="12">December</option>
-                `;
-                if (currentMonth) monthSelect.value = currentMonth;
+            const T = translations[currentLang] || translations['ka'];
+            const contract = `<a href="/Alex-Fitness-agreement.pdf" target="_blank"><span class="text-yellow-400 hover:text-yellow-300">${T.contract_text}</span></a>`;
+
+            const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+            const setHTML = (id, val) => { const el = document.getElementById(id); if (el) el.innerHTML = val; };
+            const setPlh = (id, val) => { const el = document.getElementById(id); if (el) el.placeholder = val; };
+
+            set('title',                    T.title);
+            set('label_id_number',          T.label_id_number);
+            set('label_full_name',          T.label_full_name);
+            set('label_mobile_number',      T.label_mobile_number);
+            set('label_email',              T.label_email);
+            set('label_profile_picture',    T.label_profile_picture);
+            set('upload_text',              T.upload_text);
+            set('upload-text-small',        T.upload_text_small);
+            set('camera-btn-text',          currentLang === 'ka' ? 'კამერა' : (currentLang === 'ru' ? 'Камера' : 'Camera'));
+            set('gallery-btn-text',         currentLang === 'ka' ? 'გალერეა' : (currentLang === 'ru' ? 'Галерея' : 'Gallery'));
+            set('webcam-title',             currentLang === 'ka' ? 'ფოტოს გადაღება' : (currentLang === 'ru' ? 'Сделать фото' : 'Take a Photo'));
+            set('label_birth_date',         T.label_birth_date);
+            set('verification_method_label',T.verification_method_label);
+            set('submit_button',            T.submit_button);
+            set('link_terms',               currentLang === 'ka' ? 'წესები და პირობები' : (currentLang === 'ru' ? 'Условия использования' : 'Terms and Conditions'));
+            set('link_privacy',             currentLang === 'ka' ? 'კონფიდენციალურობის პოლიტიკა' : (currentLang === 'ru' ? 'Политика конфиденциальности' : 'Privacy Policy'));
+            setHTML('label_agreement',      T.label_agreement + ' ' + contract);
+
+            setPlh('id_number',     T.placeholders.id_number);
+            setPlh('full_name',     T.placeholders.full_name);
+            setPlh('mobile_number', T.placeholders.mobile_number);
+            setPlh('email',         T.placeholders.email);
+            setPlh('birth_day',     T.placeholders.day);
+            setPlh('birth_year',    T.placeholders.year);
+
+            const monthSelect = document.getElementById('birth_month');
+            if (monthSelect) {
+                const cur = monthSelect.value;
+                const months = T.monthes;
+                monthSelect.innerHTML = `<option value="">${T.placeholders.month}</option>` +
+                    Object.entries(months).map(([v, label]) =>
+                        `<option value="${String(v).padStart(2,'0')}">${label}</option>`
+                    ).join('');
+                if (cur) monthSelect.value = cur;
             }
-            
-            console.log('Content updated successfully');
         }
 
         // Event listener for phone number field - real-time duplicate check (SOFT CHECK)
@@ -755,9 +880,9 @@
                             
                             if (response.status === 'error') {
                                 // Phone number already registered - show warning popup but allow continuation
-                                const warningMsg = currentLang === 'ka' ? 
-                                    'ეს ნომერი უკვე რეგისტრირებულია. სისტემაში შესასვლელად გადმოწერეთ ჩვენი აპი' : 
-                                    'This number is already registered. To log in, download our app.';
+                                const warningMsg = currentLang === 'ka' ?
+                                    'ეს ნომერი უკვე რეგისტრირებულია. სისტემაში შესასვლელად გადმოწერეთ ჩვენი აპი' :
+                                    (currentLang === 'ru' ? 'Этот номер уже зарегистрирован. Для входа скачайте наше приложение.' : 'This number is already registered. To log in, download our app.');
                                 console.log('Setting warning message:', warningMsg);
                                 showPhoneWarningPopup(warningMsg);
                             } else {
@@ -792,15 +917,15 @@
             }
             
             // Get translated text based on current language
-            const cancelText = currentLang === 'ka' ? 'რეგისტრაციის გაგრძელება' : 'Cancel';
+            const cancelText = currentLang === 'ka' ? 'რეგისტრაციის გაგრძელება' : (currentLang === 'ru' ? 'Продолжить регистрацию' : 'Cancel');
             
             let popup = document.createElement('div');
             popup.id = "phoneWarningPopup";
             popup.innerHTML = `
                 <div class="fixed inset-0 flex items-center justify-center z-50" style="background:rgba(0,0,0,0.85);">
-                    <div style="background:#1a1a1a;border:1px solid #c8e600;border-radius:12px;padding:2rem 2rem 1.5rem;max-width:360px;width:90%;text-align:center;box-shadow:0 0 40px rgba(200,230,0,0.15);">
-                        <div style="margin:0 auto 1.25rem;width:52px;height:52px;border-radius:50%;background:rgba(200,230,0,0.12);border:2px solid #c8e600;display:flex;align-items:center;justify-content:center;">
-                            <svg style="width:26px;height:26px;color:#c8e600;" fill="none" viewBox="0 0 24 24" stroke="#c8e600">
+                    <div style="background:#1a1a1a;border:1px solid #22c55e;border-radius:12px;padding:2rem 2rem 1.5rem;max-width:360px;width:90%;text-align:center;box-shadow:0 0 40px rgba(34, 197, 94,0.15);">
+                        <div style="margin:0 auto 1.25rem;width:52px;height:52px;border-radius:50%;background:rgba(34, 197, 94,0.12);border:2px solid #22c55e;display:flex;align-items:center;justify-content:center;">
+                            <svg style="width:26px;height:26px;color:#22c55e;" fill="none" viewBox="0 0 24 24" stroke="#22c55e">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z"></path>
                             </svg>
                         </div>
@@ -842,7 +967,7 @@
             }
             
             // Get translated text based on current language
-            const okText = currentLang === 'ka' ? 'კარგი' : 'OK';
+            const okText = currentLang === 'ka' ? 'კარგი' : (currentLang === 'ru' ? 'ОК' : 'OK');
             
             let popup = document.createElement('div');
             popup.id = "alreadyRegisteredPopup";
@@ -902,7 +1027,7 @@
             submitButton.style.cursor = 'not-allowed';
             
             // Change button text to sending state
-            const sendingButtonText = currentLang === 'ka' ? 'იგზავნება...' : 'Sending...';
+            const sendingButtonText = currentLang === 'ka' ? 'იგზავნება...' : (currentLang === 'ru' ? 'Отправка...' : 'Sending...');
             submitButton.textContent = sendingButtonText;
 
             if (!document.getElementById('agree_to_agreement').checked) {
@@ -911,9 +1036,22 @@
                 submitButton.style.opacity = '1';
                 submitButton.style.cursor = 'pointer';
                 submitButton.textContent = originalButtonText;
-                
-                const errorMsg = currentLang === 'ka' ? 'დაეთანხმეთ კონტრაქტს' : 'You must agree to the contract';
+
+                const errorMsg = currentLang === 'ka' ? 'დაეთანხმეთ კონტრაქტს' : (currentLang === 'ru' ? 'Необходимо принять условия договора' : 'You must agree to the contract');
                 messageDiv.innerHTML = errorMsg;
+                return;
+            }
+
+            // Require photo upload
+            const previewContainer = document.getElementById('image-preview-container');
+            if (!previewContainer || previewContainer.style.display === 'none') {
+                submitButton.disabled = false;
+                submitButton.style.opacity = '1';
+                submitButton.style.cursor = 'pointer';
+                submitButton.textContent = originalButtonText;
+                const photoError = currentLang === 'ka' ? 'გთხოვთ ატვირთოთ პროფილის ფოტო' : (currentLang === 'ru' ? 'Пожалуйста, загрузите фото профиля' : 'Please upload a profile photo');
+                messageDiv.innerHTML = '<span style="color:#ff4444;">' + photoError + '</span>';
+                document.getElementById('profile-picture-section').scrollIntoView({behavior:'smooth', block:'center'});
                 return;
             }
 
@@ -942,7 +1080,7 @@
                 submitButton.style.cursor = 'pointer';
                 submitButton.textContent = originalButtonText;
                 
-                const errorMsg = currentLang === 'ka' ? 'გთხოვთ შეიყვანოთ სწორი ტელეფონის ნომერი (9 ციფრი)' : 'Please enter a valid phone number (9 digits)';
+                const errorMsg = currentLang === 'ka' ? 'გთხოვთ შეიყვანოთ სწორი ტელეფონის ნომერი (9 ციფრი)' : (currentLang === 'ru' ? 'Введите корректный номер телефона (9 цифр)' : 'Please enter a valid phone number (9 digits)');
                 messageDiv.innerHTML = errorMsg;
                 return;
             }
@@ -955,7 +1093,7 @@
                 submitButton.style.cursor = 'pointer';
                 submitButton.textContent = originalButtonText;
                 
-                const errorMsg = currentLang === 'ka' ? 'თუ ტელეფონის ნომერს იყენებთ, შეიყვანეთ სწორი ფორმატი (9 ციფრი)' : 'If you provide a phone number, please use the correct format (9 digits)';
+                const errorMsg = currentLang === 'ka' ? 'თუ ტელეფონის ნომერს იყენებთ, შეიყვანეთ სწორი ფორმატი (9 ციფრი)' : (currentLang === 'ru' ? 'Если указываете номер телефона, используйте правильный формат (9 цифр)' : 'If you provide a phone number, please use the correct format (9 digits)');
                 messageDiv.innerHTML = errorMsg;
                 return;
             }
@@ -1009,9 +1147,9 @@
                             } else {
                                 // SMS sending failed, but still show popup for manual verification
                                 console.log('SMS sending failed:', response.message);
-                                const errorMsg = currentLang === 'ka' ? 
-                                    'SMS შეიძლება არ იყოს გაგზავნილი. შეიყვანეთ კოდი თუ მიიღეთ, ან დაეკონტაქტეთ ადმინისტრაციას.' : 
-                                    'SMS may not have been sent. Enter the code if you received it, or contact administration.';
+                                const errorMsg = currentLang === 'ka' ?
+                                    'SMS შეიძლება არ იყოს გაგზავნილი. შეიყვანეთ კოდი თუ მიიღეთ, ან დაეკონტაქტეთ ადმინისტრაციას.' :
+                                    (currentLang === 'ru' ? 'SMS может не быть отправлено. Введите код, если получили, или свяжитесь с администрацией.' : 'SMS may not have been sent. Enter the code if you received it, or contact administration.');
                                 document.getElementById('message').innerHTML = errorMsg;
                                 
                                 // Still show verification popup
@@ -1019,9 +1157,9 @@
                             }
                         } catch (e) {
                             console.error('Error parsing SMS response:', xhr.responseText);
-                            const errorMsg = currentLang === 'ka' ? 
-                                'SMS სისტემასთან კავშირის პრობლემა. შეიყვანეთ კოდი თუ მიიღეთ.' : 
-                                'SMS system connection issue. Enter the code if you received it.';
+                            const errorMsg = currentLang === 'ka' ?
+                                'SMS სისტემასთან კავშირის პრობლემა. შეიყვანეთ კოდი თუ მიიღეთ.' :
+                                (currentLang === 'ru' ? 'Проблема соединения с SMS-системой. Введите код, если получили его.' : 'SMS system connection issue. Enter the code if you received it.');
                             document.getElementById('message').innerHTML = errorMsg;
                             
                             // Show popup anyway for manual code entry
@@ -1040,9 +1178,9 @@
                 };
                 xhr.onerror = function() {
                     console.error('SMS request network error');
-                    const errorMsg = currentLang === 'ka' ? 
-                        'ქსელის პრობლემა. შეიყვანეთ კოდი თუ მიიღეთ SMS.' : 
-                        'Network issue. Enter the code if you received SMS.';
+                    const errorMsg = currentLang === 'ka' ?
+                        'ქსელის პრობლემა. შეიყვანეთ კოდი თუ მიიღეთ SMS.' :
+                        (currentLang === 'ru' ? 'Проблема с сетью. Введите код, если получили SMS.' : 'Network issue. Enter the code if you received SMS.');
                     document.getElementById('message').innerHTML = errorMsg;
                     
                     // Show popup anyway in case of network issues
@@ -1092,10 +1230,10 @@
             }
             
             // Get translated text based on current language
-            const promptText = currentLang === 'ka' ? 'შეიყვანეთ კოდი' : 'Enter the code';
-            const placeholderText = currentLang === 'ka' ? 'შეიყვანეთ 3 ციფრიანი კოდი' : 'Enter 3-digit code';
-            const confirmText = currentLang === 'ka' ? 'დადასტურება' : 'Confirm';
-            const cancelText = currentLang === 'ka' ? 'გაუქმება' : 'Cancel';
+            const promptText = currentLang === 'ka' ? 'შეიყვანეთ კოდი' : (currentLang === 'ru' ? 'Введите код' : 'Enter the code');
+            const placeholderText = currentLang === 'ka' ? 'შეიყვანეთ 3 ციფრიანი კოდი' : (currentLang === 'ru' ? 'Введите 3-значный код' : 'Enter 3-digit code');
+            const confirmText = currentLang === 'ka' ? 'დადასტურება' : (currentLang === 'ru' ? 'Подтвердить' : 'Confirm');
+            const cancelText = currentLang === 'ka' ? 'გაუქმება' : (currentLang === 'ru' ? 'Отмена' : 'Cancel');
             
             let popup = document.createElement('div');
             popup.id = "verificationPopup";
@@ -1146,7 +1284,7 @@
 
             // Validate that we have both codes
             if (!enteredCode) {
-                const errorText = currentLang === 'ka' ? 'გთხოვთ შეიყვანოთ კოდი' : 'Please enter the code';
+                const errorText = currentLang === 'ka' ? 'გთხოვთ შეიყვანოთ კოდი' : (currentLang === 'ru' ? 'Пожалуйста, введите код' : 'Please enter the code');
                 document.getElementById('codeErrorMessage').innerText = errorText;
                 document.getElementById('verificationCodeInput').focus();
                 return;
@@ -1168,7 +1306,7 @@
             } else {
                 // Clear the input field and show error message
                 document.getElementById('verificationCodeInput').value = '';
-                const errorText = currentLang === 'ka' ? 'კოდი არასწორია, სცადეთ თავიდან!' : 'Incorrect code, try again!';
+                const errorText = currentLang === 'ka' ? 'კოდი არასწორია, სცადეთ თავიდან!' : (currentLang === 'ru' ? 'Неверный код, попробуйте снова!' : 'Incorrect code, try again!');
                 document.getElementById('codeErrorMessage').innerText = errorText;
                 
                 // Focus back on the input field for better UX
@@ -1183,8 +1321,8 @@
                 existingLoader.remove();
             }
             
-            const loadingText = currentLang === 'ka' ? 'იტვირთება...' : 'Loading...';
-            const pleaseWaitText = currentLang === 'ka' ? 'გთხოვთ დაელოდოთ, ფორმა იგზავნება სერვერზე' : 'Please wait, submitting form to server';
+            const loadingText = currentLang === 'ka' ? 'იტვირთება...' : (currentLang === 'ru' ? 'Загрузка...' : 'Loading...');
+            const pleaseWaitText = currentLang === 'ka' ? 'გთხოვთ დაელოდოთ, ფორმა იგზავნება სერვერზე' : (currentLang === 'ru' ? 'Пожалуйста, подождите, форма отправляется' : 'Please wait, submitting form to server');
             
             let loadingScreen = document.createElement('div');
             loadingScreen.id = 'loadingScreen';
@@ -1470,9 +1608,9 @@
                             console.log('Image uploaded successfully:', response.url);
                         } else {
                             console.error('Upload failed:', response.message);
-                            const errorMsg = currentLang === 'ka' ? 
+                            const errorMsg = currentLang === 'ka' ?
                                 'ფოტოს ატვირთვისას მოხდა შეცდომა: ' + response.message :
-                                'Photo upload error: ' + response.message;
+                                (currentLang === 'ru' ? 'Ошибка загрузки фото: ' + response.message : 'Photo upload error: ' + response.message);
                             alert(errorMsg);
                             removeImage();
                         }
@@ -1494,9 +1632,9 @@
                         return;
                     }
                     
-                    const errorMsg = currentLang === 'ka' ? 
+                    const errorMsg = currentLang === 'ka' ?
                         'ფოტოს ატვირთვისას მოხდა შეცდომა (HTTP ' + xhr.status + ')' :
-                        'Photo upload error (HTTP ' + xhr.status + ')';
+                        (currentLang === 'ru' ? 'Ошибка загрузки фото (HTTP ' + xhr.status + ')' : 'Photo upload error (HTTP ' + xhr.status + ')');
                     alert(errorMsg);
                     removeImage();
                 }
@@ -1514,9 +1652,9 @@
             xhr.addEventListener('timeout', function() {
                 console.error('Upload timeout');
                 progressContainer.style.display = 'none';
-                const errorMsg = currentLang === 'ka' ? 
+                const errorMsg = currentLang === 'ka' ?
                     'ფოტოს ატვირთვის დრო ამოიწურა' :
-                    'Photo upload timeout';
+                    (currentLang === 'ru' ? 'Превышено время загрузки фото' : 'Photo upload timeout');
                 alert(errorMsg);
                 removeImage();
             });
@@ -1564,25 +1702,25 @@
                             console.log('Fallback upload successful:', response.url);
                         } else {
                             console.error('Fallback upload failed:', response.message);
-                            const errorMsg = currentLang === 'ka' ? 
+                            const errorMsg = currentLang === 'ka' ?
                                 'ფოტოს ატვირთვისას მოხდა შეცდომა: ' + response.message :
-                                'Photo upload error: ' + response.message;
+                                (currentLang === 'ru' ? 'Ошибка загрузки фото: ' + response.message : 'Photo upload error: ' + response.message);
                             alert(errorMsg);
                             removeImage();
                         }
                     } catch (e) {
                         console.error('Error parsing fallback response:', e);
-                        const errorMsg = currentLang === 'ka' ? 
+                        const errorMsg = currentLang === 'ka' ?
                             'ფოტოს ატვირთვისას მოხდა შეცდომა (სერვერის შეცდომა)' :
-                            'Photo upload error (server error)';
+                            (currentLang === 'ru' ? 'Ошибка загрузки фото (ошибка сервера)' : 'Photo upload error (server error)');
                         alert(errorMsg);
                         removeImage();
                     }
                 } else {
                     console.error('Fallback HTTP error:', xhr.status);
-                    const errorMsg = currentLang === 'ka' ? 
+                    const errorMsg = currentLang === 'ka' ?
                         'ფოტოს ატვირთვისას მოხდა შეცდომა' :
-                        'Photo upload error';
+                        (currentLang === 'ru' ? 'Ошибка загрузки фото' : 'Photo upload error');
                     alert(errorMsg);
                     removeImage();
                 }
@@ -1591,9 +1729,9 @@
             xhr.addEventListener('error', function() {
                 console.error('Fallback network error');
                 progressContainer.style.display = 'none';
-                const errorMsg = currentLang === 'ka' ? 
+                const errorMsg = currentLang === 'ka' ?
                     'ფოტოს ატვირთვისას მოხდა ქსელური შეცდომა' :
-                    'Network error during photo upload';
+                    (currentLang === 'ru' ? 'Ошибка сети при загрузке фото' : 'Network error during photo upload');
                 alert(errorMsg);
                 removeImage();
             });
@@ -1658,15 +1796,71 @@
 
         // Camera and Gallery functions
         function openCamera() {
-            console.log('Opening camera...');
-            const cameraInput = document.getElementById('camera_input');
-            cameraInput.click();
+            const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+            if (isMobile) {
+                document.getElementById('camera_input').click();
+            } else {
+                openWebcamModal();
+            }
         }
 
         function openGallery() {
-            console.log('Opening gallery...');
-            const galleryInput = document.getElementById('profile_picture');
-            galleryInput.click();
+            document.getElementById('profile_picture').click();
+        }
+
+        // ── Webcam modal (desktop) ──────────────────────────────────────
+        var webcamStream = null;
+
+        function openWebcamModal() {
+            if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+                alert(currentLang === 'ka' ? 'თქვენი ბრაუზერი კამერას არ უჭერს მხარს' :
+                      currentLang === 'ru' ? 'Ваш браузер не поддерживает камеру' :
+                      'Your browser does not support camera access');
+                return;
+            }
+            var modal = document.getElementById('webcam-modal');
+            var video = document.getElementById('webcam-video');
+            modal.style.display = 'flex';
+            navigator.mediaDevices.getUserMedia({ video: { facingMode: 'user' }, audio: false })
+                .then(function(stream) {
+                    webcamStream = stream;
+                    video.srcObject = stream;
+                    video.play();
+                })
+                .catch(function(err) {
+                    closeWebcamModal();
+                    alert(currentLang === 'ka' ? 'კამერაზე წვდომა ვერ მოხერხდა: ' + err.message :
+                          currentLang === 'ru' ? 'Не удалось получить доступ к камере: ' + err.message :
+                          'Could not access camera: ' + err.message);
+                });
+        }
+
+        function closeWebcamModal() {
+            var modal = document.getElementById('webcam-modal');
+            var video = document.getElementById('webcam-video');
+            modal.style.display = 'none';
+            if (webcamStream) {
+                webcamStream.getTracks().forEach(function(t) { t.stop(); });
+                webcamStream = null;
+            }
+            video.srcObject = null;
+        }
+
+        function captureWebcamPhoto() {
+            var video = document.getElementById('webcam-video');
+            var canvas = document.getElementById('webcam-canvas');
+            canvas.width  = video.videoWidth  || 640;
+            canvas.height = video.videoHeight || 480;
+            canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+            closeWebcamModal();
+            canvas.toBlob(function(blob) {
+                var file = new File([blob], 'webcam_photo.jpg', { type: 'image/jpeg' });
+                var dt = new DataTransfer();
+                dt.items.add(file);
+                var input = document.getElementById('profile_picture');
+                input.files = dt.files;
+                handleImageUpload(input);
+            }, 'image/jpeg', 0.92);
         }
 
         // Simple form data preservation
@@ -1746,7 +1940,7 @@
             const savedLang = localStorage.getItem('ActiveLanguage') || localStorage.getItem('language');
             
             // Priority: URL parameter > localStorage > default 'ka'
-            if (urlLang && (urlLang === 'ka' || urlLang === 'en')) {
+            if (urlLang && ['ka', 'en', 'ru'].includes(urlLang)) {
                 currentLang = urlLang;
                 // Save the URL language to localStorage for consistency
                 localStorage.setItem('ActiveLanguage', urlLang);
@@ -1868,6 +2062,37 @@
 
 </script>
 
+<!-- ── Webcam modal ── -->
+<style>
+#webcam-modal{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.85);align-items:center;justify-content:center;padding:16px}
+.webcam-box{background:#111;border:1px solid rgba(74,222,128,.3);border-radius:14px;overflow:hidden;width:100%;max-width:520px;display:flex;flex-direction:column;align-items:center}
+.webcam-header{width:100%;display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.07)}
+.webcam-header span{color:#e0e0e0;font-weight:600;font-size:.95rem}
+.webcam-close{background:none;border:none;color:#888;font-size:1.3rem;cursor:pointer;line-height:1;padding:0}
+.webcam-close:hover{color:#fff}
+#webcam-video{width:100%;max-height:380px;object-fit:cover;background:#000;display:block}
+canvas#webcam-canvas{display:none}
+.webcam-footer{padding:16px;display:flex;justify-content:center}
+.webcam-capture-btn{background:#4ade80;color:#000;border:none;border-radius:50%;width:64px;height:64px;font-size:1.5rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+.webcam-capture-btn:hover{background:#22c55e}
+@media(max-width:480px){#webcam-video{max-height:260px}.webcam-capture-btn{width:54px;height:54px;font-size:1.2rem}}
+</style>
+
+<div id="webcam-modal">
+    <div class="webcam-box">
+        <div class="webcam-header">
+            <span id="webcam-title">კამერა</span>
+            <button class="webcam-close" onclick="closeWebcamModal()" aria-label="Close">&#x2715;</button>
+        </div>
+        <video id="webcam-video" autoplay playsinline muted></video>
+        <canvas id="webcam-canvas"></canvas>
+        <div class="webcam-footer">
+            <button class="webcam-capture-btn" onclick="captureWebcamPhoto()" aria-label="Take photo">
+                <i class="fas fa-camera"></i>
+            </button>
+        </div>
+    </div>
+</div>
 
 </body>
 

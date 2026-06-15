@@ -15,13 +15,13 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
     echo '<!DOCTYPE html><html><head><meta charset="UTF-8">';
     echo '<meta name="viewport" content="width=device-width, initial-scale=1.0">';
     echo '<title>Returning to Synergy App</title>';
-    echo '<style>body{font-family:Inter,Arial,sans-serif;background:#101114;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:24px}.card{max-width:420px;width:100%;background:#181a1f;border:1px solid #2b2f38;border-radius:16px;padding:28px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.25)}h1{font-size:22px;margin:0 0 12px;color:#c8e600}p{line-height:1.5;color:#d4d7dd;margin:0 0 18px}.btn{display:inline-block;background:#c8e600;color:#000;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin:6px 0}.btn-secondary{background:#2b2f38;color:#fff}.links{margin-top:16px;font-size:14px}.links a{color:#9fd3ff;word-break:break-all;display:block;margin-top:8px}</style>';
+    echo '<style>body{font-family:Inter,Arial,sans-serif;background:#101114;color:#fff;display:flex;align-items:center;justify-content:center;min-height:100vh;margin:0;padding:24px}.card{max-width:420px;width:100%;background:#181a1f;border:1px solid #2b2f38;border-radius:16px;padding:28px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.25)}h1{font-size:22px;margin:0 0 12px;color:#22c55e}p{line-height:1.5;color:#d4d7dd;margin:0 0 18px}.btn{display:inline-block;background: #166534; color: #ffffff;text-decoration:none;padding:12px 18px;border-radius:10px;font-weight:700;margin:6px 0}.btn-secondary{background:#2b2f38;color:#fff}.links{margin-top:16px;font-size:14px}.links a{color:#9fd3ff;word-break:break-all;display:block;margin-top:8px}</style>';
     echo '</head><body>';
     echo '<div class="card">';
     echo '<h1>Returning to Synergy App</h1>';
     echo '<p>If the app does not open automatically, tap the button below.</p>';
     echo '<a class="btn" href="' . htmlspecialchars($primaryLink, ENT_QUOTES, 'UTF-8') . '">Open App</a>';
-    echo '<div class="links"><a class="btn btn-secondary" href="https://synergyfitness.ge/payment_success.php">Stay on Website</a></div>';
+    echo '<div class="links"><a class="btn btn-secondary" href="https://synergy-gym.ge/payment_success.php">Stay on Website</a></div>';
     echo '</div>';
     echo '<script>';
     echo 'const isAndroid=' . ($isAndroid ? 'true' : 'false') . ';';
@@ -71,31 +71,30 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
             border: 1px solid #333;
             border-radius: 1rem;
             transition: all 0.3s ease;
-            box-shadow: 0 0 30px rgba(255, 223, 6, 0.1);
+            box-shadow: 0 0 30px rgba(34, 197, 94, 0.1);
             overflow-wrap: break-word;
             word-wrap: break-word;
             hyphens: auto;
         }
 
         .success-card:hover {
-            border-color: #c8e600;
-            box-shadow: 0 0 40px rgba(255, 223, 6, 0.2);
+            border-color: #22c55e;
+            box-shadow: 0 0 40px rgba(34, 197, 94, 0.2);
         }
 
         .brand-btn {
-            background-color: #c8e600;
-            color: #000000;
+            background-color: #166534; color: #ffffff;
             transition: background-color 0.3s ease;
             border-radius: 0.5rem;
             font-weight: bold;
         }
         
         .brand-btn:hover {
-            background-color: #1a73e8;
+            background-color: #1e40af;
         }
 
         .success-icon {
-            background: linear-gradient(135deg, #c8e600 0%, #1a73e8 100%);
+            background: linear-gradient(135deg, #22c55e 0%, #1e40af 100%);
             animation: pulse 2s infinite;
         }
 
@@ -149,7 +148,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
             position: absolute;
             width: 10px;
             height: 10px;
-            background: #c8e600;
+            background: #22c55e;
             animation: confetti-fall 3s linear infinite;
         }
 
@@ -160,11 +159,11 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
 
         /* Custom brand color utility */
         .text-brand {
-            color: #c8e600 !important;
+            color: #22c55e !important;
         }
         
         .text-brand:hover {
-            color: #1a73e8 !important;
+            color: #1e40af !important;
         }
     </style>
     
@@ -244,7 +243,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                 
                 <!-- Header Section -->
                 <div class="header-section text-center">
-                    <img src="img/logo.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
+                    <img src="img/gym.png" alt="Synergy Gym" class="logo-img" onerror="this.onerror=null; this.src='https://placehold.co/120x50/ffdf06/000000?text=Synergy';">
                     
                     <div class="success-icon inline-flex items-center justify-center w-20 h-20 md:w-24 md:h-24 rounded-full mb-6 checkmark-animation">
                         <i class="fas fa-check text-black text-3xl md:text-4xl"></i>
@@ -276,7 +275,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                         If you have any questions, contact us:
                     </p>
                     <div class="flex justify-center flex-wrap gap-4 text-sm mb-4">
-                        <a href="tel:+995-XXX-XXX-XXX" class="text-brand hover:text-yellow-300 transition-colors">
+                        <a href="tel:+995599061572" class="text-brand hover:text-yellow-300 transition-colors">
                             <i class="fas fa-phone mr-1"></i>
                             +995 551 195 819
                         </a>
@@ -284,22 +283,22 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
                             <i class="fas fa-envelope mr-1"></i>
                             info@synergy-gym.ge
                         </a>
-                        <a href="https://wa.me/+995-XXX-XXX-XXX" class="text-brand hover:text-yellow-300 transition-colors" target="_blank">
-                            <i class="fab fa-whatsapp mr-1"></i>
-                            WhatsApp
+                        <a href="https://t.me/alex_fitness_kobuleti" class="text-brand hover:text-yellow-300 transition-colors" target="_blank">
+                            <i class="fab fa-telegram-plane mr-1"></i>
+                            Telegram
                         </a>
                     </div>
                     
                     <!-- Social Media Links -->
                     <div class="flex justify-center space-x-4 mt-4">
-                        <a href="https://www.facebook.com/SynergyGymTbilisi" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-2xl">
+                        <a href="https://www.facebook.com/Alexfitnesskobulrti" target="_blank" class="text-gray-400 hover:text-blue-500 transition-colors text-2xl">
                             <i class="fab fa-facebook"></i>
                         </a>
-                        <a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl">
+                        <a href="https://www.instagram.com/alex_fitness_kobuleti/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-2xl">
                             <i class="fab fa-instagram"></i>
                         </a>
-                        <a href="https://wa.me/+995-XXX-XXX-XXX" target="_blank" class="text-gray-400 hover:text-green-500 transition-colors text-2xl">
-                            <i class="fab fa-whatsapp"></i>
+                        <a href="https://t.me/alex_fitness_kobuleti" target="_blank" class="text-gray-400 hover:text-blue-400 transition-colors text-2xl">
+                            <i class="fab fa-telegram-plane"></i>
                         </a>
                     </div>
                 </div>
@@ -351,7 +350,7 @@ if (isset($_GET['source']) && $_GET['source'] === 'app') {
         // Create confetti animation
         function createConfetti() {
             const confettiContainer = document.getElementById('confetti');
-            const colors = ['#c8e600', '#1a73e8', '#ffffff', '#ffd700'];
+            const colors = ['#22c55e', '#1e40af', '#ffffff', '#ffd700'];
             
             for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');

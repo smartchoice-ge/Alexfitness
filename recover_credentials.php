@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 // Add immediate error output for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 0); // Don't display to prevent JSON corruption

@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 require '/home/synergy-gym.ge/public_html/mssql_connection.php';
 require '/home/synergy-gym.ge/public_html/email_sender.php';

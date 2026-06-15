@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /**
  * Image Management Admin Panel
  * Use this to view and manage uploaded profile pictures

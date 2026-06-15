@@ -1,9 +1,9 @@
 ﻿<!DOCTYPE html>
 <html lang="ka">
 <head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <meta name="title" content="Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training">
-    <meta name="description" content="Discover Synergy Gym in Didi Digomi, Tbilisi's premier fitness club. We offer state-of-the-art equipment, personal training, and a motivating environment to help you achieve your health and fitness goals. Join us today">
-    <meta name="keywords" content="gym in Didi Digomi, fitness tbilisi, Synergy Gym, gym tbilisi, personal trainer tbilisi, weight loss tbilisi, bodybuilding georgia, women's fitness tbilisi, affordable gym tbilisi, საუკეთესო სავარჯიშო დარბაზი, ფიტნესი თბილისი, Didi Digomi ფიტნესი">
+    <meta name="title" content="Alex Fit – Gym &amp; Boxing in Kobuleti | Fitness Club">
+    <meta name="description" content="Discover Alex Fit in Kobuleti. Premier fitness club combining gym training and boxing. State-of-the-art equipment, personal training, boxing classes. Join us today.">
+    <meta name="keywords" content="Alex Fit, gym in Kobuleti, boxing kobuleti, fitness kobuleti, gym kobuleti, personal trainer kobuleti, boxing classes georgia, weight loss kobuleti, bodybuilding georgia, women's fitness kobuleti, affordable gym kobuleti, ფიტნესი ქობულეთში, ბოქსი ქობულეთი, დარბაზი ქობულეთი, ჯიმი ქობულეთი, fitness club Kobuleti">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
     <!-- Preconnect to external domains for faster loading -->
@@ -63,7 +63,7 @@
 
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <title>Synergy Gym in Didi Digomi, Tbilisi | Fitness Club & Training</title>
+    <title>Alex Fit – Gym &amp; Boxing in Kobuleti | Fitness Club</title>
 
     <style>
         /* Performant CSS animation */
@@ -234,24 +234,23 @@
     {
       "@context": "https://schema.org",
       "@type": "ExerciseGym",
-      "name": "Synergy Gym",
-      "description": "Tbilisi's fitness club in Didi Digomi, offering modern equipment, personal training, and a motivating atmosphere.",
+      "name": "Alex Fit",
+      "description": "Alex Fit in Kobuleti — gym and boxing training centre with modern equipment, personal training, and boxing classes.",
       "url": "/",
-      "logo": "/img/logo.png",
-      "telephone": "+995-XXX-XXX-XXX",
+      "logo": "/img/gym.png",
+      "telephone": "+995599061572",
       "priceRange": "$$",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Didi Digomi, Girogi brwyinvale 8",
-        "addressLocality": "Tbilisi",
-        "addressRegion": "Tbilisi",
-        "postalCode": "0159",
+        "streetAddress": "Shota Rustaveli 170-25",
+        "addressLocality": "Kobuleti",
+        "postalCode": "6200",
         "addressCountry": "GE"
       },
       "geo": {
         "@type": "GeoCoordinates",
-        "latitude": "41.788453",
-        "longitude": "44.762575"
+        "latitude": "41.8323",
+        "longitude": "41.7712"
       },
       "openingHoursSpecification": [
         {
@@ -264,8 +263,8 @@
         { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
       ],
       "sameAs": [
-        "https://www.facebook.com/Synergy-Gym-236344203786898/",
-        "https://www.instagram.com/synergy_gym_tbilisi/"
+        "https://www.facebook.com/Alexfitnesskobulrti/",
+        "https://www.instagram.com/alex_fitness_kobuleti/"
       ]
     }
     </script>
@@ -273,8 +272,8 @@
 </head>
 <body>
     
-<a href="https://wa.me/+995-XXX-XXX-XXX" class="whatsapp-float" target="_blank">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" onerror="this.onerror=null; this.src='https://placehold.co/60x60/25d366/ffffff?text=WA';">
+<a href="https://t.me/alex_fitness_kobuleti" class="whatsapp-float" target="_blank">
+    <i class="fab fa-telegram-plane" style="font-size:28px;color:#fff;"></i>
 </a>
 
 <div id="cont">
@@ -283,12 +282,12 @@
             <header class="full-width text-center pt-3 pb-3">
                 <nav class="navbar navbar-expand-lg navbar-light bg-none no-padding col-md-8 offset-2" style="justify-content: center !important;">
                     <button class="navbar-toggler full-width" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <a href="/" class="logo-sm banner"><img src="img/logo.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a>
+                        <a href="/" class="logo-sm banner"><img src="img/gym.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a>
                     </button>
                     <div class="" id="navbarSupportedContent" style="justify-content: center; display: flex;">
                         <ul class="navbar-nav mr-auto middle">
                             <li class="nav-item middle"><a href="#packages" class="menu-link banner menu_links" name="key_packages">key_packages</a></li>
-                            <li class="nav-item menu-logo d-none d-md-block"><a href="/" class="menu-link banner"><img src="img/logo.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a></li>
+                            <li class="nav-item menu-logo d-none d-md-block"><a href="/" class="menu-link banner"><img src="img/gym.png" onerror="this.onerror=null; this.src='https://placehold.co/150x50/cccccc/000000?text=Synergy+Logo';"></a></li>
                             <li class="nav-item middle"><a href="#contact" class="menu-link banner menu_links" name="key_contact">key_contact</a></li>
                         </ul>
                     </div>
@@ -379,7 +378,7 @@
     <?php include(__DIR__ . '/../includes/google-reviews.php'); ?>
     <div id="contact" class="container-fluid text-center join banner pt-4 pb-4">
         <div class="full-width join-shadow"></div>
-        <i name='key_find'>key_find<h5 class="mt-4" name='key_address'>key_address <br>+995-XXX-XXX-XXX<br><a href="https://www.facebook.com/Synergy-Gym-236344203786898/" target="_blank">facebook</a><br><a href="https://www.instagram.com/synergy_gym_tbilisi/" target="_blank">Instagram</a><br>info@synergy-gym.ge</h5></i>
+        <i name='key_find'>key_find<h5 class="mt-4" name='key_address'>key_address <br>+995 599 061 572<br><a href="https://www.facebook.com/Alexfitnesskobulrti/" target="_blank">facebook</a><br><a href="https://www.instagram.com/alex_fitness_kobuleti/" target="_blank">Instagram</a><br>info@synergy-gym.ge</h5></i>
     </div>
     <div class="container-fluid map" style="position:relative;">
         <!-- Google Maps embed - Replace with Synergy location -->

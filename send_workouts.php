@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 include_once 'generate_qr.php';
 include_once 'db_connection.php';
@@ -67,7 +67,7 @@ $message_eng = $text_eng_safe . ' - ' . $image_eng;
 
 $message = $message_geo . "\n" . $message_eng;
 
-$apikey = '0f132d23f162ca06a769128a5e866cf1';
+$apikey = 'e774aad67ecaba4ba90b86da65be10d9';
 
 $url = "https://sender.ge/api/send.php";
 $fields = [
