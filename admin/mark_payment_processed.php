@@ -681,9 +681,9 @@ try {
                         'old_subscription_id' => $active_subscription_id,
                         'package_name_geo' => $mysql_package_name_geo,
                         'package_name_eng' => $mysql_package_name_eng,
-                        'new_package_duration_days' => $days_to_add,
+                        'new_package_duration_days' => websitePackageDurationDays($packageInfo),
                         'remaining_days_from_old' => $remaining_days,
-                        'total_days_added' => $total_days_to_add,
+                        'total_days_added' => websitePackageDurationDays($packageInfo) + $remaining_days,
                         'new_end_date' => $new_end_date,
                         'action' => 'expired_and_created_new'
                     ]
