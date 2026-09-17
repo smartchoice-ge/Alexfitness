@@ -1747,11 +1747,11 @@ $lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
         {
           "@type": "OpeningHoursSpecification",
           "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "02:00"
+          "opens": "09:00",
+          "closes": "00:00"
         },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "08:00", "closes": "02:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "22:00" }
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "09:00", "closes": "00:00" },
+        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "09:00", "closes": "00:00" }
       ],
       "sameAs": [
         "https://www.facebook.com/Alexfitnesskobulrti/",
@@ -2096,7 +2096,7 @@ $lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
             <div style="display:inline-flex; align-items:center; gap:18px; background:rgba(74,222,128,0.07); border:1px solid rgba(74,222,128,0.25); border-radius:50px; padding:10px 28px; margin:0.5rem 0 1.5rem;">
                 <span style="color:#4ade80; font-size:1.4rem;"><i class="fas fa-clock"></i></span>
                 <div style="text-align:left; line-height:1.35;">
-                    <div style="color:#ececec; font-size:1.25rem; font-weight:800; letter-spacing:1px;">09:30 – 00:00</div>
+                    <div style="color:#ececec; font-size:1.25rem; font-weight:800; letter-spacing:1px;">09:00 – 00:00</div>
                     <div style="color:#7a7a7a; font-size:0.82rem; letter-spacing:0.5px; text-transform:uppercase;" name="key_every_day">Every Day</div>
                 </div>
             </div>
@@ -2388,7 +2388,7 @@ $lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
                 </div>
                 <div class="footer-contact-item">
                     <i class="fas fa-clock"></i>
-                    <span style="color:#d0d0d0;">09:30 – 00:00 &nbsp;<span style="color:#606060; font-size:0.80rem;" name="key_every_day">Every Day</span></span>
+                    <span style="color:#d0d0d0;">09:00 – 00:00 &nbsp;<span style="color:#606060; font-size:0.80rem;" name="key_every_day">Every Day</span></span>
                 </div>
             </div>
 

@@ -581,7 +581,7 @@
             </div>
             <div class="footer-contact-item">
                 <i class="fas fa-clock"></i>
-                <span style="color:#d0d0d0;">09:30 – 00:00 &nbsp;<span style="color:#606060;font-size:.80rem;" name="key_every_day">Every Day</span></span>
+                <span style="color:#d0d0d0;">09:00 – 00:00 &nbsp;<span style="color:#606060;font-size:.80rem;" name="key_every_day">Every Day</span></span>
             </div>
             <div class="footer-contact-item">
                 <i class="fas fa-map-marker-alt"></i>
