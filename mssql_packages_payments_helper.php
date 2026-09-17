@@ -11,6 +11,188 @@
 require_once __DIR__ . '/mssql_connection.php';
 
 /**
+ * Canonical duration unit tokens stored in PackagesWebsite.duration_unit.
+ * @return string[]
+ */
+function websiteDurationUnits() {
+    return ['day', 'week', 'month', 'year'];
+}
+
+/**
+ * Localized label for a duration unit.
+ *
+ * @param string $type - one of day|week|month|year
+ * @param string $lang - ka|en|ru (default ka, used on admin cards)
+ * @return string
+ */
+function websiteDurationUnitLabel($type, $lang = 'ka') {
+    $labels = [
+        'ka' => ['day' => 'დღე',   'week' => 'კვირა', 'month' => 'თვე',    'year' => 'წელი'],
+        'en' => ['day' => 'days',  'week' => 'weeks', 'month' => 'months', 'year' => 'years'],
+        'ru' => ['day' => 'дн',    'week' => 'нед',   'month' => 'мес',    'year' => 'г'],
+    ];
+    $lang = isset($labels[$lang]) ? $lang : 'ka';
+    $type = strtolower((string)$type);
+    return $labels[$lang][$type] ?? $labels[$lang]['month'];
+}
+
+/**
+ * Normalize a package row into its structured duration parts.
+ *
+ * Priority:
+ *   1. Explicit duration_unit + duration_value (the new dual control).
+ *   2. Legacy duration_days  -> day-based.
+ *   3. Legacy duration_month -> month-based.
+ *   4. Fallback: 1 month.
+ *
+ * @param array $package - A PackagesWebsite row (associative)
+ * @return array{type:string,value:int}
+ */
+function websitePackageDurationParts($package) {
+    $type = isset($package['duration_unit']) ? strtolower(trim((string)$package['duration_unit'])) : '';
+    $value = isset($package['duration_value']) ? (int)$package['duration_value'] : 0;
+    if (in_array($type, websiteDurationUnits(), true) && $value > 0) {
+        return ['type' => $type, 'value' => $value];
+    }
+
+    $days = isset($package['duration_days']) ? (int)$package['duration_days'] : 0;
+    if ($days > 0) {
+        return ['type' => 'day', 'value' => $days];
+    }
+
+    $months = isset($package['duration_month']) ? (int)$package['duration_month'] : 0;
+    if ($months > 0) {
+        return ['type' => 'month', 'value' => $months];
+    }
+
+    return ['type' => 'month', 'value' => 1];
+}
+
+/**
+ * Advance a start date by a package's duration, calendar-accurately.
+ *
+ * day  -> +N days, week -> +N*7 days, month -> +N months, year -> +N years.
+ *
+ * @param DateTimeInterface|string|null $start - start date (default: now)
+ * @param array $package - A PackagesWebsite row (associative)
+ * @return DateTime
+ */
+function addPackageDurationToDate($start, $package) {
+    if ($start instanceof DateTime) {
+        $dt = clone $start;
+    } elseif ($start instanceof DateTimeInterface) {
+        $dt = new DateTime($start->format('Y-m-d H:i:s'));
+    } else {
+        $dt = new DateTime($start ?: 'now');
+    }
+
+    $parts = websitePackageDurationParts($package);
+    $n = (int)$parts['value'];
+
+    switch ($parts['type']) {
+        case 'day':   $dt->modify('+' . $n . ' day'); break;
+        case 'week':  $dt->modify('+' . ($n * 7) . ' day'); break;
+        case 'month': $dt->modify('+' . $n . ' month'); break;
+        case 'year':  $dt->modify('+' . $n . ' year'); break;
+    }
+
+    return $dt;
+}
+
+/**
+ * Approximate number of days a package covers (day=N, week=N*7,
+ * month=N*30, year=N*365). Kept for callers that need a rough day count;
+ * use addPackageDurationToDate() for the authoritative expiration date.
+ *
+ * @param array $package - A PackagesWebsite row (associative)
+ * @return int
+ */
+function websitePackageDurationDays($package) {
+    $parts = websitePackageDurationParts($package);
+    $n = (int)$parts['value'];
+    switch ($parts['type']) {
+        case 'day':   return $n;
+        case 'week':  return $n * 7;
+        case 'month': return $n * 30;
+        case 'year':  return $n * 365;
+    }
+    return $n;
+}
+
+/**
+ * Formatted, localized duration label, e.g. "2 კვირა", "15 დღე", "1 წელი".
+ *
+ * @param array $package - A PackagesWebsite row (associative)
+ * @param string $lang - ka|en|ru (default ka)
+ * @return string
+ */
+function websitePackageDurationLabel($package, $lang = 'ka') {
+    $parts = websitePackageDurationParts($package);
+    return $parts['value'] . ' ' . websiteDurationUnitLabel($parts['type'], $lang);
+}
+
+/**
+ * Derive the legacy duration_month / duration_days columns from a
+ * structured unit+value, so older code paths that read those columns keep
+ * working.
+ *
+ *   duration_days  = TOTAL days for every unit (day=N, week=N*7,
+ *                    month=N*30, year=N*365).
+ *   duration_month = equivalent whole months when applicable
+ *                    (month=N, year=N*12), otherwise NULL (day/week).
+ *
+ * @param string $type  - day|week|month|year
+ * @param int    $value - positive amount
+ * @return array{0:?int,1:int} - [duration_month (null when N/A), duration_days]
+ */
+function websiteDeriveLegacyDuration($type, $value) {
+    $type = strtolower((string)$type);
+    $value = max(1, (int)$value);
+    switch ($type) {
+        case 'day':
+            return [null, $value];
+        case 'week':
+            return [null, $value * 7];
+        case 'year':
+            return [$value * 12, $value * 365];
+        case 'month':
+        default:
+            return [$value, $value * 30];
+    }
+}
+
+/**
+ * Normalize incoming package form data (structured type+value preferred,
+ * legacy month/days accepted) into the four columns to persist.
+ *
+ * @param array $data
+ * @return array{0:int,1:?int,2:string,3:int} - [duration_month, duration_days, duration_unit, duration_value]
+ */
+function normalizePackageDurationInput($data) {
+    $type = isset($data['duration_unit']) ? strtolower(trim((string)$data['duration_unit'])) : '';
+    $value = isset($data['duration_value']) ? (int)$data['duration_value'] : 0;
+
+    if (!in_array($type, websiteDurationUnits(), true) || $value <= 0) {
+        // Fall back to legacy fields when the structured control is absent.
+        $legacyDays = isset($data['duration_days']) ? (int)$data['duration_days'] : 0;
+        $legacyMonths = isset($data['duration_month']) ? (int)$data['duration_month'] : 0;
+        if ($legacyDays > 0) {
+            $type = 'day';
+            $value = $legacyDays;
+        } elseif ($legacyMonths > 0) {
+            $type = 'month';
+            $value = $legacyMonths;
+        } else {
+            $type = 'month';
+            $value = 1;
+        }
+    }
+
+    [$duration_month, $duration_days] = websiteDeriveLegacyDuration($type, $value);
+    return [$duration_month, $duration_days, $type, $value];
+}
+
+/**
  * Get all packages from MSSQL PackagesWebsite table
  * @param string $orderBy - ORDER BY clause (default: order_number ASC, id ASC)
  * @param string $where - WHERE clause conditions (without WHERE keyword)
@@ -25,7 +207,7 @@ function getPackagesWebsite($orderBy = 'order_number ASC, id ASC', $where = null
         return $packages;
     }
     
-    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, description, description_geo, deal, order_number FROM PackagesWebsite";
+    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, duration_days, duration_unit, duration_value, description, description_geo, deal, order_number FROM PackagesWebsite";
     if ($where) {
         $sql .= " WHERE " . $where;
     }
@@ -56,7 +238,7 @@ function getPackageWebsiteById($id) {
     
     if (!$mssqlconn) return null;
     
-    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, description, description_geo, deal, order_number FROM PackagesWebsite WHERE id = ?";
+    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, duration_days, duration_unit, duration_value, description, description_geo, deal, order_number FROM PackagesWebsite WHERE id = ?";
     $params = [$id];
     
     $stmt = sqlsrv_query($mssqlconn, $sql, $params);
@@ -78,7 +260,7 @@ function getPackageWebsiteByPackageId($packageId) {
     
     if (!$mssqlconn) return null;
     
-    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, description, description_geo, deal, order_number FROM PackagesWebsite WHERE package_id = ?";
+    $sql = "SELECT id, package_id, price, old_price, name_geo, name_eng, duration_month, duration_days, duration_unit, duration_value, description, description_geo, deal, order_number FROM PackagesWebsite WHERE package_id = ?";
     $params = [$packageId];
     
     $stmt = sqlsrv_query($mssqlconn, $sql, $params);
@@ -100,17 +282,22 @@ function insertPackageWebsite($data) {
     
     if (!$mssqlconn) return false;
     
-    $sql = "INSERT INTO PackagesWebsite (package_id, price, old_price, name_geo, name_eng, duration_month, description, description_geo, deal, order_number) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
+    $sql = "INSERT INTO PackagesWebsite (package_id, price, old_price, name_geo, name_eng, duration_month, duration_days, duration_unit, duration_value, description, description_geo, deal, order_number)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);
             SELECT SCOPE_IDENTITY() AS id;";
-    
+
+    [$duration_month, $duration_days, $duration_unit, $duration_value] = normalizePackageDurationInput($data);
+
     $params = [
         $data['package_id'],
         $data['price'] ?? 0,
         $data['old_price'] ?? null,
         $data['name_geo'] ?? '',
         $data['name_eng'] ?? '',
-        $data['duration_month'] ?? 1,
+        $duration_month,
+        $duration_days,
+        $duration_unit,
+        $duration_value,
         $data['description'] ?? null,
         $data['description_geo'] ?? null,
         $data['deal'] ?? '',
@@ -148,22 +335,30 @@ function updatePackageWebsite($id, $data) {
             price = ?, 
             old_price = ?, 
             name_geo = ?, 
-            name_eng = ?, 
-            duration_month = ?, 
-            description = ?, 
-            description_geo = ?, 
-            deal = ?, 
+            name_eng = ?,
+            duration_month = ?,
+            duration_days = ?,
+            duration_unit = ?,
+            duration_value = ?,
+            description = ?,
+            description_geo = ?,
+            deal = ?,
             order_number = ?,
             updated_at = GETDATE()
             WHERE id = ?";
-    
+
+    [$duration_month, $duration_days, $duration_unit, $duration_value] = normalizePackageDurationInput($data);
+
     $params = [
         $data['package_id'],
         $data['price'] ?? 0,
         $data['old_price'] ?? null,
         $data['name_geo'] ?? '',
         $data['name_eng'] ?? '',
-        $data['duration_month'] ?? 1,
+        $duration_month,
+        $duration_days,
+        $duration_unit,
+        $duration_value,
         $data['description'] ?? null,
         $data['description_geo'] ?? null,
         $data['deal'] ?? '',

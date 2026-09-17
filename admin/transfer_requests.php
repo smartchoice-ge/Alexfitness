@@ -7,6 +7,7 @@ if (!isset($_SESSION['user_logged_in']) || $_SESSION['user_logged_in'] !== true)
 }
 
 require_once '../mssql_connection.php';
+require_once '../mssql_packages_payments_helper.php';
 
 function sendSms(string $phone, string $message): bool {
     $phone = preg_replace('/[^0-9]/', '', $phone);
@@ -38,7 +39,7 @@ function sendSms(string $phone, string $message): bool {
 
 function assignSubscription(int $transferId, $conn, int $adminUserId): string {
     // Load transfer request + package info
-    $st = sqlsrv_query($conn, "SELECT tr.*, pw.package_id AS crm_pkg_id, pw.duration_month, pw.price AS pkg_price
+    $st = sqlsrv_query($conn, "SELECT tr.*, pw.package_id AS crm_pkg_id, pw.duration_month, pw.duration_days, pw.duration_unit, pw.duration_value, pw.price AS pkg_price
         FROM TransferRequests tr
         LEFT JOIN PackagesWebsite pw ON pw.id = tr.package_id
         WHERE tr.id = ?", [$transferId]);
@@ -53,10 +54,15 @@ function assignSubscription(int $transferId, $conn, int $adminUserId): string {
     if (!$cs || !($client = sqlsrv_fetch_array($cs, SQLSRV_FETCH_ASSOC))) return 'Client not found in CRM';
     $clientId = $client['ID'];
 
-    // Duration
-    $months  = max(1, (int)$tr['duration_month']);
-    $days    = $months * 30;
-    $endDate = date('Y-m-d H:i:s', strtotime("+{$days} days"));
+    // Duration: calendar-accurate end date from the structured duration
+    // (day/week/month/year), falling back to legacy columns inside the helper.
+    $pkgForDuration = [
+        'duration_unit'  => $tr['duration_unit'] ?? null,
+        'duration_value' => $tr['duration_value'] ?? null,
+        'duration_days'  => $tr['duration_days'] ?? null,
+        'duration_month' => $tr['duration_month'] ?? null,
+    ];
+    $endDate = addPackageDurationToDate(new DateTime(), $pkgForDuration)->format('Y-m-d H:i:s');
 
     // Check for existing active subscription
     $es = sqlsrv_query($conn, "SELECT ID, EndDate FROM SoldPackages WHERE ClientID=? AND Expired=0", [$clientId]);
@@ -65,7 +71,9 @@ function assignSubscription(int $transferId, $conn, int $adminUserId): string {
         sqlsrv_query($conn, "UPDATE SoldPackages SET Expired=1 WHERE ID=?", [$existing['ID']]);
         $endObj = $existing['EndDate'] instanceof DateTime ? $existing['EndDate'] : new DateTime($existing['EndDate']);
         $remaining = max(0, (new DateTime())->diff($endObj)->days);
-        $endDate = date('Y-m-d H:i:s', strtotime("+{$days}days +{$remaining}days"));
+        $endObjNew = addPackageDurationToDate(new DateTime(), $pkgForDuration);
+        $endObjNew->modify('+' . $remaining . ' day');
+        $endDate = $endObjNew->format('Y-m-d H:i:s');
     }
 
     // Insert SoldPackages — PaymentTypeID 8 = bank transfer

@@ -27,13 +27,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_package'])) {
     $old_price = isset($_POST['old_price']) && $_POST['old_price'] !== '' ? filter_var($_POST['old_price'], FILTER_VALIDATE_INT) : null;
     $name_geo = trim($_POST['name_geo']);
     $name_eng = trim($_POST['name_eng']);
-    $duration_month = filter_var($_POST['duration_month'], FILTER_VALIDATE_INT);
+    $duration_unit = isset($_POST['duration_unit']) ? strtolower(trim($_POST['duration_unit'])) : '';
+    $duration_value = isset($_POST['duration_value']) && $_POST['duration_value'] !== '' ? filter_var($_POST['duration_value'], FILTER_VALIDATE_INT) : null;
     $description = isset($_POST['description']) ? trim($_POST['description']) : null; // EN
     $description_geo = isset($_POST['description_geo']) ? trim($_POST['description_geo']) : null; // KA
     $deal = isset($_POST['deal']) && $_POST['deal'] !== '' ? trim($_POST['deal']) : '';
     $order_number = isset($_POST['order_number']) && $_POST['order_number'] !== '' ? filter_var($_POST['order_number'], FILTER_VALIDATE_INT) : 0;
-    
-    if ($package_id !== false && $price !== false && !empty($name_geo) && !empty($name_eng) && $duration_month !== false) {
+
+    // Duration requires a valid unit (day/week/month/year) and a positive value.
+    $hasValidDuration = in_array($duration_unit, websiteDurationUnits(), true)
+        && $duration_value !== null && $duration_value !== false && $duration_value > 0;
+
+    if ($package_id !== false && $price !== false && !empty($name_geo) && !empty($name_eng) && $hasValidDuration) {
         // Use MSSQL helper function
         $insertedId = insertPackageWebsite([
             'package_id' => $package_id,
@@ -41,7 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['add_package'])) {
             'old_price' => $old_price,
             'name_geo' => $name_geo,
             'name_eng' => $name_eng,
-            'duration_month' => $duration_month,
+            'duration_unit' => $duration_unit,
+            'duration_value' => $duration_value,
             'description' => $description,
             'description_geo' => $description_geo,
             'deal' => $deal,
@@ -75,13 +81,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_packages'])) {
             $old_price = isset($package_data['old_price']) && $package_data['old_price'] !== '' ? filter_var($package_data['old_price'], FILTER_VALIDATE_INT) : null;
             $name_geo = trim($package_data['name_geo']);
             $name_eng = trim($package_data['name_eng']);
-            $duration_month = filter_var($package_data['duration_month'], FILTER_VALIDATE_INT);
+            $duration_unit = isset($package_data['duration_unit']) ? strtolower(trim($package_data['duration_unit'])) : '';
+            $duration_value = isset($package_data['duration_value']) && $package_data['duration_value'] !== '' ? filter_var($package_data['duration_value'], FILTER_VALIDATE_INT) : null;
             $description = isset($package_data['description']) ? trim($package_data['description']) : null;
             $description_geo = isset($package_data['description_geo']) ? trim($package_data['description_geo']) : null;
             $deal = isset($package_data['deal']) && $package_data['deal'] !== '' ? trim($package_data['deal']) : '';
             $order_number = isset($package_data['order_number']) && $package_data['order_number'] !== '' ? filter_var($package_data['order_number'], FILTER_VALIDATE_INT) : 0;
 
-            if ($package_id !== false && $price !== false && !empty($name_geo) && !empty($name_eng) && $duration_month !== false) {
+            // Duration requires a valid unit (day/week/month/year) and a positive value.
+            $hasValidDuration = in_array($duration_unit, websiteDurationUnits(), true)
+                && $duration_value !== null && $duration_value !== false && $duration_value > 0;
+
+            if ($package_id !== false && $price !== false && !empty($name_geo) && !empty($name_eng) && $hasValidDuration) {
                 // Use MSSQL helper function
                 $updated = updatePackageWebsite($sanitized_id, [
                     'package_id' => $package_id,
@@ -89,7 +100,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_packages'])) {
                     'old_price' => $old_price,
                     'name_geo' => $name_geo,
                     'name_eng' => $name_eng,
-                    'duration_month' => $duration_month,
+                    'duration_unit' => $duration_unit,
+                    'duration_value' => $duration_value,
                     'description' => $description,
                     'description_geo' => $description_geo,
                     'deal' => $deal,
@@ -394,18 +406,30 @@ if ($mssqlconn) {
                            placeholder="e.g. Medium Package"
                            class="form-input block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                 </div>
-                <div>
-                    <label for="duration_month" class="block text-sm font-semibold text-gray-700 mb-2">
-                        <i class="fas fa-calendar mr-1"></i>ხანგრძლივობა (თვე) *
+                <div class="lg:col-span-2">
+                    <label for="duration_value" class="block text-sm font-semibold text-gray-700 mb-2">
+                        <i class="fas fa-calendar mr-1"></i>ხანგრძლივობა / Duration *
                     </label>
-                    <input type="number" 
-                           id="duration_month" 
-                           name="duration_month" 
-                           required 
-                           min="1"
-                           max="60"
-                           placeholder="მაგ: 1"
-                           class="form-input block w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    <div class="flex">
+                        <input type="number"
+                               id="duration_value"
+                               name="duration_value"
+                               required
+                               min="1"
+                               max="999"
+                               value="1"
+                               placeholder="1"
+                               class="form-input block w-20 flex-shrink-0 border-gray-300 rounded-l-lg border-r-0 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        <select id="duration_unit"
+                                name="duration_unit"
+                                required
+                                class="form-input block w-full border-gray-300 rounded-r-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <option value="day">დღე / day</option>
+                            <option value="week">კვირა / week</option>
+                            <option value="month" selected>თვე / month</option>
+                            <option value="year">წელი / year</option>
+                        </select>
+                    </div>
                 </div>
                 <div class="lg:col-span-3">
                     <label for="description_geo" class="block text-sm font-semibold text-gray-700 mb-2">
@@ -456,11 +480,18 @@ if ($mssqlconn) {
             </h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <?php foreach ($packages as $package): ?>
-                <?php $dealVal = isset($package['deal']) ? $package['deal'] : ''; $cardTint = (stripos($dealVal, 'BEST') !== false) ? ' package-card--best' : ((stripos($dealVal, 'STUDENT') !== false) ? ' package-card--student' : ''); ?>
+                <?php
+                    $dealVal = isset($package['deal']) ? $package['deal'] : '';
+                    $cardTint = (stripos($dealVal, 'BEST') !== false) ? ' package-card--best' : ((stripos($dealVal, 'STUDENT') !== false) ? ' package-card--student' : '');
+                    // Structured duration parts + formatted badge (e.g. "2 კვირა", "15 დღე").
+                    $durationParts = websitePackageDurationParts($package);
+                    $durationBadge = websitePackageDurationLabel($package, 'ka');
+                ?>
                 <div class="package-card rounded-xl p-5 shadow<?= $cardTint ?>">
                     <div class="flex items-center justify-between mb-4">
                         <div class="text-sm font-semibold text-gray-700">
                             <i class="fas fa-hashtag mr-1 text-gray-500"></i>#<?= htmlspecialchars($package['id']) ?>
+                            <span class="ml-2 inline-block bg-blue-100 text-blue-700 text-xs font-semibold px-2 py-0.5 rounded-full"><?= htmlspecialchars($durationBadge) ?></span>
                         </div>
                         <button type="button" 
                                 onclick="deletePackage(<?= $package['id'] ?>)"
@@ -475,8 +506,16 @@ if ($mssqlconn) {
                             <input type="number" name="packages[<?= $package['id'] ?>][package_id]" value="<?= htmlspecialchars($package['package_id'] ?? '') ?>" min="1" required class="form-input w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
                         </div>
                         <div>
-                            <label class="block text-xs font-semibold text-gray-600 mb-1"><i class="fas fa-calendar mr-1"></i>ხანგრძლივობა (თვე)</label>
-                            <input type="number" name="packages[<?= $package['id'] ?>][duration_month]" value="<?= htmlspecialchars($package['duration_month'] ?? '') ?>" min="1" max="60" required class="form-input w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                            <label class="block text-xs font-semibold text-gray-600 mb-1"><i class="fas fa-calendar mr-1"></i>ხანგრძლივობა / Duration</label>
+                            <div class="flex">
+                                <input type="number" name="packages[<?= $package['id'] ?>][duration_value]" value="<?= htmlspecialchars((string)$durationParts['value']) ?>" min="1" max="999" required class="form-input w-16 flex-shrink-0 border-gray-300 rounded-l-lg border-r-0 shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <select name="packages[<?= $package['id'] ?>][duration_unit]" required class="form-input w-full border-gray-300 rounded-r-lg shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option value="day"   <?= $durationParts['type'] === 'day'   ? 'selected' : '' ?>>დღე / day</option>
+                                    <option value="week"  <?= $durationParts['type'] === 'week'  ? 'selected' : '' ?>>კვირა / week</option>
+                                    <option value="month" <?= $durationParts['type'] === 'month' ? 'selected' : '' ?>>თვე / month</option>
+                                    <option value="year"  <?= $durationParts['type'] === 'year'  ? 'selected' : '' ?>>წელი / year</option>
+                                </select>
+                            </div>
                         </div>
                         <div>
                             <label class="block text-xs font-semibold text-gray-600 mb-1"><i class="fas fa-dollar-sign mr-1"></i>ფასი</label>

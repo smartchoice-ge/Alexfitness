@@ -282,6 +282,7 @@ try {
     $mysql_package_name_eng = $packageInfo['name_eng'] ?? null;
     $mysql_package_price = $packageInfo['price'] ?? null;
     $mysql_package_duration = $packageInfo['duration_month'] ?? null;
+    $mysql_package_duration_days = isset($packageInfo['duration_days']) ? (int)$packageInfo['duration_days'] : 0;
     
     // Check if package_id exists and package information was found
     if (empty($payment['package_id'])) {
@@ -305,9 +306,9 @@ try {
         exit;
     }
     
-    if (empty($mysql_package_duration) || !is_numeric($mysql_package_duration)) {
+    if ((empty($mysql_package_duration) || !is_numeric($mysql_package_duration)) && $mysql_package_duration_days <= 0) {
         echo json_encode([
-            'success' => false, 
+            'success' => false,
             'message' => "Package duration not found or invalid in database (Payment ID: {$payment_id}, Package ID: {$payment['package_id']}, Mobile: {$mobile_number})",
             'payment_id' => $payment_id,
             'package_id' => $payment['package_id'],
@@ -524,27 +525,32 @@ try {
         }
     }
     
-    // Step 6: Calculate subscription duration using duration_month from MySQL
+    // Step 6: Calculate subscription duration.
+    // Uses the structured duration (day/week/month/year) for a calendar-accurate
+    // EndDate via addPackageDurationToDate(). The legacy "duration_month == 50"
+    // one-time sentinel is preserved only when no structured type is present.
     $months_to_add = intval($mysql_package_duration);
-    
-    // Log for debugging
-    error_log("Package: {$mysql_package_name_eng} (ID: {$payment['package_id']}), Duration from DB: {$months_to_add} months");
-    
-    // Check if this is a one-time package (duration = 50)
-    $is_one_time_package = ($months_to_add == 50);
-        
-    
+    $has_structured_type = in_array(strtolower((string)($packageInfo['duration_unit'] ?? '')), websiteDurationUnits(), true)
+        && (int)($packageInfo['duration_value'] ?? 0) > 0;
+
+    // One-time package (legacy): 1 day, 1 visit — never for structured/day-based packages.
+    $is_one_time_package = (!$has_structured_type && $mysql_package_duration_days <= 0 && $months_to_add == 50);
+
     if ($is_one_time_package) {
-        // One-time package: 1 day duration, 1 visit
-        $days_to_add = 1;
         $visits_count = 0;
         $visits_left = 1;
         error_log("One-time package detected - setting 1 day duration, 1 visit");
     } else {
-        // Regular package: calculate days based on months (30 days per month)
-        $days_to_add = $months_to_add * 30;
         $visits_count = 999;
         $visits_left = 999;
+        error_log("Package: {$mysql_package_name_eng} (ID: {$payment['package_id']}), Duration: " . websitePackageDurationLabel($packageInfo, 'en'));
+    }
+
+    // Compute the base expiration date (from now, before any carry-over days).
+    if ($is_one_time_package) {
+        $base_end_date_obj = (new DateTime())->modify('+1 day');
+    } else {
+        $base_end_date_obj = addPackageDurationToDate(new DateTime(), $packageInfo);
     }
     
     if ($has_active_subscription) {
@@ -575,8 +581,11 @@ try {
             }
             
             // Step 8: Create new subscription with new package duration + remaining days
-            $total_days_to_add = $days_to_add + $remaining_days;
-            $new_end_date = date('Y-m-d H:i:s', strtotime("+{$total_days_to_add} days"));
+            $new_end_date_obj = clone $base_end_date_obj;
+            if ($remaining_days > 0) {
+                $new_end_date_obj->modify('+' . $remaining_days . ' day');
+            }
+            $new_end_date = $new_end_date_obj->format('Y-m-d H:i:s');
             
             // Use MySQL package information for new subscription
             $package_name_for_mssql = $mysql_package_name_geo; // Use Georgian name for MSSQL
@@ -690,14 +699,10 @@ try {
             sqlsrv_free_stmt($stmt_insert);
             
         } else {
-            // No active subscription - create new one
-            if ($is_one_time_package) {
-                // One-time package: 1 day from now
-                $end_date = date('Y-m-d H:i:s', strtotime("+1 day"));
-            } else {
-                // Regular package: calculate based on months
-                $end_date = date('Y-m-d H:i:s', strtotime("+{$days_to_add} days"));
-            }
+            // No active subscription - create new one.
+            // $base_end_date_obj already reflects the correct duration (calendar
+            // months/years, weeks, exact days, or the one-time +1 day case).
+            $end_date = $base_end_date_obj->format('Y-m-d H:i:s');
             
             // Use MySQL package information
             $package_name_for_mssql = $mysql_package_name_geo; // Use Georgian name for MSSQL

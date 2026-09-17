@@ -2043,14 +2043,18 @@ $lang = isset($_GET['lang']) ? $_GET['lang'] : 'ka';
                         $deal = isset($p['deal']) ? trim($p['deal']) : '';
                         $colCls = 'col-xl-4 col-lg-6 col-md-6';
                         $blockCls = 'price-block text-center banner pt-5 pb-5 pl-3 pr-3';
-                        $duration = htmlspecialchars((string)($p['duration_month'] ?? ''));
+                        // Structured duration (day/week/month/year) with legacy fallback.
+                        $durationParts = websitePackageDurationParts($p);
+                        $duration = htmlspecialchars((string)$durationParts['value']);
+                        $durationKeyMap = ['day' => 'key_days', 'week' => 'key_week', 'month' => 'key_month', 'year' => 'key_year'];
+                        $durationLabelKey = $durationKeyMap[$durationParts['type']] ?? 'key_month';
                         $descGeo = htmlspecialchars((string)($p['description_geo'] ?: $p['name_geo'] ?: ''));
                         $descEn = htmlspecialchars((string)($p['description'] ?: $p['name_eng'] ?: ''));
                     ?>
                     <div class="<?php echo $colCls; ?>">
                         <div class="<?php echo $blockCls; ?>" onclick="openAgreementWithLang(); return false;" style="cursor: pointer;">
                             <h1 class="middle"><?php echo $duration; ?></h1>
-                            <h2 class="mt-5" name='key_month'>key_month</h2>
+                            <h2 class="mt-5" name='<?php echo $durationLabelKey; ?>'><?php echo $durationLabelKey; ?></h2>
                             <h3 class="mt-5 pkg-desc" data-geo="<?php echo $descGeo; ?>" data-en="<?php echo $descEn; ?>"></h3>
 
                             <?php if ($hasDiscount): ?>

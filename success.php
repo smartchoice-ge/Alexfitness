@@ -25,6 +25,9 @@ $t = [
         'help_sub'      => 'დაგვიკავშირდით ნებისმიერ დროს',
         'select_first'  => 'გთხოვთ, ჯერ შეარჩიოთ პაკეტი',
         'month'         => 'თვე',
+        'day'           => 'დღე',
+        'week'          => 'კვირა',
+        'year'          => 'წელი',
         'gel'           => '₾',
     ],
     'en' => [
@@ -43,6 +46,9 @@ $t = [
         'help_sub'      => 'Contact us anytime',
         'select_first'  => 'Please select a package first',
         'month'         => 'mo',
+        'day'           => 'd',
+        'week'          => 'wk',
+        'year'          => 'yr',
         'gel'           => '₾',
     ],
     'ru' => [
@@ -61,6 +67,9 @@ $t = [
         'help_sub'      => 'Свяжитесь с нами в любое время',
         'select_first'  => 'Пожалуйста, сначала выберите абонемент',
         'month'         => 'мес',
+        'day'           => 'дн',
+        'week'          => 'нед',
+        'year'          => 'г',
         'gel'           => '₾',
     ],
 ];
@@ -305,7 +314,9 @@ body{
             <?php foreach ($packages as $pkg):
                 $name  = $lang === 'ka' ? htmlspecialchars($pkg['name_geo'] ?? '', ENT_QUOTES, 'UTF-8') : htmlspecialchars($pkg['name_eng'] ?? '', ENT_QUOTES, 'UTF-8');
                 $price = htmlspecialchars($pkg['price'] ?? '', ENT_QUOTES, 'UTF-8');
-                $dur   = $pkg['duration_month'] ? htmlspecialchars($pkg['duration_month'], ENT_QUOTES, 'UTF-8') . ' ' . $c['month'] : '';
+                $durParts = websitePackageDurationParts($pkg);
+                $durUnit = $c[$durParts['type']] ?? $c['month'];
+                $dur = htmlspecialchars((string)$durParts['value'], ENT_QUOTES, 'UTF-8') . ' ' . $durUnit;
                 $label = $name . ' — ' . $price . $c['gel'] . ($dur ? ' / ' . $dur : '');
             ?>
             <option value="<?= $pkg['id'] ?>" data-price="<?= $price ?>" data-name="<?= $name ?>">
